@@ -1,0 +1,53 @@
+class Solution {
+public:
+  bool valid(const string& s) {
+    int cnt = 0;
+    for (const char ch: s) {
+      if (ch == '(') cnt++;
+      else if (ch == ')') cnt--;
+      if (cnt < 0) break;
+    }
+    return cnt == 0;
+  }
+  
+  vector<string> removeInvalidParentheses(string s) {
+    if (valid(s)) return {s};
+    if (s.size() < 2) return {""};
+
+    vector<string> ans;
+
+    int len = 0;
+    queue<string> q;
+    unordered_set<string> visited;
+    q.push(s);
+    while (!q.empty()) {
+      const string cur = q.front();
+      q.pop();
+      
+      const int next_len = cur.size() - 1;
+      if (len != 0 && next_len < len) break;
+      
+      for (int i = 0; i < cur.size(); i++) {
+        if (cur[i] != '(' && cur[i] != ')') continue;
+        
+        const string next = (i == 0)? cur.substr(1, next_len)
+          : ((i == next_len)? cur.substr(0, next_len)
+            : cur.substr(0, i) + cur.substr(i + 1, next_len - i ));
+        
+        if (visited.count(next) != 0) continue;
+        visited.insert(next);
+        
+        if (valid(next)) {
+          ans.push_back(next);
+          len = next_len;
+        }
+        else if (ans.empty()) {
+          q.push(next);
+        }
+      }
+    }
+    
+    if (ans.size() == 0) ans = {""};
+    return ans;
+  }
+};
