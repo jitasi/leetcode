@@ -1,0 +1,26 @@
+class Solution {
+public:
+    unordered_map<string, int> addOperators(string num) {
+      if (num.size() == 1) return {{num, atoi(num.c_str())}};
+                                   
+      unordered_map<string, int> ans;
+      const auto left = addOperators(num.substr(0, num.size() - 1));
+      const auto right = addOperators(num.substr(num.size() - 1, 1));
+      for (const auto& kv_left: left) {
+        for (const auto& kv_right: right) {
+          ans[kv_left.first + "+" + kv_right.first] = kv_left.second + kv_right.second;
+          ans[kv_left.first + "-" + kv_right.first] = kv_left.second - kv_right.second;
+          ans[kv_left.first + "*" + kv_right.first] = kv_left.second * kv_right.second;
+        }
+      }
+      return ans;
+    }
+  
+    vector<string> addOperators(string num, int target) {
+      vector<string> ans;
+      for (const auto& kv : addOperators(num)) {
+        if (kv.second == target) ans.push_back(kv.first);
+      }
+      return ans;
+    }
+};
