@@ -1,0 +1,33 @@
+// Runtime: 892 ms, faster than 9.07% of C++ online submissions for Best Time to Buy and Sell Stock IV.
+// Memory Usage: 9.1 MB, less than 44.09% of C++ online submissions for Best Time to Buy and Sell Stock IV.
+
+class Solution {
+public:
+  int maxProfit(int k, vector<int>& prices) {
+    const int len = prices.size();
+    if (len < 2) return 0;
+    
+    k = std::min(k, len / 2);
+    
+    // [i][j], i-th day, up to j-th transaction
+    int sold[2][k + 1];
+    int hold[2][k + 1];
+    for (int t = 0; t <= k; t++) {
+      sold[0][t] = 0;
+      hold[0][t] = -prices[0];
+    }
+    int prev = 0;
+    int cur = 1;
+    for (int i = 1; i < len; i++) {
+      sold[cur][0] = 0;
+      hold[cur][0] = std::max(hold[prev][0], -prices[i]);
+      for (int t = 1; t <= k; t++) {
+        sold[cur][t] = std::max(sold[prev][t], hold[prev][t] + prices[i]);
+        hold[cur][t] = std::max(hold[prev][t], sold[prev][t - 1] - prices[i]);
+      }
+      prev = cur;
+      cur = (cur + 1) % 2;
+    }
+    return sold[prev][k];
+  }
+};
