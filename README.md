@@ -6,6 +6,7 @@
 |10|[ Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/)|[C++](./solutions/10.%20Regular%20Expression%20MatchingC%2B%2B)|4 ms|
 |23|[ Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)|[C++](./solutions/23.%20Merge%20k%20Sorted%20ListsC%2B%2B)|28 ms|
 |24|[ Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)|[C++](./solutions/24.%20Swap%20Nodes%20in%20PairsC%2B%2B)|0 ms|
+|32|[ Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)|[C++](./solutions/32.%20Longest%20Valid%20ParenthesesC%2B%2B)|4 ms|
 |41|[ First Missing Positive](https://leetcode.com/problems/first-missing-positive/)|[C++](./solutions/41.%20First%20Missing%20PositiveC%2B%2B)|4 ms|
 |42|[ Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)|[C++](./solutions/42.%20Trapping%20Rain%20WaterC%2B%2B)|8 ms|
 |76|[ Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)|[C++](./solutions/76.%20Minimum%20Window%20SubstringC%2B%2B)|80 ms|
