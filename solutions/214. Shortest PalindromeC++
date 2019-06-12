@@ -1,0 +1,46 @@
+// Runtime: 252 ms, faster than 11.34% of C++ online submissions for Shortest Palindrome.
+// Memory Usage: 9.8 MB, less than 60.12% of C++ online submissions for Shortest Palindrome.
+
+class Solution {
+public:
+  string shortestPalindrome(string s) {
+    const int len = s.size();
+    if (len == 0) return "";
+    
+    string ans;
+    string t;
+    for (int i = (len - 1) / 2; i >= 0; i--) {
+      int p = i - 1;
+      int q = i + 1;
+      while (p >= 0 && q < len && s[p] == s[q]) {
+        p--; 
+        q++;
+      }
+      if (p < 0) {
+        t = s.substr(q, len - q + 1);
+        reverse(t.begin(), t.end());
+        t += s;
+        if (ans.empty() || t.size() < ans.size()) ans = t;
+//        cout << t << endl;
+      }
+      
+      p = i - 1;
+      q = i;
+      while (p >= 0 && q < len && s[p] == s[q]) {
+        p--; 
+        q++;
+      }
+      if (p < 0) {
+        t = s.substr(q, len - q + 1);
+        reverse(t.begin(), t.end());
+        t += s;
+        if (ans.empty() || t.size() < ans.size()) ans = t;
+//        cout << t << endl;
+      }    
+      
+      if (!ans.empty()) break;
+    }
+    
+    return ans;
+  }
+};
