@@ -1,0 +1,34 @@
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Find the Closest Palindrome.
+// Memory Usage: 8.8 MB, less than 55.33% of C++ online submissions for Find the Closest Palindrome.
+
+class Solution {
+public:
+  string nearestPalindromic(string n) {
+    const int len = n.size();
+ 
+    unordered_set<long long> s;    // s = 123
+    s.insert(pow(10, len - 1) - 1);  // 99
+    s.insert(pow(10, len) + 1);  // 101
+    
+    long long num = stoll(n);
+    long long prefix = stoll(n.substr(0, (len + 1) / 2));   // 123 => 12 and 1234 => 12
+    for (long long i = -1; i <= 1; ++i) {
+      string pre = to_string(prefix + i);
+      string str = pre + string(pre.rbegin() + (len & 1), pre.rend());
+      s.insert(stoll(str));
+    }
+    
+    s.erase(num);
+    long long ans, minDiff = LONG_MAX;
+    for (auto a : s) {
+      long long diff = max(a, num) - min(a, num);
+      if (diff < minDiff) {
+        minDiff = diff;
+        ans = a;
+      } else if (diff == minDiff) {
+        ans = min(ans, a);
+      }
+    }
+    return to_string(ans);
+  }
+};
