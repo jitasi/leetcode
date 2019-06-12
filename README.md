@@ -24,6 +24,7 @@
 |124|[ Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)|[C++](./solutions/124.%20Binary%20Tree%20Maximum%20Path%20SumC%2B%2B)|32 ms|
 |128|[ Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)|[C++](./solutions/128.%20Longest%20Consecutive%20SequenceC%2B%2B)|12 ms|
 |140|[ Word Break II](https://leetcode.com/problems/word-break-ii/)|[C++](./solutions/140.%20Word%20Break%20IIC%2B%2B)|24 ms|
+|145|[ Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)|[C++](./solutions/145.%20Binary%20Tree%20Postorder%20TraversalC%2B%2B)|4 ms|
 |146|[ LRU Cache](https://leetcode.com/problems/lru-cache/)|[C++](./solutions/146.%20LRU%20CacheC%2B%2B)|204 ms|
 |149|[ Max Points on a Line](https://leetcode.com/problems/max-points-on-a-line/)|[C++](./solutions/149.%20Max%20Points%20on%20a%20LineC%2B%2B)|12 ms|
 |188|[ Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)|[C++](./solutions/188.%20Best%20Time%20to%20Buy%20and%20Sell%20Stock%20IVC%2B%2B)|892 ms|
