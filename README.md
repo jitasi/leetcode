@@ -33,6 +33,7 @@
 |301|[ Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/)|[C++](./solutions/301.%20Remove%20Invalid%20ParenthesesC%2B%2B)|64 ms|
 |312|[ Burst Balloons](https://leetcode.com/problems/burst-balloons/)|[C++](./solutions/312.%20Burst%20BalloonsC%2B%2B)|16 ms|
 |315|[ Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)|[C++](./solutions/315.%20Count%20of%20Smaller%20Numbers%20After%20SelfC%2B%2B)|156 ms|
+|329|[ Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)|[C++](./solutions/329.%20Longest%20Increasing%20Path%20in%20a%20MatrixC%2B%2B)|40 ms|
 |336|[ Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/)|[C++](./solutions/336.%20Palindrome%20PairsC%2B%2B)|204 ms|
 |381|[ Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/)|[C++](./solutions/381.%20Insert%20Delete%20GetRandom%20O(1)%20-%20Duplicates%20allowedC%2B%2B)|64 ms|
 |403|[ Frog Jump](https://leetcode.com/problems/frog-jump/)|[C++](./solutions/403.%20Frog%20JumpC%2B%2B)|152 ms|
