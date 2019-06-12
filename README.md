@@ -27,6 +27,7 @@
 |301|[ Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/)|[C++](./solutions/301.%20Remove%20Invalid%20ParenthesesC%2B%2B)|64 ms|
 |315|[ Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)|[C++](./solutions/315.%20Count%20of%20Smaller%20Numbers%20After%20SelfC%2B%2B)|156 ms|
 |336|[ Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/)|[C++](./solutions/336.%20Palindrome%20PairsC%2B%2B)|204 ms|
+|381|[ Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/)|[C++](./solutions/381.%20Insert%20Delete%20GetRandom%20O(1)%20-%20Duplicates%20allowedC%2B%2B)|64 ms|
 |403|[ Frog Jump](https://leetcode.com/problems/frog-jump/)|[C++](./solutions/403.%20Frog%20JumpC%2B%2B)|152 ms|
 |410|[ Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/)|[C++](./solutions/410.%20Split%20Array%20Largest%20SumC%2B%2B)|140 ms|
 |442|[ Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)|[C++](./solutions/442.%20Find%20All%20Duplicates%20in%20an%20ArrayC%2B%2B)|124 ms|
