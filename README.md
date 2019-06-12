@@ -28,6 +28,7 @@
 |149|[ Max Points on a Line](https://leetcode.com/problems/max-points-on-a-line/)|[C++](./solutions/149.%20Max%20Points%20on%20a%20LineC%2B%2B)|12 ms|
 |188|[ Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)|[C++](./solutions/188.%20Best%20Time%20to%20Buy%20and%20Sell%20Stock%20IVC%2B%2B)|892 ms|
 |212|[ Word Search II](https://leetcode.com/problems/word-search-ii/)|[C++](./solutions/212.%20Word%20Search%20IIC%2B%2B)|68 ms|
+|214|[ Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/)|[C++](./solutions/214.%20Shortest%20PalindromeC%2B%2B)|252 ms|
 |218|[ The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/)|[C++](./solutions/218.%20The%20Skyline%20ProblemC%2B%2B)|28 ms|
 |224|[ Basic Calculator](https://leetcode.com/problems/basic-calculator/)|[C++](./solutions/224.%20Basic%20CalculatorC%2B%2B)|12 ms|
 |239|[ Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)|[C++](./solutions/239.%20Sliding%20Window%20MaximumC%2B%2B)|60 ms|
