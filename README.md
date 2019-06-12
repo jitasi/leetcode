@@ -45,6 +45,7 @@
 |442|[ Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)|[C++](./solutions/442.%20Find%20All%20Duplicates%20in%20an%20ArrayC%2B%2B)|124 ms|
 |502|[ IPO](https://leetcode.com/problems/ipo/)|[C++](./solutions/502.%20IPOC%2B%2B)|68 ms|
 |564|[ Find the Closest Palindrome](https://leetcode.com/problems/find-the-closest-palindrome/)|[C++](./solutions/564.%20Find%20the%20Closest%20PalindromeC%2B%2B)|0 ms|
+|632|[ Smallest Range](https://leetcode.com/problems/smallest-range/)|[C++](./solutions/632.%20Smallest%20RangeC%2B%2B)|60 ms|
 |636|[ Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions/)|[C++](./solutions/636.%20Exclusive%20Time%20of%20FunctionsC%2B%2B)|20 ms|
 |639|[ Decode Ways II](https://leetcode.com/problems/decode-ways-ii/)|[C++](./solutions/639.%20Decode%20Ways%20IIC%2B%2B)|52 ms|
 |675|[ Cut Off Trees for Golf Event](https://leetcode.com/problems/cut-off-trees-for-golf-event/)|[C++](./solutions/675.%20Cut%20Off%20Trees%20for%20Golf%20EventC%2B%2B)|N/A|
