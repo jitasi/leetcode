@@ -12,6 +12,7 @@
 |42|[ Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)|[C++](./solutions/42.%20Trapping%20Rain%20WaterC%2B%2B)|8 ms|
 |45|[ Jump Game II](https://leetcode.com/problems/jump-game-ii/)|[C++](./solutions/45.%20Jump%20Game%20IIC%2B%2B)|12 ms|
 |57|[ Insert Interval](https://leetcode.com/problems/insert-interval/)|[C++](./solutions/57.%20Insert%20IntervalC%2B%2B)|20 ms|
+|72|[ Edit Distance](https://leetcode.com/problems/edit-distance/)|[C++](./solutions/72.%20Edit%20DistanceC%2B%2B)|16 ms|
 |76|[ Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)|[C++](./solutions/76.%20Minimum%20Window%20SubstringC%2B%2B)|80 ms|
 |84|[ Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)|[C++](./solutions/84.%20Largest%20Rectangle%20in%20HistogramC%2B%2B)|16 ms|
 |85|[ Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)|[C++](./solutions/85.%20Maximal%20RectangleC%2B%2B)|56 ms|
