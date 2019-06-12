@@ -1,0 +1,15 @@
+// Runtime: 116 ms, faster than 83.54% of C++ online submissions for Find All Duplicates in an Array.
+Memory Usage: 15 MB, less than 53.20% of C++ online submissions for Find All Duplicates in an Array.
+class Solution {
+public:
+  vector<int> findDuplicates(vector<int>& nums) {
+    vector<int> ans;
+    int idx;
+    for (const int num : nums) {
+      idx = abs(num) - 1;
+      if (nums[idx] < 0) ans.push_back(idx + 1);
+      nums[idx] = -nums[idx];
+    }
+    return ans;
+  }
+};
