@@ -1,0 +1,36 @@
+// Runtime: 1776 ms, faster than 5.03% of C++ online submissions for Bus Routes.
+// Memory Usage: 58.7 MB, less than 12.67% of C++ online submissions for Bus Routes.
+
+class Solution {
+public:
+  int numBusesToDestination(vector<vector<int>>& routes, int S, int T) {
+    if (S == T) return 0;
+    
+    unordered_map<int, unordered_set<int>> m;  // stop_id -> route_idx
+    for (int i = 0; i < routes.size(); i++) {
+      for (const int stop_id: routes[i]) {
+        m[stop_id].insert(i);
+      }
+    }
+    
+    int stops = 0;
+    unordered_set<int> visited = {S};
+    unordered_set<int> cur_stops = {S};
+    while (cur_stops.count(T) == 0 && !cur_stops.empty()) {
+      stops++;
+      unordered_set<int> next_stops;
+      for (const int stop_id: cur_stops) {        
+        for (const int route_id: m[stop_id]) {
+          for (const int next_stop_id: routes[route_id]) {
+            if (next_stop_id == T) return stops;  // Eearly termination, runtime 1776 ms -> 956 ms.
+            if (visited.count(next_stop_id) > 0) continue;
+            next_stops.insert(next_stop_id);
+            visited.insert(next_stop_id);
+          }
+        } 
+      }
+      cur_stops.swap(next_stops);
+    }
+    return cur_stops.count(T) > 0? stops : -1;
+  }
+};
