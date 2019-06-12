@@ -1,0 +1,48 @@
+// Runtime: 32 ms, faster than 88.32% of C++ online submissions for Binary Tree Maximum Path Sum.
+// Memory Usage: 26.6 MB, less than 5.82% of C++ online submissions for Binary Tree Maximum Path Sum.
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    // returns first = max path sum
+    //         second = max sum ends at root
+    std::pair<int, int> helper(TreeNode* root) {
+      if (root == nullptr) return {0, 0};
+      if (root->left == nullptr && root->right == nullptr) {
+        return {root->val, root->val};  
+      }
+      
+      const auto left = helper(root->left);
+      const auto right = helper(root->right);
+     
+      int child_max = root->val;
+      int max_sum_through_root = root->val;
+      if (root->left != nullptr) {
+        if (left.second > 0)
+          max_sum_through_root += left.second;
+        child_max = std::max(child_max, left.first);
+      }
+      if (root->right != nullptr) {
+        if (right.second > 0) 
+          max_sum_through_root += right.second;
+        child_max = std::max(child_max, right.first);
+      }
+      
+      return {
+        std::max(max_sum_through_root, child_max),
+        std::max(root->val, std::max(left.second + root->val,  right.second + root->val))
+      };
+    }
+  
+    int maxPathSum(TreeNode* root) {
+      return helper(root).first;
+    }
+};
