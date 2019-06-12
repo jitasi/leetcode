@@ -33,3 +33,4 @@
 |442|[ Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)|[C++](./solutions/442.%20Find%20All%20Duplicates%20in%20an%20ArrayC%2B%2B)|124 ms|
 |564|[ Find the Closest Palindrome](https://leetcode.com/problems/find-the-closest-palindrome/)|[C++](./solutions/564.%20Find%20the%20Closest%20PalindromeC%2B%2B)|0 ms|
 |636|[ Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions/)|[C++](./solutions/636.%20Exclusive%20Time%20of%20FunctionsC%2B%2B)|20 ms|
+|689|[ Maximum Sum of 3 Non-Overlapping Subarrays](https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/)|[C++](./solutions/689.%20Maximum%20Sum%20of%203%20Non-Overlapping%20SubarraysC%2B%2B)|32 ms|
