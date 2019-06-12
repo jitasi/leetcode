@@ -42,6 +42,7 @@
 |403|[ Frog Jump](https://leetcode.com/problems/frog-jump/)|[C++](./solutions/403.%20Frog%20JumpC%2B%2B)|152 ms|
 |410|[ Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/)|[C++](./solutions/410.%20Split%20Array%20Largest%20SumC%2B%2B)|140 ms|
 |442|[ Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)|[C++](./solutions/442.%20Find%20All%20Duplicates%20in%20an%20ArrayC%2B%2B)|124 ms|
+|502|[ IPO](https://leetcode.com/problems/ipo/)|[C++](./solutions/502.%20IPOC%2B%2B)|68 ms|
 |564|[ Find the Closest Palindrome](https://leetcode.com/problems/find-the-closest-palindrome/)|[C++](./solutions/564.%20Find%20the%20Closest%20PalindromeC%2B%2B)|0 ms|
 |636|[ Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions/)|[C++](./solutions/636.%20Exclusive%20Time%20of%20FunctionsC%2B%2B)|20 ms|
 |639|[ Decode Ways II](https://leetcode.com/problems/decode-ways-ii/)|[C++](./solutions/639.%20Decode%20Ways%20IIC%2B%2B)|52 ms|
