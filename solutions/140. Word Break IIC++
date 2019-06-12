@@ -1,0 +1,41 @@
+// Runtime: 24 ms, faster than 48.03% of C++ online submissions for Word Break II.
+// Memory Usage: 13.1 MB, less than 59.14% of C++ online submissions for Word Break II.
+
+class Solution {
+public:
+    unordered_map<string, vector<string>> m;
+  
+    vector<string> wordBreak(string s, vector<string>& wordDict, int pos) {
+      const string sub = s.substr(pos, s.size() - pos);
+      if (m.count(sub) > 0) return m[sub];
+      
+      vector<string> ret;
+      for (const string& w : wordDict) {
+        int found = s.find(w, pos);
+        if (found != pos) continue;
+        
+        if (found + w.size() == s.size()) {
+          ret.push_back(w);
+        } else {
+          const vector<string> others = wordBreak(s, wordDict, found + w.size());
+          if (others.empty()) {
+            continue;
+          }
+          else {
+            for (const string& o : others) {
+              ret.push_back(w + ' ' + o);
+            }
+          }
+        }        
+      }
+
+      m[sub] = ret;
+      return ret;
+    }
+  
+    vector<string> wordBreak(string s, vector<string>& wordDict) {
+      if (s.empty()) return {};
+      
+      return wordBreak(s, wordDict, 0);    
+    }
+};
