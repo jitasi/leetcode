@@ -28,6 +28,7 @@
 |315|[ Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)|[C++](./solutions/315.%20Count%20of%20Smaller%20Numbers%20After%20SelfC%2B%2B)|156 ms|
 |336|[ Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/)|[C++](./solutions/336.%20Palindrome%20PairsC%2B%2B)|204 ms|
 |403|[ Frog Jump](https://leetcode.com/problems/frog-jump/)|[C++](./solutions/403.%20Frog%20JumpC%2B%2B)|152 ms|
+|410|[ Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/)|[C++](./solutions/410.%20Split%20Array%20Largest%20SumC%2B%2B)|140 ms|
 |442|[ Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)|[C++](./solutions/442.%20Find%20All%20Duplicates%20in%20an%20ArrayC%2B%2B)|124 ms|
 |564|[ Find the Closest Palindrome](https://leetcode.com/problems/find-the-closest-palindrome/)|[C++](./solutions/564.%20Find%20the%20Closest%20PalindromeC%2B%2B)|0 ms|
 |636|[ Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions/)|[C++](./solutions/636.%20Exclusive%20Time%20of%20FunctionsC%2B%2B)|20 ms|
