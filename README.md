@@ -8,6 +8,7 @@
 |24|[ Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)|[C++](./solutions/24.%20Swap%20Nodes%20in%20PairsC%2B%2B)|0 ms|
 |41|[ First Missing Positive](https://leetcode.com/problems/first-missing-positive/)|[C++](./solutions/41.%20First%20Missing%20PositiveC%2B%2B)|4 ms|
 |42|[ Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)|[C++](./solutions/42.%20Trapping%20Rain%20WaterC%2B%2B)|8 ms|
+|76|[ Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)|[C++](./solutions/76.%20Minimum%20Window%20SubstringC%2B%2B)|80 ms|
 |146|[ LRU Cache](https://leetcode.com/problems/lru-cache/)|[C++](./solutions/146.%20LRU%20CacheC%2B%2B)|204 ms|
 |149|[ Max Points on a Line](https://leetcode.com/problems/max-points-on-a-line/)|[C++](./solutions/149.%20Max%20Points%20on%20a%20LineC%2B%2B)|12 ms|
 |442|[ Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)|[C++](./solutions/442.%20Find%20All%20Duplicates%20in%20an%20ArrayC%2B%2B)|124 ms|
