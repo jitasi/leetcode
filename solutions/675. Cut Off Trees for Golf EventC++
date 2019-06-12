@@ -1,0 +1,67 @@
+// 
+
+class Solution {
+public:
+  int rows;
+  int cols;
+  unordered_map<int, int> m;
+  
+  const int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+  
+  int dist(const vector<int>& p1, const vector<int>& p2, const vector<vector<int>>& forest) {
+    if (p1[1] == p2[1] && p1[2] == p2[2]) return 0;
+    
+    int moves = 1;
+    
+    queue<vector<int>> que;
+    que.push(p1);
+    int x, y;
+    unordered_set<int> visited;
+    visited.insert(p1[1] * 50 + p1[2]);
+    while (!que.empty()) {
+      const int sz = que.size();
+      for (int i = 0; i < sz; i++) {
+        const auto& cur = que.front();
+        
+        for (int k = 0; k < 4; k++) {
+          x = cur[1] + dirs[k][0]; 
+          y = cur[2] + dirs[k][1];
+          if (x == p2[1] && y == p2[2]) return moves;
+          if (x >= 0 && y >= 0 && x < rows && y < cols && forest[x][y] > 0 && visited.count(x * 50 + y) == 0) {
+            que.push({0, x, y});
+            visited.insert(x * 50 + y);
+          }
+        }
+        
+        que.pop();
+      }
+      moves++;
+    }
+    
+    return -1;
+  }
+  
+  int cutOffTree(vector<vector<int>>& forest) {
+    rows = forest.size();
+    if (rows == 0) return 0;
+    cols = forest[0].size();
+    if (cols == 0) return 0;
+    
+    vector<vector<int>> trees = {{-1, 0, 0}};  // always start from 0,0
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < cols; j++) {
+        if (forest[i][j] > 1) trees.push_back({forest[i][j], i, j});
+      }
+    }
+    sort(trees.begin(), trees.end());
+    
+    int moves = 0;
+    for (int i = 1; i < trees.size(); i++) {
+      const int local_moves = dist(trees[i - 1], trees[i], forest);
+      if (local_moves == -1) return -1;
+      moves += local_moves;
+    }
+    
+    return moves;
+  }
+};
