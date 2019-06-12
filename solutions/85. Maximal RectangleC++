@@ -1,0 +1,35 @@
+// Runtime: 56 ms, faster than 10.45% of C++ online submissions for Maximal Rectangle.
+// Memory Usage: 11.2 MB, less than 62.78% of C++ online submissions for Maximal Rectangle.
+
+class Solution {
+public:
+  int maximalRectangle(vector<vector<char>>& matrix) {
+    const int rows = matrix.size();
+    if (rows == 0) return 0;
+    const int cols = matrix[0].size();
+    if (cols == 0) return 0;
+    
+    vector<vector<int>> dp(rows, vector(cols, 0));
+    for (int i = 0; i < rows; i++) {
+      dp[i][0] = matrix[i][0] == '1'? 1 : 0;
+      for (int j = 1; j < cols; j++) {
+        if (matrix[i][j] == '1') dp[i][j] = dp[i][j - 1] + 1;
+      }
+    }
+    
+    int ans = 0;
+    int len;
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < cols; j++) {
+        len = dp[i][j];
+        for (int k = i; k < rows; k++) {
+          len = min(len, dp[k][j]);
+          if (len > 0) {
+            ans = max(ans, len * (k - i + 1));            
+          }
+        }
+      }
+    }
+    return ans;
+  }
+};
