@@ -1,0 +1,53 @@
+// Runtime: 12 ms, faster than 96.05% of C++ online submissions for Basic Calculator.
+// Memory Usage: 10.4 MB, less than 72.55% of C++ online submissions for Basic Calculator.
+
+class Solution {
+public:
+  int calculate(string s) {
+  
+    stack<long> nums;
+    stack<long> signs;
+    
+    long cur_num = 0;
+    long sign = 1;
+    long accu_num = 0;
+    for (int i = 0; i < s.size(); i++) {
+      if (s[i] == ' ') continue;
+      
+      if (s[i] >= '0' && s[i] <= '9') {
+        cur_num = cur_num * 10 + s[i] - '0';
+        continue;
+      }
+      
+      accu_num += sign * cur_num;
+      cur_num = 0;
+      
+      if (s[i] == '+' || s[i] == '-') {
+        sign = s[i] == '+'? 1 : -1;
+        continue;
+      }
+      
+      // 1 + 3 - (1+(4+5+2)-3)+(6+8)
+      //         ^
+      // accu_num = 4
+      // sign = -1
+      // === after ( ====
+      // signs = {-1}  
+      // nums = {4}
+      // accu_num = 0
+      // sign = 1
+      if (s[i] == '(') {
+        signs.push(sign);
+        sign = 1;
+        nums.push(accu_num);
+        accu_num = 0;
+      } else if (s[i] == ')') {
+        accu_num *= signs.top();
+        signs.pop();
+        accu_num += nums.top();
+        nums.pop();
+      }
+    }
+    return accu_num + sign * cur_num;
+  }
+};
