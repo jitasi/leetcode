@@ -1,0 +1,35 @@
+// Runtime: 16 ms, faster than 96.71% of C++ online submissions for Median of Two Sorted Arrays.
+// Memory Usage: 9.9 MB, less than 63.28% of C++ online submissions for Median of Two Sorted Arrays.
+
+class Solution {
+public:
+  int len1;
+  int len2;
+  
+  double findKth(vector<int>& nums1, int s1, vector<int>& nums2, int s2, int k) {
+//    cout << s1 << ", " << s2 << ", " << k << endl;
+    if (s1 >= len1) return nums2[s2 + k];
+    if (s2 >= len2) return nums1[s1 + k];
+    if (k == 0) return min(nums1[s1], nums2[s2]);
+    
+    const int mid1 = min(len1 - s1, (k + 1) / 2);
+    const int mid2 = min(len2 - s2, (k + 1) / 2) ;
+//    cout << "mid " << mid1 << ", " << mid2 << endl;
+    // nums1 x x x mid1 y y y 
+    // nums2 w w w mid2 v v v 
+    // merge x x x  w w mid1 w y mid2 v v v y y
+    if (nums1[s1 + mid1 - 1] < nums2[s2 + mid2 - 1]) return findKth(nums1, mid1 + s1, nums2, s2, k - mid1);
+    return findKth(nums1, s1, nums2, mid2 + s2, k - mid2);
+  }
+  
+  double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {      
+    len1 = nums1.size();
+    len2 = nums2.size();
+    int len = len1 + len2;
+    if (len % 2 == 0) {
+      return (findKth(nums1, 0, nums2, 0, len / 2) + findKth(nums1, 0, nums2, 0, len / 2 - 1)) / 2.0;
+    } else {
+      return findKth(nums1, 0, nums2, 0, len / 2);
+    }
+  }
+};
