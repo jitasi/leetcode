@@ -22,6 +22,7 @@
 |218|[ The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/)|[C++](./solutions/218.%20The%20Skyline%20ProblemC%2B%2B)|28 ms|
 |297|[ Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)|[C++](./solutions/297.%20Serialize%20and%20Deserialize%20Binary%20TreeC%2B%2B)|48 ms|
 |301|[ Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/)|[C++](./solutions/301.%20Remove%20Invalid%20ParenthesesC%2B%2B)|64 ms|
+|315|[ Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)|[C++](./solutions/315.%20Count%20of%20Smaller%20Numbers%20After%20SelfC%2B%2B)|156 ms|
 |336|[ Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/)|[C++](./solutions/336.%20Palindrome%20PairsC%2B%2B)|204 ms|
 |403|[ Frog Jump](https://leetcode.com/problems/frog-jump/)|[C++](./solutions/403.%20Frog%20JumpC%2B%2B)|152 ms|
 |442|[ Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)|[C++](./solutions/442.%20Find%20All%20Duplicates%20in%20an%20ArrayC%2B%2B)|124 ms|
