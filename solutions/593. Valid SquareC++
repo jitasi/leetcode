@@ -1,0 +1,20 @@
+// Runtime: 4 ms, faster than 93.25% of C++ online submissions for Valid Square.
+// Memory Usage: 8.6 MB, less than 49.67% of C++ online submissions for Valid Square.
+
+class Solution {
+public:
+  double diff(const vector<int>& p1, const vector<int>& p2) {
+    return (p1[0] - p2[0]) * (p1[0] - p2[0]) + (p1[1] - p2[1]) * (p1[1] - p2[1]);
+  }
+  
+  bool validSquare(vector<int>& p1, vector<int>& p2, vector<int>& p3, vector<int>& p4) {
+    unordered_set<double> s;
+    s.insert(diff(p1, p2));
+    s.insert(diff(p1, p3));
+    s.insert(diff(p1, p4));
+    s.insert(diff(p2, p3));
+    s.insert(diff(p2, p4));
+    s.insert(diff(p3, p4));
+    return s.size() == 2 && s.count(0) == 0;
+  }
+};
