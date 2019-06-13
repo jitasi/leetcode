@@ -12,6 +12,7 @@
 |25|[ Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/)|[C++](./solutions/25.%20Reverse%20Nodes%20in%20k-GroupC%2B%2B)|20 ms|
 |29|[ Divide Two Integers](https://leetcode.com/problems/divide-two-integers/)|[C++](./solutions/29.%20Divide%20Two%20IntegersC%2B%2B)|4 ms|
 |32|[ Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)|[C++](./solutions/32.%20Longest%20Valid%20ParenthesesC%2B%2B)|4 ms|
+|33|[ Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)|[C++](./solutions/33.%20Search%20in%20Rotated%20Sorted%20ArrayC%2B%2B)|4 ms|
 |41|[ First Missing Positive](https://leetcode.com/problems/first-missing-positive/)|[C++](./solutions/41.%20First%20Missing%20PositiveC%2B%2B)|4 ms|
 |42|[ Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)|[C++](./solutions/42.%20Trapping%20Rain%20WaterC%2B%2B)|8 ms|
 |44|[ Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)|[C++](./solutions/44.%20Wildcard%20MatchingC%2B%2B)|36 ms|
