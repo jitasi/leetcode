@@ -109,6 +109,7 @@
 |556|[ Next Greater Element III](https://leetcode.com/problems/next-greater-element-iii/)|[C++](./solutions/556.%20Next%20Greater%20Element%20IIIC%2B%2B)|0 ms|
 |560|[ Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)|[C++](./solutions/560.%20Subarray%20Sum%20Equals%20KC%2B%2B)|1108 ms|
 |564|[ Find the Closest Palindrome](https://leetcode.com/problems/find-the-closest-palindrome/)|[C++](./solutions/564.%20Find%20the%20Closest%20PalindromeC%2B%2B)|0 ms|
+|593|[ Valid Square](https://leetcode.com/problems/valid-square/)|[C++](./solutions/593.%20Valid%20SquareC%2B%2B)|4 ms|
 |632|[ Smallest Range](https://leetcode.com/problems/smallest-range/)|[C++](./solutions/632.%20Smallest%20RangeC%2B%2B)|60 ms|
 |636|[ Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions/)|[C++](./solutions/636.%20Exclusive%20Time%20of%20FunctionsC%2B%2B)|20 ms|
 |639|[ Decode Ways II](https://leetcode.com/problems/decode-ways-ii/)|[C++](./solutions/639.%20Decode%20Ways%20IIC%2B%2B)|52 ms|
