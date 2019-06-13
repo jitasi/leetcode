@@ -1,0 +1,28 @@
+// Runtime: 12 ms, faster than 76.41% of C++ online submissions for Largest Sum of Averages.
+// Memory Usage: 9.4 MB, less than 45.16% of C++ online submissions for Largest Sum of Averages.
+
+
+class Solution {
+public:
+  double largestSumOfAverages(vector<int>& A, int K) {
+    // dp[i][j]: A[0..i] with j group
+    vector<vector<double>> dp(A.size() + 1, vector<double>(K + 1, 0));
+    double sum[A.size() + 1];
+    sum[0] = 0;
+    dp[0][0] = 0;
+    for (int i = 1; i <= A.size(); i++) {
+      sum[i] = sum[i - 1] + A[i - 1];
+      dp[i][1] = sum[i] / i;
+    }
+    
+    for (int k = 2; k <= K; k++) {
+      for (int i = k; i <= A.size(); i++) {
+        for (int j = k - 1; j < i; j++) {
+          dp[i][k] = max(dp[i][k], dp[j][k - 1] + (sum[i] - sum[j]) / (i - j));
+        }
+      }
+    }
+    
+    return dp[A.size()][K];
+  }
+};
