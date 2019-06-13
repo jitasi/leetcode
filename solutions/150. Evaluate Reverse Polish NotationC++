@@ -1,0 +1,43 @@
+class Solution {
+public:
+    int evalRPN(vector<string>& tokens) {
+      if (tokens.empty()) return 0;
+      
+      stack<int> operands;
+      for (int i = 0; i < tokens.size(); i++) {
+        int ret;
+        
+        if (tokens[i] == "+") {
+          const int operand1 = operands.top();
+          operands.pop();
+          const int operand2 = operands.top();
+          operands.pop();
+          ret = operand1 + operand2;
+        } else if (tokens[i] == "-") {
+          const int operand1 = operands.top();
+          operands.pop();
+          const int operand2 = operands.top();
+          operands.pop();
+          ret = operand2 - operand1;          
+        } else if (tokens[i] == "*") {
+          const int operand1 = operands.top();
+          operands.pop();
+          const int operand2 = operands.top();
+          operands.pop();
+          ret = operand1 * operand2;          
+        } else if (tokens[i] == "/") {
+          const int operand1 = operands.top();
+          operands.pop();
+          const int operand2 = operands.top();
+          operands.pop();
+          ret = operand2 / operand1;          
+        } else {
+          ret = std::stoi(tokens[i]);
+        }
+        
+        operands.push(ret);
+      }
+      
+      return operands.top();
+    }
+};
