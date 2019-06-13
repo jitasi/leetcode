@@ -165,6 +165,7 @@
 |639|[ Decode Ways II](https://leetcode.com/problems/decode-ways-ii/)|[C++](./solutions/639.%20Decode%20Ways%20IIC%2B%2B)|52 ms|
 |646|[ Maximum Length of Pair Chain](https://leetcode.com/problems/maximum-length-of-pair-chain/)|[C++](./solutions/646.%20Maximum%20Length%20of%20Pair%20ChainC%2B%2B)|28 ms|
 |673|[ Number of Longest Increasing Subsequence](https://leetcode.com/problems/number-of-longest-increasing-subsequence/)|[C++](./solutions/673.%20Number%20of%20Longest%20Increasing%20SubsequenceC%2B%2B)|32 ms|
+|674|[ Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/)|[C++](./solutions/674.%20Longest%20Continuous%20Increasing%20SubsequenceC%2B%2B)|12 ms|
 |675|[ Cut Off Trees for Golf Event](https://leetcode.com/problems/cut-off-trees-for-golf-event/)|[C++](./solutions/675.%20Cut%20Off%20Trees%20for%20Golf%20EventC%2B%2B)|N/A|
 |689|[ Maximum Sum of 3 Non-Overlapping Subarrays](https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/)|[C++](./solutions/689.%20Maximum%20Sum%20of%203%20Non-Overlapping%20SubarraysC%2B%2B)|32 ms|
 |712|[ Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/)|[C++](./solutions/712.%20Minimum%20ASCII%20Delete%20Sum%20for%20Two%20StringsC%2B%2B)|28 ms|
