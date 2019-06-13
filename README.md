@@ -125,4 +125,5 @@
 |910|[ Smallest Range II](https://leetcode.com/problems/smallest-range-ii/)|[C++](./solutions/910.%20Smallest%20Range%20IIC%2B%2B)|32 ms|
 |991|[ Broken Calculator](https://leetcode.com/problems/broken-calculator/)|[C++](./solutions/991.%20Broken%20CalculatorC%2B%2B)|0 ms|
 |1015|[ Smallest Integer Divisible by K](https://leetcode.com/problems/smallest-integer-divisible-by-k/)|[C++](./solutions/1015.%20Smallest%20Integer%20Divisible%20by%20KC%2B%2B)|0 ms|
+|1039|[ Minimum Score Triangulation of Polygon](https://leetcode.com/problems/minimum-score-triangulation-of-polygon/)|[C++](./solutions/1039.%20Minimum%20Score%20Triangulation%20of%20PolygonC%2B%2B)|4 ms|
 |1073|[ Adding Two Negabinary Numbers](https://leetcode.com/problems/adding-two-negabinary-numbers/)|[C++](./solutions/1073.%20Adding%20Two%20Negabinary%20NumbersC%2B%2B)|12 ms|
