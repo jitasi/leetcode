@@ -1,0 +1,36 @@
+// Runtime: 104 ms, faster than 94.35% of C++ online submissions for Longest Turbulent Subarray.
+// Memory Usage: 13.3 MB, less than 70.91% of C++ online submissions for Longest Turbulent Subarray.
+
+
+class Solution {
+public:
+  int maxTurbulenceSize(vector<int>& A) {
+    if (A.size() <= 1) return A.size();
+
+    int ans = 1;
+    int loc_len = 1;
+    for (int i = 1; i < A.size(); i++) {
+      // reset if equal
+      if (A[i] == A[i - 1]) {
+        loc_len = 1;
+        continue;
+      }
+        
+      // the second num always good.
+      if (loc_len == 1) {
+        loc_len++;
+        ans = max(ans, loc_len);
+        continue;
+      }
+      
+      if ((A[i] > A[i -1]) ^ (A[i - 1] > A[i -2])) {
+        loc_len++;
+        ans = max(ans, loc_len);
+      } else {
+        loc_len = 2;
+      }
+    }
+    
+    return ans;
+  }
+};
