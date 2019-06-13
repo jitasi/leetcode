@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+      if (nums.size() == 0) return 0;
+      
+      int count = 0;
+      
+      vector<int> dp(nums.size());
+      dp[0] = nums[0];
+      if (dp[0] == k) count++;
+      
+      for (int i = 1; i < nums.size(); i++) {
+        for (int j = 0; j < i; j++) {
+          dp[j] += nums[i];
+          if (dp[j] == k) count++;
+        }
+        dp[i] = nums[i];
+        if (dp[i] == k) count++;
+      }
+      
+      return count;
+    }
+};
