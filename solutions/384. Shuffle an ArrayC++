@@ -1,0 +1,34 @@
+// Runtime: 208 ms, faster than 82.25% of C++ online submissions for Shuffle an Array.
+// Memory Usage: 30.3 MB, less than 29.09% of C++ online submissions for Shuffle an Array.
+
+class Solution {
+public:
+    vector<int> nums;
+  
+    Solution(vector<int>& nums) {
+        this->nums = nums;
+    }
+    
+    /** Resets the array to its original configuration and return it. */
+    vector<int> reset() {
+        return nums;
+    }
+    
+    /** Returns a random shuffling of the array. */
+    vector<int> shuffle() {
+        vector<int> ans = nums;
+        const int len = ans.size();
+        for (int i = 0; i < len - 1; i++) {
+          const int s = i + random() % (len - i);
+          swap(ans[i], ans[s]);
+        }
+        return ans;
+    }
+};
+
+/**
+ * Your Solution object will be instantiated and called as such:
+ * Solution* obj = new Solution(nums);
+ * vector<int> param_1 = obj->reset();
+ * vector<int> param_2 = obj->shuffle();
+ */
