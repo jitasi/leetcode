@@ -1,0 +1,18 @@
+// Runtime: 52 ms, faster than 87.73% of C++ online submissions for Binary Search.
+// Memory Usage: 10.9 MB, less than 60.98% of C++ online submissions for Binary Search.
+
+class Solution {
+public:
+  int search(vector<int>& nums, int target) {
+    int first = 0;
+    int last = nums.size();
+    
+    while (first < last) {
+      const int mid = first + (last - first) / 2;
+      if (nums[mid] == target) return mid;
+      if (nums[mid] < target) first = mid + 1;
+      else last = mid;
+    }
+    return -1;
+  }
+};
