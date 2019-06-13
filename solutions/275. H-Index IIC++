@@ -1,0 +1,30 @@
+// Runtime: 24 ms, faster than 94.42% of C++ online submissions for H-Index II.
+// Memory Usage: 12.6 MB, less than 55.19% of C++ online submissions for H-Index II.
+  
+class Solution {
+public:
+  int hIndex(vector<int>& citations) {
+    const int len = citations.size();
+    if (len < 1) return len;
+    
+    int p = 0;
+    int q = len - 1;
+    int mid;
+    int cnt;
+    int h = 0;
+    int cur_h;
+    while (p <= q) {
+      mid = (p + q) / 2;
+      cnt = len - mid;
+      cur_h = min(cnt, citations[mid]);
+      h = max(cur_h, h);
+      if (cnt == citations[mid]) return cnt;
+      else if (cnt < citations[mid]) {
+        q = mid - 1;
+      } else {
+        p = mid + 1;
+      }
+    }
+    return h;
+  }
+};
