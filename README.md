@@ -88,3 +88,4 @@
 |862|[ Shortest Subarray with Sum at Least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/)|[C++](./solutions/862.%20Shortest%20Subarray%20with%20Sum%20at%20Least%20KC%2B%2B)|220 ms|
 |910|[ Smallest Range II](https://leetcode.com/problems/smallest-range-ii/)|[C++](./solutions/910.%20Smallest%20Range%20IIC%2B%2B)|32 ms|
 |1015|[ Smallest Integer Divisible by K](https://leetcode.com/problems/smallest-integer-divisible-by-k/)|[C++](./solutions/1015.%20Smallest%20Integer%20Divisible%20by%20KC%2B%2B)|0 ms|
+|1073|[ Adding Two Negabinary Numbers](https://leetcode.com/problems/adding-two-negabinary-numbers/)|[C++](./solutions/1073.%20Adding%20Two%20Negabinary%20NumbersC%2B%2B)|12 ms|
