@@ -81,6 +81,7 @@
 |336|[ Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/)|[C++](./solutions/336.%20Palindrome%20PairsC%2B%2B)|204 ms|
 |365|[ Water and Jug Problem](https://leetcode.com/problems/water-and-jug-problem/)|[C++](./solutions/365.%20Water%20and%20Jug%20ProblemC%2B%2B)|0 ms|
 |381|[ Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/)|[C++](./solutions/381.%20Insert%20Delete%20GetRandom%20O(1)%20-%20Duplicates%20allowedC%2B%2B)|64 ms|
+|396|[ Rotate Function](https://leetcode.com/problems/rotate-function/)|[C++](./solutions/396.%20Rotate%20FunctionC%2B%2B)|12 ms|
 |397|[ Integer Replacement](https://leetcode.com/problems/integer-replacement/)|[C++](./solutions/397.%20Integer%20ReplacementC%2B%2B)|0 ms|
 |403|[ Frog Jump](https://leetcode.com/problems/frog-jump/)|[C++](./solutions/403.%20Frog%20JumpC%2B%2B)|152 ms|
 |410|[ Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/)|[C++](./solutions/410.%20Split%20Array%20Largest%20SumC%2B%2B)|140 ms|
