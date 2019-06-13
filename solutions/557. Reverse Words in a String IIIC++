@@ -1,0 +1,19 @@
+class Solution {
+public: 
+    void reverse(string& s, int b, int e) {
+      while (b < e) {
+        std::swap(s[b++], s[e--]);
+      }
+    }
+  
+    string reverseWords(string s) {
+      int p = 0;
+      for (int q = 0; q < s.size(); q++) {
+        if (s[q] != ' ') continue;
+        reverse(s, p, q - 1);
+        p = q + 1;
+      }
+      reverse(s, p, s.size() - 1);
+      return s;
+    }
+};
