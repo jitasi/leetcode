@@ -105,6 +105,7 @@
 |334|[ Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/)|[C++](./solutions/334.%20Increasing%20Triplet%20SubsequenceC%2B%2B)|8 ms|
 |336|[ Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/)|[C++](./solutions/336.%20Palindrome%20PairsC%2B%2B)|204 ms|
 |341|[ Flatten Nested List Iterator](https://leetcode.com/problems/flatten-nested-list-iterator/)|[C++](./solutions/341.%20Flatten%20Nested%20List%20IteratorC%2B%2B)|20 ms|
+|343|[ Integer Break](https://leetcode.com/problems/integer-break/)|[C++](./solutions/343.%20Integer%20BreakC%2B%2B)|4 ms|
 |365|[ Water and Jug Problem](https://leetcode.com/problems/water-and-jug-problem/)|[C++](./solutions/365.%20Water%20and%20Jug%20ProblemC%2B%2B)|0 ms|
 |368|[ Largest Divisible Subset](https://leetcode.com/problems/largest-divisible-subset/)|[C++](./solutions/368.%20Largest%20Divisible%20SubsetC%2B%2B)|24 ms|
 |380|[ Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/)|[C++](./solutions/380.%20Insert%20Delete%20GetRandom%20O(1)C%2B%2B)|60 ms|
