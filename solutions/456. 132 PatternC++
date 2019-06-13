@@ -1,0 +1,22 @@
+// Runtime: 24 ms, faster than 96.72% of C++ online submissions for 132 Pattern.
+// Memory Usage: 10.6 MB, less than 57.81% of C++ online submissions for 132 Pattern.
+
+class Solution {
+public:
+    bool find132pattern(vector<int>& nums) {
+      const int len = nums.size();
+      if (len <= 2) return false;
+
+      stack<int> largest;
+      int middle = INT_MIN;
+      for (int i = len - 1; i >= 0; i--) {
+        if (nums[i] < middle) return true;
+        while(!largest.empty() && nums[i] > largest.top()) {
+          middle = largest.top();
+          largest.pop();
+        }
+        largest.push(nums[i]);
+      }
+      return false;
+    }
+};
