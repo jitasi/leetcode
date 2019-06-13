@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int uniquePaths(int m, int n) {
+      // Combination of (n-1) from (m+n-2)
+      int total = m + n - 2;
+      const int sel = (m > n)? n - 1 : m - 1;
+      
+      unsigned long long ret = 1;
+      for (int i = 1; i <= sel; i++) {
+        ret *= total--;
+        ret /= i;
+      }
+      return ret;
+    }
+};
