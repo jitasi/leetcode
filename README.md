@@ -28,6 +28,7 @@
 |43|[ Multiply Strings](https://leetcode.com/problems/multiply-strings/)|[C++](./solutions/43.%20Multiply%20StringsC%2B%2B)|4 ms|
 |44|[ Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)|[C++](./solutions/44.%20Wildcard%20MatchingC%2B%2B)|36 ms|
 |45|[ Jump Game II](https://leetcode.com/problems/jump-game-ii/)|[C++](./solutions/45.%20Jump%20Game%20IIC%2B%2B)|12 ms|
+|46|[ Permutations](https://leetcode.com/problems/permutations/)|[C++](./solutions/46.%20PermutationsC%2B%2B)|12 ms|
 |49|[ Group Anagrams](https://leetcode.com/problems/group-anagrams/)|[C++](./solutions/49.%20Group%20AnagramsC%2B%2B)|40 ms|
 |52|[ N-Queens II](https://leetcode.com/problems/n-queens-ii/)|[C++](./solutions/52.%20N-Queens%20IIC%2B%2B)|4 ms|
 |54|[ Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)|[C++](./solutions/54.%20Spiral%20MatrixC%2B%2B)|4 ms|
