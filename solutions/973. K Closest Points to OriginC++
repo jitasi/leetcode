@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<vector<int>> kClosest(vector<vector<int>>& points, int K) {
+      auto cmp = [](const pair<int, int>& a, const pair<int, int>& b) {
+        return a.first < b.first;
+      };
+      priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> pq(cmp);
+      for (int i = 0; i < points.size(); i++) {
+        const long long dist = points[i][0] * points[i][0] + points[i][1] * points[i][1];
+        pq.push({dist, i});
+        if (pq.size() > K) pq.pop();
+      }
+      
+      vector<vector<int>> ret;
+      while (!pq.empty()) {
+        auto t = pq.top();
+        pq.pop();
+        ret.push_back(points[t.second]);
+      }
+      return ret;
+    }
+};
