@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int findUnsortedSubarray(vector<int>& nums) {
+      vector<int> sorted(nums);
+      std::sort (sorted.begin(), sorted.end());
+      int c = nums.size();
+      int i = 0;
+      for (; i < nums.size(); i++) {
+        if (sorted[i] == nums[i]) c--;
+        else break;
+      }
+      for (int j = nums.size() - 1; j > i; j--) {
+        if (sorted[j] == nums[j]) c--;
+        else break;
+      }
+      return c;
+    }
+};
