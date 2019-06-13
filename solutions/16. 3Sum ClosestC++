@@ -1,0 +1,33 @@
+// Runtime: 4 ms, faster than 99.93% of C++ online submissions for 3Sum Closest.
+// Memory Usage: 8.8 MB, less than 58.74% of C++ online submissions for 3Sum Closest.
+
+class Solution {
+public:
+  int threeSumClosest(vector<int>& nums, int target) {
+    std::sort(nums.begin(), nums.end());
+    
+    int ans = nums[0] + nums[1] + nums[2];
+    int diff = abs(ans - target);
+    for (int i = 0; i < nums.size() - 2; i++) {
+      int p = i + 1;
+      int q = nums.size() - 1;
+      const int part_sum_target = target - nums[i];
+      while (p < q) {
+        const int part_sum = nums[p] + nums[q];
+        if (part_sum < part_sum_target) {
+          p++;
+        } else if (part_sum > part_sum_target) {
+          q--;
+        } else {
+          return target;
+        }
+        const int sum = nums[i] + part_sum;
+        if (diff > abs(target - sum)) {
+          diff = abs(target - sum);
+          ans = sum;
+        } 
+      }    
+    }
+    return ans;
+  }
+};
