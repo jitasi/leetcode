@@ -1,0 +1,23 @@
+// Runtime: 12 ms, faster than 80.15% of C++ online submissions for Rotate Function.
+// Memory Usage: 9.8 MB, less than 16.61% of C++ online submissions for Rotate Function.
+
+class Solution {
+public:
+  int maxRotateFunction(vector<int>& A) {
+    const long len = A.size();
+    
+    long sum = 0;
+    long cur = 0;
+    for (int i = 0; i < len; i++) {
+      sum += A[i];
+      cur += i * A[i];
+    }
+    
+    long ans = cur;
+    for (int i = 1; i < len; i++) {
+      cur = cur + sum - len * A[len - i];
+      ans = max(ans, cur);
+    }
+    return ans;
+  }
+};
