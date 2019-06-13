@@ -1,0 +1,31 @@
+// Runtime: 12 ms, faster than 15.59% of C++ online submissions for Find and Replace Pattern.
+// Memory Usage: 9.9 MB, less than 28.72% of C++ online submissions for Find and Replace Pattern.
+
+class Solution {
+public:
+  bool match(const string& w, const string& p) {
+    unordered_map<char, char> m;
+    unordered_set<char> s;
+    
+    for (int i = 0; i < w.size(); i++) {
+      if (m.count(w[i]) == 0) {
+        if (s.count(p[i]) == 0) {
+          m[w[i]] = p[i];
+          s.insert(p[i]);
+        } else
+          return false;
+      } else if (m[w[i]] != p[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+  
+  vector<string> findAndReplacePattern(vector<string>& words, string pattern) {
+    vector<string> ans;
+    for (const string& w : words) {
+      if (match(w, pattern)) ans.push_back(w);
+    }
+    return ans;
+  }
+};
