@@ -1,0 +1,28 @@
+// Runtime: 4 ms, faster than 97.58% of C++ online submissions for Binary String With Substrings Representing 1 To N.
+// Memory Usage: 8.6 MB, less than 46.89% of C++ online submissions for Binary String With Substrings Representing 1 To N.
+
+class Solution {
+public:
+  bool queryString(string S, int N) {
+    string n = "0";
+    bool flip;
+    for (int i = 0; i < N; i++) {
+      int j = j = n.size() - 1;
+      flip = false;
+      for (; j >= 0; j--) {
+        if (n[j] == '1') {
+          n[j] = '0';
+        } else {
+          n[j] = '1';
+          flip = true;
+          break;
+        }
+      }
+      if (!flip) {
+        n = "1" + n;
+      }
+      if (S.find(n) == -1) return false;
+    } 
+    return true;
+  }
+};
