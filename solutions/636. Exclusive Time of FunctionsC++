@@ -17,24 +17,21 @@ public:
     for (const string& log: logs) {
       pos = log.find(':');
       thread = std::atoi(log.substr(0, pos).c_str());
-      start = log[pos+1] == 's';
+      start = log[pos + 1] == 's';
       pos = log.rfind(':');
       ts = std::atoi(log.substr(pos + 1, log.size() - pos).c_str());
-//      cout << thread << ", " << start << ", " << ts << endl;
       
       if (start) {
         // new thread starts
         if (!threads.empty()) {
           // stop old thread
           ans[threads.top()] += ts - last_start;
-//          cout << threads.top() << ", " << ans[threads.top()] << endl;
         }
     
         last_start = ts;
         threads.push(thread);
       } else {
         ans[thread] += ts - last_start + 1;
-//        cout << thread << ", " << ans[thread] << endl;
         
         last_start = ts + 1;
         threads.pop();
