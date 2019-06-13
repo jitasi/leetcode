@@ -1,0 +1,37 @@
+// Runtime: 4 ms, faster than 99.94% of C++ online submissions for Uncrossed Lines.
+// Memory Usage: 8.7 MB, less than 93.81% of C++ online submissions for Uncrossed Lines.
+
+
+// lenght of longest common sequence
+
+//   X  1  4  2
+// X 0  0  0  0
+// 1 0  1  1  1
+// 2 0  1  1  2
+// 4 0  1  2  2  
+
+class Solution {
+public:
+  int maxUncrossedLines(vector<int>& A, vector<int>& B) {
+    const int lena = A.size();
+    const int lenb = B.size();
+    
+    // dp[i][j]: the length longest common sequence of A[0..i-1] and B[0..j-1]
+    int dp[lena + 1][lenb + 1];
+    for (int j = 0; j <= lenb; j++) dp[0][j] = 0;
+    
+    for (int i = 1; i <= lena; i++) {
+      
+      dp[i][0] = 0;
+      for (int j = 1; j <= lenb; j++) {
+        if (A[i-1] == B[j-1]) {
+          dp[i][j] = dp[i-1][j-1] + 1;
+        } else {
+          dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+        }
+      }
+    }
+    
+    return dp[lena][lenb];
+  }
+};
