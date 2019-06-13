@@ -1,0 +1,31 @@
+class Solution {
+public:
+    void combinationSum(vector<vector<int>>& ans, 
+                        vector<int>& prefix, int prefix_sum,
+                        vector<int>& candidates, int target, int idx) {
+      if (target <= 0) return;
+      
+      for (int i = idx; i < candidates.size(); i++) {
+        const int sum = prefix_sum + candidates[i];
+        if (sum > target) break;
+        prefix.push_back(candidates[i]);
+       
+        if (sum == target) {
+          ans.push_back(prefix);
+          prefix.pop_back();
+          break;
+        } 
+          
+        combinationSum(ans, prefix, sum, candidates, target, i);
+        prefix.pop_back();
+      }
+    }
+    
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        sort(candidates.begin(), candidates.end());
+        vector<vector<int>> ans;
+        vector<int> prefix;
+        combinationSum(ans, prefix, 0, candidates, target, 0);
+        return ans;
+    }
+};
