@@ -1,0 +1,41 @@
+// Runtime: 20 ms, faster than 97.88% of C++ online submissions for Longest Mountain in Array.
+// Memory Usage: 10 MB, less than 69.65% of C++ online submissions for Longest Mountain in Array.
+
+
+class Solution {
+public:
+  int longestMountain(vector<int>& A) {
+    const int len = A.size();
+    if (len < 3) return 0;
+    
+    int ans = 0;
+    
+    bool up = true;
+    int start = 0;
+    for (int i = 1; i < len; i++) {
+      if (up) {
+        if (A[i] == A[i - 1]) {
+          start = i;
+        } else if (A[i] < A[i - 1]) {
+          if (i > start + 1) {
+            up = false;            
+          } else {
+            start = i; 
+          }
+        }
+      } else {
+        if (A[i] >= A[i - 1]) {
+          ans = std::max(ans, i - start);
+//          if (ans == 4) cout << i << endl;
+          start = A[i] == A[i - 1]? i: i - 1;
+          up = true;
+        }
+      }
+    }
+//    cout << up << ", " << ans << ", " << start << endl;
+    if (!up) {
+      ans = std::max(ans, len - start);
+    }
+    return ans;
+  }
+};
