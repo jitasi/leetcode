@@ -1,0 +1,40 @@
+// Runtime: 16 ms, faster than 99.24% of C++ online submissions for Average of Levels in Binary Tree.
+// Memory Usage: 24 MB, less than 9.64% of C++ online submissions for Average of Levels in Binary Tree.
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+  vector<double> averageOfLevels(TreeNode* root) {
+    if (root == nullptr) return {};
+    
+    vector<double> ans;
+    queue<TreeNode*> q;
+    q.push(root);
+    TreeNode* node;
+    while(!q.empty()) {
+      queue<TreeNode*> t;
+      double sum = 0;
+      int cnt = 0;
+      
+      while(!q.empty()) {
+        node = q.front();
+        q.pop();
+        sum += node->val;
+        cnt++;
+        if (node->left != nullptr) t.push(node->left);
+        if (node->right != nullptr) t.push(node->right);
+      }
+      ans.push_back(sum / cnt);
+      q.swap(t);
+    }
+    return ans;
+  }
+};
