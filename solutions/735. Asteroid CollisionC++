@@ -1,0 +1,53 @@
+// Runtime: 16 ms, faster than 95.18% of C++ online submissions for Asteroid Collision.
+// Memory Usage: 10.7 MB, less than 53.09% of C++ online submissions for Asteroid Collision.
+
+class Solution {
+public:
+  vector<int> asteroidCollision(vector<int>& asteroids) {
+    vector<bool> removed(asteroids.size(), false);
+    
+    stack<int> s;
+    for (int i = 0; i < asteroids.size(); i++) {
+      const int mass = abs(asteroids[i]);
+      if (asteroids[i] > 0 && (s.empty() || mass >= s.top())) {
+        s.push(mass);
+      } else if (asteroids[i] < 0 && !s.empty()) {
+        if (mass < s.top()) {
+          removed[i] = true;
+        } else if (mass == s.top()) {
+          removed[i] = true;
+          s.pop();
+        } else {
+          stack<int> t;
+          s.swap(t);
+        }
+      } 
+    }
+    
+    stack<int> t;
+    s.swap(t);
+    for (int i = asteroids.size() - 1; i >= 0; i--) {
+      const int mass = abs(asteroids[i]);
+      if (asteroids[i] < 0 && (s.empty() || mass >= s.top())) {
+        s.push(mass);
+      } else if (asteroids[i] > 0 && !s.empty()) {
+        if (mass < s.top()) {
+          removed[i] = true;
+        } else if (mass == s.top()) {
+          removed[i] = true;
+          s.pop();
+        } else {
+          stack<int> t;
+          s.swap(t);
+        }
+      } 
+    }
+    
+    vector<int> ans;
+    for (int i = 0; i < asteroids.size(); i++) {
+      if (removed[i]) continue;
+      ans.push_back(asteroids[i]);
+    }
+    return ans;
+  }
+};
