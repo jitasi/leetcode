@@ -176,6 +176,7 @@
 |900|[ RLE Iterator](https://leetcode.com/problems/rle-iterator/)|[C++](./solutions/900.%20RLE%20IteratorC%2B%2B)|8 ms|
 |901|[ Online Stock Span](https://leetcode.com/problems/online-stock-span/)|[C++](./solutions/901.%20Online%20Stock%20SpanC%2B%2B)|300 ms|
 |910|[ Smallest Range II](https://leetcode.com/problems/smallest-range-ii/)|[C++](./solutions/910.%20Smallest%20Range%20IIC%2B%2B)|32 ms|
+|912|[ Sort an Array](https://leetcode.com/problems/sort-an-array/)|[C++](./solutions/912.%20Sort%20an%20ArrayC%2B%2B)|56 ms|
 |935|[ Knight Dialer](https://leetcode.com/problems/knight-dialer/)|[C++](./solutions/935.%20Knight%20DialerC%2B%2B)|8 ms|
 |947|[ Most Stones Removed with Same Row or Column](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/)|[C++](./solutions/947.%20Most%20Stones%20Removed%20with%20Same%20Row%20or%20ColumnC%2B%2B)|36 ms|
 |963|[ Minimum Area Rectangle II](https://leetcode.com/problems/minimum-area-rectangle-ii/)|[C++](./solutions/963.%20Minimum%20Area%20Rectangle%20IIC%2B%2B)|72 ms|
