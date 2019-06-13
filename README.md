@@ -103,6 +103,7 @@
 |632|[ Smallest Range](https://leetcode.com/problems/smallest-range/)|[C++](./solutions/632.%20Smallest%20RangeC%2B%2B)|60 ms|
 |636|[ Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions/)|[C++](./solutions/636.%20Exclusive%20Time%20of%20FunctionsC%2B%2B)|20 ms|
 |639|[ Decode Ways II](https://leetcode.com/problems/decode-ways-ii/)|[C++](./solutions/639.%20Decode%20Ways%20IIC%2B%2B)|52 ms|
+|673|[ Number of Longest Increasing Subsequence](https://leetcode.com/problems/number-of-longest-increasing-subsequence/)|[C++](./solutions/673.%20Number%20of%20Longest%20Increasing%20SubsequenceC%2B%2B)|32 ms|
 |675|[ Cut Off Trees for Golf Event](https://leetcode.com/problems/cut-off-trees-for-golf-event/)|[C++](./solutions/675.%20Cut%20Off%20Trees%20for%20Golf%20EventC%2B%2B)|N/A|
 |689|[ Maximum Sum of 3 Non-Overlapping Subarrays](https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/)|[C++](./solutions/689.%20Maximum%20Sum%20of%203%20Non-Overlapping%20SubarraysC%2B%2B)|32 ms|
 |753|[ Cracking the Safe](https://leetcode.com/problems/cracking-the-safe/)|[C++](./solutions/753.%20Cracking%20the%20SafeC%2B%2B)|16 ms|
