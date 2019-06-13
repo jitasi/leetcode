@@ -173,6 +173,7 @@
 |978|[ Longest Turbulent Subarray](https://leetcode.com/problems/longest-turbulent-subarray/)|[C++](./solutions/978.%20Longest%20Turbulent%20SubarrayC%2B%2B)|104 ms|
 |981|[ Time Based Key-Value Store](https://leetcode.com/problems/time-based-key-value-store/)|[C++](./solutions/981.%20Time%20Based%20Key-Value%20StoreC%2B%2B)|396 ms|
 |991|[ Broken Calculator](https://leetcode.com/problems/broken-calculator/)|[C++](./solutions/991.%20Broken%20CalculatorC%2B%2B)|0 ms|
+|1003|[ Check If Word Is Valid After Substitutions](https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/)|[C++](./solutions/1003.%20Check%20If%20Word%20Is%20Valid%20After%20SubstitutionsC%2B%2B)|64 ms|
 |1015|[ Smallest Integer Divisible by K](https://leetcode.com/problems/smallest-integer-divisible-by-k/)|[C++](./solutions/1015.%20Smallest%20Integer%20Divisible%20by%20KC%2B%2B)|0 ms|
 |1027|[ Longest Arithmetic Sequence](https://leetcode.com/problems/longest-arithmetic-sequence/)|[C++](./solutions/1027.%20Longest%20Arithmetic%20SequenceC%2B%2B)|3164 ms|
 |1031|[ Maximum Sum of Two Non-Overlapping Subarrays](https://leetcode.com/problems/maximum-sum-of-two-non-overlapping-subarrays/)|[C++](./solutions/1031.%20Maximum%20Sum%20of%20Two%20Non-Overlapping%20SubarraysC%2B%2B)|12 ms|
