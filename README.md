@@ -111,6 +111,7 @@
 |343|[ Integer Break](https://leetcode.com/problems/integer-break/)|[C++](./solutions/343.%20Integer%20BreakC%2B%2B)|4 ms|
 |365|[ Water and Jug Problem](https://leetcode.com/problems/water-and-jug-problem/)|[C++](./solutions/365.%20Water%20and%20Jug%20ProblemC%2B%2B)|0 ms|
 |368|[ Largest Divisible Subset](https://leetcode.com/problems/largest-divisible-subset/)|[C++](./solutions/368.%20Largest%20Divisible%20SubsetC%2B%2B)|24 ms|
+|378|[ Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)|[C++](./solutions/378.%20Kth%20Smallest%20Element%20in%20a%20Sorted%20MatrixC%2B%2B)|428 ms|
 |380|[ Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/)|[C++](./solutions/380.%20Insert%20Delete%20GetRandom%20O(1)C%2B%2B)|60 ms|
 |381|[ Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/)|[C++](./solutions/381.%20Insert%20Delete%20GetRandom%20O(1)%20-%20Duplicates%20allowedC%2B%2B)|64 ms|
 |384|[ Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/)|[C++](./solutions/384.%20Shuffle%20an%20ArrayC%2B%2B)|208 ms|
