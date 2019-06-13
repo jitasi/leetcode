@@ -139,6 +139,7 @@
 |518|[ Coin Change 2](https://leetcode.com/problems/coin-change-2/)|[C++](./solutions/518.%20Coin%20Change%202C%2B%2B)|32 ms|
 |523|[ Continuous Subarray Sum](https://leetcode.com/problems/continuous-subarray-sum/)|[C++](./solutions/523.%20Continuous%20Subarray%20SumC%2B%2B)|32 ms|
 |525|[ Contiguous Array](https://leetcode.com/problems/contiguous-array/)|[C++](./solutions/525.%20Contiguous%20ArrayC%2B%2B)|124 ms|
+|540|[ Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/)|[C++](./solutions/540.%20Single%20Element%20in%20a%20Sorted%20ArrayC%2B%2B)|12 ms|
 |556|[ Next Greater Element III](https://leetcode.com/problems/next-greater-element-iii/)|[C++](./solutions/556.%20Next%20Greater%20Element%20IIIC%2B%2B)|0 ms|
 |560|[ Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)|[C++](./solutions/560.%20Subarray%20Sum%20Equals%20KC%2B%2B)|1108 ms|
 |564|[ Find the Closest Palindrome](https://leetcode.com/problems/find-the-closest-palindrome/)|[C++](./solutions/564.%20Find%20the%20Closest%20PalindromeC%2B%2B)|0 ms|
