@@ -1,0 +1,34 @@
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+      const int len = height.size(); 
+      if (len < 2) return 0;
+      
+      // sort with pos.
+      vector<int> pos(len);
+      for (int i = 0; i < len; i++) pos[i] = i;    
+      sort(pos.begin(), pos.end(), [&height](int a, int b) {
+        return height[a] > height[b];
+      });
+
+      int left = min(pos[0], pos[1]);
+      int right = max(pos[0], pos[1]);
+      int largest = (right - left) * min(height[left], height[right]);
+      for (int i = 2; i < len; i++) {
+        if (pos[i] < left) {
+          const int area = (right - pos[i]) * height[pos[i]];
+          if (area > largest) {
+            largest = area;            
+          }
+          left = pos[i];
+        } else if (pos[i] > right) {
+          const int area = (pos[i] - left) * height[pos[i]];
+          if (area > largest) {
+            largest = area;
+          }
+          right = pos[i];
+        }
+      }       
+      return largest;                                                      
+    }
+};
