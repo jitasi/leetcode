@@ -90,6 +90,7 @@
 |309|[ Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)|[C++](./solutions/309.%20Best%20Time%20to%20Buy%20and%20Sell%20Stock%20with%20CooldownC%2B%2B)|20 ms|
 |312|[ Burst Balloons](https://leetcode.com/problems/burst-balloons/)|[C++](./solutions/312.%20Burst%20BalloonsC%2B%2B)|16 ms|
 |315|[ Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)|[C++](./solutions/315.%20Count%20of%20Smaller%20Numbers%20After%20SelfC%2B%2B)|156 ms|
+|319|[ Bulb Switcher](https://leetcode.com/problems/bulb-switcher/)|[C++](./solutions/319.%20Bulb%20SwitcherC%2B%2B)|4 ms|
 |322|[ Coin Change](https://leetcode.com/problems/coin-change/)|[C++](./solutions/322.%20Coin%20ChangeC%2B%2B)|36 ms|
 |324|[ Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/)|[C++](./solutions/324.%20Wiggle%20Sort%20IIC%2B%2B)|72 ms|
 |329|[ Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)|[C++](./solutions/329.%20Longest%20Increasing%20Path%20in%20a%20MatrixC%2B%2B)|40 ms|
