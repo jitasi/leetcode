@@ -1,0 +1,39 @@
+class Solution {
+public:
+    // 0 1 2 3 4 5 6 7   n = 8   
+    // 4 5 6 7 0 1 2 3   k = 4  gcd = 4
+    // 6 7 0 1 2 3 4 5   k = 2  gcd = 2
+    // 2 3 4 5 6 7 0 1   k = 6  gcd = 2
+    // 3 4 5 6 7 0 1 2   k = 5  gcd = 1
+  
+    int GetGcd(int a, int b) {
+      if (a < b) swap(a, b);      
+      do {
+        a = a % b;
+        swap(a, b);
+      } while (b != 0);      
+      return a;
+    }
+
+    void rotate(vector<int>& nums, int k) {
+      if (k == 0) return;
+      
+      const int len = nums.size();
+      if (len <= 1) return;
+        
+      const int gcd = GetGcd(len, k);
+      if (k % len == 0) return;
+      
+      for (int i = 0; i < gcd; i++) {
+        int t = nums[i];
+        int next = i;
+        while(true) {
+          next = (next + k) % len;
+          if (next == i) break;
+          swap(t, nums[next]);
+          cout << t << ", ";
+        }
+        nums[i] = t;
+      }
+    }
+};
