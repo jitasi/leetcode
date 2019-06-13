@@ -1,0 +1,31 @@
+class Solution {
+public:
+    int findNumberOfLIS(vector<int>& nums) {
+      const int len = nums.size();
+      if (nums.size() <= 1) return nums.size();
+    
+      int dp_len[len];
+      int dp_cnt[len];
+      dp_len[0] = dp_cnt[0] = 1;
+      for (int i = 1; i < len; i++) {
+        dp_len[i] = dp_cnt[i] = 1;
+        for (int j = 0; j < i; j++) {
+          if (nums[i] <= nums[j]) continue;
+          if (dp_len[i] < (dp_len[j] + 1)) {
+            dp_len[i] = dp_len[j] + 1;
+            dp_cnt[i] = dp_cnt[j];
+          } else if (dp_len[i] == (dp_len[j] + 1)) {
+            dp_cnt[i] += dp_cnt[j];
+          }
+        }
+      }
+      
+      int m_len = *std::max_element(dp_len, dp_len + len);
+      int ans = 0;
+      for (int i = 0; i < len; i++) {
+        if (dp_len[i] == m_len) ans += dp_cnt[i];
+      }
+      
+      return ans;
+    }
+};
