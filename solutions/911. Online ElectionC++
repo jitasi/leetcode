@@ -1,0 +1,38 @@
+// Runtime: 336 ms, faster than 92.35% of C++ online submissions for Online Election.
+// Memory Usage: 75.4 MB, less than 84.02% of C++ online submissions for Online Election.
+
+class TopVotedCandidate {
+public:
+  vector<int> winner;
+  vector<int> times;
+  
+  TopVotedCandidate(vector<int>& persons, vector<int>& times) {
+    this->times = times;
+    unordered_map<int, int> votes;
+    int max_votes = 0;
+    for (const int p : persons) {
+      votes[p]++;
+      max_votes = max(max_votes, votes[p]);
+      winner.push_back(max_votes == votes[p]? p: winner.back());
+    }
+  }
+    
+  int q(int t) {
+    // find the max idx in times so that times[idx] <= t.
+    int first = 0;
+    int last = times.size();
+    while (first < last) {
+      const int mid = first + (last - first) / 2;
+      if (times[mid] == t) return winner[mid];
+      if (times[mid] < t) first = mid + 1;
+      else last = mid;
+    }
+    return (first < times.size() && times[first] == t)? winner[first] : winner[first - 1];
+  }
+};
+
+/**
+ * Your TopVotedCandidate object will be instantiated and called as such:
+ * TopVotedCandidate* obj = new TopVotedCandidate(persons, times);
+ * int param_1 = obj->q(t);
+ */
