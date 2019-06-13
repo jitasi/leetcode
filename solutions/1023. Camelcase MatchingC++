@@ -1,0 +1,24 @@
+// Runtime: 4 ms, faster than 97.84% of C++ online submissions for Camelcase Matching.
+// Memory Usage: 8.7 MB, less than 18.41% of C++ online submissions for Camelcase Matching.
+
+
+class Solution {
+public:
+  vector<bool> camelMatch(vector<string>& queries, string pattern) {
+    vector<bool> ans;
+    const int p_len = pattern.size();
+    for (const string& query : queries) {
+      int p = 0;
+      bool match = true;
+      for (int i = 0; i < query.size(); i++) {
+        if (p < p_len && query[i] == pattern[p]) p++;
+        else if (query[i] >= 'A' && query[i] <= 'Z') {
+          match = false;
+          break;
+        }
+      }
+      ans.push_back(match && p == p_len);
+    }
+    return ans;
+  }
+};
