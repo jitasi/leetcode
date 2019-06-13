@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int kthSmallest(vector<vector<int>>& matrix, int k) {
+      auto cmp = [](const vector<int>a, const vector<int>b) {
+        return a[0] > b[0];
+      };
+      
+      const int rows = matrix.size();
+      
+      priority_queue<vector<int>, vector<vector<int>>, decltype(cmp)> pq(cmp);
+      for (int i = 0; i < matrix[0].size(); i++) {
+        pq.push({matrix[0][i], i, 0});  // val, col, row
+      }
+      
+      while (--k > 0) {
+        const auto t =  pq.top();
+        pq.pop();
+        if (t[2] < rows - 1) {
+          pq.push({matrix[t[2] + 1][t[1]], t[1], t[2] + 1});  
+        }
+
+      }
+      return pq.top()[0];
+    }
+};
