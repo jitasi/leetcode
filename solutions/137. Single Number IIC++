@@ -1,0 +1,20 @@
+// Runtime: 12 ms, faster than 93.62% of C++ online submissions for Single Number II.
+// Memory Usage: 9.8 MB, less than 22.75% of C++ online submissions for Single Number II.
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+      int cnt[32];
+      for (int i = 0; i < 32; i++) cnt[i] = 0;
+      for (int n: nums) {
+        for (int i = 0; i < 32; i++) {
+          if (n & (1 << i)) cnt[i]++;
+        }
+      }
+      int ans = 0;
+      for (int i = 0; i < 32; i++) {
+        ans += (cnt[i] % 3 == 0)? 0 : (1 << i);
+      }
+      return ans;
+    }
+};
