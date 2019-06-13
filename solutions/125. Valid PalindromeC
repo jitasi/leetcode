@@ -1,0 +1,21 @@
+
+
+bool isPalindrome(char* s) {
+  int p = 0;
+  int q = strlen(s) - 1;
+  while (p < q) {
+    if (!(s[p] >= 'a' && s[p] <= 'z') && !(s[p] >= 'A' && s[p] <= 'Z') && !(s[p] >= '0' && s[p] <= '9')) {
+      p++;
+      continue;
+    }
+    if (!(s[q] >= 'a' && s[q] <= 'z') && !(s[q] >= 'A' && s[q] <= 'Z') && !(s[q] >= '0' && s[q] <= '9')) {
+      q--;
+      continue;
+    }
+
+    if (tolower(s[p]) != tolower(s[q])) return false;
+    p++;
+    q--;
+  }
+  return true;
+}
