@@ -1,0 +1,64 @@
+class Trie {
+public:
+    vector<vector<int>> trie;
+    int next_available;
+  
+    /** Initialize your data structure here. */
+    Trie() {
+      next_available = 1;
+      trie.resize(256, vector<int>(27, -1));
+    }
+    
+    int getNextAvailable() {
+      if (next_available >=  trie.size()) {
+        trie.resize(trie.size() + 256, vector<int>(27, -1)); 
+      }
+      next_available++;
+      return next_available - 1;
+    }
+  
+    /** Inserts a word into the trie. */
+    void insert(string word) {
+      int cur = 0;
+      for (char c : word) {
+        if (trie[cur][c-'a'+1] != -1) {
+          cur = trie[cur][c-'a'+1];
+          continue;
+        }
+        
+        // to insert
+        int next = getNextAvailable();
+        trie[cur][c-'a'+1] = next;
+        cur = next;
+      }
+      trie[cur][0] = 0;
+    }
+    
+    /** Returns if the word is in the trie. */
+    bool search(string word) {
+      int cur = 0;
+      for (char c : word) {
+        if (trie[cur][c-'a'+1] == -1) return false;
+        cur = trie[cur][c-'a'+1];
+      }
+      return trie[cur][0] == 0;
+    }
+    
+    /** Returns if there is any word in the trie that starts with the given prefix. */
+    bool startsWith(string prefix) {
+      int cur = 0;
+      for (char c : prefix) {
+        if (trie[cur][c-'a'+1] == -1) return false;
+        cur = trie[cur][c-'a'+1];
+      }
+      return true;
+    }
+};
+
+/**
+ * Your Trie object will be instantiated and called as such:
+ * Trie* obj = new Trie();
+ * obj->insert(word);
+ * bool param_2 = obj->search(word);
+ * bool param_3 = obj->startsWith(prefix);
+ */
