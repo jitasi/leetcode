@@ -1,0 +1,18 @@
+// Runtime: 8 ms, faster than 98.92% of C++ online submissions for Bitwise AND of Numbers Range.
+// Memory Usage: 8.3 MB, less than 13.01% of C++ online submissions for Bitwise AND of Numbers Range.
+
+
+class Solution {
+public:
+  int rangeBitwiseAnd(int m, int n) {
+    while (m < n) {
+      // find the least significant bit
+      // e.g.:  n = 0010110
+      //       -n = 1101010
+      // . n & -n = 0000010
+      // n & ~(n & -n) = 0010100
+      n &= ~(n & (-n));
+    } 
+    return n;
+  }
+};
