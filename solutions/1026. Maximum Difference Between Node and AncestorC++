@@ -1,0 +1,52 @@
+// Runtime: 12 ms, faster than 40.67% of C++ online submissions for Maximum Difference Between Node and Ancestor.
+// Memory Usage: 15.3 MB, less than 19.89% of C++ online submissions for Maximum Difference Between Node and Ancestor.
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+  void helper(TreeNode* root, int& max_val, int& min_val, int& max_diff) {
+    max_val = min_val = root->val;
+    max_diff = 0;    
+    
+    if (root->left == nullptr && root->right == nullptr) {
+      return;
+    }
+    
+    int max_l, min_l, diff_l;
+    if (root->left != nullptr) {
+      helper(root->left, max_l, min_l, diff_l);
+      max_val = std::max(max_val, max_l);
+      min_val = std::min(min_val, min_l);
+      max_diff = std::max(diff_l, 
+                          std::max(std::abs(root->val - max_l),
+                                   std::abs(root->val - min_l)));
+    }
+    
+    int max_r, min_r, diff_r;
+    if (root->right != nullptr) {
+      helper(root->right, max_r, min_r, diff_r);
+      max_val = std::max(max_val, max_r);
+      min_val = std::min(min_val, min_r);
+      max_diff = std::max(std::max(max_diff, diff_r), 
+                          std::max(std::abs(root->val - max_r),
+                                   std::abs(root->val - min_r)));
+      
+    }
+  } 
+  
+  int maxAncestorDiff(TreeNode* root) {
+    if (root == nullptr) return 0;
+    
+    int max_val, min_val, max_diff;
+    helper(root, max_val, min_val, max_diff);
+    return max_diff;
+  }
+};
