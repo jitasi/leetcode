@@ -1,0 +1,64 @@
+class Solution {
+public:
+    int getNumber(const string& s, int* idx) {
+      if (s[*idx] < '0' || s[*idx] > '9') return -1;
+      int val = 0;
+      while (s[*idx] != '[') {
+        val *= 10;
+        val += s[(*idx)++] - '0';
+      }
+      return val;
+    }
+  
+    string getStr(const string& s, int* idx) {
+      int start = *idx;
+      int end = *idx + 1;
+      while (s[end] >= 'a' && s[end] <= 'z') end++;
+      *idx += end - start;
+      return s.substr(start, end - start);
+    }
+  
+    string decodeString(string s) {
+      if (s.empty()) return "";
+      
+      stack<int> repeats;
+      stack<string> chars;
+      
+      int idx = 0;
+      while (idx < s.size()) {
+        const int repeated = getNumber(s, &idx);
+        if (repeated >= 0) {
+          repeats.push(repeated);
+        } else if (s[idx] == ']') {
+          string subs = "";
+          while (chars.top() != "[") {
+            subs = chars.top() + subs;
+            chars.pop();
+          }
+          chars.pop();
+          int repeated = repeats.top();
+          repeats.pop();
+          
+          string news = "";
+          while (repeated-- > 0) {
+            news += subs;
+          }
+          chars.push(news);
+          idx++;
+        } else if (s[idx] == '[') {
+          chars.push("[");
+          idx++;
+        } else {
+          chars.push(getStr(s, &idx));
+        }
+      }
+      
+      string ret = "";
+      while (!chars.empty()) {
+        ret = chars.top() + ret;
+        chars.pop();
+      }     
+      
+      return ret;
+    }
+};
