@@ -1,0 +1,21 @@
+// Runtime: 12 ms, faster than 97.11% of C++ online submissions for Single Number III.
+// Memory Usage: 10 MB, less than 33.20% of C++ online submissions for Single Number III.
+
+class Solution {
+public:
+  vector<int> singleNumber(vector<int>& nums) {
+    int criteria = 0;
+    for (const int n : nums) {
+      criteria ^= n;
+    }
+    criteria = criteria & (-criteria);
+    
+    int g1_xor = 0;
+    int g2_xor = 0;
+    for (const int n : nums) {
+      if ((n & criteria) != 0) g1_xor ^= n;
+      else g2_xor ^= n;
+    }
+    return {g1_xor, g2_xor};
+  }
+};
