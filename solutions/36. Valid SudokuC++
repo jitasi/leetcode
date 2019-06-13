@@ -1,0 +1,44 @@
+class Solution {
+public:
+    bool isValidSudoku(vector<vector<char>>& board) {
+      for (int i = 0; i < 9; i++) {
+        int mask = 0;
+        for (int j = 0; j < 9; j++) {
+          if (board[i][j] == '.') continue;
+          int num = board[i][j] - '0';
+          int bit = 1 << num;
+          if ((mask & bit) == bit) return false;
+          mask |= bit;
+        }
+      }
+      
+      for (int i = 0; i < 9; i++) {
+        int mask = 0;
+        for (int j = 0; j < 9; j++) {
+          if (board[j][i] == '.') continue;
+          int num = board[j][i] - '0';
+          int bit = 1 << num;
+          if ((mask & bit) == bit) return false;
+          mask |= bit;
+        }
+      }
+      
+      for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+          int mask = 0;
+          for (int p = 0; p < 3; p++) {
+            for (int q = 0; q < 3; q++) {
+              int x = i * 3 + p;
+              int y = j * 3 + q;
+              if (board[x][y] == '.') continue;
+              int num = board[x][y] - '0';
+              int bit = 1 << num;
+              if ((mask & bit) == bit) return false;
+              mask |= bit;             
+            }
+          }
+        }
+      }
+      return true;
+    }
+};
