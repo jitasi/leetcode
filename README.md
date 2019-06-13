@@ -18,6 +18,7 @@
 |45|[ Jump Game II](https://leetcode.com/problems/jump-game-ii/)|[C++](./solutions/45.%20Jump%20Game%20IIC%2B%2B)|12 ms|
 |52|[ N-Queens II](https://leetcode.com/problems/n-queens-ii/)|[C++](./solutions/52.%20N-Queens%20IIC%2B%2B)|4 ms|
 |57|[ Insert Interval](https://leetcode.com/problems/insert-interval/)|[C++](./solutions/57.%20Insert%20IntervalC%2B%2B)|20 ms|
+|71|[ Simplify Path](https://leetcode.com/problems/simplify-path/)|[C++](./solutions/71.%20Simplify%20PathC%2B%2B)|8 ms|
 |72|[ Edit Distance](https://leetcode.com/problems/edit-distance/)|[C++](./solutions/72.%20Edit%20DistanceC%2B%2B)|16 ms|
 |76|[ Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)|[C++](./solutions/76.%20Minimum%20Window%20SubstringC%2B%2B)|80 ms|
 |84|[ Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)|[C++](./solutions/84.%20Largest%20Rectangle%20in%20HistogramC%2B%2B)|16 ms|
