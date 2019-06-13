@@ -129,6 +129,7 @@
 |845|[ Longest Mountain in Array](https://leetcode.com/problems/longest-mountain-in-array/)|[C++](./solutions/845.%20Longest%20Mountain%20in%20ArrayC%2B%2B)|20 ms|
 |855|[ Exam Room](https://leetcode.com/problems/exam-room/)|[C++](./solutions/855.%20Exam%20RoomC%2B%2B)|32 ms|
 |862|[ Shortest Subarray with Sum at Least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/)|[C++](./solutions/862.%20Shortest%20Subarray%20with%20Sum%20at%20Least%20KC%2B%2B)|220 ms|
+|881|[ Boats to Save People](https://leetcode.com/problems/boats-to-save-people/)|[C++](./solutions/881.%20Boats%20to%20Save%20PeopleC%2B%2B)|116 ms|
 |898|[ Bitwise ORs of Subarrays](https://leetcode.com/problems/bitwise-ors-of-subarrays/)|[C++](./solutions/898.%20Bitwise%20ORs%20of%20SubarraysC%2B%2B)|1764 ms|
 |910|[ Smallest Range II](https://leetcode.com/problems/smallest-range-ii/)|[C++](./solutions/910.%20Smallest%20Range%20IIC%2B%2B)|32 ms|
 |935|[ Knight Dialer](https://leetcode.com/problems/knight-dialer/)|[C++](./solutions/935.%20Knight%20DialerC%2B%2B)|8 ms|
