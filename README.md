@@ -34,6 +34,7 @@
 |84|[ Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)|[C++](./solutions/84.%20Largest%20Rectangle%20in%20HistogramC%2B%2B)|16 ms|
 |85|[ Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)|[C++](./solutions/85.%20Maximal%20RectangleC%2B%2B)|56 ms|
 |91|[ Decode Ways](https://leetcode.com/problems/decode-ways/)|[C++](./solutions/91.%20Decode%20WaysC%2B%2B)|0 ms|
+|95|[ Unique Binary Search Trees II](https://leetcode.com/problems/unique-binary-search-trees-ii/)|[C++](./solutions/95.%20Unique%20Binary%20Search%20Trees%20IIC%2B%2B)|24 ms|
 |97|[ Interleaving String](https://leetcode.com/problems/interleaving-string/)|[C++](./solutions/97.%20Interleaving%20StringC%2B%2B)|4 ms|
 |98|[ Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)|[C++](./solutions/98.%20Validate%20Binary%20Search%20TreeC%2B%2B)|20 ms|
 |99|[ Recover Binary Search Tree](https://leetcode.com/problems/recover-binary-search-tree/)|[C++](./solutions/99.%20Recover%20Binary%20Search%20TreeC%2B%2B)|24 ms|
