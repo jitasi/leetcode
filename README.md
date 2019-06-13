@@ -36,6 +36,7 @@
 |55|[ Jump Game](https://leetcode.com/problems/jump-game/)|[C++](./solutions/55.%20Jump%20GameC%2B%2B)|12 ms|
 |56|[ Merge Intervals](https://leetcode.com/problems/merge-intervals/)|[C++](./solutions/56.%20Merge%20IntervalsC%2B%2B)|20 ms|
 |57|[ Insert Interval](https://leetcode.com/problems/insert-interval/)|[C++](./solutions/57.%20Insert%20IntervalC%2B%2B)|20 ms|
+|58|[ Length of Last Word](https://leetcode.com/problems/length-of-last-word/)|[C](./solutions/58.%20Length%20of%20Last%20WordC)|220 ms|
 |60|[ Permutation Sequence](https://leetcode.com/problems/permutation-sequence/)|[C++](./solutions/60.%20Permutation%20SequenceC%2B%2B)|4 ms|
 |63|[ Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)|[C++](./solutions/63.%20Unique%20Paths%20IIC%2B%2B)|8 ms|
 |71|[ Simplify Path](https://leetcode.com/problems/simplify-path/)|[C++](./solutions/71.%20Simplify%20PathC%2B%2B)|8 ms|
