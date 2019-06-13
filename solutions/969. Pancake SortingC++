@@ -1,0 +1,34 @@
+// Runtime: 8 ms, faster than 97.10% of C++ online submissions for Pancake Sorting.
+// Memory Usage: 9.3 MB, less than 60.05% of C++ online submissions for Pancake Sorting.
+
+class Solution {
+public:
+    void reverse(vector<int>& A, int to) {
+      for (int i = 0; i < (to + 1) / 2; i++)
+        swap(A[i], A[to - i]);
+    }
+  
+    void work(vector<int>& A, int to, vector<int>& ans) {
+      if (to <= 0) return;
+      
+      // find largest from A[0] ... A[to].
+      const auto it = max_element(A.begin(), A.begin() + to + 1);
+      const int idx = distance(A.begin(), it);
+      if (idx < to) {
+        if (idx != 0) {
+          ans.push_back(idx + 1);    
+          reverse(A, idx);
+        }
+        ans.push_back(to + 1);
+        reverse(A, to);   
+      }
+
+      work(A, to - 1, ans);
+    }
+  
+    vector<int> pancakeSort(vector<int>& A) {
+      vector<int> ans;
+      work(A, A.size() - 1, ans);
+      return ans;
+    }
+};
