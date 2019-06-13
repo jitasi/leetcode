@@ -1,0 +1,20 @@
+// Runtime: 48 ms, faster than 39.35% of C++ online submissions for Check If Word Is Valid After Substitutions.
+// Memory Usage: 345.9 MB, less than 17.20% of C++ online submissions for Check If Word Is Valid After Substitutions.
+class Solution {
+public:
+  bool isValid(string S) {
+    if (S.size() < 3) return false;
+    if (S.size() % 3 != 0) return false;
+    if (S[0] != 'a' || S[S.size() - 1] != 'c') return false;
+    
+    int idx;
+    while ((idx = S.find("abc")) != std::string::npos) {
+      if (idx == 0) S = S.substr(3, S.size() - 3);
+      else if (idx == S.size() - 3) S = S.substr(0, S.size() - 3);
+      else S = S.substr(0, idx) + S.substr(idx + 3, S.size() - idx - 3);
+      if (S.empty()) return true;
+      else if (S[0] != 'a' || S[S.size() - 1] != 'c') return false;
+    }
+    return S.empty();
+  }  
+};
