@@ -1,0 +1,26 @@
+class Solution {
+public:
+    bool canPartition(vector<int>& nums) {
+      int target = 0;
+      std::for_each(nums.begin(), nums.end(), [&](int n) {
+        target += n;
+      });
+      if (target % 2 == 1) return false;
+      target = target / 2;
+      
+      vector<bool> dp(target, false);      
+      dp[0] = true;      
+      for (int i = 0; i < nums.size(); i++) {
+        for (int j = target - 1; j >= 0; j--) {
+          if (!dp[j]) continue;
+          const int partial_sum = j + nums[i];
+          if (partial_sum == target) return true;
+          if (partial_sum < target) {
+            dp[partial_sum] = true;
+          }
+        }
+      }
+
+      return false;
+    }
+};
