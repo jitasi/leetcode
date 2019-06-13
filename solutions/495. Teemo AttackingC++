@@ -1,0 +1,17 @@
+// Runtime: 60 ms, faster than 91.03% of C++ online submissions for Teemo Attacking.
+// Memory Usage: 10.9 MB, less than 55.89% of C++ online submissions for Teemo Attacking.
+
+class Solution {
+public:
+  int findPoisonedDuration(vector<int>& timeSeries, int duration) {
+    int ans = 0;
+    int last = -duration;
+    for (const int t: timeSeries) {
+      if (t < last) ans += t + duration - last;
+      else ans += duration;
+      last = t + duration;
+//      cout << ans << ", " << last << endl;
+    }
+    return ans;
+  }
+};
