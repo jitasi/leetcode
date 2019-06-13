@@ -1,0 +1,29 @@
+// Runtime: 100 ms, faster than 19.80% of C++ online submissions for Repeated DNA Sequences.
+// Memory Usage: 18.6 MB, less than 62.79% of C++ online submissions for Repeated DNA Sequences.
+
+class Solution {
+public:
+  vector<string> findRepeatedDnaSequences(string s) {
+    set<string> ans;
+    set<int> codes;
+    
+    int cur_code = 0;
+    string cur_str = "";  
+    for (int i = 0; i < s.size(); i++) {
+      cur_code = ((cur_code & 0x7ffffff) << 3) + (s[i] & 7);
+      cur_str = cur_str + string(1, s[i]);
+      if (cur_str.size() > 10) {
+        cur_str = cur_str.substr(1, 10);
+      } else if (cur_str.size() < 10) {
+        continue;
+      }
+//      cout << cur_str << endl;
+      if (codes.count(cur_code) == 0) {
+        codes.insert(cur_code);
+      } else {
+        ans.insert(cur_str);
+      }
+    }
+    return vector<string>(ans.begin(), ans.end());
+  }
+};
