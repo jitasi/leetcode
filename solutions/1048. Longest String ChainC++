@@ -1,0 +1,41 @@
+// Runtime: 88 ms, faster than 57.76% of C++ online submissions for Longest String Chain.
+// Memory Usage: 25.9 MB, less than 100.00% of C++ online submissions for Longest String Chain.
+
+
+class Solution {
+public:
+  int longestStrChain(vector<string>& words) {
+    if (words.size() <= 1) return words.size();
+    unordered_map<string, int> m;  // string to the longest chain ending with string.
+    
+    sort(words.begin(), words.end(), [](const string& a, const string& b) {
+      const int lena = a.size();
+      const int lenb = b.size();
+      if (lena != lenb) return lena < lenb;
+      return a < b;
+    });
+    
+    int ans = 1;
+    for (const string& w : words) {
+      if (w.size() == 1) {
+        m[w] = 1;
+        continue;
+      }
+      int local = 0;
+      for (int i = 0; i < w.size(); i++) {
+        string new_w = w;
+        new_w.erase(i, 1);
+        if (m.count(new_w) != 0) {
+          local = max(local, m[new_w]);
+        }
+      }
+      m[w] = local + 1;
+      ans = max(ans, m[w]);
+    }
+    return ans;
+  }
+};
+
+// "a","b","ba","bca","bda","bdca"
+// sort by len "a","b","ba","bca","bda","bdca"
+// .            1 . 1 . 2 .      
