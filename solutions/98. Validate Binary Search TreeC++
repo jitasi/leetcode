@@ -1,0 +1,53 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    // is_bst, min, max
+    tuple<bool, int, int> work(TreeNode* root) {
+      if (root->left == nullptr && root->right == nullptr) {
+        return {true, root->val, root->val};
+      }
+              
+      tuple<bool, int, int> left_ret, right_ret;
+      if (root->left != nullptr) {
+        left_ret = work(root->left);
+      }
+      if (root->right != nullptr) {
+        right_ret = work(root->right);
+      }
+      
+      if (root->left != nullptr && root->right != nullptr) {
+        return {
+          get<0>(left_ret) && get<0>(right_ret) &&
+            get<2>(left_ret) < root->val && get<1>(right_ret) > root->val,
+          get<1>(left_ret),
+          get<2>(right_ret)
+          };
+      } else if (root->left != nullptr) {
+        return {
+          get<0>(left_ret) && get<2>(left_ret) < root->val,
+          get<1>(left_ret),
+          root->val
+        };
+      } else /* if (root->right != nullptr) */ {
+        return {
+          get<0>(right_ret) && get<1>(right_ret) > root->val,
+          root->val,
+          get<2>(right_ret)         
+        };
+      }
+    }
+  
+    bool isValidBST(TreeNode* root) {
+      if (root == nullptr) return true;
+      auto ret = work(root);
+      return get<0>(ret);
+    }
+};
