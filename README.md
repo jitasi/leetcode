@@ -37,6 +37,7 @@
 |130|[ Surrounded Regions](https://leetcode.com/problems/surrounded-regions/)|[C++](./solutions/130.%20Surrounded%20RegionsC%2B%2B)|32 ms|
 |138|[ Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)|[C++](./solutions/138.%20Copy%20List%20with%20Random%20PointerC%2B%2B)|28 ms|
 |140|[ Word Break II](https://leetcode.com/problems/word-break-ii/)|[C++](./solutions/140.%20Word%20Break%20IIC%2B%2B)|24 ms|
+|142|[ Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)|[C++](./solutions/142.%20Linked%20List%20Cycle%20IIC%2B%2B)|20 ms|
 |145|[ Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)|[C++](./solutions/145.%20Binary%20Tree%20Postorder%20TraversalC%2B%2B)|4 ms|
 |146|[ LRU Cache](https://leetcode.com/problems/lru-cache/)|[C++](./solutions/146.%20LRU%20CacheC%2B%2B)|204 ms|
 |149|[ Max Points on a Line](https://leetcode.com/problems/max-points-on-a-line/)|[C++](./solutions/149.%20Max%20Points%20on%20a%20LineC%2B%2B)|12 ms|
