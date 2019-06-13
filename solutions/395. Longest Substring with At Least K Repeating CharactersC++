@@ -1,0 +1,26 @@
+class Solution {
+public:
+  int longestSubstring(string s, int k) {
+    multiset<char> cnt(s.begin(), s.end());
+    
+    int m = 0;
+    int i = 0;
+    for (int  j = 0; j < s.size(); j++) {
+      if (cnt.count(s[j]) >= k) continue;
+      
+      if (i < j) {
+//        cout << s.substr(i, j - i) << endl;
+        m = max(m, longestSubstring(s.substr(i, j - i), k));
+      }
+      
+      i = j + 1;
+    }
+    if (i != 0) {
+//      cout << s.substr(i, s.size() - i) << endl;
+      m = max(m, longestSubstring(s.substr(i, s.size() - i), k));
+    } else {
+      return s.size();
+    }
+    return m;
+  }
+};
