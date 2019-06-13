@@ -116,6 +116,7 @@
 |395|[ Longest Substring with At Least K Repeating Characters](https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/)|[C++](./solutions/395.%20Longest%20Substring%20with%20At%20Least%20K%20Repeating%20CharactersC%2B%2B)|32 ms|
 |396|[ Rotate Function](https://leetcode.com/problems/rotate-function/)|[C++](./solutions/396.%20Rotate%20FunctionC%2B%2B)|12 ms|
 |397|[ Integer Replacement](https://leetcode.com/problems/integer-replacement/)|[C++](./solutions/397.%20Integer%20ReplacementC%2B%2B)|0 ms|
+|398|[ Random Pick Index](https://leetcode.com/problems/random-pick-index/)|[C++](./solutions/398.%20Random%20Pick%20IndexC%2B%2B)|88 ms|
 |399|[ Evaluate Division](https://leetcode.com/problems/evaluate-division/)|[C++](./solutions/399.%20Evaluate%20DivisionC%2B%2B)|4 ms|
 |403|[ Frog Jump](https://leetcode.com/problems/frog-jump/)|[C++](./solutions/403.%20Frog%20JumpC%2B%2B)|152 ms|
 |410|[ Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/)|[C++](./solutions/410.%20Split%20Array%20Largest%20SumC%2B%2B)|140 ms|
