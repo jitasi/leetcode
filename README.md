@@ -78,6 +78,7 @@
 |210|[ Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)|[C++](./solutions/210.%20Course%20Schedule%20IIC%2B%2B)|24 ms|
 |212|[ Word Search II](https://leetcode.com/problems/word-search-ii/)|[C++](./solutions/212.%20Word%20Search%20IIC%2B%2B)|68 ms|
 |214|[ Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/)|[C++](./solutions/214.%20Shortest%20PalindromeC%2B%2B)|252 ms|
+|215|[ Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)|[C++](./solutions/215.%20Kth%20Largest%20Element%20in%20an%20ArrayC%2B%2B)|80 ms|
 |218|[ The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/)|[C++](./solutions/218.%20The%20Skyline%20ProblemC%2B%2B)|28 ms|
 |220|[ Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii/)|[C++](./solutions/220.%20Contains%20Duplicate%20IIIC%2B%2B)|20 ms|
 |221|[ Maximal Square](https://leetcode.com/problems/maximal-square/)|[C++](./solutions/221.%20Maximal%20SquareC%2B%2B)|20 ms|
