@@ -63,6 +63,7 @@
 |150|[ Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)|[C++](./solutions/150.%20Evaluate%20Reverse%20Polish%20NotationC%2B%2B)|16 ms|
 |151|[ Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)|[C++](./solutions/151.%20Reverse%20Words%20in%20a%20StringC%2B%2B)|8 ms|
 |152|[ Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)|[C++](./solutions/152.%20Maximum%20Product%20SubarrayC%2B%2B)|4 ms|
+|153|[ Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)|[C++](./solutions/153.%20Find%20Minimum%20in%20Rotated%20Sorted%20ArrayC%2B%2B)|4 ms|
 |166|[ Fraction to Recurring Decimal](https://leetcode.com/problems/fraction-to-recurring-decimal/)|[C++](./solutions/166.%20Fraction%20to%20Recurring%20DecimalC%2B%2B)|4 ms|
 |179|[ Largest Number](https://leetcode.com/problems/largest-number/)|[C++](./solutions/179.%20Largest%20NumberC%2B%2B)|8 ms|
 |187|[ Repeated DNA Sequences](https://leetcode.com/problems/repeated-dna-sequences/)|[C++](./solutions/187.%20Repeated%20DNA%20SequencesC%2B%2B)|100 ms|
