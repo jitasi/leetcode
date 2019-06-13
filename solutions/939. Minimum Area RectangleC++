@@ -1,0 +1,27 @@
+// Runtime: 828 ms, faster than 25.04% of C++ online submissions for Minimum Area Rectangle.
+// Memory Usage: 18.1 MB, less than 62.40% of C++ online submissions for Minimum Area Rectangle.
+
+class Solution {
+public:
+  int minAreaRect(vector<vector<int>>& points) {
+    unordered_map<int, unordered_set<int>> m;
+    for (const auto& pt: points) {
+      if (m.count(pt[0]) == 0) {
+        m[pt[0]] = {pt[1]};
+      } else {
+        m[pt[0]].insert(pt[1]);
+      }
+    }
+    
+    int ans = 0;
+    for (const auto& pt1: points) {
+      for (const auto& pt2: points) {
+        if (pt1[0] == pt2[0] || pt1[1] == pt2[1]) continue;
+        if (m[pt1[0]].count(pt2[1]) == 0 || m[pt2[0]].count(pt1[1]) == 0) continue;
+        if (ans == 0) ans = abs((pt1[0] - pt2[0]) * (pt1[1] - pt2[1]));
+        else ans = min(ans, abs((pt1[0] - pt2[0]) * (pt1[1] - pt2[1])));
+      }
+    }
+    return ans;
+  }
+};
