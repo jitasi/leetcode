@@ -1,0 +1,26 @@
+// Runtime: 4 ms, faster than 89.91% of C++ online submissions for Permutation Sequence.
+// Memory Usage: 8.2 MB, less than 78.85% of C++ online submissions for Permutation Sequence.
+
+class Solution {
+public:
+  string getPermutation(int n, int k) {
+    int total = 1;
+    vector<char> digits(n, '0');
+    for (int i = 1; i <= n; i++) {
+      total *= i;
+      digits[i - 1] += i;
+    }
+
+    k--;
+    string ans;
+    while (n != 0) {
+      total /= n;
+      const int idx = k / total;
+      ans += digits[idx];
+      digits.erase(digits.begin() + idx);
+      k %= total;
+      n--;
+    }
+    return ans;
+  }
+};
