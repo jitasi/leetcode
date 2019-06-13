@@ -1,0 +1,41 @@
+// Runtime: 396 ms, faster than 87.65% of C++ online submissions for Time Based Key-Value Store.
+// Memory Usage: 134.3 MB, less than 92.00% of C++ online submissions for Time Based Key-Value Store.
+
+class TimeMap {
+public:
+    unordered_map<string, vector<pair<int, string>>> store;
+  
+    /** Initialize your data structure here. */
+    TimeMap() {
+        
+    }
+    
+    void set(string key, string value, int timestamp) {
+        store[key].push_back({timestamp, value});
+     }
+    
+    string get(string key, int timestamp) {
+      if (store.count(key) == 0 || store[key].size() == 0) return "";
+      
+      const auto& v = store[key];
+      int first = 0;
+      int last = v.size();
+      while (first < last) {
+        const int mid = first + (last - first) / 2;
+        if (v[mid].first == timestamp) return v[mid].second;
+        if (v[mid].first < timestamp) first = mid + 1;
+        else last = mid;
+      }
+      if (first == store[key].size()) return store[key].back().second;
+      if (first == 0 && v[first].first > timestamp) return "";
+      if (first > 0 && v[first].first > timestamp) return v[first - 1].second;
+      return v[first].second;
+    }
+};
+
+/**
+ * Your TimeMap object will be instantiated and called as such:
+ * TimeMap* obj = new TimeMap();
+ * obj->set(key,value,timestamp);
+ * string param_2 = obj->get(key,timestamp);
+ */
