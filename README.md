@@ -25,6 +25,7 @@
 |71|[ Simplify Path](https://leetcode.com/problems/simplify-path/)|[C++](./solutions/71.%20Simplify%20PathC%2B%2B)|8 ms|
 |72|[ Edit Distance](https://leetcode.com/problems/edit-distance/)|[C++](./solutions/72.%20Edit%20DistanceC%2B%2B)|16 ms|
 |76|[ Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)|[C++](./solutions/76.%20Minimum%20Window%20SubstringC%2B%2B)|80 ms|
+|79|[ Word Search](https://leetcode.com/problems/word-search/)|[C++](./solutions/79.%20Word%20SearchC%2B%2B)|328 ms|
 |84|[ Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)|[C++](./solutions/84.%20Largest%20Rectangle%20in%20HistogramC%2B%2B)|16 ms|
 |85|[ Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)|[C++](./solutions/85.%20Maximal%20RectangleC%2B%2B)|56 ms|
 |91|[ Decode Ways](https://leetcode.com/problems/decode-ways/)|[C++](./solutions/91.%20Decode%20WaysC%2B%2B)|0 ms|
