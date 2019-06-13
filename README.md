@@ -42,6 +42,7 @@
 |58|[ Length of Last Word](https://leetcode.com/problems/length-of-last-word/)|[C](./solutions/58.%20Length%20of%20Last%20WordC)|220 ms|
 |60|[ Permutation Sequence](https://leetcode.com/problems/permutation-sequence/)|[C++](./solutions/60.%20Permutation%20SequenceC%2B%2B)|4 ms|
 |63|[ Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)|[C++](./solutions/63.%20Unique%20Paths%20IIC%2B%2B)|8 ms|
+|67|[ Add Binary](https://leetcode.com/problems/add-binary/)|[C](./solutions/67.%20Add%20BinaryC)|4 ms|
 |71|[ Simplify Path](https://leetcode.com/problems/simplify-path/)|[C++](./solutions/71.%20Simplify%20PathC%2B%2B)|8 ms|
 |72|[ Edit Distance](https://leetcode.com/problems/edit-distance/)|[C++](./solutions/72.%20Edit%20DistanceC%2B%2B)|16 ms|
 |75|[ Sort Colors](https://leetcode.com/problems/sort-colors/)|[C++](./solutions/75.%20Sort%20ColorsC%2B%2B)|4 ms|
