@@ -1,0 +1,22 @@
+class Solution {
+public:
+    bool increasingTriplet(vector<int>& nums) {
+      if (nums.size() < 3) return false;
+      
+      int min_so_far = nums[0];
+      bool has_candidate = false;
+      int low, mid;
+      for (int i = 1; i < nums.size(); i++) {
+        if (nums[i] <= min_so_far) {
+          min_so_far = nums[i];
+        } else if (!has_candidate || mid >= nums[i]) {
+          low = min_so_far;
+          mid = nums[i];
+          has_candidate = true;
+        } else {
+          return true;
+        }
+      }
+      return false;
+    }
+};
