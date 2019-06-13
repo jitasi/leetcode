@@ -1,0 +1,49 @@
+// Runtime: 52 ms, faster than 90.25% of C++ online submissions for Capacity To Ship Packages Within D Days.
+// Memory Usage: 12.1 MB, less than 12.15% of C++ online submissions for Capacity To Ship Packages Within D Days.
+
+class Solution {
+public:
+  //   3,2,2,4, 1, 4
+  // 0 3 5 7 11 12 16
+  // 
+  int shipWithinDays(vector<int>& weights, int D) {
+    const int len = weights.size();
+    int max_num = 0;
+    int total = 0;
+    for (int i = 0; i < len; i++) {
+      max_num = max(max_num, weights[i]);
+      total += weights[i];
+    }
+    
+    int p = total / D;
+    if (total % D != 0) p++;
+    p = max(p, max_num);
+    
+    int q = total;
+    while (p < q) {
+      int mid = (p + q) / 2;
+//      cout << p << ", " << q << ", " << mid << endl;
+      
+      int days = 0;
+      int sum = 0;
+      for (int i = 0; i < len; i++) {
+        if (sum == 0) days++;
+        sum += weights[i];
+        if (sum == mid) {
+          sum = 0;
+        } else if (sum > mid) {
+          days++;
+          sum = weights[i];
+        }
+        if (days > D) {
+          p = mid + 1;
+          break;
+        }
+      }
+      if (days <= D) {
+        q = mid;
+      }
+    }
+    return p;
+  }
+};
