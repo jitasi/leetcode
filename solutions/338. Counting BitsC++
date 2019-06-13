@@ -1,0 +1,17 @@
+class Solution {
+public:
+    vector<int> countBits(int num) {
+      vector<int> ret(num+1, 0);
+      int last = 0;
+      int cur = 0;
+      for (int i = 1; i <= num; i++) {
+        ret[i] = 1 + ret[cur];
+        cur++;
+        if (cur > last) {
+          cur = 0;
+          last = i;
+        }
+      }
+      return ret;
+    }
+};
