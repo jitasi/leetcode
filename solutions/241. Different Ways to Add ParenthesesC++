@@ -1,0 +1,29 @@
+// Runtime: 4 ms, faster than 96.74% of C++ online submissions for Different Ways to Add Parentheses.
+// Memory Usage: 14 MB, less than 14.88% of C++ online submissions for Different Ways to Add Parentheses.
+
+
+class Solution {
+public:
+  vector<int> diffWaysToCompute(string input) {
+    return diffWaysToCompute(input, 0, input.size() - 1);
+  }
+  
+  vector<int> diffWaysToCompute(string& input, int from, int to) {
+    vector<int> ans;
+    if (from > to) return {0};
+    for (int i = from; i <= to; i++) {
+      if (input[i] == '+' || input[i] == '-' || input[i] == '*') {
+        for (int l : diffWaysToCompute(input, from, i - 1)) {
+          for (int r : diffWaysToCompute(input, i + 1, to)) {
+            if (input[i] == '+') ans.push_back(l + r); 
+            else if (input[i] == '-') ans.push_back(l - r);
+            else if (input[i] == '*') ans.push_back(l * r);          
+          }
+        }
+      }
+    }
+//    cout << from << ", " << to << endl;
+    if (ans.empty()) ans.push_back(atoi(input.substr(from, to - from + 1).c_str()));
+    return ans;
+  }
+};
