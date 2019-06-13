@@ -1,0 +1,44 @@
+class Solution {
+public:
+    void strip(string &s) {
+      int cur = 0;
+      bool in_word = false;
+      for (int i = 0; i < s.size(); i++) {
+        if (s[i] == ' ') {
+          in_word = false;
+        } else if (in_word) {
+          s[cur++] = s[i];
+        } else {
+          in_word = true;
+          if (cur != 0)
+            s[cur++] = ' ';
+          s[cur++] = s[i];
+        }
+      }
+      s.resize(cur);
+    }
+  
+    void reverse(string& s, int b, int e) {
+      while (b < e) {
+        std::swap(s[b++], s[e--]);
+      }
+    }
+  
+    string reverseWords(string s) {
+      if (s.empty()) return s;
+      strip(s);
+      if (s.empty()) return s;
+      reverse(s, 0, s.size() - 1);
+      int p = 0;
+      for (int q = 1; q < s.size() - 1; q++) {
+        if (s[q] != ' ') continue;
+        reverse(s, p, q - 1);
+        p = q + 1;
+        q = q + 1;
+      }
+      if (p != s.size() - 1)
+        reverse(s, p, s.size() - 1);
+      
+      return s;
+    }
+};
