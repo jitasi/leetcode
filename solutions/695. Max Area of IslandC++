@@ -1,0 +1,42 @@
+// Runtime: 16 ms, faster than 91.83% of C++ online submissions for Max Area of Island.
+// Memory Usage: 10.5 MB, less than 82.54% of C++ online submissions for Max Area of Island.
+
+
+class Solution {
+public:
+  int rows;
+  int cols;
+  
+  int dfs(vector<vector<int>>& grid, int row, int col) {
+    int area = 1;
+    
+    grid[row][col] = -1;
+    if (row > 0 && grid[row - 1][col] == 1)
+      area += dfs(grid, row - 1, col);
+    if (row + 1 < rows && grid[row + 1][col] == 1)
+      area += dfs(grid, row + 1, col);
+    if (col > 0 && grid[row][col - 1] == 1)
+      area += dfs(grid, row, col - 1);
+    if (col + 1 < cols && grid[row][col + 1] == 1)
+      area += dfs(grid, row, col + 1);
+    return area;
+  }
+  
+  int maxAreaOfIsland(vector<vector<int>>& grid) {
+    rows = grid.size();
+    if (rows == 0) return 0;
+    cols = grid[0].size();
+    if (cols == 0) return 0;
+    
+    int max_area = 0;
+    
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < cols; j++) {
+        if (grid[i][j] == 1)
+          max_area = std::max(max_area, dfs(grid, i, j));
+      }
+    }
+    
+    return max_area;
+  }
+};
