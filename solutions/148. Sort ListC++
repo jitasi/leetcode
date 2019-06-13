@@ -1,0 +1,58 @@
+// Runtime: 44 ms, faster than 94.09% of C++ online submissions for Sort List.
+// Memory Usage: 11.7 MB, less than 77.76% of C++ online submissions for Sort List.
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+  ListNode* sortList(ListNode* head) {
+    if (head == nullptr || head->next == nullptr) return head;
+    
+    ListNode* slow = head;
+    ListNode* last = nullptr;
+    ListNode* fast = head;
+    while (fast != nullptr) {
+      last = slow;
+      slow = slow->next;
+      fast = fast->next;
+      if (fast != nullptr) fast = fast->next;
+    }
+    last->next = nullptr;
+    return mergeSort(sortList(head), sortList(slow));
+  }
+  
+  ListNode* mergeSort(ListNode* l1, ListNode* l2) {
+    ListNode* head = nullptr;
+    ListNode* cur = nullptr;    
+    ListNode* next = nullptr;
+    while (l1 != nullptr && l2 != nullptr) {
+      if (l1->val < l2->val) {
+        next = l1;
+        l1 = l1->next;
+      } else {
+        next = l2;
+        l2 = l2->next;
+      }
+      
+      if (cur == nullptr) {
+        head = cur = next;
+      } else {
+        cur->next = next;
+        cur = next;
+      }
+    }
+    
+    if (l1 != nullptr) {
+      cur->next = l1;
+    } else if (l2 != nullptr) {
+      cur->next = l2;
+    }
+    return head;
+  }
+};
