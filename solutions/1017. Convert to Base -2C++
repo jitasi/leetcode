@@ -1,0 +1,17 @@
+// Runtime: 12 ms, faster than 77.88% of C++ online submissions for Adding Two Negabinary Numbers.
+// Memory Usage: 8.9 MB, less than 100.00% of C++ online submissions for Adding Two Negabinary Numbers.
+
+class Solution {
+public:
+  string baseNeg2(int N) {
+    string ans;
+    int flag = 1;
+    while (N > 0) {
+      const int r = N % 2;
+      ans = to_string(r) + ans;
+      N = (N - r * flag) / 2;
+      flag *= -1;
+    }
+    return ans.empty()? "0" : ans;
+  }
+};
