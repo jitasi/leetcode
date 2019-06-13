@@ -101,6 +101,7 @@
 |239|[ Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)|[C++](./solutions/239.%20Sliding%20Window%20MaximumC%2B%2B)|60 ms|
 |240|[ Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/)|[C++](./solutions/240.%20Search%20a%202D%20Matrix%20IIC%2B%2B)|64 ms|
 |241|[ Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/)|[C++](./solutions/241.%20Different%20Ways%20to%20Add%20ParenthesesC%2B%2B)|4 ms|
+|258|[ Add Digits](https://leetcode.com/problems/add-digits/)|[C++](./solutions/258.%20Add%20DigitsC%2B%2B)|7 ms|
 |264|[ Ugly Number II](https://leetcode.com/problems/ugly-number-ii/)|[C++](./solutions/264.%20Ugly%20Number%20IIC%2B%2B)|136 ms|
 |274|[ H-Index](https://leetcode.com/problems/h-index/)|[C++](./solutions/274.%20H-IndexC%2B%2B)|0 ms|
 |275|[ H-Index II](https://leetcode.com/problems/h-index-ii/)|[C++](./solutions/275.%20H-Index%20IIC%2B%2B)|24 ms|
