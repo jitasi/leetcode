@@ -1,0 +1,21 @@
+// Runtime: 8 ms, faster than 98.30% of C++ online submissions for Swap Adjacent in LR String.
+// Memory Usage: 9.5 MB, less than 71.99% of C++ online submissions for Swap Adjacent in LR String.
+
+class Solution {
+public:
+  bool canTransform(string start, string end) {
+    const int len = start.size();
+    int i = 0, j = 0;      
+    
+    while (i < len && j < len) {
+      while (i < len - 1 && start[i] == 'X') i++;
+      while (j < len - 1 && end[j] == 'X') j++;
+      if (start[i] != end[j]) return false;
+      if (start[i] == 'L' && i < j) return false;
+      if (start[i] == 'R' && i > j) return false;
+      i++;
+      j++;
+    }
+    return true;
+  }
+};
