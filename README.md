@@ -53,6 +53,7 @@
 |152|[ Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)|[C++](./solutions/152.%20Maximum%20Product%20SubarrayC%2B%2B)|4 ms|
 |166|[ Fraction to Recurring Decimal](https://leetcode.com/problems/fraction-to-recurring-decimal/)|[C++](./solutions/166.%20Fraction%20to%20Recurring%20DecimalC%2B%2B)|4 ms|
 |179|[ Largest Number](https://leetcode.com/problems/largest-number/)|[C++](./solutions/179.%20Largest%20NumberC%2B%2B)|8 ms|
+|187|[ Repeated DNA Sequences](https://leetcode.com/problems/repeated-dna-sequences/)|[C++](./solutions/187.%20Repeated%20DNA%20SequencesC%2B%2B)|100 ms|
 |188|[ Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)|[C++](./solutions/188.%20Best%20Time%20to%20Buy%20and%20Sell%20Stock%20IVC%2B%2B)|892 ms|
 |212|[ Word Search II](https://leetcode.com/problems/word-search-ii/)|[C++](./solutions/212.%20Word%20Search%20IIC%2B%2B)|68 ms|
 |214|[ Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/)|[C++](./solutions/214.%20Shortest%20PalindromeC%2B%2B)|252 ms|
