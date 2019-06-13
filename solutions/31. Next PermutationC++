@@ -1,0 +1,28 @@
+class Solution {
+public:
+  
+    void nextPermutation(vector<int>& nums) {
+      const int len = nums.size();
+      int p = -1;
+      for (int i = 1; i < len; i++) {
+        if (nums[i - 1] < nums[i]) {
+          p = i - 1;
+        }
+      }
+      if (p == -1) {
+        std::reverse(nums.begin(), nums.end());
+        return;
+      }
+      
+      int q = p + 1;
+      for (int i = p + 2; i < len; i++) {
+        if (nums[p] < nums[i]) {
+          q = i;
+        }
+      }
+      
+      swap(nums[p], nums[q]);
+      reverse(nums.begin() + p + 1, nums.end());
+      return;
+    }
+};
