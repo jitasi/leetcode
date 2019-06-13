@@ -1,0 +1,16 @@
+// Runtime: 64 ms, faster than 85.41% of C++ online submissions for Global and Local Inversions.
+// Memory Usage: 11.7 MB, less than 62.59% of C++ online submissions for Global and Local Inversions.
+
+class Solution {
+public:
+  bool isIdealPermutation(vector<int>& A) {
+    if (A.size() < 3) return true;
+    
+    int m = INT_MIN;
+    for (int i = 0; i < A.size() - 2; i++) {
+      m = max(m, A[i]);
+      if (m > A[i + 2]) return false;
+    }
+    return true;
+  }
+};
