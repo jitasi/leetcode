@@ -78,6 +78,7 @@
 |264|[ Ugly Number II](https://leetcode.com/problems/ugly-number-ii/)|[C++](./solutions/264.%20Ugly%20Number%20IIC%2B%2B)|136 ms|
 |274|[ H-Index](https://leetcode.com/problems/h-index/)|[C++](./solutions/274.%20H-IndexC%2B%2B)|0 ms|
 |275|[ H-Index II](https://leetcode.com/problems/h-index-ii/)|[C++](./solutions/275.%20H-Index%20IIC%2B%2B)|24 ms|
+|279|[ Perfect Squares](https://leetcode.com/problems/perfect-squares/)|[C++](./solutions/279.%20Perfect%20SquaresC%2B%2B)|92 ms|
 |295|[ Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)|[C++](./solutions/295.%20Find%20Median%20from%20Data%20StreamC%2B%2B)|156 ms|
 |297|[ Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)|[C++](./solutions/297.%20Serialize%20and%20Deserialize%20Binary%20TreeC%2B%2B)|48 ms|
 |301|[ Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/)|[C++](./solutions/301.%20Remove%20Invalid%20ParenthesesC%2B%2B)|64 ms|
