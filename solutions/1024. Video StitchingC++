@@ -1,0 +1,33 @@
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Video Stitching.
+// Memory Usage: 9.3 MB, less than 17.79% of C++ online submissions for Video Stitching.
+
+class Solution {
+public:
+  int videoStitching(vector<vector<int>>& clips, int T) {
+    int dp[T+1];
+    for (int i = 0; i <= T; i++) dp[i] = -1;
+    
+    sort(clips.begin(), clips.end());
+    for (const auto& clip : clips) {
+      const int prev = clip[0];
+      if (prev > T) break;
+      
+      const int prev_num = (prev == 0)? 0 : prev_num = dp[prev];
+      if (prev_num == -1) return -1;
+      
+      int cur_num = prev_num + 1;
+      for (int i = clip[0]; i <= clip[1] && i <= T; i++) {
+        if (dp[i] == -1 || dp[i] > cur_num) dp[i] = cur_num;
+      }
+    }
+    return dp[T];
+  }
+};
+
+// [0,2],[4,6],[8,10],[1,9],[1,5],[5,9]
+// sort [0,2],[1,9],[1,5], [4,6],[5,9],[8,10]
+// dedup [0,2],[1,9],[4,6],[5,9],[8,10]
+// .     0   1 . 2 . 3 . 4  5  6  7 . 8 . 9 . 10
+//       1   1   1
+//                   2 . 2 .2  2 .2 . 2 . 2
+                                           
