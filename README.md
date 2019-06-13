@@ -160,6 +160,7 @@
 |843|[ Guess the Word](https://leetcode.com/problems/guess-the-word/)|[C++](./solutions/843.%20Guess%20the%20WordC%2B%2B)|0 ms|
 |845|[ Longest Mountain in Array](https://leetcode.com/problems/longest-mountain-in-array/)|[C++](./solutions/845.%20Longest%20Mountain%20in%20ArrayC%2B%2B)|20 ms|
 |855|[ Exam Room](https://leetcode.com/problems/exam-room/)|[C++](./solutions/855.%20Exam%20RoomC%2B%2B)|32 ms|
+|858|[ Mirror Reflection](https://leetcode.com/problems/mirror-reflection/)|[C++](./solutions/858.%20Mirror%20ReflectionC%2B%2B)|4 ms|
 |862|[ Shortest Subarray with Sum at Least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/)|[C++](./solutions/862.%20Shortest%20Subarray%20with%20Sum%20at%20Least%20KC%2B%2B)|220 ms|
 |881|[ Boats to Save People](https://leetcode.com/problems/boats-to-save-people/)|[C++](./solutions/881.%20Boats%20to%20Save%20PeopleC%2B%2B)|116 ms|
 |898|[ Bitwise ORs of Subarrays](https://leetcode.com/problems/bitwise-ors-of-subarrays/)|[C++](./solutions/898.%20Bitwise%20ORs%20of%20SubarraysC%2B%2B)|1764 ms|
