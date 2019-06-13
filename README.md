@@ -106,6 +106,7 @@
 |368|[ Largest Divisible Subset](https://leetcode.com/problems/largest-divisible-subset/)|[C++](./solutions/368.%20Largest%20Divisible%20SubsetC%2B%2B)|24 ms|
 |380|[ Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/)|[C++](./solutions/380.%20Insert%20Delete%20GetRandom%20O(1)C%2B%2B)|60 ms|
 |381|[ Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/)|[C++](./solutions/381.%20Insert%20Delete%20GetRandom%20O(1)%20-%20Duplicates%20allowedC%2B%2B)|64 ms|
+|394|[ Decode String](https://leetcode.com/problems/decode-string/)|[C++](./solutions/394.%20Decode%20StringC%2B%2B)|4 ms|
 |395|[ Longest Substring with At Least K Repeating Characters](https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/)|[C++](./solutions/395.%20Longest%20Substring%20with%20At%20Least%20K%20Repeating%20CharactersC%2B%2B)|32 ms|
 |396|[ Rotate Function](https://leetcode.com/problems/rotate-function/)|[C++](./solutions/396.%20Rotate%20FunctionC%2B%2B)|12 ms|
 |397|[ Integer Replacement](https://leetcode.com/problems/integer-replacement/)|[C++](./solutions/397.%20Integer%20ReplacementC%2B%2B)|0 ms|
