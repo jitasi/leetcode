@@ -1,0 +1,21 @@
+// Runtime: 20 ms, faster than 78.11% of C++ online submissions for Contains Duplicate III.
+// Memory Usage: 11 MB, less than 12.58% of C++ online submissions for Contains Duplicate III.
+
+
+class Solution {
+public:
+  bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
+    map<long, int> m;  // val -> idx
+    for (int i = 0; i < nums.size(); i++) {
+      if (i > k) m.erase(nums[i - k - 1]);
+
+      auto it = m.lower_bound(long(nums[i]) - t); 
+      if (it != m.end() && it->first - t <= nums[i]) {
+        return true;
+      }
+      
+      m[nums[i]] = i;
+    }
+    return false;
+  }
+};
