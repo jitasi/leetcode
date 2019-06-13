@@ -1,0 +1,31 @@
+class Solution {
+public:
+    void swap(vector<int>& nums, int i, int j) {
+      int t = nums[i];
+      nums[i] = nums[j];
+      nums[j] = t;
+    }
+  
+    int _findKthLargest(vector<int>& nums, int k, int p, int q) {
+      if (p == q) return nums[p];
+      
+      int pivot = nums[q];
+      int cur = p - 1;
+      for (int i = p; i <= q - 1; i++) {
+        if (nums[i] >= pivot) {
+          cur++;
+          swap(nums, cur, i);
+        }
+      }
+      cur++;
+      swap(nums, cur, q);
+
+      if ((cur + 1) == k) return nums[cur];
+      else if ((cur + 1) < k) return _findKthLargest(nums, k, cur + 1, q);
+      else return _findKthLargest(nums, k, p, cur - 1);
+    }
+        
+    int findKthLargest(vector<int>& nums, int k) {
+      return _findKthLargest(nums, k, 0, nums.size() - 1);
+    }
+};
