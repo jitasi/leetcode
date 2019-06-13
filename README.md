@@ -123,6 +123,7 @@
 |689|[ Maximum Sum of 3 Non-Overlapping Subarrays](https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/)|[C++](./solutions/689.%20Maximum%20Sum%20of%203%20Non-Overlapping%20SubarraysC%2B%2B)|32 ms|
 |731|[ My Calendar II](https://leetcode.com/problems/my-calendar-ii/)|[C++](./solutions/731.%20My%20Calendar%20IIC%2B%2B)|132 ms|
 |753|[ Cracking the Safe](https://leetcode.com/problems/cracking-the-safe/)|[C++](./solutions/753.%20Cracking%20the%20SafeC%2B%2B)|16 ms|
+|764|[ Largest Plus Sign](https://leetcode.com/problems/largest-plus-sign/)|[C++](./solutions/764.%20Largest%20Plus%20SignC%2B%2B)|460 ms|
 |777|[ Swap Adjacent in LR String](https://leetcode.com/problems/swap-adjacent-in-lr-string/)|[C++](./solutions/777.%20Swap%20Adjacent%20in%20LR%20StringC%2B%2B)|8 ms|
 |815|[ Bus Routes](https://leetcode.com/problems/bus-routes/)|[C++](./solutions/815.%20Bus%20RoutesC%2B%2B)|956 ms|
 |838|[ Push Dominoes](https://leetcode.com/problems/push-dominoes/)|[C++](./solutions/838.%20Push%20DominoesC%2B%2B)|24 ms|
