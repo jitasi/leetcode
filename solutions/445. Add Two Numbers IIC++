@@ -1,0 +1,68 @@
+// Runtime: 24 ms, faster than 95.98% of C++ online submissions for Add Two Numbers II.
+// Memory Usage: 9.7 MB, less than 99.68% of C++ online submissions for Add Two Numbers II.
+
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+  ListNode* ReverseList(ListNode* head, int* cnt) {
+    if (head == nullptr) return nullptr;
+    
+    int count = 1;
+    ListNode* prev = head;
+    ListNode* cur = prev->next;
+    ListNode* t;
+    prev->next = nullptr;
+    while (cur != nullptr) {
+      count++;
+      t = cur->next;
+      cur->next = prev;
+      prev = cur;
+      cur = t;
+    }
+    if (cnt != nullptr) *cnt = count;
+    return prev;
+  }
+  
+  ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+    int l1_len;
+    int l2_len;
+    ListNode* l1r_head = ReverseList(l1, &l1_len);
+    ListNode* l2r_head = ReverseList(l2, &l2_len);
+    
+    ListNode* l1_cur = l1_len >= l2_len? l1r_head : l2r_head;
+    ListNode* l2_cur = l1_len < l2_len? l1r_head : l2r_head;
+    ListNode* l1_prev;
+    int c = 0;
+    while(l1_cur != nullptr && l2_cur != nullptr) {
+      l1_cur->val += c + l2_cur->val;
+      c = l1_cur->val / 10;
+      l1_cur->val %= 10;
+      
+      l1_prev = l1_cur;
+      l1_cur = l1_cur->next;
+      l2_cur = l2_cur->next;
+    }
+    while(l1_cur != nullptr) {
+      l1_cur->val += c;
+      c = l1_cur->val / 10;
+      l1_cur->val %= 10;
+
+      l1_prev = l1_cur;
+      l1_cur = l1_cur->next;
+    }
+    if (c > 0) {
+      l1_prev->next = new ListNode(c);
+      l1_prev->next->next = nullptr;
+    }
+    
+    return ReverseList(l1_len >= l2_len? l1r_head : l2r_head, nullptr);
+  }
+};
