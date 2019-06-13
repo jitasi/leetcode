@@ -45,6 +45,7 @@
 |128|[ Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)|[C++](./solutions/128.%20Longest%20Consecutive%20SequenceC%2B%2B)|12 ms|
 |130|[ Surrounded Regions](https://leetcode.com/problems/surrounded-regions/)|[C++](./solutions/130.%20Surrounded%20RegionsC%2B%2B)|32 ms|
 |138|[ Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)|[C++](./solutions/138.%20Copy%20List%20with%20Random%20PointerC%2B%2B)|28 ms|
+|139|[ Word Break](https://leetcode.com/problems/word-break/)|[C++](./solutions/139.%20Word%20BreakC%2B%2B)|4 ms|
 |140|[ Word Break II](https://leetcode.com/problems/word-break-ii/)|[C++](./solutions/140.%20Word%20Break%20IIC%2B%2B)|24 ms|
 |142|[ Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)|[C++](./solutions/142.%20Linked%20List%20Cycle%20IIC%2B%2B)|20 ms|
 |145|[ Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)|[C++](./solutions/145.%20Binary%20Tree%20Postorder%20TraversalC%2B%2B)|4 ms|
