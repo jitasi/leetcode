@@ -1,0 +1,37 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    // pair<bool, int> p
+    // p.first = true  ==> p.second = the answer.
+    // p.first = false ==> p.second = # of numbers in the tree.
+    std::pair<bool, int> work(TreeNode* root, int k) {
+      if (root == nullptr) return {false, 0};
+      
+      // search in left child first.
+      const auto left_ret = work(root->left, k);
+      if (left_ret.first) return left_ret;
+      
+      // check if it the root
+      if (left_ret.second == k - 1) return {true, root->val};
+      
+      // search in the right child.
+      const auto right_ret = work(root->right, k - left_ret.second - 1);
+      if (right_ret.first) return right_ret;
+      
+      // not found
+      return {false, left_ret.second + 1 + right_ret.second};
+    }
+  
+    int kthSmallest(TreeNode* root, int k) {
+      auto ret = work(root, k);
+      return ret.second;
+    }
+};
