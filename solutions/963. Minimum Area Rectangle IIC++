@@ -1,0 +1,37 @@
+// Runtime: 72 ms, faster than 53.27% of C++ online submissions for Minimum Area Rectangle II.
+// Memory Usage: 25.4 MB, less than 50.60% of C++ online submissions for Minimum Area Rectangle II.
+
+class Solution {
+public:
+  double minAreaFreeRect(vector<vector<int>>& points) {
+    map<vector<double>, vector<vector<int>>> m;
+    for (int i = 0; i < points.size() - 1; i++) {
+      for (int j = i + 1; j < points.size(); j++) {
+        const double x = (points[i][0] + points[j][0]) / 2.0;
+        const double y = (points[i][1] + points[j][1]) / 2.0;
+        const double d = (points[i][0] - points[j][0]) * (points[i][0] - points[j][0]) 
+          + (points[i][1] - points[j][1]) * (points[i][1] - points[j][1]);
+        m[{d, x, y}].push_back({i, j});
+      }
+    }
+
+    double ans = INT_MAX;
+    for (const auto& kv: m) {
+      for (int i = 0; i < kv.second.size() - 1; i++) {
+        const int p0 = kv.second[i][0];
+        const int p2 = kv.second[i][1];
+        for (int j = i + 1; j < kv.second.size(); j++) {
+          const int p1 = kv.second[j][0];
+          const int p3 = kv.second[j][1];         
+          
+          const double d1 = sqrt((points[p0][0] - points[p1][0]) * (points[p0][0] - points[p1][0])
+            +  (points[p0][1] - points[p1][1]) * (points[p0][1] - points[p1][1]));
+          const double d2 = sqrt((points[p0][0] - points[p3][0]) * (points[p0][0] - points[p3][0])
+            +  (points[p0][1] - points[p3][1]) * (points[p0][1] - points[p3][1]));
+          ans = min(ans, d1 * d2);
+        }
+      }
+    }
+    return (ans == INT_MAX)? 0 : ans;
+  }
+};
