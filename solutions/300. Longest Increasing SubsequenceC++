@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+      const int len = nums.size();
+      if (len <= 1) return len;
+      
+      vector<int> dp(len);
+      dp[0] = 1;
+      for (int i = 1; i < len; i++) {
+        int m = 1;
+        for (int j = 0; j < i; j++) {
+          if (nums[j] < nums[i] && dp[j] + 1 > m) {
+            m = dp[j] + 1;
+          }
+        }
+        dp[i] = m;
+      }
+      
+      auto max_it = std::max_element(dp.begin(), dp.end());
+      return *max_it;
+    }
+};
