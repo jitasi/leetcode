@@ -1,0 +1,70 @@
+// Runtime: 52 ms, faster than 97.71% of C++ online submissions for Binary Search Tree Iterator.
+// Memory Usage: 24.3 MB, less than 76.88% of C++ online submissions for Binary Search Tree Iterator.
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class BSTIterator {
+public:
+    TreeNode* current;
+    TreeNode* ret;
+  
+    BSTIterator(TreeNode* root) {
+      current = root;
+      ret = nullptr;
+      hasNext();
+    }
+    
+    /** @return the next smallest number */
+    int next() {
+      int ans = ret->val;
+      ret = nullptr;
+      hasNext();
+      return ans;
+    }
+    
+    /** @return whether we have a next smallest number */
+    bool hasNext() {
+      if (ret != nullptr) return true;
+      
+      while (current != nullptr) {
+        // visit node.
+        if (current->left == nullptr) {
+          ret = current;
+          current = current->right;
+          break;
+        }
+      
+        // visit left tree.
+        // -- find right most of the left tree.
+        TreeNode* right_most = current->left;
+        while (right_most->right != nullptr && right_most->right != current) {
+          right_most = right_most->right;
+        }
+        if (right_most->right != current) {
+          right_most->right = current;
+          current = current->left;
+        } else {
+          right_most->right = nullptr;
+          ret = current;
+          current = current->right;
+          break;
+        }        
+      }      
+            
+      return ret != nullptr;
+    }
+};
+
+/**
+ * Your BSTIterator object will be instantiated and called as such:
+ * BSTIterator* obj = new BSTIterator(root);
+ * int param_1 = obj->next();
+ * bool param_2 = obj->hasNext();
+ */
