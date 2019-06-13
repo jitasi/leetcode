@@ -1,0 +1,43 @@
+// Runtime: 124 ms, faster than 39.01% of C++ online submissions for 3Sum.
+// Memory Usage: 14.7 MB, less than 83.06% of C++ online submissions for 3Sum.
+
+
+class Solution {
+public:
+  vector<vector<int>> threeSum(vector<int>& nums) {
+    const int len = nums.size();
+    if (len < 3) return {};
+    
+    std::sort(nums.begin(), nums.end());
+    
+    vector<vector<int>> ans;
+    for (int i = 0; i < len - 2; i++) {
+      if (i > 0 && nums[i] == nums[i - 1]) continue;
+    
+      int p = i + 1;
+      int q = len - 1;
+      while (p < q) {
+        
+        if (p > (i + 1) && nums[p] == nums[p - 1]) {
+          p++;
+          continue;
+        }
+        if (q < (len - 1) && nums[q] == nums[q + 1]) {
+          q--;
+          continue;
+        }
+    
+        if (nums[p] + nums[q] == -nums[i]) {
+          ans.push_back({nums[i], nums[p], nums[q]});
+          p++;
+          q--;
+        } else if (nums[p] + nums[q] > -nums[i]) {
+          q--;
+        } else {
+          p++;
+        }
+      }
+    }
+    return ans;
+  }
+};
