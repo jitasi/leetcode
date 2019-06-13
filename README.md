@@ -16,6 +16,7 @@
 |33|[ Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)|[C++](./solutions/33.%20Search%20in%20Rotated%20Sorted%20ArrayC%2B%2B)|4 ms|
 |41|[ First Missing Positive](https://leetcode.com/problems/first-missing-positive/)|[C++](./solutions/41.%20First%20Missing%20PositiveC%2B%2B)|4 ms|
 |42|[ Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)|[C++](./solutions/42.%20Trapping%20Rain%20WaterC%2B%2B)|8 ms|
+|43|[ Multiply Strings](https://leetcode.com/problems/multiply-strings/)|[C++](./solutions/43.%20Multiply%20StringsC%2B%2B)|4 ms|
 |44|[ Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)|[C++](./solutions/44.%20Wildcard%20MatchingC%2B%2B)|36 ms|
 |45|[ Jump Game II](https://leetcode.com/problems/jump-game-ii/)|[C++](./solutions/45.%20Jump%20Game%20IIC%2B%2B)|12 ms|
 |52|[ N-Queens II](https://leetcode.com/problems/n-queens-ii/)|[C++](./solutions/52.%20N-Queens%20IIC%2B%2B)|4 ms|
