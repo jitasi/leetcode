@@ -1,0 +1,22 @@
+class Solution {
+public:
+    void work(const string& prefix, vector<string>* ret, int existing, int n) {
+      if (n == 0 && existing == 0) {
+        ret->push_back(prefix);
+        return;
+      }
+      
+      if (existing > 0) {
+        work(prefix + ')', ret, existing - 1, n);
+      }
+      if (n > 0) {
+        work(prefix + '(', ret, existing + 1, n - 1);
+      }   
+    }
+  
+    vector<string> generateParenthesis(int n) {
+      vector<string> ret;
+      work("", &ret, 0, n);
+      return ret;
+    }
+};
