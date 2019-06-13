@@ -1,0 +1,38 @@
+// Runtime: 212 ms, faster than 92.34% of C++ online submissions for Next Greater Node In Linked List.
+// Memory Usage: 25.5 MB, less than 61.04% of C++ online submissions for Next Greater Node In Linked List.
+
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+  vector<int> nextLargerNodes(ListNode* head) {
+    vector<int> ans;
+    if (head == nullptr) return ans;
+    
+    stack<int> s;
+    while (head != nullptr) {
+      ans.push_back(head->val);
+      while (!s.empty() && ans[s.top()] < head->val) {
+        ans[s.top()] = head->val;
+        s.pop();
+      }
+      s.push(ans.size() - 1);
+      
+      head = head->next;
+    }
+    
+    while (!s.empty()) {
+      ans[s.top()] = 0;    
+      s.pop();
+    }
+
+    return ans;
+  }
+};
