@@ -1,0 +1,31 @@
+// Runtime: 36 ms, faster than 90.69% of C++ online submissions for Grumpy Bookstore Owner.
+// Memory Usage: 11.5 MB, less than 100.00% of C++ online submissions for Grumpy Bookstore Owner.
+
+
+class Solution {
+public:
+  int maxSatisfied(vector<int>& customers, vector<int>& grumpy, int X) {
+    int num_customers = 0;
+    for (int i = 0; i < grumpy.size(); i++) {      
+      if (grumpy[i] == 0) {
+        num_customers += customers[i];
+        customers[i] = 0;
+      }
+    }
+//    cout << num_customers << endl;
+     
+    // find the subarray in X length with max sum
+    int max_sum = 0;
+    int local_sum = 0;
+    for (int i = 0; i < customers.size(); i++) {
+      local_sum += customers[i];
+      if (i >= X) {
+        local_sum -= customers[i - X];   
+      } 
+      max_sum = max(max_sum, local_sum);
+//      cout << i << ", " << local_sum << "," << max_sum << endl;
+    }
+    
+    return num_customers + max_sum;
+  }
+};
