@@ -121,6 +121,7 @@
 |416|[ Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)|[C++](./solutions/416.%20Partition%20Equal%20Subset%20SumC%2B%2B)|52 ms|
 |424|[ Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)|[C++](./solutions/424.%20Longest%20Repeating%20Character%20ReplacementC%2B%2B)|8 ms|
 |442|[ Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)|[C++](./solutions/442.%20Find%20All%20Duplicates%20in%20an%20ArrayC%2B%2B)|124 ms|
+|445|[ Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/)|[C++](./solutions/445.%20Add%20Two%20Numbers%20IIC%2B%2B)|24 ms|
 |456|[ 132 Pattern](https://leetcode.com/problems/132-pattern/)|[C++](./solutions/456.%20132%20PatternC%2B%2B)|24 ms|
 |474|[ Ones and Zeroes](https://leetcode.com/problems/ones-and-zeroes/)|[C++](./solutions/474.%20Ones%20and%20ZeroesC%2B%2B)|136 ms|
 |494|[ Target Sum](https://leetcode.com/problems/target-sum/)|[C++](./solutions/494.%20Target%20SumC%2B%2B)|276 ms|
