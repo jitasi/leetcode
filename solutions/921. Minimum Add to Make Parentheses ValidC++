@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int minAddToMakeValid(string S) {
+      int fix = 0;
+      int cnt = 0;
+      for (const char ch: S) {
+        cnt += (ch == '(')? 1 : -1;
+        if (cnt < 0) {
+          cnt = 0;
+          fix++;
+        }
+      }
+      return fix + cnt;
+    }
+};
