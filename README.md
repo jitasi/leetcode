@@ -129,6 +129,7 @@
 |898|[ Bitwise ORs of Subarrays](https://leetcode.com/problems/bitwise-ors-of-subarrays/)|[C++](./solutions/898.%20Bitwise%20ORs%20of%20SubarraysC%2B%2B)|1764 ms|
 |910|[ Smallest Range II](https://leetcode.com/problems/smallest-range-ii/)|[C++](./solutions/910.%20Smallest%20Range%20IIC%2B%2B)|32 ms|
 |935|[ Knight Dialer](https://leetcode.com/problems/knight-dialer/)|[C++](./solutions/935.%20Knight%20DialerC%2B%2B)|8 ms|
+|963|[ Minimum Area Rectangle II](https://leetcode.com/problems/minimum-area-rectangle-ii/)|[C++](./solutions/963.%20Minimum%20Area%20Rectangle%20IIC%2B%2B)|72 ms|
 |991|[ Broken Calculator](https://leetcode.com/problems/broken-calculator/)|[C++](./solutions/991.%20Broken%20CalculatorC%2B%2B)|0 ms|
 |1015|[ Smallest Integer Divisible by K](https://leetcode.com/problems/smallest-integer-divisible-by-k/)|[C++](./solutions/1015.%20Smallest%20Integer%20Divisible%20by%20KC%2B%2B)|0 ms|
 |1039|[ Minimum Score Triangulation of Polygon](https://leetcode.com/problems/minimum-score-triangulation-of-polygon/)|[C++](./solutions/1039.%20Minimum%20Score%20Triangulation%20of%20PolygonC%2B%2B)|4 ms|
