@@ -116,6 +116,7 @@
 |338|[ Counting Bits](https://leetcode.com/problems/counting-bits/)|[C++](./solutions/338.%20Counting%20BitsC%2B%2B)|52 ms|
 |341|[ Flatten Nested List Iterator](https://leetcode.com/problems/flatten-nested-list-iterator/)|[C++](./solutions/341.%20Flatten%20Nested%20List%20IteratorC%2B%2B)|20 ms|
 |343|[ Integer Break](https://leetcode.com/problems/integer-break/)|[C++](./solutions/343.%20Integer%20BreakC%2B%2B)|4 ms|
+|345|[ Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/)|[C++](./solutions/345.%20Reverse%20Vowels%20of%20a%20StringC%2B%2B)|11 ms|
 |365|[ Water and Jug Problem](https://leetcode.com/problems/water-and-jug-problem/)|[C++](./solutions/365.%20Water%20and%20Jug%20ProblemC%2B%2B)|0 ms|
 |368|[ Largest Divisible Subset](https://leetcode.com/problems/largest-divisible-subset/)|[C++](./solutions/368.%20Largest%20Divisible%20SubsetC%2B%2B)|24 ms|
 |378|[ Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)|[C++](./solutions/378.%20Kth%20Smallest%20Element%20in%20a%20Sorted%20MatrixC%2B%2B)|428 ms|
