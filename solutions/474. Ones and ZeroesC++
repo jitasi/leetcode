@@ -1,5 +1,5 @@
 // untime: 136 ms, faster than 39.34% of C++ online submissions for Ones and Zeroes.
-Memory Usage: 9.9 MB, less than 73.50% of C++ online submissions for Ones and Zeroes.
+// Memory Usage: 9.9 MB, less than 73.50% of C++ online submissions for Ones and Zeroes.
 
 class Solution {
 public:
