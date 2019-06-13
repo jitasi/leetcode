@@ -1,0 +1,33 @@
+// Runtime: 16 ms, faster than 91.91% of C++ online submissions for Find Largest Value in Each Tree Row.
+// Memory Usage: 21.2 MB, less than 61.34% of C++ online submissions for Find Largest Value in Each Tree Row.
+
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+  void helper(TreeNode* root, int level, vector<int>& ans) {
+    if (root == nullptr) return;
+    if (ans.size() <= level) {
+      ans.push_back(root->val);
+    } else {
+      ans[level] = std::max(ans[level], root->val);
+    }
+    helper(root->left, level + 1, ans);
+    helper(root->right, level + 1, ans);
+  }
+  
+  
+  vector<int> largestValues(TreeNode* root) {
+    vector<int> ans;
+    helper(root, 0, ans);
+    return ans;
+  }
+};
