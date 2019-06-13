@@ -1,0 +1,32 @@
+// Runtime: 24 ms, faster than 73.67% of C++ online submissions for Friend Circles.
+// Memory Usage: 11.1 MB, less than 65.86% of C++ online submissions for Friend Circles.
+
+class Solution {
+public:
+  int grp(int *p, int x) {
+    while (p[x] != -1) x = p[x];
+    return x;
+  }
+  
+  void u(int *p, int x, int y) {
+    const int gx = grp(p, x);
+    const int gy = grp(p, y);
+    if (gx != gy) p[gx] = gy;
+  }
+  
+  int findCircleNum(vector<vector<int>>& M) {
+    const int len = M.size();
+    if (len == 0) return 0;
+    int grps[len];
+    for (int i = 0; i < len; i++) grps[i] = -1;
+    for (int i = 0; i < len; i++) {
+      for (int j = 0; j < len; j++) {
+        if (M[i][j] == 1) u(grps, i, j);
+      }
+    }
+    int ans = 0;
+    for (int i = 0; i < len; i++)
+      if (grps[i] == -1) ans++;
+    return ans;
+  }
+};
