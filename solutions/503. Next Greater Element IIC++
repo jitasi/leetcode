@@ -1,0 +1,28 @@
+class Solution {
+public:
+  vector<int> nextGreaterElements(vector<int>& nums) {
+    stack<pair<int, int>> s;
+    vector<int> ret(nums.size());
+    vector<bool> b(nums.size(), false);
+    for (int i = nums.size() - 1; i >= 0; i--) {
+      while (!s.empty() && nums[i] >= s.top().first) s.pop();
+      if (s.empty()) {
+        ret[i] = -1;
+        b[i] = true;
+      } else {
+        ret[i] = s.top().first;
+      }
+      s.push({nums[i], i});
+    }
+    for (int i = nums.size() - 1; i >= 0; i--) {
+      if (!b[i]) continue;
+      while (!s.empty() && nums[i] >= s.top().first) s.pop();
+      if (s.empty()) {
+        break;
+      } else {
+        ret[i] = s.top().first;
+      }
+    }
+    return ret;
+  }
+};
