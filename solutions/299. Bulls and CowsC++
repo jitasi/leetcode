@@ -1,0 +1,28 @@
+// Runtime: 4 ms, faster than 98.94% of C++ online submissions for Bulls and Cows.
+// Memory Usage: 9 MB, less than 28.88% of C++ online submissions for Bulls and Cows.
+
+class Solution {
+public:
+  string getHint(string secret, string guess) {
+    int A = 0;
+    int B = 0;
+    int cnt_1[10];
+    int cnt_2[10];
+    for (int i = 0; i < 10; i++) {
+      cnt_1[i] = 0; 
+      cnt_2[i] = 0; 
+    }
+    
+    for (int i = 0; i < guess.size(); i++) {
+      A += (secret[i] == guess[i])? 1 : 0;
+      cnt_1[secret[i] - '0']++;
+      cnt_2[guess[i] - '0']++;
+    }
+    
+    for (int i = 0; i < 10; i++) {
+      B += min(cnt_1[i], cnt_2[i]);
+    }
+    B -= A;
+    return to_string(A) + "A" + to_string(B) + "B";
+  }
+};
