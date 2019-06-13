@@ -166,6 +166,7 @@
 |855|[ Exam Room](https://leetcode.com/problems/exam-room/)|[C++](./solutions/855.%20Exam%20RoomC%2B%2B)|32 ms|
 |858|[ Mirror Reflection](https://leetcode.com/problems/mirror-reflection/)|[C++](./solutions/858.%20Mirror%20ReflectionC%2B%2B)|4 ms|
 |862|[ Shortest Subarray with Sum at Least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/)|[C++](./solutions/862.%20Shortest%20Subarray%20with%20Sum%20at%20Least%20KC%2B%2B)|220 ms|
+|865|[ Smallest Subtree with all the Deepest Nodes](https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/)|[C++](./solutions/865.%20Smallest%20Subtree%20with%20all%20the%20Deepest%20NodesC%2B%2B)|8 ms|
 |869|[ Reordered Power of 2](https://leetcode.com/problems/reordered-power-of-2/)|[C++](./solutions/869.%20Reordered%20Power%20of%202C%2B%2B)|0 ms|
 |881|[ Boats to Save People](https://leetcode.com/problems/boats-to-save-people/)|[C++](./solutions/881.%20Boats%20to%20Save%20PeopleC%2B%2B)|116 ms|
 |898|[ Bitwise ORs of Subarrays](https://leetcode.com/problems/bitwise-ors-of-subarrays/)|[C++](./solutions/898.%20Bitwise%20ORs%20of%20SubarraysC%2B%2B)|1764 ms|
