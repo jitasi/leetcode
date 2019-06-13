@@ -1,0 +1,28 @@
+// Runtime: 3164 ms, faster than 23.26% of C++ online submissions for Longest Arithmetic Sequence.
+// Memory Usage: 384.6 MB, less than 8.45% of C++ online submissions for Longest Arithmetic Sequence.
+
+class Solution {
+public:
+  int longestArithSeqLength(vector<int>& A) {
+    if (A.size() == 2) return 2;
+    
+    const int len = A.size();
+    // dp[i][j]: lenght of LAS ending at A[i] with diff j.
+    vector<map<int, int>> dp(len);
+    
+    int ans = 0;
+    for (int j = 1; j < len; j++) {
+      for (int i = 0; i < j; i++) {
+        int diff = A[i] - A[j];
+        if (dp[i][diff] == 0) {
+          dp[j][diff] = 2;
+        } else {
+          dp[j][diff] = dp[i][diff] + 1;
+        }
+        ans = max(ans, dp[j][diff]);
+      }
+    }
+    
+    return ans;
+  }
+};
