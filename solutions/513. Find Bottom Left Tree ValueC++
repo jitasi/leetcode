@@ -1,0 +1,56 @@
+// Runtime: 12 ms, faster than 97.85% of C++ online submissions for Find Bottom Left Tree Value.
+// Memory Usage: 21.4 MB, less than 22.00% of C++ online submissions for Find Bottom Left Tree Value.
+
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+  void findBottomLeftValue(TreeNode* root, int& val, int& level) {
+    if (root->left == nullptr && root->right == nullptr) {
+      val = root->val;
+      level = 1;
+      return;
+    }
+    
+    int val_l, level_l, val_r, level_r;
+    if (root->left != nullptr) {
+      findBottomLeftValue(root->left, val_l, level_l);
+      if (root->right == nullptr) {
+        val = val_l;
+        level = level_l + 1;
+        return;        
+      }
+    }
+    
+    if (root->right != nullptr) {
+      findBottomLeftValue(root->right, val_r, level_r);
+      if (root->left == nullptr) {
+        val = val_r;
+        level = level_r + 1;  
+        return;
+      }
+    }
+    
+    if (level_r > level_l) {
+      val = val_r;
+      level = level_r + 1;
+    } else {
+      val = val_l;
+      level = level_l + 1;
+    }
+  }
+  
+  int findBottomLeftValue(TreeNode* root) {
+    int val, level;
+    findBottomLeftValue(root, val, level);
+    return val;
+  }
+};
