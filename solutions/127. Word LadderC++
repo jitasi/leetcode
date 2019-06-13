@@ -1,0 +1,51 @@
+class Solution {
+public:
+    bool isConnected(const string& a, const string& b) {
+      int cnt = 0;
+      for (int i = 0; i < a.size() && cnt < 2; i++) {
+        if (a[i] != b[i]) cnt++;
+      }
+      return cnt == 1;
+    }
+  
+    int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
+      vector<set<int>> conns(wordList.size());
+      
+      int target = -1;
+      for (int i = 0; i < wordList.size(); i++) {
+        if (endWord == wordList[i]) target = i;
+        for (int j = 0; j < i; j++) {
+          if (isConnected(wordList[i], wordList[j])) {
+            conns[i].insert(j);
+            conns[j].insert(i);
+          }
+        }
+      }
+      
+      if (target == -1) return 0;
+      
+      set<int> s;
+      for (int i = 0; i < wordList.size(); i++) {
+        if (isConnected(wordList[i], beginWord)) {
+          s.insert(i);
+        }
+      }
+      if (s.find(target) != s.end()) return 2;
+      
+      for (int i = 3; i <= wordList.size(); i++) {
+        set<int> tmp;
+        for (int idx : s) {
+          for (int conn : conns[idx]) {
+            if (conn == target) {
+              return i;
+            }
+            tmp.insert(conn);
+          }
+        }
+        s.swap(tmp);
+        if (s.find(target) != s.end()) return 2;     
+      }
+      
+      return 0;
+    }
+};
