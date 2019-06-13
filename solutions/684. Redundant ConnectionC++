@@ -1,0 +1,32 @@
+// Runtime: 4 ms, faster than 99.91% of C++ online submissions for Redundant Connection.
+// Memory Usage: 10 MB, less than 82.89% of C++ online submissions for Redundant Connection.
+
+
+class Solution {
+public:
+  int grp(int *p, int x) {
+    while (p[x] != -1) x = p[x];
+    return x;
+  }
+  
+  bool u(int *p, int x, int y) {
+    const int gx = grp(p, x);
+    const int gy = grp(p, y);
+    if (gx != gy) p[gx] = gy;
+    else return true;
+    return false;
+  }
+  
+  vector<int> findRedundantConnection(vector<vector<int>>& edges) {
+    const int len = edges.size();
+    if (len == 0) return {};
+    int grps[len];
+    for (int i = 0; i < len; i++) grps[i] = -1;
+    for (const auto& e : edges) {
+      if (u(grps, e[0] - 1, e[1] - 1)) {
+        return e;
+      }
+    }
+    return {};
+  }
+};
