@@ -1,0 +1,17 @@
+// Runtime: 4 ms, faster than 97.64% of C++ online submissions for Rabbits in Forest.
+// Memory Usage: 9.2 MB, less than 36.71% of C++ online submissions for Rabbits in Forest.
+
+class Solution {
+public:
+  int numRabbits(vector<int>& answers) {
+    unordered_map<int, int> m;
+    for (const int a: answers) m[a]++;
+    
+    int rabbits = 0;
+    for (const auto& kv: m) {
+      const int groups = (kv.second + kv.first) / (kv.first + 1);
+      rabbits += (kv.first + 1) * groups;
+    }
+    return rabbits;
+  }
+};
