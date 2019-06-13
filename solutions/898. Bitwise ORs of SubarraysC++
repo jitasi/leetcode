@@ -1,0 +1,21 @@
+// Runtime: 1764 ms, faster than 15.83% of C++ online submissions for Bitwise ORs of Subarrays.
+// Memory Usage: 303.2 MB, less than 25.61% of C++ online submissions for Bitwise ORs of Subarrays.
+
+class Solution {
+public:  
+  int subarrayBitwiseORs(vector<int>& A) {
+    set<int> ans;
+    set<int> cur;
+    set<int> nxt;
+    for (int a : A) {
+      nxt.clear();
+      nxt.insert(a);
+      for (int c: cur) {
+        nxt.insert(a | c);
+      }
+      ans.insert(nxt.begin(), nxt.end());
+      cur.swap(nxt);
+    }
+    return ans.size();
+  }
+};
