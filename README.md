@@ -150,6 +150,7 @@
 |445|[ Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/)|[C++](./solutions/445.%20Add%20Two%20Numbers%20IIC%2B%2B)|24 ms|
 |451|[ Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/)|[C++](./solutions/451.%20Sort%20Characters%20By%20FrequencyC%2B%2B)|40 ms|
 |456|[ 132 Pattern](https://leetcode.com/problems/132-pattern/)|[C++](./solutions/456.%20132%20PatternC%2B%2B)|24 ms|
+|460|[ LFU Cache](https://leetcode.com/problems/lfu-cache/)|[C++](./solutions/460.%20LFU%20CacheC%2B%2B)|128 ms|
 |461|[ Hamming Distance](https://leetcode.com/problems/hamming-distance/)|[C++](./solutions/461.%20Hamming%20DistanceC%2B%2B)|4 ms|
 |463|[ Island Perimeter](https://leetcode.com/problems/island-perimeter/)|[C++](./solutions/463.%20Island%20PerimeterC%2B%2B)|135 ms|
 |474|[ Ones and Zeroes](https://leetcode.com/problems/ones-and-zeroes/)|[C++](./solutions/474.%20Ones%20and%20ZeroesC%2B%2B)|136 ms|
