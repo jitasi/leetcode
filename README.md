@@ -21,6 +21,7 @@
 |26|[ Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)|[C](./solutions/26.%20Remove%20Duplicates%20from%20Sorted%20ArrayC)|12 ms|
 |27|[ Remove Element](https://leetcode.com/problems/remove-element/)|[C](./solutions/27.%20Remove%20ElementC)|5 ms|
 |29|[ Divide Two Integers](https://leetcode.com/problems/divide-two-integers/)|[C++](./solutions/29.%20Divide%20Two%20IntegersC%2B%2B)|4 ms|
+|30|[ Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)|[C++](./solutions/30.%20Substring%20with%20Concatenation%20of%20All%20WordsC%2B%2B)|204 ms|
 |31|[ Next Permutation](https://leetcode.com/problems/next-permutation/)|[C++](./solutions/31.%20Next%20PermutationC%2B%2B)|12 ms|
 |32|[ Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)|[C++](./solutions/32.%20Longest%20Valid%20ParenthesesC%2B%2B)|4 ms|
 |33|[ Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)|[C++](./solutions/33.%20Search%20in%20Rotated%20Sorted%20ArrayC%2B%2B)|4 ms|
