@@ -64,6 +64,7 @@
 |117|[ Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)|[C++](./solutions/117.%20Populating%20Next%20Right%20Pointers%20in%20Each%20Node%20IIC%2B%2B)|392 ms|
 |123|[ Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/)|[C++](./solutions/123.%20Best%20Time%20to%20Buy%20and%20Sell%20Stock%20IIIC%2B%2B)|4 ms|
 |124|[ Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)|[C++](./solutions/124.%20Binary%20Tree%20Maximum%20Path%20SumC%2B%2B)|32 ms|
+|126|[ Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)|[C++](./solutions/126.%20Word%20Ladder%20IIC%2B%2B)|588 ms|
 |127|[ Word Ladder](https://leetcode.com/problems/word-ladder/)|[C++](./solutions/127.%20Word%20LadderC%2B%2B)|468 ms|
 |128|[ Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)|[C++](./solutions/128.%20Longest%20Consecutive%20SequenceC%2B%2B)|12 ms|
 |130|[ Surrounded Regions](https://leetcode.com/problems/surrounded-regions/)|[C++](./solutions/130.%20Surrounded%20RegionsC%2B%2B)|32 ms|
