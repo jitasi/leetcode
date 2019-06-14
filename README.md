@@ -183,6 +183,7 @@
 |769|[ Max Chunks To Make Sorted](https://leetcode.com/problems/max-chunks-to-make-sorted/)|[C++](./solutions/769.%20Max%20Chunks%20To%20Make%20SortedC%2B%2B)|0 ms|
 |777|[ Swap Adjacent in LR String](https://leetcode.com/problems/swap-adjacent-in-lr-string/)|[C++](./solutions/777.%20Swap%20Adjacent%20in%20LR%20StringC%2B%2B)|8 ms|
 |815|[ Bus Routes](https://leetcode.com/problems/bus-routes/)|[C++](./solutions/815.%20Bus%20RoutesC%2B%2B)|956 ms|
+|827|[ Making A Large Island](https://leetcode.com/problems/making-a-large-island/)|[C++](./solutions/827.%20Making%20A%20Large%20IslandC%2B%2B)|16 ms|
 |838|[ Push Dominoes](https://leetcode.com/problems/push-dominoes/)|[C++](./solutions/838.%20Push%20DominoesC%2B%2B)|24 ms|
 |843|[ Guess the Word](https://leetcode.com/problems/guess-the-word/)|[C++](./solutions/843.%20Guess%20the%20WordC%2B%2B)|0 ms|
 |845|[ Longest Mountain in Array](https://leetcode.com/problems/longest-mountain-in-array/)|[C++](./solutions/845.%20Longest%20Mountain%20in%20ArrayC%2B%2B)|20 ms|
