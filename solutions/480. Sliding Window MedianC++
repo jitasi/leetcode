@@ -1,3 +1,5 @@
+// Runtime: 48 ms, faster than 100.00% of C++ online submissions for Sliding Window Median.
+// Memory Usage: 15.5 MB, less than 51.21% of C++ online submissions for Sliding Window Median.
 
 class Solution {
 public:
@@ -14,6 +16,10 @@ public:
       ans.push_back((*mid + *prev(mid, 1 - k % 2)) / 2);
       if (i == nums.size()) return ans;
       s.insert(nums[i]);
+      
+      // 1 2 3 4 5
+      // .   m
+      // nums[i] = 
       if (nums[i] < *mid) --mid;
       if (nums[i - k] <= *mid) ++mid;
       s.erase(s.lower_bound(nums[i - k]));
