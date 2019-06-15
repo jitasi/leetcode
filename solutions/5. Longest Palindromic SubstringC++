@@ -1,6 +1,8 @@
 class Solution {
 public:
   
+// Runtime: 8 ms, faster than 92.70% of C++ online submissions for Longest Palindromic Substring.
+// Memory Usage: 8.7 MB, less than 89.61% of C++ online submissions for Longest Palindromic Substring.
   string longestPalindrome(string s) {
     const int len = s.length();
     if (len == 0) return "";
@@ -11,6 +13,7 @@ public:
     // 0123456 len = 7
     // check the palindromic centering at 1,2,3,4,5 with odd len
     for (int i = 1; i < len - 1; i++) {
+      if (i >= len - longest / 2) break;  // reduce exec time from 20ms to 8ms.
       int pl = 1;
       while (s[i - pl] == s[i + pl]) {
         pl++;
@@ -26,6 +29,7 @@ public:
     // 0123456 len = 7
     // check the palindromic centering at 0,1,2,3,4,5 with even len
     for (int i = 0; i < len - 1; i++) {
+      if (i >= len - longest / 2) break;  // reduce exec time from 20ms to 8ms.
       int pl = 1;
       while (s[i - pl + 1] == s[i + pl]) {
         pl++;
@@ -37,7 +41,6 @@ public:
         pos = i - pl + 1;
       }
     }
-//    cout << pos << ", " << longest << endl;
     return s.substr(pos, longest);
   }
 
