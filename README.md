@@ -131,6 +131,7 @@
 |342|[ Power of Four](https://leetcode.com/problems/power-of-four/)|[C++](./solutions/342.%20Power%20of%20FourC%2B%2B)|5 ms|
 |343|[ Integer Break](https://leetcode.com/problems/integer-break/)|[C++](./solutions/343.%20Integer%20BreakC%2B%2B)|4 ms|
 |345|[ Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/)|[C++](./solutions/345.%20Reverse%20Vowels%20of%20a%20StringC%2B%2B)|11 ms|
+|347|[ Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)|[C++](./solutions/347.%20Top%20K%20Frequent%20ElementsC%2B%2B)|20 ms|
 |349|[ Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)|[C++](./solutions/349.%20Intersection%20of%20Two%20ArraysC%2B%2B)|7 ms|
 |365|[ Water and Jug Problem](https://leetcode.com/problems/water-and-jug-problem/)|[C++](./solutions/365.%20Water%20and%20Jug%20ProblemC%2B%2B)|0 ms|
 |368|[ Largest Divisible Subset](https://leetcode.com/problems/largest-divisible-subset/)|[C++](./solutions/368.%20Largest%20Divisible%20SubsetC%2B%2B)|24 ms|
