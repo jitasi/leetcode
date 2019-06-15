@@ -1,0 +1,31 @@
+
+
+class WordFilter {
+public:
+  unordered_map<string, int> m;
+  
+  WordFilter(vector<string>& words) {
+    for (int i = 0; i < words.size(); i++) {
+      const int len = words[i].size();
+      for (int j = 0; j <= len; j++) {
+        for (int k = 0; k <= len; k++) {
+          const string s = (j > 0? words[i].substr(0, j) : "") + "#"
+              + (k == len? "" : words[i].substr(k, len - k));
+          m[s] = i;
+        }
+      }
+    }      
+  }
+    
+  int f(string prefix, string suffix) {
+    const string s = prefix + "#" + suffix;
+    if (m.count(s) == 0) return -1;
+    return m[s];
+  }
+};
+
+/**
+ * Your WordFilter object will be instantiated and called as such:
+ * WordFilter* obj = new WordFilter(words);
+ * int param_1 = obj->f(prefix,suffix);
+ */
