@@ -1,0 +1,29 @@
+
+class Solution {
+public:
+  int numberOfArithmeticSlices(vector<int>& A) {
+    const int len = A.size();
+    
+    // dp[i][j], length of AS ending at A[i] with diff = j.
+    vector<unordered_map<int, int>> dp(len);  
+    
+    int ans = 0;
+    for (int i = 1; i < len; i++) {
+      for (int j = 0; j < i; j++) {
+        const long diff = long(A[i]) - long(A[j]);
+        if (diff > INT_MAX || diff < INT_MIN) continue;
+        dp[i][diff]++;
+        if (dp[j].count(diff)) {
+          ans += dp[j][diff];
+          dp[i][diff] += dp[j][diff];
+        }
+      }
+    }
+    
+    return ans;
+  }
+};
+
+// 4 4 6 6 8 8 10
+//     2 2 3 3 4
+//     2 2 4 4
