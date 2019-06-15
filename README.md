@@ -158,6 +158,7 @@
 |461|[ Hamming Distance](https://leetcode.com/problems/hamming-distance/)|[C++](./solutions/461.%20Hamming%20DistanceC%2B%2B)|4 ms|
 |463|[ Island Perimeter](https://leetcode.com/problems/island-perimeter/)|[C++](./solutions/463.%20Island%20PerimeterC%2B%2B)|135 ms|
 |474|[ Ones and Zeroes](https://leetcode.com/problems/ones-and-zeroes/)|[C++](./solutions/474.%20Ones%20and%20ZeroesC%2B%2B)|136 ms|
+|480|[ Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)|[C++](./solutions/480.%20Sliding%20Window%20MedianC%2B%2B)|48 ms|
 |494|[ Target Sum](https://leetcode.com/problems/target-sum/)|[C++](./solutions/494.%20Target%20SumC%2B%2B)|276 ms|
 |502|[ IPO](https://leetcode.com/problems/ipo/)|[C++](./solutions/502.%20IPOC%2B%2B)|68 ms|
 |513|[ Find Bottom Left Tree Value](https://leetcode.com/problems/find-bottom-left-tree-value/)|[C++](./solutions/513.%20Find%20Bottom%20Left%20Tree%20ValueC%2B%2B)|12 ms|
