@@ -151,6 +151,7 @@
 |424|[ Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)|[C++](./solutions/424.%20Longest%20Repeating%20Character%20ReplacementC%2B%2B)|8 ms|
 |442|[ Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)|[C++](./solutions/442.%20Find%20All%20Duplicates%20in%20an%20ArrayC%2B%2B)|124 ms|
 |445|[ Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/)|[C++](./solutions/445.%20Add%20Two%20Numbers%20IIC%2B%2B)|24 ms|
+|446|[ Arithmetic Slices II - Subsequence](https://leetcode.com/problems/arithmetic-slices-ii-subsequence/)|[C++](./solutions/446.%20Arithmetic%20Slices%20II%20-%20SubsequenceC%2B%2B)|408 ms|
 |451|[ Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/)|[C++](./solutions/451.%20Sort%20Characters%20By%20FrequencyC%2B%2B)|40 ms|
 |456|[ 132 Pattern](https://leetcode.com/problems/132-pattern/)|[C++](./solutions/456.%20132%20PatternC%2B%2B)|24 ms|
 |460|[ LFU Cache](https://leetcode.com/problems/lfu-cache/)|[C++](./solutions/460.%20LFU%20CacheC%2B%2B)|128 ms|
