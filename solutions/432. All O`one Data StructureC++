@@ -1,0 +1,71 @@
+/
+
+class AllOne {
+public:
+    typedef pair<int, unordered_set<string>> entry;  // val, key
+    list<entry> l;  // increase of entry.val
+    unordered_map<string, list<entry>::iterator> m;  // key, list
+  
+    /** Initialize your data structure here. */
+    AllOne() {
+    }
+    
+    /** Inserts a new key <Key> with value 1. Or increments an existing key by 1. */
+    void inc(string key) {
+      if (m.count(key) > 0) {
+        auto old_entry = m[key];
+        auto new_val = old_entry->first + 1;
+        auto new_entry = ++m[key];
+        old_entry->second.erase(key);
+        if (old_entry->second.size() == 0) l.erase(old_entry);
+        if (new_entry == l.end() || new_entry->first != new_val)
+          m[key] = l.insert(new_entry, {new_val, {key}});
+        else
+          new_entry->second.insert(key);
+      } else {
+        if (l.empty() || l.begin()->first != 1) {
+          m[key] = l.insert(l.begin(), {1, {key}});
+        } else {
+          m[key] = l.begin();
+          m[key]->second.insert(key);
+        }
+      }
+    }
+    
+    /** Decrements an existing key by 1. If Key's value is 1, remove it from the data structure. */
+    void dec(string key) {
+      if (m.count(key) == 0) return;
+      
+      auto old_entry = m[key];
+      auto new_val = old_entry->first - 1;
+      auto new_entry = --m[key];
+      if (new_val == 0) {
+        m.erase(key);
+      } else if (new_entry == l.end() || new_entry->first != new_val) {
+        m[key] = l.insert(old_entry, {new_val, {key}});
+      } else {
+        new_entry->second.insert(key);
+      }
+      old_entry->second.erase(key);
+      if (old_entry->second.size() == 0) l.erase(old_entry);
+    }
+    
+    /** Returns one of the keys with maximal value. */
+    string getMaxKey() {
+      return l.empty()? "" : *(l.rbegin()->second.begin());   
+    }
+    
+    /** Returns one of the keys with Minimal value. */
+    string getMinKey() {
+      return l.empty()? "" : *(l.begin()->second.begin());   
+    }
+};
+
+/**
+ * Your AllOne object will be instantiated and called as such:
+ * AllOne* obj = new AllOne();
+ * obj->inc(key);
+ * obj->dec(key);
+ * string param_3 = obj->getMaxKey();
+ * string param_4 = obj->getMinKey();
+ */
