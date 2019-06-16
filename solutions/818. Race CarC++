@@ -1,0 +1,49 @@
+// Runtime: 16 ms, faster than 58.74% of C++ online submissions for Race Car.
+// Memory Usage: 8.8 MB, less than 82.13% of C++ online submissions for Race Car.
+​
+// https://leetcode.com/problems/race-car/discuss/124326/summary-of-the-bfs-and-dp-solutions-with-intuitive-explanation
+​
+class Solution {
+public:
+  int racecar(int target) {
+    // dp[i]: the min steps to reach i, from pos 0, with speed 1 pointing to i.
+    vector<int> dp(target + 1, INT_MAX);
+    dp[0] = 0;
+    
+    for (int i = 1; i <= target; i++) {
+      // starting from dp[0], do acc instruction A
+      int acc = 0;
+      int speed = 1;
+      int pos = 0;
+      while (true) {             
+        acc++;
+        pos += speed;
+        speed <<= 1;
+        if (pos >= i) break;
+        
+        // starting from pos, do
+        // 1) instruction R
+        // 2) back_acc instructino A to reach back_pos
+        // 3) instruction R to correct the direction.
+        // back_acc, back_speed and back_pos are inited with instruction R
+        int back_acc = 0;
+        int back_speed = 1;
+        int back_pos = 0;
+        while (back_pos < pos) {     
+          dp[i] = min(dp[i], acc + 1 + back_acc + 1 + dp[i - (pos - back_pos)]);
+           
+          back_acc++;
+          back_pos += back_speed;
+          back_speed <<= 1;
+        }
+      }
+      
+      // at this point, pos >= i, so there are two situations.
+      // 1) pos == i 
+      // .  => done.
+      // 2) pos > i with speed pointing away from i
+      // .  => do instruction R to correct the direction (speed at 1 poining to i).
+      dp[i] = min(dp[i], acc + (pos == i? 0: 1 + dp[pos - i]));
+    }
+    
+    return dp[target];
