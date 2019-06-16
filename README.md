@@ -61,7 +61,7 @@
 |95|[ Unique Binary Search Trees II](https://leetcode.com/problems/unique-binary-search-trees-ii/)|[C++](./solutions/95.%20Unique%20Binary%20Search%20Trees%20IIC%2B%2B)|24 ms|
 |97|[ Interleaving String](https://leetcode.com/problems/interleaving-string/)|[C++](./solutions/97.%20Interleaving%20StringC%2B%2B)|4 ms|
 |98|[ Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)|[C++](./solutions/98.%20Validate%20Binary%20Search%20TreeC%2B%2B)|20 ms|
-|99|[ Recover Binary Search Tree](https://leetcode.com/problems/recover-binary-search-tree/)|[C++](./solutions/99.%20Recover%20Binary%20Search%20TreeC%2B%2B)|24 ms|
+|99|[ Recover Binary Search Tree](https://leetcode.com/problems/recover-binary-search-tree/)|[C++](./solutions/99.%20Recover%20Binary%20Search%20TreeC%2B%2B)|20 ms|
 |102|[ Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)|[C++](./solutions/102.%20Binary%20Tree%20Level%20Order%20TraversalC%2B%2B)|8 ms|
 |114|[ Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/)|[C++](./solutions/114.%20Flatten%20Binary%20Tree%20to%20Linked%20ListC%2B%2B)|16 ms|
 |117|[ Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)|[C++](./solutions/117.%20Populating%20Next%20Right%20Pointers%20in%20Each%20Node%20IIC%2B%2B)|392 ms|
