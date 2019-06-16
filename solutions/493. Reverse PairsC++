@@ -1,0 +1,45 @@
+// https://leetcode.com/problems/reverse-pairs/discuss/97268/general-principles-behind-problems-similar-to-reverse-pairs
+​
+class Solution {
+public:
+  void update(vector<int>& bit, int pos, int val) {
+    for (; pos < bit.size(); pos += pos & (-pos))
+      bit[pos] += val;
+  }
+  
+  int search(const vector<int> bit, int pos) {
+    int ans = 0;
+    for (; pos > 0; pos -= pos & (-pos))
+      ans += bit[pos];
+    return ans;
+  }
+  
+  int getBitIdx(const vector<int> sorted_nums, long target) {
+    if (target > INT_MAX) return 0;
+    int l = 0; 
+    int r = sorted_nums.size();
+    int m;
+    while (l < r) {
+      m = l + (r - l) / 2;
+      if (sorted_nums[m] == target) return sorted_nums.size() - m;
+      if (sorted_nums[m] < target) l = m + 1;
+      else r = m;
+    }
+    return sorted_nums.size() - l;
+  }
+  
+  int reversePairs(vector<int>& nums) {
+    vector<int> sorted_nums = nums;
+    sort(sorted_nums.begin(), sorted_nums.end());
+    
+    vector<int> bit(nums.size() + 1, 0);
+    int ans = 0;
+    for (const long num: nums) {
+      int idx1 = getBitIdx(sorted_nums, 2 * num + 1);
+      ans += search(bit, idx1);
+      int idx2 = getBitIdx(sorted_nums, num);
+      update(bit, idx2, 1);
+    }
+    return ans;
+  }
+};
