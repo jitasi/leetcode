@@ -1,0 +1,28 @@
+class Solution {
+public:
+  // Runtime: 100 ms, faster than 88.36% of C++ online submissions for Find K Closest Elements.
+  // Memory Usage: 13.1 MB, less than 68.66% of C++ online submissions for Find K Closest Elements.
+  
+  vector<int> findClosestElements(vector<int>& arr, int k, int x) {
+    int l = 0;
+    int r = arr.size() - k;
+    while (l < r) {
+      const int m = l + (r - l) / 2;
+      if (x - arr[m] > arr[m + k] - x) l = m + 1;
+      else r = m;
+    }
+    return vector<int>(arr.begin() + l, arr.begin() + l + k);
+  } 
+  
+  // Runtime: 492 ms, faster than 5.07% of C++ online submissions for Find K Closest Elements.
+  // Memory Usage: 13.2 MB, less than 64.98% of C++ online submissions for Find K Closest Elements.
+/*
+  vector<int> findClosestElements(vector<int>& arr, int k, int x) {
+    while (arr.size() > k) {
+      if (x - arr[0] <= arr.back() - x) arr.pop_back();
+      else arr.erase(arr.begin());
+    }
+    return arr;
+  }
+*/
+};
