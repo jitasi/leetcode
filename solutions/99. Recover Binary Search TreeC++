@@ -1,35 +1,34 @@
 // Runtime: 24 ms, faster than 90.44% of C++ online submissions for Recover Binary Search Tree.
 // Memory Usage: 17.8 MB, less than 71.95% of C++ online submissions for Recover Binary Search Tree.
-
+​
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
 class Solution {
 public:
-    TreeNode *pre = nullptr, *first = nullptr, *second = nullptr;
-  
-    void recoverTree(TreeNode* root) {
-        inorder(root);
-        swap(first->val, second->val);
-    }
-  
-    void inorder(TreeNode* root) {
-        if (root == nullptr) return;
-       
-        inorder(root->left);
-        if (pre == nullptr) pre = root;
-        if (pre->val > root->val) {
-            if (first == nullptr) first = pre;
-            second = root;
-        }
-        pre = root;
-
-        inorder(root->right);
-    }
+    TreeNode *pre = nullptr, *first = nullptr, *second = nullptr;
+  
+    void recoverTree(TreeNode* root) {
+        inorder(root);
+        swap(first->val, second->val);
+    }
+  
+    void inorder(TreeNode* root) {
+        if (root == nullptr) return;
+       
+        inorder(root->left);
+        if (pre != nullptr && pre->val > root->val) {
+            if (first == nullptr) first = pre;
+            second = root;
+        }
+        pre = root;
+​
+        inorder(root->right);
+    }
 };
