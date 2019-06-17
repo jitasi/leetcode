@@ -196,6 +196,7 @@
 |731|[ My Calendar II](https://leetcode.com/problems/my-calendar-ii/)|[C++](./solutions/731.%20My%20Calendar%20IIC%2B%2B)|132 ms|
 |753|[ Cracking the Safe](https://leetcode.com/problems/cracking-the-safe/)|[C++](./solutions/753.%20Cracking%20the%20SafeC%2B%2B)|16 ms|
 |764|[ Largest Plus Sign](https://leetcode.com/problems/largest-plus-sign/)|[C++](./solutions/764.%20Largest%20Plus%20SignC%2B%2B)|460 ms|
+|767|[ Reorganize String](https://leetcode.com/problems/reorganize-string/)|[C++](./solutions/767.%20Reorganize%20StringC%2B%2B)|8 ms|
 |769|[ Max Chunks To Make Sorted](https://leetcode.com/problems/max-chunks-to-make-sorted/)|[C++](./solutions/769.%20Max%20Chunks%20To%20Make%20SortedC%2B%2B)|0 ms|
 |777|[ Swap Adjacent in LR String](https://leetcode.com/problems/swap-adjacent-in-lr-string/)|[C++](./solutions/777.%20Swap%20Adjacent%20in%20LR%20StringC%2B%2B)|8 ms|
 |785|[ Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/)|[C++](./solutions/785.%20Is%20Graph%20Bipartite%3FC%2B%2B)|40 ms|
