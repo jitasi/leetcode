@@ -1,0 +1,27 @@
+// Runtime: 20 ms, faster than 98.00% of C++ online submissions for Permutations II.
+// Memory Usage: 10 MB, less than 75.92% of C++ online submissions for Permutations II.
+​
+class Solution {
+public:
+  void work(vector<int>& nums, vector<vector<int>>& ret, int first) {
+    for (int i = first; i < nums.size(); i++) {          
+      int j = i - 1;
+      while (j >= first && nums[j] != nums[i]) --j;
+      if (j != first - 1) continue;
+      swap(nums[first], nums[i]);
+      if (first == nums.size() - 1)
+        ret.push_back(nums);
+      work(nums, ret, first + 1);
+      swap(nums[first], nums[i]);
+    }
+  }
+  
+  vector<vector<int>> permuteUnique(vector<int>& nums) {
+    if (nums.size() < 1) return {{}};
+   
+    sort(nums.begin(), nums.end());
+    vector<vector<int>> ret;
+    work(nums, ret, 0);
+    return ret;
+  }
+};
