@@ -1,0 +1,41 @@
+// Runtime: 8 ms, faster than 93.80% of C++ online submissions for Maximum Gap.
+// Memory Usage: 9.4 MB, less than 60.80% of C++ online submissions for Maximum Gap.
+​
+class Solution {
+public:
+  int maximumGap(vector<int>& nums) {
+    const int len = nums.size();
+    if (len < 2) return 0;
+    const auto [min_num, max_num] = std::minmax_element(nums.begin(), nums.end());
+    const int bin_size = (*max_num - *min_num) / len + 1;
+    const int bin_num =  (*max_num - *min_num) / bin_size + 1;
+    
+    vector<int> bin_min(bin_num, INT_MAX);
+    vector<int> bin_max(bin_num, INT_MIN);
+    for (const int n : nums) {
+      const int bin_id = (n - *min_num) / bin_size;
+      bin_min[bin_id] = min(bin_min[bin_id], n);
+      bin_max[bin_id] = max(bin_max[bin_id], n);
+    }
+    
+    int ans = 0;
+    int prev = 0;
+    for (int i = 1; i < bin_num; i++) {
+      if (bin_min[i] == INT_MAX) continue;
+      ans = max(ans, bin_min[i] - bin_max[prev]);
+      prev = i;
+    }
+    return ans;
+  }
+  
+/*  
+  int maximumGap(vector<int>& nums) {
+    if (nums.size() < 2) return 0;
+    sort(nums.begin(), nums.end());
+    int ans = nums[1] - nums[0];
+    for (int i = 2; i < nums.size(); i++)
+      ans = max(ans, nums[i] - nums[i - 1]);
+    return ans;
+  }
+*/
+};
