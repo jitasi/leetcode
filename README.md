@@ -51,6 +51,7 @@
 |67|[ Add Binary](https://leetcode.com/problems/add-binary/)|[C](./solutions/67.%20Add%20BinaryC)|4 ms|
 |71|[ Simplify Path](https://leetcode.com/problems/simplify-path/)|[C++](./solutions/71.%20Simplify%20PathC%2B%2B)|8 ms|
 |72|[ Edit Distance](https://leetcode.com/problems/edit-distance/)|[C++](./solutions/72.%20Edit%20DistanceC%2B%2B)|16 ms|
+|74|[ Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/)|[C++](./solutions/74.%20Search%20a%202D%20MatrixC%2B%2B)|8 ms|
 |75|[ Sort Colors](https://leetcode.com/problems/sort-colors/)|[C++](./solutions/75.%20Sort%20ColorsC%2B%2B)|4 ms|
 |76|[ Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)|[C++](./solutions/76.%20Minimum%20Window%20SubstringC%2B%2B)|80 ms|
 |79|[ Word Search](https://leetcode.com/problems/word-search/)|[C++](./solutions/79.%20Word%20SearchC%2B%2B)|328 ms|
