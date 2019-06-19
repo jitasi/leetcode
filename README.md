@@ -114,6 +114,7 @@
 |222|[ Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/)|[C++](./solutions/222.%20Count%20Complete%20Tree%20NodesC%2B%2B)|36 ms|
 |224|[ Basic Calculator](https://leetcode.com/problems/basic-calculator/)|[C++](./solutions/224.%20Basic%20CalculatorC%2B%2B)|12 ms|
 |227|[ Basic Calculator II](https://leetcode.com/problems/basic-calculator-ii/)|[C++](./solutions/227.%20Basic%20Calculator%20IIC%2B%2B)|12 ms|
+|228|[ Summary Ranges](https://leetcode.com/problems/summary-ranges/)|[C++](./solutions/228.%20Summary%20RangesC%2B%2B)|0 ms|
 |229|[ Majority Element II](https://leetcode.com/problems/majority-element-ii/)|[C++](./solutions/229.%20Majority%20Element%20IIC%2B%2B)|16 ms|
 |239|[ Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)|[C++](./solutions/239.%20Sliding%20Window%20MaximumC%2B%2B)|60 ms|
 |240|[ Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/)|[C++](./solutions/240.%20Search%20a%202D%20Matrix%20IIC%2B%2B)|64 ms|
