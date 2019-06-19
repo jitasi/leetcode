@@ -217,6 +217,7 @@
 |838|[ Push Dominoes](https://leetcode.com/problems/push-dominoes/)|[C++](./solutions/838.%20Push%20DominoesC%2B%2B)|24 ms|
 |843|[ Guess the Word](https://leetcode.com/problems/guess-the-word/)|[C++](./solutions/843.%20Guess%20the%20WordC%2B%2B)|0 ms|
 |845|[ Longest Mountain in Array](https://leetcode.com/problems/longest-mountain-in-array/)|[C++](./solutions/845.%20Longest%20Mountain%20in%20ArrayC%2B%2B)|20 ms|
+|847|[ Shortest Path Visiting All Nodes](https://leetcode.com/problems/shortest-path-visiting-all-nodes/)|[C++](./solutions/847.%20Shortest%20Path%20Visiting%20All%20NodesC%2B%2B)|24 ms|
 |852|[ Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array/)|[C++](./solutions/852.%20Peak%20Index%20in%20a%20Mountain%20ArrayC%2B%2B)|16 ms|
 |855|[ Exam Room](https://leetcode.com/problems/exam-room/)|[C++](./solutions/855.%20Exam%20RoomC%2B%2B)|32 ms|
 |858|[ Mirror Reflection](https://leetcode.com/problems/mirror-reflection/)|[C++](./solutions/858.%20Mirror%20ReflectionC%2B%2B)|4 ms|
