@@ -102,6 +102,7 @@
 |209|[ Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)|[C++](./solutions/209.%20Minimum%20Size%20Subarray%20SumC%2B%2B)|8 ms|
 |210|[ Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)|[C++](./solutions/210.%20Course%20Schedule%20IIC%2B%2B)|24 ms|
 |212|[ Word Search II](https://leetcode.com/problems/word-search-ii/)|[C++](./solutions/212.%20Word%20Search%20IIC%2B%2B)|68 ms|
+|213|[ House Robber II](https://leetcode.com/problems/house-robber-ii/)|[C++](./solutions/213.%20House%20Robber%20IIC%2B%2B)|0 ms|
 |214|[ Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/)|[C++](./solutions/214.%20Shortest%20PalindromeC%2B%2B)|252 ms|
 |215|[ Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)|[C++](./solutions/215.%20Kth%20Largest%20Element%20in%20an%20ArrayC%2B%2B)|80 ms|
 |216|[ Combination Sum III](https://leetcode.com/problems/combination-sum-iii/)|[C++](./solutions/216.%20Combination%20Sum%20IIIC%2B%2B)|0 ms|
