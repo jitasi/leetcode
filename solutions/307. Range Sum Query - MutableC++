@@ -1,0 +1,47 @@
+// Runtime: 36 ms, faster than 89.20% of C++ online submissions for Range Sum Query - Mutable.
+// Memory Usage: 18.9 MB, less than 87.01% of C++ online submissions for Range Sum Query - Mutable.
+​
+class NumArray {
+public:
+  vector<int> data;
+  vector<int> bit;
+  
+  void bit_udpate(int idx, int diff) {
+    while (idx < bit.size()) {
+      bit[idx] += diff;
+      idx += idx & (-idx);
+    }
+  }
+  
+  int bit_query(int idx) {
+    int ans = 0;
+    while (idx > 0) {
+      ans += bit[idx];
+      idx -= idx & (-idx);
+    }
+    return ans;
+  }
+  
+  NumArray(vector<int>& nums) {
+    data.swap(nums);
+    bit.resize(data.size() + 1, 0);
+    for (int i = 0; i < data.size(); i++)
+      bit_udpate(i + 1, data[i]);
+  }
+    
+  void update(int i, int val) {
+    bit_udpate(i + 1, val - data[i]);
+    data[i] = val;
+  }
+    
+  int sumRange(int i, int j) {
+    return bit_query(j + 1) - bit_query(i);
+  }
+};
+​
+/**
+ * Your NumArray object will be instantiated and called as such:
+ * NumArray* obj = new NumArray(nums);
+ * obj->update(i,val);
+ * int param_2 = obj->sumRange(i,j);
+ */
