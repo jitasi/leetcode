@@ -1,0 +1,23 @@
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Combination Sum III.
+// Memory Usage: 8.5 MB, less than 78.70% of C++ online submissions for Combination Sum III.
+​
+class Solution {
+public:
+  void combinationSum3(int k, int n, int from, vector<int>& prefix, vector<vector<int>>& ans) {
+    if (n == 0 && k == 0) ans.push_back(prefix);
+    if (n <= 0 || k <= 0) return;
+    
+    for (int i = from; i <= 9; i++) {
+      prefix.push_back(i);
+      combinationSum3(k - 1, n - i, i + 1, prefix, ans);
+      prefix.pop_back();
+    }
+  }
+  
+  vector<vector<int>> combinationSum3(int k, int n) {
+    vector<vector<int>> ans;
+    vector<int> prefix;
+    combinationSum3(k, n, 1, prefix, ans);
+    return ans;
+  }
+};
