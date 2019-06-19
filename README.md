@@ -108,6 +108,7 @@
 |215|[ Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)|[C++](./solutions/215.%20Kth%20Largest%20Element%20in%20an%20ArrayC%2B%2B)|80 ms|
 |216|[ Combination Sum III](https://leetcode.com/problems/combination-sum-iii/)|[C++](./solutions/216.%20Combination%20Sum%20IIIC%2B%2B)|0 ms|
 |218|[ The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/)|[C++](./solutions/218.%20The%20Skyline%20ProblemC%2B%2B)|24 ms|
+|219|[ Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)|[C++](./solutions/219.%20Contains%20Duplicate%20IIC%2B%2B)|32 ms|
 |220|[ Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii/)|[C++](./solutions/220.%20Contains%20Duplicate%20IIIC%2B%2B)|20 ms|
 |221|[ Maximal Square](https://leetcode.com/problems/maximal-square/)|[C++](./solutions/221.%20Maximal%20SquareC%2B%2B)|20 ms|
 |222|[ Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/)|[C++](./solutions/222.%20Count%20Complete%20Tree%20NodesC%2B%2B)|36 ms|
