@@ -124,6 +124,7 @@
 |274|[ H-Index](https://leetcode.com/problems/h-index/)|[C++](./solutions/274.%20H-IndexC%2B%2B)|0 ms|
 |275|[ H-Index II](https://leetcode.com/problems/h-index-ii/)|[C++](./solutions/275.%20H-Index%20IIC%2B%2B)|24 ms|
 |279|[ Perfect Squares](https://leetcode.com/problems/perfect-squares/)|[C++](./solutions/279.%20Perfect%20SquaresC%2B%2B)|92 ms|
+|282|[ Expression Add Operators](https://leetcode.com/problems/expression-add-operators/)|[C++](./solutions/282.%20Expression%20Add%20OperatorsC%2B%2B)|N/A|
 |287|[ Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)|[C++](./solutions/287.%20Find%20the%20Duplicate%20NumberC%2B%2B)|12 ms|
 |295|[ Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)|[C++](./solutions/295.%20Find%20Median%20from%20Data%20StreamC%2B%2B)|156 ms|
 |297|[ Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)|[C++](./solutions/297.%20Serialize%20and%20Deserialize%20Binary%20TreeC%2B%2B)|48 ms|
