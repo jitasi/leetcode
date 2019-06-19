@@ -57,6 +57,7 @@
 |77|[ Combinations](https://leetcode.com/problems/combinations/)|[C++](./solutions/77.%20CombinationsC%2B%2B)|104 ms|
 |79|[ Word Search](https://leetcode.com/problems/word-search/)|[C++](./solutions/79.%20Word%20SearchC%2B%2B)|328 ms|
 |80|[ Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)|[C++](./solutions/80.%20Remove%20Duplicates%20from%20Sorted%20Array%20IIC%2B%2B)|12 ms|
+|82|[ Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)|[C++](./solutions/82.%20Remove%20Duplicates%20from%20Sorted%20List%20IIC%2B%2B)|8 ms|
 |84|[ Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)|[C++](./solutions/84.%20Largest%20Rectangle%20in%20HistogramC%2B%2B)|16 ms|
 |85|[ Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)|[C++](./solutions/85.%20Maximal%20RectangleC%2B%2B)|56 ms|
 |90|[ Subsets II](https://leetcode.com/problems/subsets-ii/)|[C++](./solutions/90.%20Subsets%20IIC%2B%2B)|8 ms|
