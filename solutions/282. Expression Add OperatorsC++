@@ -1,26 +1,34 @@
+// failed at "123456789"  45
+​
 class Solution {
 public:
-    unordered_map<string, int> addOperators(string num) {
-      if (num.size() == 1) return {{num, atoi(num.c_str())}};
-                                   
-      unordered_map<string, int> ans;
-      const auto left = addOperators(num.substr(0, num.size() - 1));
-      const auto right = addOperators(num.substr(num.size() - 1, 1));
-      for (const auto& kv_left: left) {
-        for (const auto& kv_right: right) {
-          ans[kv_left.first + "+" + kv_right.first] = kv_left.second + kv_right.second;
-          ans[kv_left.first + "-" + kv_right.first] = kv_left.second - kv_right.second;
-          ans[kv_left.first + "*" + kv_right.first] = kv_left.second * kv_right.second;
-        }
-      }
-      return ans;
-    }
-  
-    vector<string> addOperators(string num, int target) {
-      vector<string> ans;
-      for (const auto& kv : addOperators(num)) {
-        if (kv.second == target) ans.push_back(kv.first);
-      }
-      return ans;
-    }
-};
+  unordered_map<string, int> AddMultiply(string num, int l, int r) {
+    if (r - l == 1) return {{string(1, num[l]), num[l] - '0'}};
+    
+    unordered_map<string, int> ans;
+    for (int i = l + 1; i < r; i++) {
+      const string left = num.substr(l, i - l);
+      const int left_part = atoi(left.c_str());
+      for (const auto& kv_right: AddMultiply(num, i, r)) {
+        ans[left + "*" + kv_right.first] = left_part * kv_right.second;
+      }
+    }
+    return ans;
+  }
+  
+  unordered_map<string, int> addOperators(string num, int l, int r) {
+    if (r - l == 1) return {{string(1, num[l]), num[l] - '0'}};
+    
+    unordered_map<string, int> ans = AddMultiply(num, l, r);
+    if (num[0] != 0 || r - l > 1)
+      ans[num.substr(l, r - l)] = atoi(num.substr(l, r - l).c_str());
+    for (int i = l + 1; i < r; i++) {
+      const auto left_part = addOperators(num, l, i);
+      const auto right_part = AddMultiply(num, i, r);
+      for (const auto& kv_left: left_part) {
+        for (const auto& kv_right: right_part) {
+          ans[kv_left.first + "+" + kv_right.first] = kv_left.second + kv_right.second;
+          ans[kv_left.first + "-" + kv_right.first] = kv_left.second - kv_right.second;
+        }
+      }
+    }
