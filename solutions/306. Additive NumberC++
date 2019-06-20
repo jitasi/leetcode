@@ -1,0 +1,35 @@
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Additive Number.
+// Memory Usage: 8.2 MB, less than 66.03% of C++ online submissions for Additive Number.
+​
+class Solution {
+public:
+  bool isAdditiveNumber(string num) {
+    const int len = num.size();
+    if (len < 3) return false;
+    
+    for (int i = 1; i <= len - 2; i++) { 
+      if (num[0] == '0' && i > 1) break;      
+      const long first = stol(num.substr(0, i));
+      
+      for (int j = i + 1; j <= len - 1; j++) {
+        if (num[i] == '0' && j - i > 1) break;
+        const long second = stol(num.substr(i, j - i));
+        
+        int pos = j;
+        bool valid = true;
+        long prev = second;
+        long next = first + second;
+        while(valid) {
+          const string next_str = to_string(next);
+          if (num.substr(pos, next_str.size()) != next_str) break;
+          pos += next_str.size();
+          if (pos == len) return true;
+          int t = prev;
+          prev = next;
+          next += t;
+        }
+      }
+    }
+    return false;
+  }
+};
