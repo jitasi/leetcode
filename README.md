@@ -131,6 +131,7 @@
 |300|[ Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)|[C++](./solutions/300.%20Longest%20Increasing%20SubsequenceC%2B%2B)|36 ms|
 |301|[ Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/)|[C++](./solutions/301.%20Remove%20Invalid%20ParenthesesC%2B%2B)|64 ms|
 |304|[ Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/)|[C++](./solutions/304.%20Range%20Sum%20Query%202D%20-%20ImmutableC%2B%2B)|28 ms|
+|306|[ Additive Number](https://leetcode.com/problems/additive-number/)|[C++](./solutions/306.%20Additive%20NumberC%2B%2B)|0 ms|
 |307|[ Range Sum Query - Mutable](https://leetcode.com/problems/range-sum-query-mutable/)|[C++](./solutions/307.%20Range%20Sum%20Query%20-%20MutableC%2B%2B)|36 ms|
 |309|[ Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)|[C++](./solutions/309.%20Best%20Time%20to%20Buy%20and%20Sell%20Stock%20with%20CooldownC%2B%2B)|20 ms|
 |312|[ Burst Balloons](https://leetcode.com/problems/burst-balloons/)|[C++](./solutions/312.%20Burst%20BalloonsC%2B%2B)|16 ms|
