@@ -1,0 +1,35 @@
+// Runtime: 116 ms, faster than 55.49% of C++ online submissions for My Calendar I.
+// Memory Usage: 34.7 MB, less than 83.73% of C++ online submissions for My Calendar I.
+​
+class MyCalendar {
+public:
+  vector<pair<int, int>> mtgs;
+  
+  MyCalendar() {
+  }
+    
+  bool book(int start, int end) {
+    if (mtgs.empty()) {
+      mtgs.push_back({start, end});
+      return true;
+    }
+    
+    int i = 0;
+    while (i < mtgs.size() && mtgs[i].second <= start) i++;
+    if (i == mtgs.size()) {
+      mtgs.push_back({start, end});
+      return true;    
+    }
+    if (mtgs[i].first >= end) { 
+      mtgs.insert(mtgs.begin() + i, {start, end});
+      return true;
+    }
+    return false;   
+  }
+};
+​
+/**
+ * Your MyCalendar object will be instantiated and called as such:
+ * MyCalendar* obj = new MyCalendar();
+ * bool param_1 = obj->book(start,end);
+ */
