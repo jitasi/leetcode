@@ -1,0 +1,23 @@
+// Runtime: 24 ms, faster than 72.77% of C++ online submissions for Array Nesting.
+// Memory Usage: 9.9 MB, less than 68.83% of C++ online submissions for Array Nesting.
+​
+class Solution {
+public:
+  int arrayNesting(vector<int>& nums) {
+    const int len = nums.size();
+    int ans = 0;
+    for (int i = 0; i < len; i++) {
+      if (nums[i] == len) continue;
+      int l = 0;
+      int j = i;
+      while (nums[j] != len) {
+        l++;
+        int next = nums[j];
+        nums[j] = len;
+        j = next;
+      }
+      ans = max(ans, l);
+    }
+    return ans;
+  }
+};
