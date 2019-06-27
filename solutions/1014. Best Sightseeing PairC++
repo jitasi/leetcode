@@ -1,0 +1,16 @@
+// Runtime: 56 ms, faster than 96.25% of C++ online submissions for Best Sightseeing Pair.
+// Memory Usage: 13.2 MB, less than 38.62% of C++ online submissions for Best Sightseeing Pair.
+​
+class Solution {
+public:
+  int maxScoreSightseeingPair(vector<int>& A) {
+    int ans = A[0] + A[1] - 1;
+    int prev = (A[0] - 1 > A[1])? 0 : 1;
+    
+    for (int i = 2; i < A.size(); i++) {
+      ans = max(ans, A[i] + A[prev] + prev - i);
+      prev = (A[prev] + prev - i > A[i])? prev : i; 
+    }
+    return ans;
+  }
+};
