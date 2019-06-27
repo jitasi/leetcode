@@ -1,0 +1,25 @@
+// Runtime: 12 ms, faster than 53.76% of C++ online submissions for Flip String to Monotone Increasing.
+// Memory Usage: 10.7 MB, less than 32.53% of C++ online submissions for Flip String to Monotone Increasing.
+​
+class Solution {
+public:
+  int minFlipsMonoIncr(string S) {
+    const int len = S.size();
+    if (len <= 1) return 0;
+    
+    vector<int> zeros(len, 0);
+    vector<int> ones(len, 0);
+    ones[0] = S[0] == '1'? 1 : 0;
+    for (int i = 1; i < len; i++)
+      ones[i] = ones[i - 1] + (S[i] == '1'? 1 : 0);
+    zeros[len - 1] = S[len - 1] == '0'? 1 : 0;
+    for (int i = len - 2; i >= 0; i--)
+      zeros[i] = zeros[i + 1] + (S[i] == '0'? 1 : 0);
+    
+    int ans = min(zeros[0], ones[len - 1]);  // all bits to 1
+    for (int i = 0; i < len - 1; i++)  // 0 .. i => 0, i+1 .. len-1 => 1
+      ans = min(ans, ones[i] + zeros[i + 1]);
+    
+    return ans;
+  }
+};
