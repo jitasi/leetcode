@@ -212,6 +212,7 @@
 |712|[ Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/)|[C++](./solutions/712.%20Minimum%20ASCII%20Delete%20Sum%20for%20Two%20StringsC%2B%2B)|28 ms|
 |729|[ My Calendar I](https://leetcode.com/problems/my-calendar-i/)|[C++](./solutions/729.%20My%20Calendar%20IC%2B%2B)|116 ms|
 |731|[ My Calendar II](https://leetcode.com/problems/my-calendar-ii/)|[C++](./solutions/731.%20My%20Calendar%20IIC%2B%2B)|132 ms|
+|740|[ Delete and Earn](https://leetcode.com/problems/delete-and-earn/)|[C++](./solutions/740.%20Delete%20and%20EarnC%2B%2B)|16 ms|
 |753|[ Cracking the Safe](https://leetcode.com/problems/cracking-the-safe/)|[C++](./solutions/753.%20Cracking%20the%20SafeC%2B%2B)|16 ms|
 |764|[ Largest Plus Sign](https://leetcode.com/problems/largest-plus-sign/)|[C++](./solutions/764.%20Largest%20Plus%20SignC%2B%2B)|460 ms|
 |767|[ Reorganize String](https://leetcode.com/problems/reorganize-string/)|[C++](./solutions/767.%20Reorganize%20StringC%2B%2B)|8 ms|
