@@ -252,6 +252,7 @@
 |1003|[ Check If Word Is Valid After Substitutions](https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/)|[C++](./solutions/1003.%20Check%20If%20Word%20Is%20Valid%20After%20SubstitutionsC%2B%2B)|64 ms|
 |1014|[ Best Sightseeing Pair](https://leetcode.com/problems/best-sightseeing-pair/)|[C++](./solutions/1014.%20Best%20Sightseeing%20PairC%2B%2B)|56 ms|
 |1015|[ Smallest Integer Divisible by K](https://leetcode.com/problems/smallest-integer-divisible-by-k/)|[C++](./solutions/1015.%20Smallest%20Integer%20Divisible%20by%20KC%2B%2B)|0 ms|
+|1020|[ Number of Enclaves](https://leetcode.com/problems/number-of-enclaves/)|[C++](./solutions/1020.%20Number%20of%20EnclavesC%2B%2B)|52 ms|
 |1023|[ Camelcase Matching](https://leetcode.com/problems/camelcase-matching/)|[C++](./solutions/1023.%20Camelcase%20MatchingC%2B%2B)|4 ms|
 |1027|[ Longest Arithmetic Sequence](https://leetcode.com/problems/longest-arithmetic-sequence/)|[C++](./solutions/1027.%20Longest%20Arithmetic%20SequenceC%2B%2B)|3164 ms|
 |1031|[ Maximum Sum of Two Non-Overlapping Subarrays](https://leetcode.com/problems/maximum-sum-of-two-non-overlapping-subarrays/)|[C++](./solutions/1031.%20Maximum%20Sum%20of%20Two%20Non-Overlapping%20SubarraysC%2B%2B)|12 ms|
