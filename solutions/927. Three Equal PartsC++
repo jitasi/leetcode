@@ -25,3 +25,23 @@ public:
     int last = second;
     cnt = ones_in_part + 1;
     while(cnt > 0) cnt -= A[last++];
+    last--;
+    
+    // check
+    for (int i = last; i < A.size(); i++, first++, second++)
+      if (A[i] != A[first] || A[i] != A[second]) return {-1, -1};
+    
+    return {first - 1, second};
+  }
+};
+​
+/*
+​
+[1,0,1,1,0]
+[1,1,0,0,1]
+[1,0,1,0,1]
+[0, 1,0,0,1,1]
+[1,1,0,1,1]
+[0,0,0,0,0]
+​
+*/
