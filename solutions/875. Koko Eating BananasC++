@@ -1,0 +1,26 @@
+// Runtime: 60 ms, faster than 89.53% of C++ online submissions for Koko Eating Bananas.
+// Memory Usage: 10.2 MB, less than 68.04% of C++ online submissions for Koko Eating Bananas.
+​
+class Solution {
+public:
+  int minEatingSpeed(vector<int>& piles, int H) {
+    const auto mm = std::minmax_element(piles.begin(), piles.end());
+    int l = *(mm.first) / (H / piles.size()) - 1;
+    int r = *(mm.second) / (H / piles.size()) + 1;
+    if (l < 1) l = 1;
+    
+    int ans = r;
+    while (l < r) {
+      const int m = r - (r - l) / 2;
+      int hours = 0;
+      for (const int p : piles) hours += (p + m - 1) / m;
+//      cout << l << ", " << r << ", " << m << ", " << hours << endl;
+      if (hours > H) l = m;
+      else {
+        ans = m;
+        r = m - 1;
+      }
+    }
+    return ans;
+  }
+};
