@@ -1,0 +1,32 @@
+// Runtime: 80 ms, faster than 74.20% of C++ online submissions for Heaters.
+// Memory Usage: 11.2 MB, less than 52.20% of C++ online submissions for Heaters.
+​
+class Solution {
+public:
+  int findRadius(vector<int>& houses, vector<int>& heaters) {
+    std::sort(houses.begin(), houses.end());
+    std::sort(heaters.begin(), heaters.end());
+    
+    // if there is only one heater
+    if (heaters.size() == 1)
+      return max(abs(heaters[0] - houses.front()), 
+                 abs(heaters[0] - houses.back()));
+    
+    // at least two heaters
+    int ans = 0;
+    int h1 = 0;
+    int h2 = 1;
+    for (int i = 0; i < houses.size(); i++) {
+      if (houses[i] == heaters[h1]) continue;
+      while (h2 < heaters.size() && houses[i] >= heaters[h2]) {
+        h1 = h2;
+        h2++;
+      }     
+      if (h2 == heaters.size()) {
+        return max(ans, houses.back() - heaters[h1]);
+      }
+      ans = max(ans, min(abs(houses[i] - heaters[h1]), heaters[h2] - houses[i]));
+    }
+    return ans;
+  }
+};
