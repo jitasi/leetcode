@@ -1,0 +1,32 @@
+// Runtime: 20 ms, faster than 54.41% of C++ online submissions for Path Sum II.
+// Memory Usage: 33.6 MB, less than 30.13% of C++ online submissions for Path Sum II.
+​
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+  void pathSum(TreeNode* root, vector<int> prefix, int sum, vector<vector<int>>& ans) {
+    prefix.push_back(root->val);
+    sum -= root->val;
+    if (root->left == nullptr && root->right == nullptr) {
+      if (sum == 0) ans.push_back(prefix);
+      return;
+    }
+    if (root->left != nullptr) pathSum(root->left, prefix, sum, ans);
+    if (root->right != nullptr) pathSum(root->right, prefix, sum, ans);
+  }
+  
+  vector<vector<int>> pathSum(TreeNode* root, int sum) {
+    if (root == nullptr) return {};
+    vector<vector<int>> ans;
+    pathSum(root, {}, sum, ans);
+    return ans;
+  }
+};
