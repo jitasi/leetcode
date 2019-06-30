@@ -81,6 +81,7 @@
 |126|[ Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)|[C++](./solutions/126.%20Word%20Ladder%20IIC%2B%2B)|588 ms|
 |127|[ Word Ladder](https://leetcode.com/problems/word-ladder/)|[C++](./solutions/127.%20Word%20LadderC%2B%2B)|356 ms|
 |128|[ Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)|[C++](./solutions/128.%20Longest%20Consecutive%20SequenceC%2B%2B)|12 ms|
+|129|[ Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/)|[C++](./solutions/129.%20Sum%20Root%20to%20Leaf%20NumbersC%2B%2B)|0 ms|
 |130|[ Surrounded Regions](https://leetcode.com/problems/surrounded-regions/)|[C++](./solutions/130.%20Surrounded%20RegionsC%2B%2B)|32 ms|
 |134|[ Gas Station](https://leetcode.com/problems/gas-station/)|[C++](./solutions/134.%20Gas%20StationC%2B%2B)|76 ms|
 |135|[ Candy](https://leetcode.com/problems/candy/)|[C++](./solutions/135.%20CandyC%2B%2B)|28 ms|
