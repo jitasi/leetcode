@@ -65,6 +65,7 @@
 |86|[ Partition List](https://leetcode.com/problems/partition-list/)|[C++](./solutions/86.%20Partition%20ListC%2B%2B)|8 ms|
 |90|[ Subsets II](https://leetcode.com/problems/subsets-ii/)|[C++](./solutions/90.%20Subsets%20IIC%2B%2B)|8 ms|
 |91|[ Decode Ways](https://leetcode.com/problems/decode-ways/)|[C++](./solutions/91.%20Decode%20WaysC%2B%2B)|0 ms|
+|93|[ Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/)|[C++](./solutions/93.%20Restore%20IP%20AddressesC%2B%2B)|4 ms|
 |95|[ Unique Binary Search Trees II](https://leetcode.com/problems/unique-binary-search-trees-ii/)|[C++](./solutions/95.%20Unique%20Binary%20Search%20Trees%20IIC%2B%2B)|24 ms|
 |97|[ Interleaving String](https://leetcode.com/problems/interleaving-string/)|[C++](./solutions/97.%20Interleaving%20StringC%2B%2B)|4 ms|
 |98|[ Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)|[C++](./solutions/98.%20Validate%20Binary%20Search%20TreeC%2B%2B)|20 ms|
