@@ -1,0 +1,30 @@
+// Runtime: 4 ms, faster than 83.81% of C++ online submissions for Restore IP Addresses.
+// Memory Usage: 8.6 MB, less than 64.24% of C++ online submissions for Restore IP Addresses.
+​
+class Solution {
+public:
+  void restoreIpAddresses(const string& s, int from, int parts, 
+                          string prefix, vector<string>& ans) {
+    if (from == s.size() && parts == 0) {
+      ans.push_back(prefix);
+      return;
+    }
+    if (from == s.size() || parts == 0) return;
+    
+    const int end = min(from + 3, (int) s.size() - parts + 1);
+    for (int i = from; i < end; i++) {
+      if (i != from && s[from] == '0') break;  // disallow leading 0
+      const string sub = s.substr(from, i - from + 1);
+      int num = stoi(sub.c_str());
+      if (num > 255) break;
+      const string new_prefix = prefix.empty()? sub : prefix + "." + sub;
+      restoreIpAddresses(s, i + 1, parts - 1, new_prefix, ans);
+    }
+  } 
+  
+  vector<string> restoreIpAddresses(string s) {
+    vector<string> ans;
+    restoreIpAddresses(s, 0, 4, "", ans);
+    return ans;
+  }
+};
