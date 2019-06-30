@@ -1,0 +1,20 @@
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Integer to Roman.
+// Memory Usage: 8.5 MB, less than 58.95% of C++ online submissions for Integer to Roman.
+​
+class Solution {
+public:
+  const int vals[13] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+  const string syms[13] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+  
+  string intToRoman(int num) {
+    int pos = 0;
+    string ans;
+    while (num > 0) {
+      if (num >= vals[pos]) {
+        ans += syms[pos];
+        num -= vals[pos];
+      } else pos++;
+    }
+    return ans;
+  }
+};
