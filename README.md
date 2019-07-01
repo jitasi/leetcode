@@ -125,6 +125,7 @@
 |222|[ Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/)|[C++](./solutions/222.%20Count%20Complete%20Tree%20NodesC%2B%2B)|36 ms|
 |223|[ Rectangle Area](https://leetcode.com/problems/rectangle-area/)|[C++](./solutions/223.%20Rectangle%20AreaC%2B%2B)|8 ms|
 |224|[ Basic Calculator](https://leetcode.com/problems/basic-calculator/)|[C++](./solutions/224.%20Basic%20CalculatorC%2B%2B)|12 ms|
+|225|[ Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/)|[C++](./solutions/225.%20Implement%20Stack%20using%20QueuesC%2B%2B)|4 ms|
 |227|[ Basic Calculator II](https://leetcode.com/problems/basic-calculator-ii/)|[C++](./solutions/227.%20Basic%20Calculator%20IIC%2B%2B)|12 ms|
 |228|[ Summary Ranges](https://leetcode.com/problems/summary-ranges/)|[C++](./solutions/228.%20Summary%20RangesC%2B%2B)|0 ms|
 |229|[ Majority Element II](https://leetcode.com/problems/majority-element-ii/)|[C++](./solutions/229.%20Majority%20Element%20IIC%2B%2B)|16 ms|
