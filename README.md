@@ -123,6 +123,7 @@
 |220|[ Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii/)|[C++](./solutions/220.%20Contains%20Duplicate%20IIIC%2B%2B)|20 ms|
 |221|[ Maximal Square](https://leetcode.com/problems/maximal-square/)|[C++](./solutions/221.%20Maximal%20SquareC%2B%2B)|20 ms|
 |222|[ Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/)|[C++](./solutions/222.%20Count%20Complete%20Tree%20NodesC%2B%2B)|36 ms|
+|223|[ Rectangle Area](https://leetcode.com/problems/rectangle-area/)|[C++](./solutions/223.%20Rectangle%20AreaC%2B%2B)|8 ms|
 |224|[ Basic Calculator](https://leetcode.com/problems/basic-calculator/)|[C++](./solutions/224.%20Basic%20CalculatorC%2B%2B)|12 ms|
 |227|[ Basic Calculator II](https://leetcode.com/problems/basic-calculator-ii/)|[C++](./solutions/227.%20Basic%20Calculator%20IIC%2B%2B)|12 ms|
 |228|[ Summary Ranges](https://leetcode.com/problems/summary-ranges/)|[C++](./solutions/228.%20Summary%20RangesC%2B%2B)|0 ms|
