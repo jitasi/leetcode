@@ -155,6 +155,7 @@
 |324|[ Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/)|[C++](./solutions/324.%20Wiggle%20Sort%20IIC%2B%2B)|72 ms|
 |327|[ Count of Range Sum](https://leetcode.com/problems/count-of-range-sum/)|[C++](./solutions/327.%20Count%20of%20Range%20SumC%2B%2B)|44 ms|
 |329|[ Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)|[C++](./solutions/329.%20Longest%20Increasing%20Path%20in%20a%20MatrixC%2B%2B)|40 ms|
+|331|[ Verify Preorder Serialization of a Binary Tree](https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/)|[C++](./solutions/331.%20Verify%20Preorder%20Serialization%20of%20a%20Binary%20TreeC%2B%2B)|4 ms|
 |334|[ Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/)|[C++](./solutions/334.%20Increasing%20Triplet%20SubsequenceC%2B%2B)|8 ms|
 |336|[ Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/)|[C++](./solutions/336.%20Palindrome%20PairsC%2B%2B)|204 ms|
 |338|[ Counting Bits](https://leetcode.com/problems/counting-bits/)|[C++](./solutions/338.%20Counting%20BitsC%2B%2B)|52 ms|
