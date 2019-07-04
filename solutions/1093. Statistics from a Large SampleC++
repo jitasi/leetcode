@@ -1,0 +1,31 @@
+// Runtime: 4 ms, faster than 83.59% of C++ online submissions for Statistics from a Large Sample.
+// Memory Usage: 8.6 MB, less than 100.00% of C++ online submissions for Statistics from a Large Sample.
+​
+class Solution {
+public:
+  vector<double> sampleStats(vector<int>& count) {
+    const int cnt = accumulate(count.begin(), count.end(), 0);
+    const int median_1 = cnt / 2;
+    const int median_2 = (cnt % 2 == 0)? median_1 - 1 : -1; 
+    
+    int max = -1;
+    int min = -1;
+    int mode = 0;
+    double sum = 0;
+    int median_val_1, median_val_2;
+    int inc_cnt = 0;
+    for (int i = 0; i < count.size(); i++) {
+      sum += count[i] * i;
+      if (median_1 >= inc_cnt && median_1 <= inc_cnt + count[i]) median_val_1 = i;
+      if (median_2 != -1 && median_2 >= inc_cnt && median_2 <= inc_cnt + count[i]) median_val_2 = i;
+      inc_cnt += count[i];
+      if (count[i] > count[mode]) mode = i;
+      if (count[i] > 0) {
+        max = i;
+        if (min == -1) min = i;
+      }
+    }
+    const double median = median_2 == -1? median_val_1 : ((median_val_1 + median_val_2) / 2.0);
+    return {min, max, double(sum) / cnt, median, mode};
+  }
+};
