@@ -1,0 +1,23 @@
+// Runtime: 48 ms, faster than 26.81% of C++ online submissions for Largest Values From Labels.
+// Memory Usage: 15.9 MB, less than 100.00% of C++ online submissions for Largest Values From Labels.
+​
+class Solution {
+public:
+  int largestValsFromLabels(vector<int>& values, vector<int>& labels, int num_wanted, int use_limit) {
+    unordered_map<int, multiset<int>> m;
+    for (int i = 0; i < values.size(); i++) m[labels[i]].insert(values[i]);
+    
+    priority_queue<int> pq;
+    for (const auto& kv: m) {
+      auto it = kv.second.rbegin();
+      for (int i = 0; i < use_limit && it != kv.second.rend(); i++, it++) pq.push(*it);
+    }
+    
+    int ans = 0;
+    while (!pq.empty() && num_wanted-- > 0) {
+      ans += pq.top();
+      pq.pop();
+    }
+    return ans;
+  }
+};
