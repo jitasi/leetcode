@@ -153,6 +153,7 @@
 |316|[ Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/)|[C++](./solutions/316.%20Remove%20Duplicate%20LettersC%2B%2B)|4 ms|
 |318|[ Maximum Product of Word Lengths](https://leetcode.com/problems/maximum-product-of-word-lengths/)|[C++](./solutions/318.%20Maximum%20Product%20of%20Word%20LengthsC%2B%2B)|64 ms|
 |319|[ Bulb Switcher](https://leetcode.com/problems/bulb-switcher/)|[C++](./solutions/319.%20Bulb%20SwitcherC%2B%2B)|4 ms|
+|321|[ Create Maximum Number](https://leetcode.com/problems/create-maximum-number/)|[C++](./solutions/321.%20Create%20Maximum%20NumberC%2B%2B)|156 ms|
 |322|[ Coin Change](https://leetcode.com/problems/coin-change/)|[C++](./solutions/322.%20Coin%20ChangeC%2B%2B)|36 ms|
 |324|[ Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/)|[C++](./solutions/324.%20Wiggle%20Sort%20IIC%2B%2B)|72 ms|
 |327|[ Count of Range Sum](https://leetcode.com/problems/count-of-range-sum/)|[C++](./solutions/327.%20Count%20of%20Range%20SumC%2B%2B)|44 ms|
