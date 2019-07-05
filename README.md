@@ -203,6 +203,7 @@
 |460|[ LFU Cache](https://leetcode.com/problems/lfu-cache/)|[C++](./solutions/460.%20LFU%20CacheC%2B%2B)|128 ms|
 |461|[ Hamming Distance](https://leetcode.com/problems/hamming-distance/)|[C++](./solutions/461.%20Hamming%20DistanceC%2B%2B)|4 ms|
 |463|[ Island Perimeter](https://leetcode.com/problems/island-perimeter/)|[C++](./solutions/463.%20Island%20PerimeterC%2B%2B)|135 ms|
+|466|[ Count The Repetitions](https://leetcode.com/problems/count-the-repetitions/)|[C++](./solutions/466.%20Count%20The%20RepetitionsC%2B%2B)|44 ms|
 |474|[ Ones and Zeroes](https://leetcode.com/problems/ones-and-zeroes/)|[C++](./solutions/474.%20Ones%20and%20ZeroesC%2B%2B)|136 ms|
 |475|[ Heaters](https://leetcode.com/problems/heaters/)|[C++](./solutions/475.%20HeatersC%2B%2B)|80 ms|
 |480|[ Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)|[C++](./solutions/480.%20Sliding%20Window%20MedianC%2B%2B)|48 ms|
