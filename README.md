@@ -161,6 +161,7 @@
 |330|[ Patching Array](https://leetcode.com/problems/patching-array/)|[C++](./solutions/330.%20Patching%20ArrayC%2B%2B)|12 ms|
 |331|[ Verify Preorder Serialization of a Binary Tree](https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/)|[C++](./solutions/331.%20Verify%20Preorder%20Serialization%20of%20a%20Binary%20TreeC%2B%2B)|4 ms|
 |334|[ Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/)|[C++](./solutions/334.%20Increasing%20Triplet%20SubsequenceC%2B%2B)|8 ms|
+|335|[ Self Crossing](https://leetcode.com/problems/self-crossing/)|[C++](./solutions/335.%20Self%20CrossingC%2B%2B)|4 ms|
 |336|[ Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/)|[C++](./solutions/336.%20Palindrome%20PairsC%2B%2B)|204 ms|
 |338|[ Counting Bits](https://leetcode.com/problems/counting-bits/)|[C++](./solutions/338.%20Counting%20BitsC%2B%2B)|52 ms|
 |341|[ Flatten Nested List Iterator](https://leetcode.com/problems/flatten-nested-list-iterator/)|[C++](./solutions/341.%20Flatten%20Nested%20List%20IteratorC%2B%2B)|20 ms|
