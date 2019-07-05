@@ -1,0 +1,38 @@
+// Runtime: 44 ms, faster than 30.22% of C++ online submissions for Count The Repetitions.
+// Memory Usage: 122.7 MB, less than 6.38% of C++ online submissions for Count The Repetitions.
+​
+class Solution {
+public:
+  int getMaxRepetitions(string s1, int n1, string s2, int n2) {
+    const int len1 = s1.size();
+    const int len2 = s2.size();
+    vector<int> reps(n1 + 1, 0);
+    vector<int> idx(n1 + 1, 0);
+    int cnt = 0;
+    int k = 0;
+    for (int i = 1; i <= n1; i++) {
+      for (int j = 0; j < len1; j++) {
+        if (s1[j] == s2[k]) {
+          k++;
+          if (k == len2) {
+            cnt++;
+            k = 0;
+          }
+        }
+      }
+      reps[i] = cnt;
+      idx[i] = k;
+      
+      for (int j = 0; j < i; j++) {
+        if (idx[j] == k) {
+          const int pattern_len = i - j;
+          const int pattern_cnts = (n1 - j) / pattern_len;
+          const int pattern_repes = (reps[i] - reps[j]) * pattern_cnts;
+          return (pattern_repes + reps[j + (n1 - j) % pattern_len]) / n2;
+        }
+      }
+    }
+    
+    return reps[n1] / n2;
+  }
+};
