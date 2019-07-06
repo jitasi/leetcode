@@ -275,6 +275,7 @@
 |927|[ Three Equal Parts](https://leetcode.com/problems/three-equal-parts/)|[C++](./solutions/927.%20Three%20Equal%20PartsC%2B%2B)|40 ms|
 |935|[ Knight Dialer](https://leetcode.com/problems/knight-dialer/)|[C++](./solutions/935.%20Knight%20DialerC%2B%2B)|8 ms|
 |947|[ Most Stones Removed with Same Row or Column](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/)|[C++](./solutions/947.%20Most%20Stones%20Removed%20with%20Same%20Row%20or%20ColumnC%2B%2B)|36 ms|
+|960|[ Delete Columns to Make Sorted III](https://leetcode.com/problems/delete-columns-to-make-sorted-iii/)|[C++](./solutions/960.%20Delete%20Columns%20to%20Make%20Sorted%20IIIC%2B%2B)|16 ms|
 |963|[ Minimum Area Rectangle II](https://leetcode.com/problems/minimum-area-rectangle-ii/)|[C++](./solutions/963.%20Minimum%20Area%20Rectangle%20IIC%2B%2B)|72 ms|
 |973|[ K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/)|[C++](./solutions/973.%20K%20Closest%20Points%20to%20OriginC%2B%2B)|276 ms|
 |978|[ Longest Turbulent Subarray](https://leetcode.com/problems/longest-turbulent-subarray/)|[C++](./solutions/978.%20Longest%20Turbulent%20SubarrayC%2B%2B)|104 ms|
