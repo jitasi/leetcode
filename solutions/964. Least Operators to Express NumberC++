@@ -29,7 +29,7 @@ public:
     
     // case 3: x * x * ... * x + f(x, p * x - target) => k + 1 + least(x, p * x - target)
     long sub = p * x - target;
-    if (sub < target)
+    if (sub < target)  // keep target decreasing
       ans = min(ans, leastOpsExpressTarget(x, sub) + k + 1);
     m[target] = ans;
     return ans;
