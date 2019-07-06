@@ -295,4 +295,5 @@
 |1081|[ Smallest Subsequence of Distinct Characters](https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/)|[C++](./solutions/1081.%20Smallest%20Subsequence%20of%20Distinct%20CharactersC%2B%2B)|4 ms|
 |1090|[ Largest Values From Labels](https://leetcode.com/problems/largest-values-from-labels/)|[C++](./solutions/1090.%20Largest%20Values%20From%20LabelsC%2B%2B)|48 ms|
 |1091|[ Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/)|[C++](./solutions/1091.%20Shortest%20Path%20in%20Binary%20MatrixC%2B%2B)|44 ms|
+|1092|[ Shortest Common Supersequence](https://leetcode.com/problems/shortest-common-supersequence/)|[C++](./solutions/1092.%20Shortest%20Common%20SupersequenceC%2B%2B)|8 ms|
 |1093|[ Statistics from a Large Sample](https://leetcode.com/problems/statistics-from-a-large-sample/)|[C++](./solutions/1093.%20Statistics%20from%20a%20Large%20SampleC%2B%2B)|4 ms|
