@@ -1,0 +1,31 @@
+// Runtime: 32 ms, faster than 46.89% of C++ online submissions for K Inverse Pairs Array.
+// Memory Usage: 17 MB, less than 76.54% of C++ online submissions for K Inverse Pairs Array.
+​
+class Solution {
+public:
+  const int MOD = 1000000007;
+  
+  int kInversePairs(int n, int k) {
+    int max_reverse_pairs = n * (n - 1) / 2;
+    if (k > max_reverse_pairs || k < 0) return 0;
+    if (k == 0 || k == max_reverse_pairs) return 1;
+    
+    long dp[n + 1][k + 1];
+    for (int i = 0; i <= n; i++)
+      for (int j = 0; j <= k; j++)
+        dp[i][j] = 0;
+    dp[2][0] = 1;
+    dp[2][1] = 1;
+    
+    for (int i = 3; i <= n; i++) {
+      dp[i][0] = 1;  // no reverse pairs, only 1.
+      max_reverse_pairs = min(k, i * (i - 1) / 2);
+      for (int j = 1; j <= max_reverse_pairs; j++) {
+        dp[i][j] = dp[i][j - 1] + dp[i - 1][j];
+        if (j >= i) dp[i][j] -= dp[i - 1][j - i];
+        dp[i][j] = (dp[i][j] + MOD) % MOD;
+      }
+    }
+    return dp[n][k];          
+  }
+};
