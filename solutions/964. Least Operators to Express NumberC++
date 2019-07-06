@@ -28,9 +28,9 @@ public:
     int ans = leastOpsExpressTarget(x, target - p) + k;
     
     // case 3: x * x * ... * x + f(x, p * x - target) => k + 1 + least(x, p * x - target)
-    long left = p * x - target;
-    if (left < target)
-      ans = min(ans, leastOpsExpressTarget(x, left) + k + 1);
+    long sub = p * x - target;
+    if (sub < target)
+      ans = min(ans, leastOpsExpressTarget(x, sub) + k + 1);
     m[target] = ans;
     return ans;
   }
