@@ -217,6 +217,7 @@
 |525|[ Contiguous Array](https://leetcode.com/problems/contiguous-array/)|[C++](./solutions/525.%20Contiguous%20ArrayC%2B%2B)|124 ms|
 |529|[ Minesweeper](https://leetcode.com/problems/minesweeper/)|[C++](./solutions/529.%20MinesweeperC%2B%2B)|64 ms|
 |540|[ Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/)|[C++](./solutions/540.%20Single%20Element%20in%20a%20Sorted%20ArrayC%2B%2B)|12 ms|
+|546|[ Remove Boxes](https://leetcode.com/problems/remove-boxes/)|[C++](./solutions/546.%20Remove%20BoxesC%2B%2B)|272 ms|
 |553|[ Optimal Division](https://leetcode.com/problems/optimal-division/)|[C++](./solutions/553.%20Optimal%20DivisionC%2B%2B)|4 ms|
 |556|[ Next Greater Element III](https://leetcode.com/problems/next-greater-element-iii/)|[C++](./solutions/556.%20Next%20Greater%20Element%20IIIC%2B%2B)|0 ms|
 |560|[ Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)|[C++](./solutions/560.%20Subarray%20Sum%20Equals%20KC%2B%2B)|28 ms|
