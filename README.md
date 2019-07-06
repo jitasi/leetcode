@@ -272,6 +272,7 @@
 |910|[ Smallest Range II](https://leetcode.com/problems/smallest-range-ii/)|[C++](./solutions/910.%20Smallest%20Range%20IIC%2B%2B)|32 ms|
 |912|[ Sort an Array](https://leetcode.com/problems/sort-an-array/)|[C++](./solutions/912.%20Sort%20an%20ArrayC%2B%2B)|56 ms|
 |916|[ Word Subsets](https://leetcode.com/problems/word-subsets/)|[C++](./solutions/916.%20Word%20SubsetsC%2B%2B)|236 ms|
+|920|[ Number of Music Playlists](https://leetcode.com/problems/number-of-music-playlists/)|[C++](./solutions/920.%20Number%20of%20Music%20PlaylistsC%2B%2B)|4 ms|
 |926|[ Flip String to Monotone Increasing](https://leetcode.com/problems/flip-string-to-monotone-increasing/)|[C++](./solutions/926.%20Flip%20String%20to%20Monotone%20IncreasingC%2B%2B)|12 ms|
 |927|[ Three Equal Parts](https://leetcode.com/problems/three-equal-parts/)|[C++](./solutions/927.%20Three%20Equal%20PartsC%2B%2B)|40 ms|
 |935|[ Knight Dialer](https://leetcode.com/problems/knight-dialer/)|[C++](./solutions/935.%20Knight%20DialerC%2B%2B)|8 ms|
