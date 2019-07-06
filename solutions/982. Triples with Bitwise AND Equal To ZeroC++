@@ -1,0 +1,18 @@
+// Runtime: 508 ms, faster than 42.63% of C++ online submissions for Triples with Bitwise AND Equal To Zero.
+// Memory Usage: 14.6 MB, less than 61.83% of C++ online submissions for Triples with Bitwise AND Equal To Zero.
+​
+class Solution {
+public:
+  int countTriplets(vector<int>& A) {
+    unordered_map<int, int> m;
+    for (int i = 0; i < A.size(); i++)
+      for (int j = 0; j < A.size(); j++)
+        m[A[i] & A[j]]++;
+    
+    int ans = 0;
+    for (const int a : A)
+      for (const auto& kv: m)
+        if ((kv.first & a) == 0) ans += kv.second;
+    return ans;
+  }
+};
