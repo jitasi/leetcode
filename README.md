@@ -279,6 +279,7 @@
 |973|[ K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/)|[C++](./solutions/973.%20K%20Closest%20Points%20to%20OriginC%2B%2B)|276 ms|
 |978|[ Longest Turbulent Subarray](https://leetcode.com/problems/longest-turbulent-subarray/)|[C++](./solutions/978.%20Longest%20Turbulent%20SubarrayC%2B%2B)|104 ms|
 |981|[ Time Based Key-Value Store](https://leetcode.com/problems/time-based-key-value-store/)|[C++](./solutions/981.%20Time%20Based%20Key-Value%20StoreC%2B%2B)|396 ms|
+|982|[ Triples with Bitwise AND Equal To Zero](https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/)|[C++](./solutions/982.%20Triples%20with%20Bitwise%20AND%20Equal%20To%20ZeroC%2B%2B)|508 ms|
 |990|[ Satisfiability of Equality Equations](https://leetcode.com/problems/satisfiability-of-equality-equations/)|[C++](./solutions/990.%20Satisfiability%20of%20Equality%20EquationsC%2B%2B)|8 ms|
 |991|[ Broken Calculator](https://leetcode.com/problems/broken-calculator/)|[C++](./solutions/991.%20Broken%20CalculatorC%2B%2B)|0 ms|
 |1003|[ Check If Word Is Valid After Substitutions](https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/)|[C++](./solutions/1003.%20Check%20If%20Word%20Is%20Valid%20After%20SubstitutionsC%2B%2B)|64 ms|
