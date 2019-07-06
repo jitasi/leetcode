@@ -268,6 +268,7 @@
 |898|[ Bitwise ORs of Subarrays](https://leetcode.com/problems/bitwise-ors-of-subarrays/)|[C++](./solutions/898.%20Bitwise%20ORs%20of%20SubarraysC%2B%2B)|1764 ms|
 |900|[ RLE Iterator](https://leetcode.com/problems/rle-iterator/)|[C++](./solutions/900.%20RLE%20IteratorC%2B%2B)|8 ms|
 |901|[ Online Stock Span](https://leetcode.com/problems/online-stock-span/)|[C++](./solutions/901.%20Online%20Stock%20SpanC%2B%2B)|300 ms|
+|903|[ Valid Permutations for DI Sequence](https://leetcode.com/problems/valid-permutations-for-di-sequence/)|[C++](./solutions/903.%20Valid%20Permutations%20for%20DI%20SequenceC%2B%2B)|0 ms|
 |910|[ Smallest Range II](https://leetcode.com/problems/smallest-range-ii/)|[C++](./solutions/910.%20Smallest%20Range%20IIC%2B%2B)|32 ms|
 |912|[ Sort an Array](https://leetcode.com/problems/sort-an-array/)|[C++](./solutions/912.%20Sort%20an%20ArrayC%2B%2B)|56 ms|
 |916|[ Word Subsets](https://leetcode.com/problems/word-subsets/)|[C++](./solutions/916.%20Word%20SubsetsC%2B%2B)|236 ms|
