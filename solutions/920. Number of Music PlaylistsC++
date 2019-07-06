@@ -9,7 +9,7 @@ public:
     long dp[L + 1][N + 1];  // dp[i][j]: number playlists with length j of i diffs songs.
     for (int i = 0; i <= L; i++)
       for (int j = 0; j <= N; j++)
-        dp[0][j] = 0;
+        dp[i][j] = 0;
     
     dp[0][0] = 1;
     for (int i = 1; i <= L; i++) {
