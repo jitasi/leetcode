@@ -235,6 +235,7 @@
 |674|[ Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/)|[C++](./solutions/674.%20Longest%20Continuous%20Increasing%20SubsequenceC%2B%2B)|12 ms|
 |675|[ Cut Off Trees for Golf Event](https://leetcode.com/problems/cut-off-trees-for-golf-event/)|[C++](./solutions/675.%20Cut%20Off%20Trees%20for%20Golf%20EventC%2B%2B)|N/A|
 |689|[ Maximum Sum of 3 Non-Overlapping Subarrays](https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/)|[C++](./solutions/689.%20Maximum%20Sum%20of%203%20Non-Overlapping%20SubarraysC%2B%2B)|32 ms|
+|691|[ Stickers to Spell Word](https://leetcode.com/problems/stickers-to-spell-word/)|[C++](./solutions/691.%20Stickers%20to%20Spell%20WordC%2B%2B)|164 ms|
 |699|[ Falling Squares](https://leetcode.com/problems/falling-squares/)|[C++](./solutions/699.%20Falling%20SquaresC%2B%2B)|28 ms|
 |712|[ Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/)|[C++](./solutions/712.%20Minimum%20ASCII%20Delete%20Sum%20for%20Two%20StringsC%2B%2B)|28 ms|
 |729|[ My Calendar I](https://leetcode.com/problems/my-calendar-i/)|[C++](./solutions/729.%20My%20Calendar%20IC%2B%2B)|116 ms|
