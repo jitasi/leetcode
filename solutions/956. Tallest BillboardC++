@@ -1,0 +1,25 @@
+// Runtime: 780 ms, faster than 8.74% of C++ online submissions for Tallest Billboard.
+// Memory Usage: 151.1 MB, less than 6.14% of C++ online submissions for Tallest Billboard.
+​
+class Solution {
+public:
+  int tallestBillboard(vector<int>& rods) {
+    // for r in rods, multiple r with -1, 0, 1 and sum up to get i
+    // dp[i] is the sum of the all rs multipled with 1.
+    unordered_map<int, int> dp;
+    dp[0] = 0;
+    for (const int r : rods) {
+      unordered_map<int, int> next;
+      for (const auto& kv : dp) {
+        // case 1: mulitple r with 1.
+        next[kv.first + r] = max(next[kv.first + r], dp[kv.first] + r);
+        // case 2: mulitple r with 0.
+        next[kv.first] = max(next[kv.first], dp[kv.first]);
+        // case 1: mulitple r with -1.
+        next[kv.first - r] = max(next[kv.first - r], dp[kv.first]);
+      }
+      dp = next;
+    }
+    return dp[0];
+  }
+};
