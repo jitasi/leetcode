@@ -211,6 +211,7 @@
 |474|[ Ones and Zeroes](https://leetcode.com/problems/ones-and-zeroes/)|[C++](./solutions/474.%20Ones%20and%20ZeroesC%2B%2B)|136 ms|
 |475|[ Heaters](https://leetcode.com/problems/heaters/)|[C++](./solutions/475.%20HeatersC%2B%2B)|80 ms|
 |480|[ Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)|[C++](./solutions/480.%20Sliding%20Window%20MedianC%2B%2B)|48 ms|
+|491|[ Increasing Subsequences](https://leetcode.com/problems/increasing-subsequences/)|[C++](./solutions/491.%20Increasing%20SubsequencesC%2B%2B)|252 ms|
 |493|[ Reverse Pairs](https://leetcode.com/problems/reverse-pairs/)|[C++](./solutions/493.%20Reverse%20PairsC%2B%2B)|348 ms|
 |494|[ Target Sum](https://leetcode.com/problems/target-sum/)|[C++](./solutions/494.%20Target%20SumC%2B%2B)|276 ms|
 |502|[ IPO](https://leetcode.com/problems/ipo/)|[C++](./solutions/502.%20IPOC%2B%2B)|68 ms|
