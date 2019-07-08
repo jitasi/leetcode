@@ -1,0 +1,21 @@
+// Runtime: 252 ms, faster than 29.04% of C++ online submissions for Increasing Subsequences.
+// Memory Usage: 38 MB, less than 17.48% of C++ online submissions for Increasing Subsequences.
+​
+class Solution {
+public:
+  vector<vector<int>> findSubsequences(vector<int>& nums) {
+    set<vector<int>> ans;
+    vector<vector<int>> cur;
+    cur.push_back({});
+    for (int i = 0; i < nums.size(); i++) {
+      int n = cur.size();
+      for (int j = 0; j < n; ++j) {
+        if (!cur[j].empty() && cur[j].back() > nums[i]) continue;
+        cur.push_back(cur[j]);
+        cur.back().push_back(nums[i]);
+        if (cur.back().size() >= 2) ans.insert(cur.back());
+      }
+    }
+    return vector<vector<int>>(ans.begin(), ans.end());
+  }
+};
