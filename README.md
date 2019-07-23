@@ -243,6 +243,7 @@
 |691|[ Stickers to Spell Word](https://leetcode.com/problems/stickers-to-spell-word/)|[C++](./solutions/691.%20Stickers%20to%20Spell%20WordC%2B%2B)|164 ms|
 |699|[ Falling Squares](https://leetcode.com/problems/falling-squares/)|[C++](./solutions/699.%20Falling%20SquaresC%2B%2B)|28 ms|
 |712|[ Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/)|[C++](./solutions/712.%20Minimum%20ASCII%20Delete%20Sum%20for%20Two%20StringsC%2B%2B)|28 ms|
+|726|[ Number of Atoms](https://leetcode.com/problems/number-of-atoms/)|[C++](./solutions/726.%20Number%20of%20AtomsC%2B%2B)|4 ms|
 |729|[ My Calendar I](https://leetcode.com/problems/my-calendar-i/)|[C++](./solutions/729.%20My%20Calendar%20IC%2B%2B)|116 ms|
 |731|[ My Calendar II](https://leetcode.com/problems/my-calendar-ii/)|[C++](./solutions/731.%20My%20Calendar%20IIC%2B%2B)|132 ms|
 |740|[ Delete and Earn](https://leetcode.com/problems/delete-and-earn/)|[C++](./solutions/740.%20Delete%20and%20EarnC%2B%2B)|16 ms|
