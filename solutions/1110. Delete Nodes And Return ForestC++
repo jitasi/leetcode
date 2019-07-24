@@ -1,0 +1,32 @@
+// Runtime: 36 ms, faster than 14.97% of C++ online submissions for Delete Nodes And Return Forest.
+// Memory Usage: 18.8 MB, less than 100.00% of C++ online submissions for Delete Nodes And Return Forest.
+​
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+  TreeNode* helper(TreeNode* root, const unordered_set<int>& s, vector<TreeNode*>* ans, bool is_root) {
+    if (root == nullptr) return nullptr;
+    
+    bool to_del = s.count(root->val) > 0;
+    if (is_root && !to_del) ans->push_back(root);
+    
+    root->left = helper(root->left, s, ans, to_del);
+    root->right = helper(root->right, s, ans, to_del);
+    return to_del? nullptr : root;
+  }
+  
+  vector<TreeNode*> delNodes(TreeNode* root, vector<int>& to_delete) {
+    unordered_set<int> s(to_delete.begin(), to_delete.end());
+    vector<TreeNode*> ans;
+    helper(root, s, &ans, true);
+    return ans;
+  }
+};
