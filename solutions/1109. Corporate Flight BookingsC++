@@ -1,0 +1,18 @@
+// Runtime: 284 ms, faster than 42.63% of C++ online submissions for Corporate Flight Bookings.
+// Memory Usage: 41.2 MB, less than 100.00% of C++ online submissions for Corporate Flight Bookings.
+​
+class Solution {
+public:
+  vector<int> corpFlightBookings(vector<vector<int>>& bookings, int n) {
+    vector<int> presum(n + 1, 0);
+    for (const auto& b : bookings) {
+      presum[b[0] - 1] += b[2];
+      presum[b[1]] -= b[2];
+    }
+    
+    presum.resize(n);
+    for (int i = 1; i < n; i++)
+      presum[i] += presum[i - 1];
+    return presum;
+  }
+};
