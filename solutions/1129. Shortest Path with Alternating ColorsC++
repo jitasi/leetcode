@@ -1,0 +1,46 @@
+// Runtime: 20 ms, faster than 84.54% of C++ online submissions for Shortest Path with Alternating Colors.
+// Memory Usage: 12.7 MB, less than 100.00% of C++ online submissions for Shortest Path with Alternating Colors.
+​
+class Solution {
+public:
+  vector<int> shortestAlternatingPaths(int n, vector<vector<int>>& red_edges, vector<vector<int>>& blue_edges) {
+    // Build Graph
+    vector<vector<int>> adj_red(n), adj_blue(n);
+    for (const auto& e: red_edges) adj_red[e[0]].push_back(e[1]);
+    for (const auto& e: blue_edges) adj_blue[e[0]].push_back(e[1]);
+    
+    vector<int> ans(n, -1);
+    ans[0] = 0;
+  
+    // BFS
+    int hops = 0;
+    queue<pair<int, bool>> q;  // node idx, true => next edge allow red; false => blue
+    vector<int> visited_red(n, 0), visited_blue(n, 0);
+    q.push({0, true});
+    q.push({0, false});
+    visited_red[0] = visited_blue[0] = 1;
+    while(!q.empty()) {
+      hops++;
+      const int num = q.size();
+      for (int i = 0; i < num; i++) {
+        const auto p = q.front();
+        q.pop();
+        const auto& adj = p.second? adj_red : adj_blue;
+        for (const int next: adj[p.first]) {
+          if (p.second && visited_red[next]) continue;
+          if (!p.second && visited_blue[next]) continue;
+          if (p.second) visited_red[next] = 1;
+          else visited_blue[next] = 1;
+          if (ans[next] == -1) ans[next] = hops;
+          q.push({next, !p.second});
+        }
+      }
+    }
+​
+    return ans;
+  }
+};
+​
+// 5
+// 0-1-2-3-4
+// . 1-2-3-1
