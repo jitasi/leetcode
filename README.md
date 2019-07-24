@@ -309,6 +309,7 @@
 |1091|[ Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/)|[C++](./solutions/1091.%20Shortest%20Path%20in%20Binary%20MatrixC%2B%2B)|44 ms|
 |1092|[ Shortest Common Supersequence](https://leetcode.com/problems/shortest-common-supersequence/)|[C++](./solutions/1092.%20Shortest%20Common%20SupersequenceC%2B%2B)|8 ms|
 |1093|[ Statistics from a Large Sample](https://leetcode.com/problems/statistics-from-a-large-sample/)|[C++](./solutions/1093.%20Statistics%20from%20a%20Large%20SampleC%2B%2B)|4 ms|
+|1109|[ Corporate Flight Bookings](https://leetcode.com/problems/corporate-flight-bookings/)|[C++](./solutions/1109.%20Corporate%20Flight%20BookingsC%2B%2B)|284 ms|
 |1123|[ Lowest Common Ancestor of Deepest Leaves](https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/)|[C++](./solutions/1123.%20Lowest%20Common%20Ancestor%20of%20Deepest%20LeavesC%2B%2B)|8 ms|
 |1124|[ Longest Well-Performing Interval](https://leetcode.com/problems/longest-well-performing-interval/)|[C++](./solutions/1124.%20Longest%20Well-Performing%20IntervalC%2B%2B)|40 ms|
 |1129|[ Shortest Path with Alternating Colors](https://leetcode.com/problems/shortest-path-with-alternating-colors/)|[C++](./solutions/1129.%20Shortest%20Path%20with%20Alternating%20ColorsC%2B%2B)|20 ms|
