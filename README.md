@@ -309,3 +309,4 @@
 |1091|[ Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/)|[C++](./solutions/1091.%20Shortest%20Path%20in%20Binary%20MatrixC%2B%2B)|44 ms|
 |1092|[ Shortest Common Supersequence](https://leetcode.com/problems/shortest-common-supersequence/)|[C++](./solutions/1092.%20Shortest%20Common%20SupersequenceC%2B%2B)|8 ms|
 |1093|[ Statistics from a Large Sample](https://leetcode.com/problems/statistics-from-a-large-sample/)|[C++](./solutions/1093.%20Statistics%20from%20a%20Large%20SampleC%2B%2B)|4 ms|
+|1129|[ Shortest Path with Alternating Colors](https://leetcode.com/problems/shortest-path-with-alternating-colors/)|[C++](./solutions/1129.%20Shortest%20Path%20with%20Alternating%20ColorsC%2B%2B)|20 ms|
