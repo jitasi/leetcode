@@ -1,0 +1,36 @@
+// Runtime: 48 ms, faster than 59.04% of C++ online submissions for Insufficient Nodes in Root to Leaf Paths.
+// Memory Usage: 23.5 MB, less than 100.00% of C++ online submissions for Insufficient Nodes in Root to Leaf Paths.
+​
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+  TreeNode* sufficientSubset(TreeNode* root, int limit) {
+    if (root == nullptr) return nullptr;
+    if (root->left == nullptr && root->right == nullptr) {
+      return root->val >= limit? root : nullptr;
+    }
+    
+    int num_children = 0;
+    int num_children_removed = 0;   
+    if (root->left != nullptr) {
+      num_children++;
+      root->left = sufficientSubset(root->left, limit - root->val);
+      if (root->left == nullptr) num_children_removed++;
+    }
+    if (root->right != nullptr) {
+      num_children++;
+      root->right = sufficientSubset(root->right, limit - root->val);
+      if (root->right == nullptr) num_children_removed++;
+    }  
+​
+    return num_children == num_children_removed? nullptr : root;
+  }
+};
