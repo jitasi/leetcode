@@ -304,6 +304,7 @@
 |1031|[ Maximum Sum of Two Non-Overlapping Subarrays](https://leetcode.com/problems/maximum-sum-of-two-non-overlapping-subarrays/)|[C++](./solutions/1031.%20Maximum%20Sum%20of%20Two%20Non-Overlapping%20SubarraysC%2B%2B)|12 ms|
 |1039|[ Minimum Score Triangulation of Polygon](https://leetcode.com/problems/minimum-score-triangulation-of-polygon/)|[C++](./solutions/1039.%20Minimum%20Score%20Triangulation%20of%20PolygonC%2B%2B)|4 ms|
 |1073|[ Adding Two Negabinary Numbers](https://leetcode.com/problems/adding-two-negabinary-numbers/)|[C++](./solutions/1073.%20Adding%20Two%20Negabinary%20NumbersC%2B%2B)|12 ms|
+|1080|[ Insufficient Nodes in Root to Leaf Paths](https://leetcode.com/problems/insufficient-nodes-in-root-to-leaf-paths/)|[C++](./solutions/1080.%20Insufficient%20Nodes%20in%20Root%20to%20Leaf%20PathsC%2B%2B)|48 ms|
 |1081|[ Smallest Subsequence of Distinct Characters](https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/)|[C++](./solutions/1081.%20Smallest%20Subsequence%20of%20Distinct%20CharactersC%2B%2B)|4 ms|
 |1090|[ Largest Values From Labels](https://leetcode.com/problems/largest-values-from-labels/)|[C++](./solutions/1090.%20Largest%20Values%20From%20LabelsC%2B%2B)|48 ms|
 |1091|[ Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/)|[C++](./solutions/1091.%20Shortest%20Path%20in%20Binary%20MatrixC%2B%2B)|44 ms|
