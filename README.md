@@ -311,3 +311,4 @@
 |1093|[ Statistics from a Large Sample](https://leetcode.com/problems/statistics-from-a-large-sample/)|[C++](./solutions/1093.%20Statistics%20from%20a%20Large%20SampleC%2B%2B)|4 ms|
 |1129|[ Shortest Path with Alternating Colors](https://leetcode.com/problems/shortest-path-with-alternating-colors/)|[C++](./solutions/1129.%20Shortest%20Path%20with%20Alternating%20ColorsC%2B%2B)|20 ms|
 |1130|[ Minimum Cost Tree From Leaf Values](https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/)|[C++](./solutions/1130.%20Minimum%20Cost%20Tree%20From%20Leaf%20ValuesC%2B%2B)|4 ms|
+|1131|[ Maximum of Absolute Value Expression](https://leetcode.com/problems/maximum-of-absolute-value-expression/)|[C++](./solutions/1131.%20Maximum%20of%20Absolute%20Value%20ExpressionC%2B%2B)|36 ms|
