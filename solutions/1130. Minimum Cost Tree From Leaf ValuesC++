@@ -1,0 +1,24 @@
+// Runtime: 4 ms, faster than 85.47% of C++ online submissions for Minimum Cost Tree From Leaf Values.
+// Memory Usage: 8.4 MB, less than 100.00% of C++ online submissions for Minimum Cost Tree From Leaf Values.
+​
+class Solution {
+public:
+  int mctFromLeafValues(vector<int>& arr) {
+    int ans = 0;
+    vector<int> s;
+    s.push_back(INT_MAX);
+    for (const int cur_num : arr) {
+      while (s.back() <= cur_num) {
+        const int num_to_del = s.back();
+        s.pop_back();
+        ans += num_to_del * min(s.back(), cur_num);
+      }
+      s.push_back(cur_num);
+    }
+    
+    for (int i = 2; i < s.size(); i++)
+      ans += s[i] * s[i -1];
+    
+    return ans;
+  }
+};
