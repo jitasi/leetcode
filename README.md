@@ -303,6 +303,7 @@
 |1027|[ Longest Arithmetic Sequence](https://leetcode.com/problems/longest-arithmetic-sequence/)|[C++](./solutions/1027.%20Longest%20Arithmetic%20SequenceC%2B%2B)|3164 ms|
 |1031|[ Maximum Sum of Two Non-Overlapping Subarrays](https://leetcode.com/problems/maximum-sum-of-two-non-overlapping-subarrays/)|[C++](./solutions/1031.%20Maximum%20Sum%20of%20Two%20Non-Overlapping%20SubarraysC%2B%2B)|12 ms|
 |1039|[ Minimum Score Triangulation of Polygon](https://leetcode.com/problems/minimum-score-triangulation-of-polygon/)|[C++](./solutions/1039.%20Minimum%20Score%20Triangulation%20of%20PolygonC%2B%2B)|4 ms|
+|1040|[ Moving Stones Until Consecutive II](https://leetcode.com/problems/moving-stones-until-consecutive-ii/)|[C++](./solutions/1040.%20Moving%20Stones%20Until%20Consecutive%20IIC%2B%2B)|28 ms|
 |1054|[ Distant Barcodes](https://leetcode.com/problems/distant-barcodes/)|[C++](./solutions/1054.%20Distant%20BarcodesC%2B%2B)|216 ms|
 |1073|[ Adding Two Negabinary Numbers](https://leetcode.com/problems/adding-two-negabinary-numbers/)|[C++](./solutions/1073.%20Adding%20Two%20Negabinary%20NumbersC%2B%2B)|12 ms|
 |1079|[ Letter Tile Possibilities](https://leetcode.com/problems/letter-tile-possibilities/)|[C++](./solutions/1079.%20Letter%20Tile%20PossibilitiesC%2B%2B)|4 ms|
