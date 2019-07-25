@@ -305,6 +305,7 @@
 |1039|[ Minimum Score Triangulation of Polygon](https://leetcode.com/problems/minimum-score-triangulation-of-polygon/)|[C++](./solutions/1039.%20Minimum%20Score%20Triangulation%20of%20PolygonC%2B%2B)|4 ms|
 |1040|[ Moving Stones Until Consecutive II](https://leetcode.com/problems/moving-stones-until-consecutive-ii/)|[C++](./solutions/1040.%20Moving%20Stones%20Until%20Consecutive%20IIC%2B%2B)|28 ms|
 |1054|[ Distant Barcodes](https://leetcode.com/problems/distant-barcodes/)|[C++](./solutions/1054.%20Distant%20BarcodesC%2B%2B)|216 ms|
+|1072|[ Flip Columns For Maximum Number of Equal Rows](https://leetcode.com/problems/flip-columns-for-maximum-number-of-equal-rows/)|[C++](./solutions/1072.%20Flip%20Columns%20For%20Maximum%20Number%20of%20Equal%20RowsC%2B%2B)|176 ms|
 |1073|[ Adding Two Negabinary Numbers](https://leetcode.com/problems/adding-two-negabinary-numbers/)|[C++](./solutions/1073.%20Adding%20Two%20Negabinary%20NumbersC%2B%2B)|12 ms|
 |1079|[ Letter Tile Possibilities](https://leetcode.com/problems/letter-tile-possibilities/)|[C++](./solutions/1079.%20Letter%20Tile%20PossibilitiesC%2B%2B)|4 ms|
 |1080|[ Insufficient Nodes in Root to Leaf Paths](https://leetcode.com/problems/insufficient-nodes-in-root-to-leaf-paths/)|[C++](./solutions/1080.%20Insufficient%20Nodes%20in%20Root%20to%20Leaf%20PathsC%2B%2B)|48 ms|
