@@ -1,0 +1,23 @@
+// Runtime: 4 ms, faster than 93.98% of C++ online submissions for Letter Tile Possibilities.
+// Memory Usage: 8.2 MB, less than 100.00% of C++ online submissions for Letter Tile Possibilities.
+​
+class Solution {
+public:
+  int dfs(vector<int>& cnts) {
+    int ans = 0;
+    for (int i = 0; i < 26; i++) {
+      if (cnts[i] == 0) continue;
+      cnts[i]--;
+      ans += 1 + dfs(cnts);
+      cnts[i]++;
+    }
+    return ans;
+  }
+  
+  int numTilePossibilities(string tiles) {
+    vector<int> cnts(26, 0);
+    for (const char ch: tiles) cnts[ch - 'A']++;
+    
+    return dfs(cnts);
+  }
+};
