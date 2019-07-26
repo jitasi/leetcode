@@ -1,0 +1,42 @@
+/* vim: set fp=cpp : */
+​
+// Runtime: 48 ms, faster than 98.19% of C++ online submissions for Coloring A Border.
+// Memory Usage: 12 MB, less than 99.60% of C++ online submissions for Coloring A Border.
+​
+class Solution {
+public:
+  int rows;
+  int cols;
+  
+  const int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+  const int border_mask = -1001;
+  
+  void dfs(vector<vector<int>>& grid, int r0, int c0) {
+    bool border = false;
+    grid[r0][c0] = -grid[r0][c0];
+    for (const auto& d : dirs) {
+      const int r1 = r0 + d[0];
+      const int c1 = c0 + d[1];
+      if (r1 < 0 || r1 >= rows || c1 < 0 || c1 >= cols) border = true;
+      else {
+        if (abs(grid[r0][c0]) != abs(grid[r1][c1]) && grid[r1][c1] != border_mask) border = true;
+        else if (grid[r1][c1] > 0) dfs(grid, r1, c1);
+      }
+    }
+    if (border) grid[r0][c0] = border_mask;
+  }
+  
+  vector<vector<int>> colorBorder(vector<vector<int>>& grid, int r0, int c0, int color) {
+    rows = grid.size();
+    cols = grid[0].size();
+   
+    dfs(grid, r0, c0);
+    
+    for (int i = 0; i < rows; i++)
+      for (int j = 0; j < cols; j++) {
+        if (grid[i][j] == border_mask) grid[i][j] = color; 
+        else if (grid[i][j] < 0) grid[i][j] = -grid[i][j];
+      }
+    return grid;
+  }
+};
