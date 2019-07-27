@@ -289,6 +289,7 @@
 |947|[ Most Stones Removed with Same Row or Column](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/)|[C++](./solutions/947.%20Most%20Stones%20Removed%20with%20Same%20Row%20or%20ColumnC%2B%2B)|36 ms|
 |956|[ Tallest Billboard](https://leetcode.com/problems/tallest-billboard/)|[C++](./solutions/956.%20Tallest%20BillboardC%2B%2B)|780 ms|
 |960|[ Delete Columns to Make Sorted III](https://leetcode.com/problems/delete-columns-to-make-sorted-iii/)|[C++](./solutions/960.%20Delete%20Columns%20to%20Make%20Sorted%20IIIC%2B%2B)|16 ms|
+|962|[ Maximum Width Ramp](https://leetcode.com/problems/maximum-width-ramp/)|[C++](./solutions/962.%20Maximum%20Width%20RampC%2B%2B)|56 ms|
 |963|[ Minimum Area Rectangle II](https://leetcode.com/problems/minimum-area-rectangle-ii/)|[C++](./solutions/963.%20Minimum%20Area%20Rectangle%20IIC%2B%2B)|72 ms|
 |964|[ Least Operators to Express Number](https://leetcode.com/problems/least-operators-to-express-number/)|[C++](./solutions/964.%20Least%20Operators%20to%20Express%20NumberC%2B%2B)|4 ms|
 |973|[ K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/)|[C++](./solutions/973.%20K%20Closest%20Points%20to%20OriginC%2B%2B)|276 ms|
