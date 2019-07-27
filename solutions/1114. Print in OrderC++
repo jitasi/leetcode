@@ -1,11 +1,11 @@
 /* vim: set ft=cpp : */
 ​
-// Runtime: 1440 ms, faster than 6.71% of C++ online submissions for Print in Order.
+// Runtime: 164 ms, faster than 43.02% of C++ online submissions for Print in Order.
 // Memory Usage: 9.2 MB, less than 100.00% of C++ online submissions for Print in Order.
 ​
 class Foo {
 public:
-    int seq = 0;
+    std::promise<void> barrier_1, barrier_2;
   
     Foo() {
         
@@ -14,18 +14,18 @@ public:
     void first(function<void()> printFirst) {
         // printFirst() outputs "first". Do not change or remove this line.
         printFirst();
-        seq = 1;
+        barrier_1.set_value();
     }
 ​
     void second(function<void()> printSecond) {
-        while (seq != 1) ;
+        barrier_1.get_future().wait();
         // printSecond() outputs "second". Do not change or remove this line.
         printSecond();
-        seq = 2;
+        barrier_2.set_value();
     }
 ​
     void third(function<void()> printThird) {
-        while (seq != 2) ;
+        barrier_2.get_future().wait();
         // printThird() outputs "third". Do not change or remove this line.
         printThird();
     }
