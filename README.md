@@ -230,6 +230,7 @@
 |567|[ Permutation in String](https://leetcode.com/problems/permutation-in-string/)|[C++](./solutions/567.%20Permutation%20in%20StringC%2B%2B)|8 ms|
 |593|[ Valid Square](https://leetcode.com/problems/valid-square/)|[C++](./solutions/593.%20Valid%20SquareC%2B%2B)|4 ms|
 |605|[ Can Place Flowers](https://leetcode.com/problems/can-place-flowers/)|[C++](./solutions/605.%20Can%20Place%20FlowersC%2B%2B)|22 ms|
+|611|[ Valid Triangle Number](https://leetcode.com/problems/valid-triangle-number/)|[C++](./solutions/611.%20Valid%20Triangle%20NumberC%2B%2B)|20 ms|
 |621|[ Task Scheduler](https://leetcode.com/problems/task-scheduler/)|[C++](./solutions/621.%20Task%20SchedulerC%2B%2B)|56 ms|
 |632|[ Smallest Range](https://leetcode.com/problems/smallest-range/)|[C++](./solutions/632.%20Smallest%20RangeC%2B%2B)|60 ms|
 |636|[ Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions/)|[C++](./solutions/636.%20Exclusive%20Time%20of%20FunctionsC%2B%2B)|20 ms|
