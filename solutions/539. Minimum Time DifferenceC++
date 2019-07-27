@@ -1,0 +1,22 @@
+/* vim: set ft=cpp : */
+​
+// Runtime: 20 ms, faster than 71.47% of C++ online submissions for Minimum Time Difference.
+// Memory Usage: 11.7 MB, less than 70.10% of C++ online submissions for Minimum Time Difference.
+​
+class Solution {
+public:
+  int findMinDifference(vector<string>& timePoints) {
+    vector<int> ts(timePoints.size() << 1);
+    int pos = 0;
+    for (const string& tp: timePoints) {
+      const int t = atoi(tp.substr(0, 2).c_str()) * 60 + atoi(tp.substr(3, 2).c_str());
+      ts[pos++] = t;
+      ts[pos++] = t + 24 * 60;
+    }
+    sort(ts.begin(), ts.end());
+    int ans = INT_MAX;
+    for (int i = 0; i < timePoints.size(); i++)
+      ans = min(ans, ts[i + 1] - ts[i]);
+    return ans;
+  }
+};
