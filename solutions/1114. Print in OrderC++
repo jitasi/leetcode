@@ -1,0 +1,32 @@
+/* vim: set ft=cpp : */
+​
+// Runtime: 1440 ms, faster than 6.71% of C++ online submissions for Print in Order.
+// Memory Usage: 9.2 MB, less than 100.00% of C++ online submissions for Print in Order.
+​
+class Foo {
+public:
+    int seq = 0;
+  
+    Foo() {
+        
+    }
+​
+    void first(function<void()> printFirst) {
+        // printFirst() outputs "first". Do not change or remove this line.
+        printFirst();
+        seq = 1;
+    }
+​
+    void second(function<void()> printSecond) {
+        while (seq != 1) ;
+        // printSecond() outputs "second". Do not change or remove this line.
+        printSecond();
+        seq = 2;
+    }
+​
+    void third(function<void()> printThird) {
+        while (seq != 2) ;
+        // printThird() outputs "third". Do not change or remove this line.
+        printThird();
+    }
+};
