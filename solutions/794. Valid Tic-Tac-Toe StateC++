@@ -1,0 +1,41 @@
+/* vim: set ft=cpp : */
+​
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Valid Tic-Tac-Toe State.
+// Memory Usage: 8.3 MB, less than 26.92% of C++ online submissions for Valid Tic-Tac-Toe State.
+​
+class Solution {
+public:
+  bool validTicTacToe(vector<string>& board) {
+    int cnt_xo = 0;
+    vector<int> cnts(8, 0);
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        const int inc = board[i][j] == 'O'? 1 : (board[i][j] == 'X'? -1 : 0);
+        cnts[i] += inc;
+        cnts[3 + j] += inc;
+        if (i == j) cnts[6] += inc;
+        if (i + j == 2) cnts[7] += inc;
+        cnt_xo += inc;
+      }
+    }
+    
+    bool win_o = false;
+    bool win_x = false;
+    for (int i = 0; i < 8; i++) {
+      win_o = win_o || (cnts[i] == 3);
+      win_x = win_x || (cnts[i] == -3);
+    }
+​
+    if (win_o && win_x) return false;  // cannot both win
+    if (win_x && cnt_xo == 0) return false;  // X wins, X should have 1 more piece than O.
+    if (win_o && cnt_xo == -1) return false; // O wins, X should have the same number of pieces as O.
+    return cnt_xo == 0 || cnt_xo == -1;
+  }
+};
+​
+// ["XXX", "   ", "OOO"]   both win
+// ["XXX","OOX","OOX"]     the last X wins both row and col.
+// ["XXX","XOO","OO "]     X wins, then O cannot place the last piece.
+// ["OXX","XOX","OXO"]     O wins, X should have the same number of pieces as O.
+​
+​
