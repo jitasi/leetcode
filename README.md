@@ -256,6 +256,7 @@
 |777|[ Swap Adjacent in LR String](https://leetcode.com/problems/swap-adjacent-in-lr-string/)|[C++](./solutions/777.%20Swap%20Adjacent%20in%20LR%20StringC%2B%2B)|8 ms|
 |785|[ Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/)|[C++](./solutions/785.%20Is%20Graph%20Bipartite%3FC%2B%2B)|40 ms|
 |793|[ Preimage Size of Factorial Zeroes Function](https://leetcode.com/problems/preimage-size-of-factorial-zeroes-function/)|[C++](./solutions/793.%20Preimage%20Size%20of%20Factorial%20Zeroes%20FunctionC%2B%2B)|0 ms|
+|794|[ Valid Tic-Tac-Toe State](https://leetcode.com/problems/valid-tic-tac-toe-state/)|[C++](./solutions/794.%20Valid%20Tic-Tac-Toe%20StateC%2B%2B)|0 ms|
 |798|[ Smallest Rotation with Highest Score](https://leetcode.com/problems/smallest-rotation-with-highest-score/)|[C++](./solutions/798.%20Smallest%20Rotation%20with%20Highest%20ScoreC%2B%2B)|32 ms|
 |815|[ Bus Routes](https://leetcode.com/problems/bus-routes/)|[C++](./solutions/815.%20Bus%20RoutesC%2B%2B)|956 ms|
 |818|[ Race Car](https://leetcode.com/problems/race-car/)|[C++](./solutions/818.%20Race%20CarC%2B%2B)|16 ms|
