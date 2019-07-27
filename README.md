@@ -264,7 +264,7 @@
 |847|[ Shortest Path Visiting All Nodes](https://leetcode.com/problems/shortest-path-visiting-all-nodes/)|[C++](./solutions/847.%20Shortest%20Path%20Visiting%20All%20NodesC%2B%2B)|24 ms|
 |851|[ Loud and Rich](https://leetcode.com/problems/loud-and-rich/)|[C++](./solutions/851.%20Loud%20and%20RichC%2B%2B)|116 ms|
 |852|[ Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array/)|[C++](./solutions/852.%20Peak%20Index%20in%20a%20Mountain%20ArrayC%2B%2B)|16 ms|
-|853|[ Car Fleet](https://leetcode.com/problems/car-fleet/)|[C++](./solutions/853.%20Car%20FleetC%2B%2B)|48 ms|
+|853|[ Car Fleet](https://leetcode.com/problems/car-fleet/)|[C++](./solutions/853.%20Car%20FleetC%2B%2B)|40 ms|
 |855|[ Exam Room](https://leetcode.com/problems/exam-room/)|[C++](./solutions/855.%20Exam%20RoomC%2B%2B)|32 ms|
 |858|[ Mirror Reflection](https://leetcode.com/problems/mirror-reflection/)|[C++](./solutions/858.%20Mirror%20ReflectionC%2B%2B)|4 ms|
 |862|[ Shortest Subarray with Sum at Least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/)|[C++](./solutions/862.%20Shortest%20Subarray%20with%20Sum%20at%20Least%20KC%2B%2B)|220 ms|
