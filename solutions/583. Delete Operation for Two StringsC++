@@ -1,0 +1,28 @@
+/* vim: set ft=cpp : */
+​
+// Runtime: 8 ms, faster than 99.56% of C++ online submissions for Delete Operation for Two Strings.
+// Memory Usage: 9.1 MB, less than 94.12% of C++ online submissions for Delete Operation for Two Strings.
+​
+class Solution {
+public:
+  int minDistance(string word1, string word2) {
+    const int len1 = word1.size();
+    const int len2 = word2.size();
+    vector<int> dp(len2 + 1, 0);
+    
+    int lcs = 0;
+    for (int i = 0; i < len1; i++) {
+      int cur_m = 0;
+      for (int j = 0; j < len2; j++) {
+        const int tmp = dp[j + 1];
+        if (word1[i] == word2[j]) {
+          dp[j + 1] = cur_m + 1;
+          lcs = max(lcs, dp[j + 1]);
+        }
+        cur_m = max(cur_m, tmp);
+      }
+    }
+    
+    return len1 + len2 - (lcs << 1);
+  }
+};
