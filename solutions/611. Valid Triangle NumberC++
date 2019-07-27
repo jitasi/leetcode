@@ -1,0 +1,23 @@
+/* vim: set ft=cpp : */
+​
+// Runtime: 20 ms, faster than 50.61% of C++ online submissions for Valid Triangle Number.
+// Memory Usage: 8.5 MB, less than 87.50% of C++ online submissions for Valid Triangle Number.
+​
+class Solution {
+public:
+  int triangleNumber(vector<int>& nums) {
+    const int len = nums.size();
+    sort(nums.begin(), nums.end());
+    
+    int ans = 0;
+    for (int i = 0; i < len - 2; i++) {
+      int r = 0;
+      for (int l = i + 1; l < len - 1; l++) {
+        r = max(r, l + 1);
+        while (r < len && nums[r] < nums[l] + nums[i]) r++;
+        ans += r - l - 1;
+      }
+    }
+    return ans;
+  }
+};
