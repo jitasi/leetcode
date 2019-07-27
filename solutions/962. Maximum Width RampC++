@@ -1,0 +1,23 @@
+/* vim: set ft=cpp : */
+​
+// Runtime: 56 ms, faster than 95.81% of C++ online submissions for Maximum Width Ramp.
+// Memory Usage: 12.7 MB, less than 93.15% of C++ online submissions for Maximum Width Ramp.
+​
+class Solution {
+public:
+  int maxWidthRamp(vector<int>& A) {
+    vector<int> monolithic_queue;
+    monolithic_queue.push_back(0);
+    for (int i = 1; i < A.size(); i++)
+      if (A[i] < A[monolithic_queue.back()]) monolithic_queue.push_back(i);
+​
+    int ans = 0;
+    for (int i = A.size() - 1; i > 0; i--) {
+      while (!monolithic_queue.empty() && A[i] >= A[monolithic_queue.back()]) {
+        ans = max(ans, i - monolithic_queue.back());
+        monolithic_queue.pop_back();
+      }
+    }
+    return ans;
+  }
+};
