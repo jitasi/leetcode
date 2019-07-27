@@ -12,6 +12,7 @@ public:
   
   void dfs(vector<vector<int>>& A, int i, int j, queue<pair<int, int>>& borders) {
     if (i < 0 || i >= rows || j < 0 || j >= cols || A[i][j] < 0) return;
+    
     if (A[i][j] == 0) {  
       borders.push({i, j});
       A[i][j] = -2;  // mark water connect to land.
@@ -25,20 +26,11 @@ public:
   int shortestBridge(vector<vector<int>>& A) {
     rows = A.size();
     cols = A[0].size();
-    
-    int i;
-    int j;
+     
+    int i, j;   // find the pos of any land from the first island.
     bool found = false;
     for (i = 0; i < rows; i++) {
       for (j = 0; j < cols; j++) {
        if (A[i][j] == 1) {
           found = true;
           break;
-        }  
-      } 
-      if (found) break;
-    }
-    
-    queue<pair<int, int>> borders;
-    dfs(A, i, j, borders);
-  
