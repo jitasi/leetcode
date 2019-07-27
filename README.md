@@ -221,7 +221,7 @@
 |523|[ Continuous Subarray Sum](https://leetcode.com/problems/continuous-subarray-sum/)|[C++](./solutions/523.%20Continuous%20Subarray%20SumC%2B%2B)|32 ms|
 |525|[ Contiguous Array](https://leetcode.com/problems/contiguous-array/)|[C++](./solutions/525.%20Contiguous%20ArrayC%2B%2B)|124 ms|
 |529|[ Minesweeper](https://leetcode.com/problems/minesweeper/)|[C++](./solutions/529.%20MinesweeperC%2B%2B)|64 ms|
-|539|[ Minimum Time Difference](https://leetcode.com/problems/minimum-time-difference/)|[C++](./solutions/539.%20Minimum%20Time%20DifferenceC%2B%2B)|20 ms|
+|539|[ Minimum Time Difference](https://leetcode.com/problems/minimum-time-difference/)|[C++](./solutions/539.%20Minimum%20Time%20DifferenceC%2B%2B)|16 ms|
 |540|[ Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/)|[C++](./solutions/540.%20Single%20Element%20in%20a%20Sorted%20ArrayC%2B%2B)|12 ms|
 |546|[ Remove Boxes](https://leetcode.com/problems/remove-boxes/)|[C++](./solutions/546.%20Remove%20BoxesC%2B%2B)|272 ms|
 |553|[ Optimal Division](https://leetcode.com/problems/optimal-division/)|[C++](./solutions/553.%20Optimal%20DivisionC%2B%2B)|4 ms|
