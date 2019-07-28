@@ -266,6 +266,7 @@
 |843|[ Guess the Word](https://leetcode.com/problems/guess-the-word/)|[C++](./solutions/843.%20Guess%20the%20WordC%2B%2B)|0 ms|
 |845|[ Longest Mountain in Array](https://leetcode.com/problems/longest-mountain-in-array/)|[C++](./solutions/845.%20Longest%20Mountain%20in%20ArrayC%2B%2B)|20 ms|
 |847|[ Shortest Path Visiting All Nodes](https://leetcode.com/problems/shortest-path-visiting-all-nodes/)|[C++](./solutions/847.%20Shortest%20Path%20Visiting%20All%20NodesC%2B%2B)|24 ms|
+|848|[ Shifting Letters](https://leetcode.com/problems/shifting-letters/)|[C++](./solutions/848.%20Shifting%20LettersC%2B%2B)|60 ms|
 |851|[ Loud and Rich](https://leetcode.com/problems/loud-and-rich/)|[C++](./solutions/851.%20Loud%20and%20RichC%2B%2B)|116 ms|
 |852|[ Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array/)|[C++](./solutions/852.%20Peak%20Index%20in%20a%20Mountain%20ArrayC%2B%2B)|16 ms|
 |853|[ Car Fleet](https://leetcode.com/problems/car-fleet/)|[C++](./solutions/853.%20Car%20FleetC%2B%2B)|40 ms|
