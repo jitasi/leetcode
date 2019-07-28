@@ -1,15 +1,15 @@
 /* vim: set ft=cpp : */
 ​
-// Runtime: 60 ms, faster than 23.80% of C++ online submissions for Shifting Letters.
-// Memory Usage: 11.5 MB, less than 80.60% of C++ online submissions for Shifting Letters.
+// Runtime: 52 ms, faster than 90.42% of C++ online submissions for Shifting Letters.
+// Memory Usage: 11.4 MB, less than 82.09% of C++ online submissions for Shifting Letters.
 ​
 class Solution {
 public:
   string shiftingLetters(string S, vector<int>& shifts) {
     const int len = S.size();
-    int steps = 0;
+    long steps = 0;
     for (int i = len - 1; i >= 0; i--) {
-      steps = (steps + shifts[i]) % 26;
+      steps += shifts[i];
       S[i] = ((S[i] - 'a') + steps) % 26 + 'a';
     }
     return S;
