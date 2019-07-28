@@ -299,6 +299,7 @@
 |962|[ Maximum Width Ramp](https://leetcode.com/problems/maximum-width-ramp/)|[C++](./solutions/962.%20Maximum%20Width%20RampC%2B%2B)|56 ms|
 |963|[ Minimum Area Rectangle II](https://leetcode.com/problems/minimum-area-rectangle-ii/)|[C++](./solutions/963.%20Minimum%20Area%20Rectangle%20IIC%2B%2B)|72 ms|
 |964|[ Least Operators to Express Number](https://leetcode.com/problems/least-operators-to-express-number/)|[C++](./solutions/964.%20Least%20Operators%20to%20Express%20NumberC%2B%2B)|4 ms|
+|966|[ Vowel Spellchecker](https://leetcode.com/problems/vowel-spellchecker/)|[C++](./solutions/966.%20Vowel%20SpellcheckerC%2B%2B)|72 ms|
 |973|[ K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/)|[C++](./solutions/973.%20K%20Closest%20Points%20to%20OriginC%2B%2B)|276 ms|
 |974|[ Subarray Sums Divisible by K](https://leetcode.com/problems/subarray-sums-divisible-by-k/)|[C++](./solutions/974.%20Subarray%20Sums%20Divisible%20by%20KC%2B%2B)|52 ms|
 |978|[ Longest Turbulent Subarray](https://leetcode.com/problems/longest-turbulent-subarray/)|[C++](./solutions/978.%20Longest%20Turbulent%20SubarrayC%2B%2B)|104 ms|
