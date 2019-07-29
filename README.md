@@ -337,6 +337,7 @@
 |1116|[ Print Zero Even Odd](https://leetcode.com/problems/print-zero-even-odd/)|[C++](./solutions/1116.%20Print%20Zero%20Even%20OddC%2B%2B)|36 ms|
 |1123|[ Lowest Common Ancestor of Deepest Leaves](https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/)|[C++](./solutions/1123.%20Lowest%20Common%20Ancestor%20of%20Deepest%20LeavesC%2B%2B)|8 ms|
 |1124|[ Longest Well-Performing Interval](https://leetcode.com/problems/longest-well-performing-interval/)|[C++](./solutions/1124.%20Longest%20Well-Performing%20IntervalC%2B%2B)|40 ms|
+|1125|[ Smallest Sufficient Team](https://leetcode.com/problems/smallest-sufficient-team/)|[C++](./solutions/1125.%20Smallest%20Sufficient%20TeamC%2B%2B)|208 ms|
 |1129|[ Shortest Path with Alternating Colors](https://leetcode.com/problems/shortest-path-with-alternating-colors/)|[C++](./solutions/1129.%20Shortest%20Path%20with%20Alternating%20ColorsC%2B%2B)|20 ms|
 |1130|[ Minimum Cost Tree From Leaf Values](https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/)|[C++](./solutions/1130.%20Minimum%20Cost%20Tree%20From%20Leaf%20ValuesC%2B%2B)|4 ms|
 |1131|[ Maximum of Absolute Value Expression](https://leetcode.com/problems/maximum-of-absolute-value-expression/)|[C++](./solutions/1131.%20Maximum%20of%20Absolute%20Value%20ExpressionC%2B%2B)|36 ms|
