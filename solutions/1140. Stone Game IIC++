@@ -1,17 +1,17 @@
 /* vim: set ft=cpp : */
 ​
-// Runtime: 8 ms, faster than 66.43% of C++ online submissions for Stone Game II.
+// Runtime: 4 ms, faster than 90.81% of C++ online submissions for Stone Game II.
 // Memory Usage: 9.4 MB, less than 100.00% of C++ online submissions for Stone Game II.
 ​
 class Solution {
 public:
-  unordered_map<int, int> dp;  // key: from * 100 + m
+  unordered_map<int, int> dp;  // key: from << 6 + m
   
   int helper(const vector<int>& suffix_sum, int from, int m) {
     const int max_taken_to = from + (m << 1);
     if (max_taken_to >= suffix_sum.size()) return suffix_sum[from];
     
-    const int key = from * 100 + m;
+    const int key = (from << 6) + m;
     if (dp.count(key) > 0) return dp[key];
     
     int ans = INT_MAX;
@@ -23,13 +23,10 @@ public:
   
   int stoneGameII(vector<int>& piles) {
     const int len = piles.size();
-    
-    vector<int> suffix_sum(len, 0);    
-    suffix_sum[len - 1] = piles[len - 1];
     for (int i = len - 2; i >= 0; i--) 
-      suffix_sum[i] = suffix_sum[i + 1] + piles[i];
+      piles[i] += piles[i + 1];
     
-    return helper(suffix_sum, 0, 1);
+    return helper(piles, 0, 1);
   }
 };
 ​
