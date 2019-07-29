@@ -259,6 +259,7 @@
 |793|[ Preimage Size of Factorial Zeroes Function](https://leetcode.com/problems/preimage-size-of-factorial-zeroes-function/)|[C++](./solutions/793.%20Preimage%20Size%20of%20Factorial%20Zeroes%20FunctionC%2B%2B)|0 ms|
 |794|[ Valid Tic-Tac-Toe State](https://leetcode.com/problems/valid-tic-tac-toe-state/)|[C++](./solutions/794.%20Valid%20Tic-Tac-Toe%20StateC%2B%2B)|0 ms|
 |798|[ Smallest Rotation with Highest Score](https://leetcode.com/problems/smallest-rotation-with-highest-score/)|[C++](./solutions/798.%20Smallest%20Rotation%20with%20Highest%20ScoreC%2B%2B)|32 ms|
+|809|[ Expressive Words](https://leetcode.com/problems/expressive-words/)|[C++](./solutions/809.%20Expressive%20WordsC%2B%2B)|12 ms|
 |815|[ Bus Routes](https://leetcode.com/problems/bus-routes/)|[C++](./solutions/815.%20Bus%20RoutesC%2B%2B)|956 ms|
 |818|[ Race Car](https://leetcode.com/problems/race-car/)|[C++](./solutions/818.%20Race%20CarC%2B%2B)|16 ms|
 |827|[ Making A Large Island](https://leetcode.com/problems/making-a-large-island/)|[C++](./solutions/827.%20Making%20A%20Large%20IslandC%2B%2B)|16 ms|
