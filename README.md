@@ -342,3 +342,4 @@
 |1131|[ Maximum of Absolute Value Expression](https://leetcode.com/problems/maximum-of-absolute-value-expression/)|[C++](./solutions/1131.%20Maximum%20of%20Absolute%20Value%20ExpressionC%2B%2B)|36 ms|
 |1138|[ Alphabet Board Path](https://leetcode.com/problems/alphabet-board-path/)|[C++](./solutions/1138.%20Alphabet%20Board%20PathC%2B%2B)|0 ms|
 |1139|[ Largest 1-Bordered Square](https://leetcode.com/problems/largest-1-bordered-square/)|[C++](./solutions/1139.%20Largest%201-Bordered%20SquareC%2B%2B)|16 ms|
+|1140|[ Stone Game II](https://leetcode.com/problems/stone-game-ii/)|[C++](./solutions/1140.%20Stone%20Game%20IIC%2B%2B)|8 ms|
