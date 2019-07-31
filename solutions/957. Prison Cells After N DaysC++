@@ -1,0 +1,20 @@
+/* vim: set ft=cpp : */
+​
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Prison Cells After N Days.
+// Memory Usage: 8.3 MB, less than 91.38% of C++ online submissions for Prison Cells After N Days.
+​
+class Solution {
+public:
+  vector<int> prisonAfterNDays(vector<int>& cells, int N) {
+    vector<int> cells2(8);
+    for (N = (N - 1) % 14 + 1; N > 0; --N) {
+      cells2[0] = cells2[7] = 0;
+      for (int i = 1; i < 7; ++i)
+        cells2[i] = !(cells[i - 1] ^ cells[i + 1]);
+      cells.swap(cells2);
+    }
+    return cells;     
+  }
+};
+​
+​
