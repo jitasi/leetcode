@@ -1,20 +1,24 @@
-// Runtime: 20 ms, faster than 21.62% of C++ online submissions for Super Washing Machines.
-// Memory Usage: 9.3 MB, less than 78.86% of C++ online submissions for Super Washing Machines.
+// Runtime: 20 ms, faster than 21.62% of C++ online submissions for Super
+// Washing Machines. Memory Usage: 9.3 MB, less than 78.86% of C++ online
+// submissions for Super Washing Machines.
 
 class Solution {
 public:
-  int findMinMoves(vector<int>& machines) {
+  int findMinMoves(vector<int> &machines) {
     const int len = machines.size();
-    if (len <= 1) return 0;
-    
+    if (len <= 1)
+      return 0;
+
     int sum = 0;
-    for (const int m: machines) sum += m;
-    if (sum % len != 0) return -1;
+    for (const int m : machines)
+      sum += m;
+    if (sum % len != 0)
+      return -1;
     const int target = sum / len;
 
     int ans = 0;
     int needs = 0;
-    for (const int m: machines) {
+    for (const int m : machines) {
       needs += target - m;
       ans = max(ans, max(abs(needs), ));
     }

@@ -1,38 +1,41 @@
 /* vim: set ft=cpp : */
 ​
-// Runtime: 244 ms, faster than 27.71% of C++ online submissions for Possible Bipartition.
-// Memory Usage: 68.3 MB, less than 21.11% of C++ online submissions for Possible Bipartition.
-​
-class Solution {
+    // Runtime: 244 ms, faster than 27.71% of C++ online submissions for
+    // Possible Bipartition. Memory Usage: 68.3 MB, less than 21.11% of C++
+    // online submissions for Possible Bipartition.
+        ​ class Solution {
 public:
-  vector<int> ps;
-  
+   vector<int> ps;
+   
   int find(int x) {
-    if (ps[x] == -1) return x;
-    return ps[x] = find(ps[x]);
+       if (ps[x] == -1) return x;
+       return ps[x] = find(ps[x]);
   }
-  
-  bool possibleBipartition(int N, vector<vector<int>>& dislikes) {
-    ps.resize(N + 1, -1);
-    
+   
+  bool possibleBipartition(int N, vector<vector<int>> &dislikes) {
+       ps.resize(N + 1, -1);
+       
     vector<unordered_set<int>> adjs(N + 1);
-    for (const auto& e: dislikes) {
-      adjs[e[0]].insert(e[1]);
-      adjs[e[1]].insert(e[0]);
-    }
-    
+       for (const auto &e : dislikes) {
+           adjs[e[0]].insert(e[1]);
+           adjs[e[1]].insert(e[0]);
+       
+    }
+       
     for (int i = 1; i < N; i++) {
-      if (adjs[i].size() == 0) continue;
-      
+           if (adjs[i].size() == 0) continue;
+           
       const int g_1 = find(i);
-      const int g_2 = find(*adjs[i].begin());
-      if (g_1 == g_2) return false;
-      for (const int d: adjs[i]) {
-        const int g = find(d);
-        if (g_1 == g) return false;
-        if (g_2 != g) ps[g] = g_2;
-      }
-    }
-    return true;
+           const int g_2 = find(*adjs[i].begin());
+           if (g_1 == g_2) return false;
+           for (const int d : adjs[i]) {
+               const int g = find(d);
+               if (g_1 == g) return false;
+               if (g_2 != g) ps[g] = g_2;
+           
+      }
+       
+    }
+       return true;
   }
 };

@@ -1,29 +1,30 @@
 class Solution {
 public:
-    int trap(vector<int>& height) {
-      if (height.size() <= 2) return 0;
-      
-      vector<int> left_max(height.size()); 
-      int m = 0;
-      for (int i = 0; i < height.size(); i++) {
-        m = std::max(m, height[i]);
-        left_max[i] = m;
-      }
-      
-      m = 0;
-      vector<int> right_max(height.size()); 
-      for (int i = height.size() - 1; i >= 0; i--) {
-        m = std::max(m, height[i]);
-        right_max[i] = m;       
-      }
-      
-      int ret = 0;
-      for (int i = 1; i < height.size() - 1; i++) {
-        int t = std::min(left_max[i - 1], right_max[i + 1]);
-        t = t > height[i]? t - height[i] : 0;
-        ret += t;
-      }
-      
-      return ret;
+  int trap(vector<int> &height) {
+    if (height.size() <= 2)
+      return 0;
+
+    vector<int> left_max(height.size());
+    int m = 0;
+    for (int i = 0; i < height.size(); i++) {
+      m = std::max(m, height[i]);
+      left_max[i] = m;
     }
+
+    m = 0;
+    vector<int> right_max(height.size());
+    for (int i = height.size() - 1; i >= 0; i--) {
+      m = std::max(m, height[i]);
+      right_max[i] = m;
+    }
+
+    int ret = 0;
+    for (int i = 1; i < height.size() - 1; i++) {
+      int t = std::min(left_max[i - 1], right_max[i + 1]);
+      t = t > height[i] ? t - height[i] : 0;
+      ret += t;
+    }
+
+    return ret;
+  }
 };

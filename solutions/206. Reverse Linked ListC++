@@ -10,28 +10,28 @@
  */
 class Solution {
 public:
-   ListNode* reverseList(ListNode* head) {
-1     if (head == NULL) return NULL;
-2     ListNode* p = head;
-3     ListNode* q = head->next;
-4     if (q == NULL) return p;
-5     ListNode* new_head = reverseList(q);
-6     q->next = p;
-7     p->next = NULL;
-8     return new_head;
-   }
-/*  ListNode* reverseList(ListNode* head) {
-    if (head == NULL) return NULL;
-    ListNode* p = head;
-    ListNode* q = head->next;
-    head->next = NULL;
-    while (q != NULL) {
-      ListNode* tmp = q->next;
-      q->next = p;
-      p = q;
-      q = tmp;
-    }  
-    return p;
+  ListNode *reverseList(ListNode *head) {
+    1 if (head == NULL) return NULL;
+    2 ListNode *p = head;
+    3 ListNode *q = head->next;
+    4 if (q == NULL) return p;
+    5 ListNode *new_head = reverseList(q);
+    6 q->next = p;
+    7 p->next = NULL;
+    8 return new_head;
   }
-*/
+  /*  ListNode* reverseList(ListNode* head) {
+      if (head == NULL) return NULL;
+      ListNode* p = head;
+      ListNode* q = head->next;
+      head->next = NULL;
+      while (q != NULL) {
+        ListNode* tmp = q->next;
+        q->next = p;
+        p = q;
+        q = tmp;
+      }
+      return p;
+    }
+  */
 };

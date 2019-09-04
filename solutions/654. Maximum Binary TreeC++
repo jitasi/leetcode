@@ -1,5 +1,6 @@
-// Runtime: 72 ms, faster than 93.30% of C++ online submissions for Maximum Binary Tree.
-// Memory Usage: 29.1 MB, less than 62.82% of C++ online submissions for Maximum Binary Tree.
+// Runtime: 72 ms, faster than 93.30% of C++ online submissions for Maximum
+// Binary Tree. Memory Usage: 29.1 MB, less than 62.82% of C++ online
+// submissions for Maximum Binary Tree.
 
 /**
  * Definition for a binary tree node.
@@ -12,26 +13,29 @@
  */
 class Solution {
 public:
-    TreeNode* constructMaximumBinaryTree(vector<int>& nums, int from, int to) {
-      if (from > to) return nullptr;
-      
-      // max element in nums[from] ... nums[to]
-      const auto it = max_element(nums.begin() + from, nums.begin() + to + 1);
-      
-      // make node
-      TreeNode* root = new TreeNode(*it);
+  TreeNode *constructMaximumBinaryTree(vector<int> &nums, int from, int to) {
+    if (from > to)
+      return nullptr;
 
-      // make left
-      const int idx = distance(nums.begin(), it);
-      root->left = idx > 0? constructMaximumBinaryTree(nums, from, idx - 1) : nullptr;
-      
-      // make right
-      root->right = idx < to? constructMaximumBinaryTree(nums, idx + 1, to) : nullptr;
-    
-      return root;
-    }
-  
-    TreeNode* constructMaximumBinaryTree(vector<int>& nums) {
-      return constructMaximumBinaryTree(nums, 0, nums.size() - 1);
-    }
+    // max element in nums[from] ... nums[to]
+    const auto it = max_element(nums.begin() + from, nums.begin() + to + 1);
+
+    // make node
+    TreeNode *root = new TreeNode(*it);
+
+    // make left
+    const int idx = distance(nums.begin(), it);
+    root->left =
+        idx > 0 ? constructMaximumBinaryTree(nums, from, idx - 1) : nullptr;
+
+    // make right
+    root->right =
+        idx < to ? constructMaximumBinaryTree(nums, idx + 1, to) : nullptr;
+
+    return root;
+  }
+
+  TreeNode *constructMaximumBinaryTree(vector<int> &nums) {
+    return constructMaximumBinaryTree(nums, 0, nums.size() - 1);
+  }
 };

@@ -1,17 +1,18 @@
-// Runtime: 4 ms, faster than 99.59% of C++ online submissions for Find Minimum in Rotated Sorted Array II.
-// Memory Usage: 8.8 MB, less than 55.43% of C++ online submissions for Find Minimum in Rotated Sorted Array II.
+// Runtime: 4 ms, faster than 99.59% of C++ online submissions for Find Minimum
+// in Rotated Sorted Array II. Memory Usage: 8.8 MB, less than 55.43% of C++
+// online submissions for Find Minimum in Rotated Sorted Array II.
 
 class Solution {
 public:
-  int findMin(vector<int>& nums) {
+  int findMin(vector<int> &nums) {
     int p = 0;
     int q = nums.size() - 1;
     while (p < q) {
       const int mid = p + (q - p) / 2;
-      
+
       // 4,5,6,7,0,1,2
       // p .     m . q
-      
+
       // 4,5,6,7,0,0,0   4,4,4,7,0,0,4
       // p .     m . q   p . m .     q
       if (nums[mid] < nums[q]) {

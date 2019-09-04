@@ -1,33 +1,33 @@
-// Runtime: 460 ms, faster than 20.84% of C++ online submissions for Largest Plus Sign.
-// Memory Usage: 16.8 MB, less than 99.35% of C++ online submissions for Largest Plus Sign.
-
+// Runtime: 460 ms, faster than 20.84% of C++ online submissions for Largest
+// Plus Sign. Memory Usage: 16.8 MB, less than 99.35% of C++ online submissions
+// for Largest Plus Sign.
 
 class Solution {
 public:
-  int orderOfLargestPlusSign(int N, vector<vector<int>>& mines) {
+  int orderOfLargestPlusSign(int N, vector<vector<int>> &mines) {
     int dp[N][N];
     for (int i = 0; i < N; i++) {
       for (int j = 0; j < N; j++) {
         dp[i][j] = min(min(i, j), min(N - 1 - i, N - 1 - j)) + 1;
       }
     }
-    
-    for (const auto& mine: mines) {
+
+    for (const auto &mine : mines) {
       dp[mine[0]][mine[1]] = 0;
       for (int j = 0; j < mine[1]; j++) {
         dp[mine[0]][j] = min(dp[mine[0]][j], mine[1] - j);
       }
       for (int j = mine[1] + 1; j < N; j++) {
         dp[mine[0]][j] = min(dp[mine[0]][j], j - mine[1]);
-      }      
+      }
       for (int i = 0; i < mine[0]; i++) {
         dp[i][mine[1]] = min(dp[i][mine[1]], mine[0] - i);
       }
       for (int i = mine[0] + 1; i < N; i++) {
         dp[i][mine[1]] = min(dp[i][mine[1]], i - mine[0]);
-      } 
+      }
     }
-    
+
     int ans = dp[0][0];
     for (int i = 0; i < N; i++) {
       for (int j = 0; j < N; j++) {

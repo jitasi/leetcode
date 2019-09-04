@@ -1,27 +1,32 @@
-// Runtime: 96 ms, faster than 36.62% of C++ online submissions for Hand of Straights.
-// Memory Usage: 17.6 MB, less than 62.78% of C++ online submissions for Hand of Straights.
-
+// Runtime: 96 ms, faster than 36.62% of C++ online submissions for Hand of
+// Straights. Memory Usage: 17.6 MB, less than 62.78% of C++ online submissions
+// for Hand of Straights.
 
 class Solution {
 public:
-  bool isNStraightHand(vector<int>& hand, int W) {
+  bool isNStraightHand(vector<int> &hand, int W) {
     map<int, int> m;
     for (const int card : hand) {
-      if (m.count(card) == 0) m[card] = 1;
-      else m[card]++;
+      if (m.count(card) == 0)
+        m[card] = 1;
+      else
+        m[card]++;
     }
-    
+
     while (!m.empty()) {
       auto prev = m.begin();
       for (int i = 1; i < W; i++) {
         auto cur = std::next(prev);
-        if (cur == m.end() || cur->first != (prev->first + 1)) return false;
+        if (cur == m.end() || cur->first != (prev->first + 1))
+          return false;
         m[prev->first]--;
-        if (m[prev->first] == 0) m.erase(prev->first);
+        if (m[prev->first] == 0)
+          m.erase(prev->first);
         prev = cur;
       }
       m[prev->first]--;
-      if (m[prev->first] == 0) m.erase(prev->first);      
+      if (m[prev->first] == 0)
+        m.erase(prev->first);
     }
     return true;
   }

@@ -1,19 +1,20 @@
-// Runtime: 4 ms, faster than 60.39% of C++ online submissions for Last Stone Weight.
-// Memory Usage: 8.3 MB, less than 100.00% of C++ online submissions for Last Stone Weight.
-​
-class Solution {
+// Runtime: 4 ms, faster than 60.39% of C++ online submissions for Last Stone
+// Weight. Memory Usage: 8.3 MB, less than 100.00% of C++ online submissions for
+// Last Stone Weight.
+​ class Solution {
 public:
-  int lastStoneWeight(vector<int>& stones) {
-    priority_queue<int> pq;
-    for (const int s: stones) pq.push(s);
-    while (pq.size() >= 2) {
-      const int x = pq.top();
-      pq.pop();
-      const int y = pq.top();
-      pq.pop();
-      if (x != y) pq.push(abs(x - y));
-    }
-    if (pq.size() == 0) return 0;
-    return pq.top();
+   int lastStoneWeight(vector<int> &stones) {
+       priority_queue<int> pq;
+       for (const int s : stones) pq.push(s);
+       while (pq.size() >= 2) {
+           const int x = pq.top();
+           pq.pop();
+           const int y = pq.top();
+           pq.pop();
+           if (x != y) pq.push(abs(x - y));
+       
+    }
+       if (pq.size() == 0) return 0;
+       return pq.top();
   }
 };

@@ -2,39 +2,41 @@
 class Solution {
 public:
   const int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-  
-    int numIslands(vector<vector<char>>& grid) {
-      int cnt = 0;
-      const int rows = grid.size();
-      if (rows == 0) return 0;
-      const int cols = grid[0].size();
-      if (cols == 0) return 0;
-      
-      for (int i = 0; i< rows; i++) {
-        for (int j = 0; j < cols; j++) {
-          if (grid[i][j] == '0') continue;
-          cnt++;
-          
-          stack<pair<int, int>> s;
-          s.push({i, j});
-          grid[i][j] = '0';
-          while (!s.empty()) {
-            const auto pos = s.top();
-            s.pop();
 
-            for (int k = 0; k < 4; k++) {
-              const int x = pos.first + dirs[k][0];
-              const int y = pos.second + dirs[k][1];
-              if (x >= 0 && y >= 0 && x < rows && y < cols
-                  && grid[x][y] == '1') {
-                s.push({x, y});   
-                grid[x][y] = '0';
-              }
+  int numIslands(vector<vector<char>> &grid) {
+    int cnt = 0;
+    const int rows = grid.size();
+    if (rows == 0)
+      return 0;
+    const int cols = grid[0].size();
+    if (cols == 0)
+      return 0;
+
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < cols; j++) {
+        if (grid[i][j] == '0')
+          continue;
+        cnt++;
+
+        stack<pair<int, int>> s;
+        s.push({i, j});
+        grid[i][j] = '0';
+        while (!s.empty()) {
+          const auto pos = s.top();
+          s.pop();
+
+          for (int k = 0; k < 4; k++) {
+            const int x = pos.first + dirs[k][0];
+            const int y = pos.second + dirs[k][1];
+            if (x >= 0 && y >= 0 && x < rows && y < cols && grid[x][y] == '1') {
+              s.push({x, y});
+              grid[x][y] = '0';
             }
           }
         }
       }
-      
-      return cnt;
     }
+
+    return cnt;
+  }
 };

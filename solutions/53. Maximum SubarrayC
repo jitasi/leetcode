@@ -1,13 +1,15 @@
-int maxSubArray(int* nums, int numsSize) {
-  if (numsSize <= 0) return 0;
-  
+int maxSubArray(int *nums, int numsSize) {
+  if (numsSize <= 0)
+    return 0;
+
   int ret = nums[0];
   int curr = ret;
   for (int i = 1; i < numsSize; i++) {
     int tmp = curr + nums[i];
-    curr = tmp < nums[i]? nums[i] : tmp;
-    if (curr > ret) ret = curr;
+    curr = tmp < nums[i] ? nums[i] : tmp;
+    if (curr > ret)
+      ret = curr;
   }
-  
+
   return ret;
 }

@@ -5,13 +5,15 @@ class Solution {
 public:
   string smallestSubsequence(string text) {
     vector<int> cnt(26, 0);
-    for (const char ch: text) cnt[ch - 'a']++;
-    
+    for (const char ch : text)
+      cnt[ch - 'a']++;
+
     string ans;
     vector<bool> used(26, false);
-    for (const char ch: text) {
+    for (const char ch : text) {
       cnt[ch - 'a']--;
-      if (used[ch - 'a']) continue;
+      if (used[ch - 'a'])
+        continue;
       while (!ans.empty() && cnt[ans.back() - 'a'] > 0 && ans.back() > ch) {
         used[ans.back() - 'a'] = false;
         ans.pop_back();

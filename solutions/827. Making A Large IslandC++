@@ -1,33 +1,38 @@
-// Runtime: 16 ms, faster than 96.47% of C++ online submissions for Making A Large Island.
-// Memory Usage: 11.7 MB, less than 87.46% of C++ online submissions for Making A Large Island.
+// Runtime: 16 ms, faster than 96.47% of C++ online submissions for Making A
+// Large Island. Memory Usage: 11.7 MB, less than 87.46% of C++ online
+// submissions for Making A Large Island.
 
 class Solution {
 public:
   int rows;
   int cols;
-  
+
   const int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-  
-  void dfs(vector<vector<int>>& grid, int i, int j, int id) {
+
+  void dfs(vector<vector<int>> &grid, int i, int j, int id) {
     grid[i][j] = id;
     for (int k = 0; k < 4; k++) {
       const int x = i + dirs[k][0];
       const int y = j + dirs[k][1];
-      if (x < 0 || x >= rows || y < 0 || y >= cols || grid[x][y] != 1) continue;
+      if (x < 0 || x >= rows || y < 0 || y >= cols || grid[x][y] != 1)
+        continue;
       dfs(grid, x, y, id);
     }
   }
-  
-  int largestIsland(vector<vector<int>>& grid) {
+
+  int largestIsland(vector<vector<int>> &grid) {
     rows = grid.size();
-    if (rows == 0) return 0;
+    if (rows == 0)
+      return 0;
     cols = grid[0].size();
-    if (cols == 0) return 0;
-    
+    if (cols == 0)
+      return 0;
+
     int id = 2;
     for (int i = 0; i < rows; i++) {
       for (int j = 0; j < cols; j++)
-        if (grid[i][j] == 1) dfs(grid, i, j, id++);
+        if (grid[i][j] == 1)
+          dfs(grid, i, j, id++);
     }
     cout << id - 2 << endl;
 
@@ -35,27 +40,29 @@ public:
     for (int i = 0; i < rows; i++)
       for (int j = 0; j < cols; j++)
         areas[grid[i][j]]++;
-    
+
     int max_area = 0;
     for (int i = 0; i < rows; i++) {
       for (int j = 0; j < cols; j++) {
         int local_area = 1;
-        if (grid[i][j] >= 2) 
+        if (grid[i][j] >= 2)
           local_area = areas[grid[i][j]];
         else {
           unordered_set<int> ids;
           for (int k = 0; k < 4; k++) {
             const int x = i + dirs[k][0];
             const int y = j + dirs[k][1];
-            if (x < 0 || x >= rows || y < 0 || y >= cols || grid[x][y] < 2) continue;
-            if (ids.count(grid[x][y]) > 0) continue;
+            if (x < 0 || x >= rows || y < 0 || y >= cols || grid[x][y] < 2)
+              continue;
+            if (ids.count(grid[x][y]) > 0)
+              continue;
             local_area += areas[grid[x][y]];
             ids.insert(grid[x][y]);
-          } 
+          }
         }
         max_area = max(max_area, local_area);
       }
-    }        
+    }
     return max_area;
   }
 };

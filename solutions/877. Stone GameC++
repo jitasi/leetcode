@@ -1,32 +1,33 @@
 class Solution {
-public: 
-    bool stoneGame(vector<int>& piles) {
-      const int sz = piles.size();
-      if (sz <= 2) return true;
-      
-      int dp_hi[sz][sz];
-      int dp_lo[sz][sz];
-      for (int i = 0; i < sz; i++) {
-        dp_hi[i][i] = piles[i];
-        dp_lo[i][i] = 0;
-      }
-      
-      for (int k = 1; k < sz; k++) {
-        for (int i = 0; i < sz - k; i++) {
-          const int j = i + k;
-          const int a = piles[i] + dp_lo[i+1][j];
-          const int b = piles[j] + dp_lo[i][j-1];
-          if (a > b) {
-            dp_hi[i][j] = a;
-            dp_lo[i][j] = dp_hi[i+1][j];
-          } else {
-            dp_hi[i][j] = b;
-            dp_lo[i][j] = dp_hi[i][j-1];
-          }
-//          cout << dp_hi[i][j] << "/" << dp_lo[i][j] << ",";
-        }
-//        cout << endl;
-      }
-      return dp_hi[0][sz-1] > dp_lo[0][sz-1];
+public:
+  bool stoneGame(vector<int> &piles) {
+    const int sz = piles.size();
+    if (sz <= 2)
+      return true;
+
+    int dp_hi[sz][sz];
+    int dp_lo[sz][sz];
+    for (int i = 0; i < sz; i++) {
+      dp_hi[i][i] = piles[i];
+      dp_lo[i][i] = 0;
     }
+
+    for (int k = 1; k < sz; k++) {
+      for (int i = 0; i < sz - k; i++) {
+        const int j = i + k;
+        const int a = piles[i] + dp_lo[i + 1][j];
+        const int b = piles[j] + dp_lo[i][j - 1];
+        if (a > b) {
+          dp_hi[i][j] = a;
+          dp_lo[i][j] = dp_hi[i + 1][j];
+        } else {
+          dp_hi[i][j] = b;
+          dp_lo[i][j] = dp_hi[i][j - 1];
+        }
+        //          cout << dp_hi[i][j] << "/" << dp_lo[i][j] << ",";
+      }
+      //        cout << endl;
+    }
+    return dp_hi[0][sz - 1] > dp_lo[0][sz - 1];
+  }
 };

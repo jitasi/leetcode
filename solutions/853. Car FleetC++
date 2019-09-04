@@ -1,31 +1,36 @@
 /* vim: set ft=cpp : */
 ​
-// Runtime: 40 ms, faster than 99.17% of C++ online submissions for Car Fleet.
-// Memory Usage: 10.6 MB, less than 98.89% of C++ online submissions for Car Fleet.
-​
-class Solution {
+    // Runtime: 40 ms, faster than 99.17% of C++ online submissions for Car
+    // Fleet. Memory Usage: 10.6 MB, less than 98.89% of C++ online submissions
+    // for Car Fleet.
+        ​ class Solution {
 public:
-  int carFleet(int target, vector<int>& position, vector<int>& speed) {
-    const int num_cars = position.size();
-    if (num_cars == 0) return 0;
-    
-    vector<int> idx(num_cars);  // idx: sorted by distance to target, fartest comes first
-    for (int i = 0; i < num_cars; i++) idx[i] = i; 
-    sort(idx.begin(), idx.end(), [&position](int a, int b){
-      return position[a] < position[b];
-    });
-    
+   int carFleet(int target, vector<int> &position, vector<int> &speed) {
+       const int num_cars = position.size();
+       if (num_cars == 0) return 0;
+       
+    vector<int> idx(num_cars);
+      // idx: sorted by distance to target, fartest comes first
+    for (int i = 0; i < num_cars; i++) idx[i] = i;
+       sort(idx.begin(), idx.end(), [&position](int a, int b) {
+           return position[a] < position[b];
+       
+    });
+       
     int ans = 1;
-    int cur_idx = idx[num_cars - 1];
-    float next_t = (target - position[cur_idx]) * 1.0f / speed[cur_idx];
-    for (int i = num_cars - 2; i >= 0; i--) {
-      cur_idx = idx[i];
-      const float cur_t = (target - position[cur_idx]) * 1.0f / speed[cur_idx];
-      if (next_t < cur_t) {
-        ans++;
-        next_t = cur_t;
-      }
-    }
-    return ans;
+       int cur_idx = idx[num_cars - 1];
+       float next_t = (target - position[cur_idx]) * 1.0f / speed[cur_idx];
+       for (int i = num_cars - 2; i >= 0; i--) {
+           cur_idx = idx[i];
+           const float cur_t =
+          (target - position[cur_idx]) * 1.0f / speed[cur_idx];
+           if (next_t < cur_t) {
+               ans++;
+               next_t = cur_t;
+           
+      }
+       
+    }
+       return ans;
   }
 };

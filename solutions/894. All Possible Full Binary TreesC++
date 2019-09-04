@@ -1,6 +1,6 @@
-// Runtime: 104 ms, faster than 77.05% of C++ online submissions for All Possible Full Binary Trees.
-// Memory Usage: 36.1 MB, less than 26.99% of C++ online submissions for All Possible Full Binary Trees.
-
+// Runtime: 104 ms, faster than 77.05% of C++ online submissions for All
+// Possible Full Binary Trees. Memory Usage: 36.1 MB, less than 26.99% of C++
+// online submissions for All Possible Full Binary Trees.
 
 /**
  * Definition for a binary tree node.
@@ -13,21 +13,23 @@
  */
 class Solution {
 public:
-    vector<TreeNode*> allPossibleFBT(int N) {
-      vector<TreeNode*> ans;
-      if (N % 2 == 0) return ans;
-      if (N == 1) return {new TreeNode(0)};
-      
-      for (int i = 1; i < N; i += 2) {
-        for (auto* l : allPossibleFBT(i)) {
-          for (auto* r : allPossibleFBT(N - i - 1))  {
-            TreeNode* node = new TreeNode(0);
-            node->left = l;
-            node->right = r;
-            ans.push_back(node);
-          }
+  vector<TreeNode *> allPossibleFBT(int N) {
+    vector<TreeNode *> ans;
+    if (N % 2 == 0)
+      return ans;
+    if (N == 1)
+      return {new TreeNode(0)};
+
+    for (int i = 1; i < N; i += 2) {
+      for (auto *l : allPossibleFBT(i)) {
+        for (auto *r : allPossibleFBT(N - i - 1)) {
+          TreeNode *node = new TreeNode(0);
+          node->left = l;
+          node->right = r;
+          ans.push_back(node);
         }
       }
-      return ans;
     }
+    return ans;
+  }
 };

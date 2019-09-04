@@ -1,5 +1,6 @@
-// Runtime: 8 ms, faster than 88.28% of C++ online submissions for Smallest Subtree with all the Deepest Nodes.
-// Memory Usage: 15 MB, less than 58.46% of C++ online submissions for Smallest Subtree with all the Deepest Nodes.
+// Runtime: 8 ms, faster than 88.28% of C++ online submissions for Smallest
+// Subtree with all the Deepest Nodes. Memory Usage: 15 MB, less than 58.46% of
+// C++ online submissions for Smallest Subtree with all the Deepest Nodes.
 
 /**
  * Definition for a binary tree node.
@@ -12,14 +13,14 @@
  */
 class Solution {
 public:
-  TreeNode* helper(TreeNode* root, int& level) {
+  TreeNode *helper(TreeNode *root, int &level) {
     if (root->left == nullptr && root->right == nullptr) {
       level = 1;
       return root;
     }
-  
-    int level_l;   
-    TreeNode* ret_l;
+
+    int level_l;
+    TreeNode *ret_l;
     if (root->left != nullptr) {
       ret_l = helper(root->left, level_l);
       if (root->right == nullptr) {
@@ -27,9 +28,9 @@ public:
         return ret_l;
       }
     }
-    
-    int level_r;   
-    TreeNode* ret_r;
+
+    int level_r;
+    TreeNode *ret_r;
     if (root->right != nullptr) {
       ret_r = helper(root->right, level_r);
       if (root->left == nullptr) {
@@ -37,7 +38,7 @@ public:
         return ret_r;
       }
     }
-    
+
     if (level_l == level_r) {
       level = level_l + 1;
       return root;
@@ -46,12 +47,12 @@ public:
       return ret_l;
     } else {
       level = level_r + 1;
-      return ret_r;      
+      return ret_r;
     }
     return nullptr;
   }
-  
-  TreeNode* subtreeWithAllDeepest(TreeNode* root) {
+
+  TreeNode *subtreeWithAllDeepest(TreeNode *root) {
     int level;
     return helper(root, level);
   }

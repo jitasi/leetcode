@@ -1,42 +1,44 @@
-// Runtime: 32 ms, faster than 70.86% of C++ online submissions for Convert Sorted List to Binary Search Tree.
-// Memory Usage: 24.3 MB, less than 90.44% of C++ online submissions for Convert Sorted List to Binary Search Tree.
+// Runtime: 32 ms, faster than 70.86% of C++ online submissions for Convert
+// Sorted List to Binary Search Tree. Memory Usage: 24.3 MB, less than 90.44% of
+// C++ online submissions for Convert Sorted List to Binary Search Tree.
 ​
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
-class Solution {
+    /**
+     * Definition for singly-linked list.
+     * struct ListNode {
+     *     int val;
+     *     ListNode *next;
+     *     ListNode(int x) : val(x), next(NULL) {}
+     * };
+     */
+    /**
+     * Definition for a binary tree node.
+     * struct TreeNode {
+     *     int val;
+     *     TreeNode *left;
+     *     TreeNode *right;
+     *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+     * };
+     */
+    class Solution {
 public:
-  TreeNode* sortedListToBST(ListNode* head) {
-    if (head == nullptr) return nullptr;
-    if (head->next == nullptr) return new TreeNode(head->val);
-    
-    ListNode* prev_slow = head;
-    ListNode* slow = head;
-    ListNode* fast = head->next;
-    while (fast != nullptr) {
-      prev_slow = slow;
-      slow = slow->next;
-      fast = fast->next;
-      if (fast != nullptr) fast = fast->next;
-    }
-    prev_slow->next = nullptr;
-    TreeNode *tn = new TreeNode(slow->val);
-    tn->right = sortedListToBST(slow->next);
-    tn->left = sortedListToBST(head);
-    return tn;
+   TreeNode *sortedListToBST(ListNode *head) {
+       if (head == nullptr) return nullptr;
+       if (head->next == nullptr) return new TreeNode(head->val);
+       
+    ListNode *prev_slow = head;
+       ListNode *slow = head;
+       ListNode *fast = head->next;
+       while (fast != nullptr) {
+           prev_slow = slow;
+           slow = slow->next;
+           fast = fast->next;
+           if (fast != nullptr) fast = fast->next;
+       
+    }
+       prev_slow->next = nullptr;
+       TreeNode *tn = new TreeNode(slow->val);
+       tn->right = sortedListToBST(slow->next);
+       tn->left = sortedListToBST(head);
+       return tn;
   }
 };

@@ -1,28 +1,30 @@
-// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Sum Root to Leaf Numbers.
-// Memory Usage: 12.2 MB, less than 89.85% of C++ online submissions for Sum Root to Leaf Numbers.
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Sum Root to
+// Leaf Numbers. Memory Usage: 12.2 MB, less than 89.85% of C++ online
+// submissions for Sum Root to Leaf Numbers.
 ​
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
-class Solution {
+    /**
+     * Definition for a binary tree node.
+     * struct TreeNode {
+     *     int val;
+     *     TreeNode *left;
+     *     TreeNode *right;
+     *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+     * };
+     */
+    class Solution {
 public:
-  int sumNumbers(TreeNode* root, int presum) {
-    presum = presum * 10 + root->val;
-    if (root->left == nullptr && root->right == nullptr) return presum;
-    int total = 0;
-    if (root->left != nullptr) total = sumNumbers(root->left, presum);
-    if (root->right != nullptr) total += sumNumbers(root->right, presum);
-    return total;
+   int sumNumbers(TreeNode *root, int presum) {
+       presum = presum * 10 + root->val;
+       if (root->left == nullptr && root->right == nullptr) return presum;
+       int total = 0;
+       if (root->left != nullptr) total = sumNumbers(root->left, presum);
+       if (root->right != nullptr) total += sumNumbers(root->right, presum);
+       return total;
   }
-  
-  int sumNumbers(TreeNode* root) {
-    if (root == nullptr) return 0;
-    return sumNumbers(root, 0);    
+   
+  int sumNumbers(TreeNode *root) {
+       if (root == nullptr) return 0;
+       return sumNumbers(root, 0);
+       
   }
 };

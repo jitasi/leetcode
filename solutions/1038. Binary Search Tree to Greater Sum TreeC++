@@ -9,22 +9,23 @@
  */
 class Solution {
 public:
-    int work(TreeNode* root, int acc) {
-      if (root == nullptr) return acc;
-      
-      if (root->right != nullptr) {
-        acc = work(root->right, acc);
-      }
-      acc += root->val;
-      root->val = acc;
-      if (root->left != nullptr) {
-        acc = work(root->left, acc);
-      }
+  int work(TreeNode *root, int acc) {
+    if (root == nullptr)
       return acc;
+
+    if (root->right != nullptr) {
+      acc = work(root->right, acc);
     }
-  
-    TreeNode* bstToGst(TreeNode* root) {
-      work(root, 0);
-      return root;
+    acc += root->val;
+    root->val = acc;
+    if (root->left != nullptr) {
+      acc = work(root->left, acc);
     }
+    return acc;
+  }
+
+  TreeNode *bstToGst(TreeNode *root) {
+    work(root, 0);
+    return root;
+  }
 };

@@ -1,20 +1,21 @@
 /* vim: set fp=cpp : */
 ​
-// Runtime: 52 ms, faster than 96.16% of C++ online submissions for Subarray Sums Divisible by K.
-// Memory Usage: 12.2 MB, less than 73.40% of C++ online submissions for Subarray Sums Divisible by K.
-​
-class Solution {
+    // Runtime: 52 ms, faster than 96.16% of C++ online submissions for Subarray
+    // Sums Divisible by K. Memory Usage: 12.2 MB, less than 73.40% of C++
+    // online submissions for Subarray Sums Divisible by K.
+        ​ class Solution {
 public:
-  int subarraysDivByK(vector<int>& A, int K) {
-    vector<int> cnts(K, 0);
-    int presum_r = 0;
-    for (const int a : A) {
-      presum_r = ((presum_r + a) % K + K) % K;
-      cnts[presum_r]++;
-    }
-    
+   int subarraysDivByK(vector<int> &A, int K) {
+       vector<int> cnts(K, 0);
+       int presum_r = 0;
+       for (const int a : A) {
+           presum_r = ((presum_r + a) % K + K) % K;
+           cnts[presum_r]++;
+       
+    }
+       
     int ans = cnts[0];
-    for (const int c : cnts) ans += (c - 1) * c / 2;
-    return ans;
+       for (const int c : cnts) ans += (c - 1) * c / 2;
+       return ans;
   }
 };

@@ -1,24 +1,28 @@
-// Runtime: 28 ms, faster than 95.21% of C++ online submissions for Moving Stones Until Consecutive II.
-// Memory Usage: 9.5 MB, less than 100.00% of C++ online submissions for Moving Stones Until Consecutive II.
-​
-class Solution {
+// Runtime: 28 ms, faster than 95.21% of C++ online submissions for Moving
+// Stones Until Consecutive II. Memory Usage: 9.5 MB, less than 100.00% of C++
+// online submissions for Moving Stones Until Consecutive II.
+​ class Solution {
 public:
-  vector<int> numMovesStonesII(vector<int>& stones) {
-    const int len = stones.size();
-    sort(stones.begin(), stones.end());
-    
+   vector<int> numMovesStonesII(vector<int> &stones) {
+       const int len = stones.size();
+       sort(stones.begin(), stones.end());
+       
     int min_steps = len;
-    int left = 0;
-    for (int right = 0; right < len; right++) {
-      const int t = stones[right] - len;
-      while(t >= stones[left]) left++;
-      if (right - left + 1 == len - 1 && stones[right] - stones[left] == len - 2)
-        min_steps = min(min_steps, 2);  // handle special case: 1 2 3 4 10
-      else
-        min_steps = min(min_steps, len - (right - left + 1));      
-    }
-    
-    const int max_steps = max(stones[len - 1] - stones[1], stones[len - 2] - stones[0]) - len + 2;
-    return {min_steps, max_steps};
+       int left = 0;
+       for (int right = 0; right < len; right++) {
+           const int t = stones[right] - len;
+           while (t >= stones[left]) left++;
+           if (right - left + 1 == len - 1 &&
+               stones[right] - stones[left] == len - 2)
+        min_steps = min(min_steps, 2);
+        // handle special case: 1 2 3 4 10
+      else        min_steps = min(min_steps, len - (right - left + 1));
+           
+  
+    }
+       
+    const int max_steps =
+        max(stones[len - 1] - stones[1], stones[len - 2] - stones[0]) - len + 2;
+       return {min_steps, max_steps};
   }
 };

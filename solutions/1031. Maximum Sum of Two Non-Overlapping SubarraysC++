@@ -1,40 +1,42 @@
-// Runtime: 12 ms, faster than 51.32% of C++ online submissions for Maximum Sum of Two Non-Overlapping Subarrays.
-// Memory Usage: 8.8 MB, less than 50.14% of C++ online submissions for Maximum Sum of Two Non-Overlapping Subarrays.
-
+// Runtime: 12 ms, faster than 51.32% of C++ online submissions for Maximum Sum
+// of Two Non-Overlapping Subarrays. Memory Usage: 8.8 MB, less than 50.14% of
+// C++ online submissions for Maximum Sum of Two Non-Overlapping Subarrays.
 
 class Solution {
 public:
-  int maxSumTwoNoOverlap(vector<int>& A, int L, int M) {
+  int maxSumTwoNoOverlap(vector<int> &A, int L, int M) {
     const int len = A.size();
-    
+
     int sum_l[len], sum_m[len];
     sum_l[0] = A[0];
     sum_m[0] = A[0];
     for (int i = 1; i < len; i++) {
       sum_l[i] = sum_l[i - 1] + A[i];
       sum_m[i] = sum_m[i - 1] + A[i];
-      if (i >= L) sum_l[i] -= A[i - L];
-      if (i >= M) sum_m[i] -= A[i - M];
+      if (i >= L)
+        sum_l[i] -= A[i - L];
+      if (i >= M)
+        sum_m[i] -= A[i - M];
     }
-    
-/*
-    for (int a: sum_l) {
-      cout << a << ", ";
-    }
-    cout << endl;
-    for (int a: sum_m) {
-      cout << a << ", ";
-    }
-    cout << endl;
-*/
-    
+
+    /*
+        for (int a: sum_l) {
+          cout << a << ", ";
+        }
+        cout << endl;
+        for (int a: sum_m) {
+          cout << a << ", ";
+        }
+        cout << endl;
+    */
+
     int ans = 0;
     for (int i = L - 1; i < len; i++) {
       for (int j = M - 1; j < len; j++) {
         if (i + M <= j || j + L <= i) {
           ans = std::max(ans, sum_l[i] + sum_m[j]);
-        } 
-//        cout << i << ", " << j << ", " << ans << endl; 
+        }
+        //        cout << i << ", " << j << ", " << ans << endl;
       }
     }
     return ans;

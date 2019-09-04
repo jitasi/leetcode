@@ -1,27 +1,32 @@
-// Runtime: 20 ms, faster than 67.61% of C++ online submissions for Find K Pairs with Smallest Sums.
-// Memory Usage: 9.8 MB, less than 48.12% of C++ online submissions for Find K Pairs with Smallest Sums.
-​
-class Solution {
+// Runtime: 20 ms, faster than 67.61% of C++ online submissions for Find K Pairs
+// with Smallest Sums. Memory Usage: 9.8 MB, less than 48.12% of C++ online
+// submissions for Find K Pairs with Smallest Sums.
+​ class Solution {
 public:
-  vector<vector<int>> kSmallestPairs(vector<int>& nums1, vector<int>& nums2, int k) {
-    const int len1 = nums1.size();
-    const int len2 = nums2.size();
-    k = min(k, len1 * len2);
-    
+   vector<vector<int>> kSmallestPairs(vector<int> &nums1, vector<int> &nums2,
+                                      int k) {
+       const int len1 = nums1.size();
+       const int len2 = nums2.size();
+       k = min(k, len1 * len2);
+       
     vector<vector<int>> ans;
-    vector<int> idx(len1, 0);  // for nums1[i], the first avialable number in nums2 is nums2[idx[i]]
-    while(k--) {
-      int sum = INT_MAX;
-      int idx1 = 0;
-      for (int i = 0; i < len1; i++) {
-        if (idx[i] < len2 && sum >= (nums1[i] + nums2[idx[i]])) {
-          idx1 = i;
-          sum = nums1[i] + nums2[idx[i]];
-        }
-      }
-      ans.push_back({nums1[idx1], nums2[idx[idx1]]});
-      idx[idx1]++;
-    }
-    return ans;
+       vector<int> idx(len1, 0);
+      // for nums1[i], the first avialable number in nums2 is nums2[idx[i]]
+    while (k--) {
+           int sum = INT_MAX;
+           int idx1 = 0;
+           for (int i = 0; i < len1; i++) {
+               if (idx[i] < len2 && sum >= (nums1[i] + nums2[idx[i]])) {
+                   idx1 = i;
+                   sum = nums1[i] + nums2[idx[i]];
+               
+        }
+           
+      }
+           ans.push_back({nums1[idx1], nums2[idx[idx1]]});
+           idx[idx1]++;
+       
+    }
+       return ans;
   }
 };

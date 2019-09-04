@@ -1,5 +1,6 @@
-// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Binary Tree Zigzag Level Order Traversal.
-// Memory Usage: 13.6 MB, less than 29.59% of C++ online submissions for Binary Tree Zigzag Level Order Traversal.
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Binary Tree
+// Zigzag Level Order Traversal. Memory Usage: 13.6 MB, less than 29.59% of C++
+// online submissions for Binary Tree Zigzag Level Order Traversal.
 
 /**
  * Definition for a binary tree node.
@@ -12,26 +13,31 @@
  */
 class Solution {
 public:
-  vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
-    if (root == nullptr) return {};
+  vector<vector<int>> zigzagLevelOrder(TreeNode *root) {
+    if (root == nullptr)
+      return {};
     vector<vector<int>> ans;
     bool left_to_right = true;
-    stack<TreeNode*> cur;
-    stack<TreeNode*> next;
-    
+    stack<TreeNode *> cur;
+    stack<TreeNode *> next;
+
     cur.push(root);
     while (!cur.empty()) {
       vector<int> vals;
       while (!cur.empty()) {
-        TreeNode* p = cur.top();
+        TreeNode *p = cur.top();
         cur.pop();
         vals.push_back(p->val);
         if (left_to_right) {
-          if (p->left != nullptr) next.push(p->left);
-          if (p->right != nullptr) next.push(p->right);
+          if (p->left != nullptr)
+            next.push(p->left);
+          if (p->right != nullptr)
+            next.push(p->right);
         } else {
-          if (p->right != nullptr) next.push(p->right);
-          if (p->left != nullptr) next.push(p->left);
+          if (p->right != nullptr)
+            next.push(p->right);
+          if (p->left != nullptr)
+            next.push(p->left);
         }
       }
       ans.emplace_back(vals);

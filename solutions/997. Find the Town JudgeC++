@@ -1,27 +1,26 @@
 class Solution {
 public:
-    int findJudge(int N, vector<vector<int>>& trust) {
-      vector<int> trusted(N + 1, 0);
-      vector<int> trusting(N + 1, 0);   
-      
-      for (auto p: trust) {
-        trusting[p[0]]++;
-        trusted[p[1]]++;        
-      }
-      
-      for (int i = 1; i <= N; i++) {
-        cout << trusting[i] << ", " << trusted[i] << endl;
-      }
-      
-      int candidate = -1;
-      for (int i = 1; i <= N; i++) {
-        if (trusting[i] == 0) {
-          candidate = i;
-          break;
-        }
-      }
-      
-      
-      return (candidate > 0 && trusted[candidate] == N - 1)? candidate : -1;
+  int findJudge(int N, vector<vector<int>> &trust) {
+    vector<int> trusted(N + 1, 0);
+    vector<int> trusting(N + 1, 0);
+
+    for (auto p : trust) {
+      trusting[p[0]]++;
+      trusted[p[1]]++;
     }
+
+    for (int i = 1; i <= N; i++) {
+      cout << trusting[i] << ", " << trusted[i] << endl;
+    }
+
+    int candidate = -1;
+    for (int i = 1; i <= N; i++) {
+      if (trusting[i] == 0) {
+        candidate = i;
+        break;
+      }
+    }
+
+    return (candidate > 0 && trusted[candidate] == N - 1) ? candidate : -1;
+  }
 };

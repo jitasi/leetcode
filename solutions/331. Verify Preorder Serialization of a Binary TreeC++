@@ -1,18 +1,21 @@
-// Runtime: 4 ms, faster than 93.86% of C++ online submissions for Verify Preorder Serialization of a Binary Tree.
-// Memory Usage: 9.1 MB, less than 59.00% of C++ online submissions for Verify Preorder Serialization of a Binary Tree.
-​
-class Solution {
+// Runtime: 4 ms, faster than 93.86% of C++ online submissions for Verify
+// Preorder Serialization of a Binary Tree. Memory Usage: 9.1 MB, less
+// than 59.00% of C++ online submissions for Verify Preorder Serialization of a
+// Binary Tree.
+​ class Solution {
 public:
-  bool isValidSerialization(string preorder) {
-    int diff = 1;
-    preorder.push_back(',');
-    for (int i = 1; i < preorder.size(); i++) {
-      if (preorder[i] == ',') {
-        diff--;
-        if (diff < 0) return false;
-        if (preorder[i - 1] != '#') diff += 2;
-      }
-    }
-    return diff == 0;
+   bool isValidSerialization(string preorder) {
+       int diff = 1;
+       preorder.push_back(',');
+       for (int i = 1; i < preorder.size(); i++) {
+           if (preorder[i] == ',') {
+               diff--;
+               if (diff < 0) return false;
+               if (preorder[i - 1] != '#') diff += 2;
+           
+      }
+       
+    }
+       return diff == 0;
   }
 };

@@ -1,38 +1,44 @@
 class Solution {
 public:
-  
-// Runtime: 8 ms, faster than 97.38% of C++ online submissions for Two Sum.
-// Memory Usage: 9.6 MB, less than 57.18% of C++ online submissions for Two Sum.  
-  
-  vector<int> twoSum(vector<int>& nums, int target) {
+  // Runtime: 8 ms, faster than 97.38% of C++ online submissions for Two Sum.
+  // Memory Usage: 9.6 MB, less than 57.18% of C++ online submissions for Two
+  // Sum.
+
+  vector<int> twoSum(vector<int> &nums, int target) {
     vector<int> idx(nums.size());
-    for (int i = 0; i < nums.size(); i++) idx[i] = i;
-    sort(idx.begin(), idx.end(), [&nums](int a, int b) {return nums[a] < nums[b];});
-    
+    for (int i = 0; i < nums.size(); i++)
+      idx[i] = i;
+    sort(idx.begin(), idx.end(),
+         [&nums](int a, int b) { return nums[a] < nums[b]; });
+
     int p = 0;
     int q = idx.size() - 1;
     int sum;
     while (p < q) {
       sum = nums[idx[p]] + nums[idx[q]];
-      if (sum == target) return {min(idx[p], idx[q]), max(idx[p], idx[q])};
-      if (sum < target) p++;
-      else q--;
+      if (sum == target)
+        return {min(idx[p], idx[q]), max(idx[p], idx[q])};
+      if (sum < target)
+        p++;
+      else
+        q--;
     }
     return {-1, -1};
   }
-  
-// Runtime: 152 ms, faster than 21.06% of C++ online submissions for Two Sum.
-// Memory Usage: 9.2 MB, less than 92.15% of C++ online submissions for Two Sum.
-  
-/* vector<int> twoSum(vector<int>& nums, int target) {
-        for (int i = 0; i < nums.size() - 1; i++) {
-            for (int j = i+1; j < nums.size(); j++) {
-                if (nums[i] + nums[j] == target) {
-                    return {i, j};
-                }
-            }
-        }
-        return {-1, -1};
-    }
-*/
+
+  // Runtime: 152 ms, faster than 21.06% of C++ online submissions for Two Sum.
+  // Memory Usage: 9.2 MB, less than 92.15% of C++ online submissions for Two
+  // Sum.
+
+  /* vector<int> twoSum(vector<int>& nums, int target) {
+          for (int i = 0; i < nums.size() - 1; i++) {
+              for (int j = i+1; j < nums.size(); j++) {
+                  if (nums[i] + nums[j] == target) {
+                      return {i, j};
+                  }
+              }
+          }
+          return {-1, -1};
+      }
+  */
 };

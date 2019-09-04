@@ -9,54 +9,59 @@
  */
 class Codec {
 public:
+  // Encodes a tree to a single string.
+  string serialize(TreeNode *root) {
+    if (root == nullptr)
+      return "";
 
-    // Encodes a tree to a single string.
-    string serialize(TreeNode* root) {
-      if (root == nullptr) return "";
-      
-      return to_string(root->val) +
-        (root->left == nullptr && root->right == nullptr ? "" :
-            "(" + serialize(root->left) + ")(" + serialize(root->right) + ")"); 
-    }
+    return to_string(root->val) +
+           (root->left == nullptr && root->right == nullptr
+                ? ""
+                : "(" + serialize(root->left) + ")(" + serialize(root->right) +
+                      ")");
+  }
 
-    // Decodes your encoded data to tree.
-    TreeNode* deserialize(string data) {
-      if (data.empty()) return nullptr;
-      
-      size_t sz;
-      TreeNode* root = new TreeNode(stoi(data, &sz));
-      
-      if (sz == data.size()) {
-        root->left = root->right = nullptr;
-        return root;
-      }
-      
-      int cnt = 1;
-      int e_l = sz;
-      while(cnt != 0) {
-        e_l++;
-        if (data[e_l] == '(') cnt++;
-        else if (data[e_l] == ')') cnt--;
-        
-        if (cnt == 0) {
-          break;
-        }
-      }
-      sz++;
-      if (e_l - sz > 0) {//        cout << data.substr(sz, e_l - sz) << endl;
-        root->left = deserialize(data.substr(sz, e_l - sz));
-      }
+  // Decodes your encoded data to tree.
+  TreeNode *deserialize(string data) {
+    if (data.empty())
+      return nullptr;
 
-      e_l += 2;
-      if (data.size() - e_l -1 > 0) {
-        root->right = deserialize(data.substr(e_l, data.size() - e_l - 1));   
-      }
+    size_t sz;
+    TreeNode *root = new TreeNode(stoi(data, &sz));
+
+    if (sz == data.size()) {
+      root->left = root->right = nullptr;
       return root;
     }
+
+    int cnt = 1;
+    int e_l = sz;
+    while (cnt != 0) {
+      e_l++;
+      if (data[e_l] == '(')
+        cnt++;
+      else if (data[e_l] == ')')
+        cnt--;
+
+      if (cnt == 0) {
+        break;
+      }
+    }
+    sz++;
+    if (e_l - sz > 0) { //        cout << data.substr(sz, e_l - sz) << endl;
+      root->left = deserialize(data.substr(sz, e_l - sz));
+    }
+
+    e_l += 2;
+    if (data.size() - e_l - 1 > 0) {
+      root->right = deserialize(data.substr(e_l, data.size() - e_l - 1));
+    }
+    return root;
+  }
 };
 
 // 1 (2()()) (3(4()())(5()()))
-  
+
 // Your Codec object will be instantiated and called as such:
 // Codec codec;
 // codec.deserialize(codec.serialize(root));

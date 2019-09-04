@@ -1,45 +1,42 @@
 // Runtime: 32 ms, faster than 94.39% of C++ online submissions for Exam Room.
-// Memory Usage: 14.1 MB, less than 56.55% of C++ online submissions for Exam Room.
+// Memory Usage: 14.1 MB, less than 56.55% of C++ online submissions for Exam
+// Room.
 
 class ExamRoom {
 public:
-    set<int> s;
-    int N;
-  
-    ExamRoom(int N) {
-      this->N = N;
+  set<int> s;
+  int N;
+
+  ExamRoom(int N) { this->N = N; }
+
+  int seat() {
+    if (s.empty()) {
+      s.insert(0);
+      return 0;
     }
-    
-    int seat() {
-      if (s.empty()) {
-        s.insert(0);
-        return 0;
-      }
-      
-      auto it = s.begin();
-      int prev = *it;
-      int gap = prev;
-      int selected = 0;
-      for (it++; it != s.end(); it++) {
-        int local_gap = (*it - prev) / 2;
-        if (local_gap > gap) {
-          gap = local_gap;
-          selected = (*it + prev) / 2;
-        }
-        prev = *it;
-      }
-      int local_gap = N - prev - 1;
+
+    auto it = s.begin();
+    int prev = *it;
+    int gap = prev;
+    int selected = 0;
+    for (it++; it != s.end(); it++) {
+      int local_gap = (*it - prev) / 2;
       if (local_gap > gap) {
         gap = local_gap;
-        selected = N - 1;
-      }    
-      s.insert(selected);
-      return selected;
+        selected = (*it + prev) / 2;
+      }
+      prev = *it;
     }
-    
-    void leave(int p) {
-      s.erase(p);
+    int local_gap = N - prev - 1;
+    if (local_gap > gap) {
+      gap = local_gap;
+      selected = N - 1;
     }
+    s.insert(selected);
+    return selected;
+  }
+
+  void leave(int p) { s.erase(p); }
 };
 
 /**

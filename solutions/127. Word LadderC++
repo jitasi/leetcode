@@ -1,51 +1,64 @@
-// Runtime: 356 ms, faster than 42.35% of C++ online submissions for Word Ladder.
-// Memory Usage: 22.3 MB, less than 31.31% of C++ online submissions for Word Ladder.
-​
-class Solution {
+// Runtime: 356 ms, faster than 42.35% of C++ online submissions for Word
+// Ladder. Memory Usage: 22.3 MB, less than 31.31% of C++ online submissions for
+// Word Ladder.
+​ class Solution {
 public:
-    bool isConnected(const string& a, const string& b) {
-      int cnt = 0;
-      for (int i = 0; i < a.size() && cnt < 2; i++) {
-        if (a[i] != b[i]) cnt++;
-      }
-      return cnt == 1;
-    }
-  
-    int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
-      wordList.push_back(beginWord);
-      vector<unordered_set<int>> conns(wordList.size());
-      
+     bool isConnected(const string &a, const string &b) {
+         int cnt = 0;
+         for (int i = 0; i < a.size() && cnt < 2; i++) {
+             if (a[i] != b[i]) cnt++;
+         
+    }
+         return cnt == 1;
+     
+  }
+   
+    int ladderLength(string beginWord, string endWord,
+                      vector<string> &wordList) {
+         wordList.push_back(beginWord);
+         vector<unordered_set<int>> conns(wordList.size());
+         
       int target = -1;
-      for (int i = 0; i < wordList.size(); i++) {
-        if (endWord == wordList[i]) target = i;
-        for (int j = 0; j < i; j++) {
-          if (isConnected(wordList[i], wordList[j])) {
-            conns[i].insert(j);
-            conns[j].insert(i);
-          }
-        }
-      }
-      
+         for (int i = 0; i < wordList.size(); i++) {
+             if (endWord == wordList[i]) target = i;
+             for (int j = 0; j < i; j++) {
+                 if (isConnected(wordList[i], wordList[j])) {
+                     conns[i].insert(j);
+                     conns[j].insert(i);
+                 
+        }
+             
+      }
+         
+    }
+         
       if (target == -1) return 0;
-      
+         
       unordered_set<int> s = {wordList.size() - 1};
-      unordered_set<int> visited = s;
-      int ans = 2;
-      while (!s.empty()) {
-        unordered_set<int> tmp;
-        for (int idx : s) {
-          for (int conn : conns[idx]) {
-            if (conn == target) return ans;
-            if (visited.count(conn) == 0) {
-              tmp.insert(conn);   
+         unordered_set<int> visited = s;
+         int ans = 2;
+         while (!s.empty()) {
+             unordered_set<int> tmp;
+             for (int idx : s) {
+                 for (int conn : conns[idx]) {
+                     if (conn == target) return ans;
+                     if (visited.count(conn) == 0) {
+                         tmp.insert(conn);
+              
               visited.insert(conn);
-            }
-          }
-        }
-        s.swap(tmp);
-        ans++;     
-      }
-      
+                     
+          }
+                 
+        }
+             
+      }
+             s.swap(tmp);
+             ans++;
+          
+    
+    }
+         
       return 0;
-    }
+     
+  }
 };

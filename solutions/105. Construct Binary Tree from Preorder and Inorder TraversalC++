@@ -9,39 +9,43 @@
  */
 class Solution {
 public:
-    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder,
-                        int preorder_begin, int preorder_end,
-                        int inorder_begin, int inorder_end) {
-      if (preorder_begin > preorder_end) return nullptr;
-      if (inorder_begin > inorder_end) return nullptr;
-      
-      int pos = inorder_begin;
-      for (; pos <= inorder_end; pos++) {
-        if (inorder[pos] == preorder[preorder_begin]) break;
-      }
-      
-      TreeNode* root = new TreeNode(preorder[preorder_begin]);
-      
-      if (pos == inorder_begin) {
-        root->left = nullptr;
-      } else {
-        root->left = buildTree(preorder, inorder,
-                               preorder_begin + 1, preorder_begin + pos - inorder_begin,
-                               inorder_begin, pos - 1);
-      }
-      
-      if (pos == inorder_end) {
-        root->right == nullptr;
-      } else {
-        root->right = buildTree(preorder, inorder,
-                               preorder_begin + pos - inorder_begin + 1, preorder_end,
-                               pos + 1, inorder_end);
-      }
-      
-      return root;
+  TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder,
+                      int preorder_begin, int preorder_end, int inorder_begin,
+                      int inorder_end) {
+    if (preorder_begin > preorder_end)
+      return nullptr;
+    if (inorder_begin > inorder_end)
+      return nullptr;
+
+    int pos = inorder_begin;
+    for (; pos <= inorder_end; pos++) {
+      if (inorder[pos] == preorder[preorder_begin])
+        break;
     }
-  
-    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
-      return buildTree(preorder, inorder, 0, preorder.size() - 1, 0, inorder.size() - 1);
+
+    TreeNode *root = new TreeNode(preorder[preorder_begin]);
+
+    if (pos == inorder_begin) {
+      root->left = nullptr;
+    } else {
+      root->left = buildTree(preorder, inorder, preorder_begin + 1,
+                             preorder_begin + pos - inorder_begin,
+                             inorder_begin, pos - 1);
     }
+
+    if (pos == inorder_end) {
+      root->right == nullptr;
+    } else {
+      root->right =
+          buildTree(preorder, inorder, preorder_begin + pos - inorder_begin + 1,
+                    preorder_end, pos + 1, inorder_end);
+    }
+
+    return root;
+  }
+
+  TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder) {
+    return buildTree(preorder, inorder, 0, preorder.size() - 1, 0,
+                     inorder.size() - 1);
+  }
 };

@@ -1,29 +1,30 @@
-// Runtime: 8 ms, faster than 99.31% of C++ online submissions for Lowest Common Ancestor of Deepest Leaves.
-// Memory Usage: 19.6 MB, less than 100.00% of C++ online submissions for Lowest Common Ancestor of Deepest Leaves.
+// Runtime: 8 ms, faster than 99.31% of C++ online submissions for Lowest Common
+// Ancestor of Deepest Leaves. Memory Usage: 19.6 MB, less than 100.00% of C++
+// online submissions for Lowest Common Ancestor of Deepest Leaves.
 ​
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
-class Solution {
+    /**
+     * Definition for a binary tree node.
+     * struct TreeNode {
+     *     int val;
+     *     TreeNode *left;
+     *     TreeNode *right;
+     *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+     * };
+     */
+    class Solution {
 public:
-  pair<TreeNode*, int> helper(TreeNode* root) {
-    if (root == nullptr) return {nullptr, 0};
-    if (root->left == nullptr && root->right == nullptr) return {root, 1};
-    
-    const auto& l = helper(root->left);
-    const auto& r = helper(root->right);
-    if (l.second == r.second) return {root, l.second + 1};
-    if (l.second > r.second) return {l.first, l.second + 1};
-    return {r.first, r.second + 1};
+   pair<TreeNode *, int> helper(TreeNode *root) {
+       if (root == nullptr) return {nullptr, 0};
+       if (root->left == nullptr && root->right == nullptr) return {root, 1};
+       
+    const auto &l = helper(root->left);
+       const auto &r = helper(root->right);
+       if (l.second == r.second) return {root, l.second + 1};
+       if (l.second > r.second) return {l.first, l.second + 1};
+       return {r.first, r.second + 1};
   }
-  
-  TreeNode* lcaDeepestLeaves(TreeNode* root) {
-    return helper(root).first;
+   
+  TreeNode *lcaDeepestLeaves(TreeNode *root) {
+       return helper(root).first;
   }
 };

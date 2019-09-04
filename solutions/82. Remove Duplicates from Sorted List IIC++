@@ -6,25 +6,28 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-// Runtime: 8 ms, faster than 92.74% of C++ online submissions for Remove Duplicates from Sorted List II.
-// Memory Usage: 9 MB, less than 86.88% of C++ online submissions for Remove Duplicates from Sorted List II.
-​
-class Solution {
+// Runtime: 8 ms, faster than 92.74% of C++ online submissions for Remove
+// Duplicates from Sorted List II. Memory Usage: 9 MB, less than 86.88% of C++
+// online submissions for Remove Duplicates from Sorted List II.
+​ class Solution {
 public:
-  ListNode* deleteDuplicates(ListNode* head) {
-    if (head == nullptr || head->next == nullptr) return head;
-    
-    ListNode* dummy = new ListNode(-1);
-    dummy->next = head;
-    ListNode* prev = dummy;    
+   ListNode *deleteDuplicates(ListNode *head) {
+       if (head == nullptr || head->next == nullptr) return head;
+       
+    ListNode *dummy = new ListNode(-1);
+       dummy->next = head;
+       ListNode *prev = dummy;
+       
     while (prev->next != nullptr) {
-      ListNode *cur = prev->next;
-      while (cur->next != nullptr && cur->next->val == cur->val) {
-        cur = cur->next;
-      }
-      if (cur != prev->next) prev->next = cur->next;
-      else prev = prev->next;
-    }
-    return dummy->next;
+           ListNode *cur = prev->next;
+           while (cur->next != nullptr && cur->next->val == cur->val) {
+               cur = cur->next;
+           
+      }
+           if (cur != prev->next) prev->next = cur->next;
+           else prev = prev->next;
+       
+    }
+       return dummy->next;
   }
 };

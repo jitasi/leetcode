@@ -1,16 +1,19 @@
 // Runtime: 0 ms, faster than 100.00% of C++ online submissions for Poor Pigs.
-// Memory Usage: 8.1 MB, less than 88.64% of C++ online submissions for Poor Pigs.
-​
-class Solution {
+// Memory Usage: 8.1 MB, less than 88.64% of C++ online submissions for Poor
+// Pigs.
+​ class Solution {
 public:
-    int poorPigs(int buckets, int minutesToDie, int minutesToTest) {
-      const int one_pig = minutesToTest / minutesToDie + 1;
-      int ans = 0;
-      int b = 1;
-      while (b < buckets) {
-        b *= one_pig;
-        ans++;
-      }     
+     int poorPigs(int buckets, int minutesToDie, int minutesToTest) {
+         const int one_pig = minutesToTest / minutesToDie + 1;
+         int ans = 0;
+         int b = 1;
+         while (b < buckets) {
+             b *= one_pig;
+             ans++;
+         
+    }
+        
       return ans;
-    }
+     
+  }
 };

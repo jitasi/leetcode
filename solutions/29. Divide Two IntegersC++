@@ -1,27 +1,29 @@
-// Runtime: 4 ms, faster than 93.13% of C++ online submissions for Divide Two Integers.
-// Memory Usage: 8.3 MB, less than 50.36% of C++ online submissions for Divide Two Integers.
+// Runtime: 4 ms, faster than 93.13% of C++ online submissions for Divide Two
+// Integers. Memory Usage: 8.3 MB, less than 50.36% of C++ online submissions
+// for Divide Two Integers.
 
 class Solution {
 public:
   int divide(int dividend, int divisor) {
-    long flag = (dividend < 0) ^ (divisor < 0)? -1 : 1;
-    
+    long flag = (dividend < 0) ^ (divisor < 0) ? -1 : 1;
+
     long dividend_l = dividend;
     dividend_l = abs(dividend_l);
     long divisor_l = divisor;
     divisor_l = abs(divisor_l);
-    
+
     long quotient = 0;
     long temp = 0;
     for (int i = 31; i >= 0; i--) {
-      if ( temp + (divisor_l << i) <= dividend_l ) {
+      if (temp + (divisor_l << i) <= dividend_l) {
         quotient |= 1 << i;
         temp += divisor_l << i;
       }
     }
 
     long t = flag * quotient;
-    if (t == -2147483648L) t = 2147483647;
+    if (t == -2147483648L)
+      t = 2147483647;
     return t;
   }
 };

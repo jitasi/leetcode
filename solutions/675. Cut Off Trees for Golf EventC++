@@ -1,56 +1,64 @@
-// 
-​
-class Solution {
+//
+​ class Solution {
 public:
-  int rows;
-  int cols;
-  unordered_map<int, int> m;
-  
+   int rows;
+   int cols;
+   unordered_map<int, int> m;
+   
   const int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-  
-  int dist(const vector<int>& p1, const vector<int>& p2, const vector<vector<int>>& forest) {
-    if (p1[0] == p2[0] && p1[1] == p2[1]) return 0;
-    
+   
+  int dist(const vector<int> &p1, const vector<int> &p2,
+            const vector<vector<int>> &forest) {
+       if (p1[0] == p2[0] && p1[1] == p2[1]) return 0;
+       
     int moves = 1;
-    
+       
     queue<vector<int>> que;
-    que.push(p1);
-    int x, y;
-    unordered_set<int> visited;
-    visited.insert(p1[0] * 50 + p1[1]);
-    while (!que.empty()) {
-      const int sz = que.size();
-      for (int i = 0; i < sz; i++) {
-        const auto cur = que.front();
-        que.pop();
-        
+       que.push(p1);
+       int x, y;
+       unordered_set<int> visited;
+       visited.insert(p1[0] * 50 + p1[1]);
+       while (!que.empty()) {
+           const int sz = que.size();
+           for (int i = 0; i < sz; i++) {
+               const auto cur = que.front();
+               que.pop();
+               
         for (int k = 0; k < 4; k++) {
-          x = cur[0] + dirs[k][0]; 
-          y = cur[1] + dirs[k][1];
-          if (x == p2[0] && y == p2[1]) return moves;
-          if (x >= 0 && y >= 0 && x < rows && y < cols && forest[x][y] > 0 && visited.count(x * 50 + y) == 0) {
-            que.push({x, y});
-            visited.insert(x * 50 + y);
-          }
-        }
-      }
-      moves++;
-    }
-    
+                   x = cur[0] + dirs[k][0];
+                   y = cur[1] + dirs[k][1];
+                   if (x == p2[0] && y == p2[1]) return moves;
+                   if (x >= 0 && y >= 0 && x < rows && y < cols &&
+                       forest[x][y] > 0 && visited.count(x * 50 + y) == 0) {
+                       que.push({x, y});
+                       visited.insert(x * 50 + y);
+                   
+          }
+                 
+        }
+           
+      }
+           moves++;
+       
+    }
+       
     return -1;
   }
-  
-  int cutOffTree(vector<vector<int>>& forest) {
-    rows = forest.size();
-    if (rows == 0) return 0;
-    cols = forest[0].size();
-    if (cols == 0) return 0;
-    
-    vector<vector<int>> trees = {{0, 0}};   // always start from 0,0
+   
+  int cutOffTree(vector<vector<int>> &forest) {
+       rows = forest.size();
+       if (rows == 0) return 0;
+       cols = forest[0].size();
+       if (cols == 0) return 0;
+       
+    vector<vector<int>> trees = {{0, 0}};
+      // always start from 0,0
     for (int i = 0; i < rows; i++) {
-      for (int j = 0; j < cols; j++) {
-        if (forest[i][j] > 1) trees.push_back({i, j});
-      }
-    }
+           for (int j = 0; j < cols; j++) {
+               if (forest[i][j] > 1) trees.push_back({i, j});
+           
+      }
+       
+    }
     sort(trees.begin() + 1, trees.end(), [&forest](const vector<int>& a, const vector<int>& b){
-      return forest[a[0]][a[1]] < forest[b[0]][b[1]];
+           return forest[a[0]][a[1]] < forest[b[0]][b[1]];

@@ -1,18 +1,13 @@
 class Solution {
 public:
-  
   int helper(int n, int m) {
     int count = 0;
     while (n != 0) {
       n /= m;
-      count += n;  
+      count += n;
     }
     return count;
   }
-  
-  int trailingZeroes(int n) {
-    return helper(n, 5);
-  }
- 
-  
+
+  int trailingZeroes(int n) { return helper(n, 5); }
 };

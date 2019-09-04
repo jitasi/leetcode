@@ -1,23 +1,27 @@
 class Solution {
 public:
-  
-// Runtime: 8 ms, faster than 92.70% of C++ online submissions for Longest Palindromic Substring.
-// Memory Usage: 8.7 MB, less than 89.61% of C++ online submissions for Longest Palindromic Substring.
+  // Runtime: 8 ms, faster than 92.70% of C++ online submissions for Longest
+  // Palindromic Substring. Memory Usage: 8.7 MB, less than 89.61% of C++ online
+  // submissions for Longest Palindromic Substring.
   string longestPalindrome(string s) {
     const int len = s.length();
-    if (len == 0) return "";
-    if (len == 1) return s;
-    
+    if (len == 0)
+      return "";
+    if (len == 1)
+      return s;
+
     int longest = 1;
     int pos = 0;
     // 0123456 len = 7
     // check the palindromic centering at 1,2,3,4,5 with odd len
     for (int i = 1; i < len - 1; i++) {
-      if (i >= len - longest / 2) break;  // reduce exec time from 20ms to 8ms.
+      if (i >= len - longest / 2)
+        break; // reduce exec time from 20ms to 8ms.
       int pl = 1;
       while (s[i - pl] == s[i + pl]) {
         pl++;
-        if (i - pl < 0 || i + pl >= len) break;
+        if (i - pl < 0 || i + pl >= len)
+          break;
       }
       pl--;
       if ((pl * 2 + 1) > longest) {
@@ -25,15 +29,17 @@ public:
         pos = i - pl;
       }
     }
-    
+
     // 0123456 len = 7
     // check the palindromic centering at 0,1,2,3,4,5 with even len
     for (int i = 0; i < len - 1; i++) {
-      if (i >= len - longest / 2) break;  // reduce exec time from 20ms to 8ms.
+      if (i >= len - longest / 2)
+        break; // reduce exec time from 20ms to 8ms.
       int pl = 1;
       while (s[i - pl + 1] == s[i + pl]) {
         pl++;
-        if (i - pl + 1 < 0 || i + pl >= len) break;
+        if (i - pl + 1 < 0 || i + pl >= len)
+          break;
       }
       pl--;
       if (pl * 2 > longest) {
@@ -44,41 +50,42 @@ public:
     return s.substr(pos, longest);
   }
 
-// Runtime: 44 ms, faster than 55.68% of C++ online submissions for Longest Palindromic Substring.
-// Memory Usage: 9.6 MB, less than 60.48% of C++ online submissions for Longest Palindromic Substring.
-/*
-  string longestPalindrome(string s) {
-      const int len = s.length();
-      if (len == 0) return "";
-      if (len == 1) return s;
-      
-      // dp[i][j] = true if starting form pos j, len i+1 is Palindromic.
-      bool dp[1000][1000];
-      
-      for (int i = 0; i < len; i++) dp[0][i] = true;
+  // Runtime: 44 ms, faster than 55.68% of C++ online submissions for Longest
+  // Palindromic Substring. Memory Usage: 9.6 MB, less than 60.48% of C++ online
+  // submissions for Longest Palindromic Substring.
+  /*
+    string longestPalindrome(string s) {
+        const int len = s.length();
+        if (len == 0) return "";
+        if (len == 1) return s;
 
-      int longest = 0;
-      int pos = len - 1;
-      
-      for (int i = 0; i < len - 1; i++) {
-        dp[1][i] = s[i] == s[i+1];
-        if (dp[1][i] && 1 >= longest) {
-            longest = 1;
-            pos = i;
-        }
-      }
+        // dp[i][j] = true if starting form pos j, len i+1 is Palindromic.
+        bool dp[1000][1000];
 
-      for (int j = 2; j < len; j++) {
-        for (int i = 0; i < len - j; i++) {
-          dp[j][i] = dp[j-2][i+1] && (s[i] == s[i+j]);
-          if (dp[j][i] && j >= longest) {
-            longest = j;
-            pos = i;
+        for (int i = 0; i < len; i++) dp[0][i] = true;
+
+        int longest = 0;
+        int pos = len - 1;
+
+        for (int i = 0; i < len - 1; i++) {
+          dp[1][i] = s[i] == s[i+1];
+          if (dp[1][i] && 1 >= longest) {
+              longest = 1;
+              pos = i;
           }
         }
-        if (longest + 2 <= j) break;
+
+        for (int j = 2; j < len; j++) {
+          for (int i = 0; i < len - j; i++) {
+            dp[j][i] = dp[j-2][i+1] && (s[i] == s[i+j]);
+            if (dp[j][i] && j >= longest) {
+              longest = j;
+              pos = i;
+            }
+          }
+          if (longest + 2 <= j) break;
+        }
+        return s.substr(pos, longest + 1);
       }
-      return s.substr(pos, longest + 1);
-    }
-*/
+  */
 };

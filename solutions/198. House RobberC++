@@ -5,22 +5,25 @@
 
 class Solution {
 public:
-  int rob(vector<int>& nums) {
-    if (nums.size() == 0) return 0;
-    if (nums.size() == 1) return nums[0];
-    
+  int rob(vector<int> &nums) {
+    if (nums.size() == 0)
+      return 0;
+    if (nums.size() == 1)
+      return nums[0];
+
     int p = nums[0];
     int q = nums[1];
-    if (nums.size() == 2) return p > q? p : q;
-    
-    int r = nums[0] + nums[2];    
+    if (nums.size() == 2)
+      return p > q ? p : q;
+
+    int r = nums[0] + nums[2];
     for (int i = 3; i < nums.size(); i++) {
-      int x = (p > q? p : q) + nums[i];
+      int x = (p > q ? p : q) + nums[i];
       p = q;
       q = r;
       r = x;
     }
-    
-    return (q > r)? q : r;
+
+    return (q > r) ? q : r;
   }
 };

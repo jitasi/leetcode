@@ -1,20 +1,25 @@
-// Runtime: 12 ms, faster than 20.05% of C++ online submissions for Patching Array.
-// Memory Usage: 9.1 MB, less than 32.14% of C++ online submissions for Patching Array.
-​
-class Solution {
+// Runtime: 12 ms, faster than 20.05% of C++ online submissions for Patching
+// Array. Memory Usage: 9.1 MB, less than 32.14% of C++ online submissions for
+// Patching Array.
+​ class Solution {
 public:
-  int minPatches(vector<int>& nums, int n) {
-    long miss = 1;
-    int ans = 0;
-    int i = 0;
-    while (miss <= n) {
-      if (i < nums.size() && miss >= nums[i]) {
-        miss += nums[i++];
-      } else {
-        miss <<= 1;
-        ans++;
-      }
-    }
-    return ans;
-  }
+   int minPatches(vector<int> &nums, int n) {
+       long miss = 1;
+       int ans = 0;
+       int i = 0;
+       while (miss <= n) {
+           if (i < nums.size() && miss >= nums[i]) {
+               miss += nums[i++];
+           
+      }
+      else {
+               miss <<= 1;
+               ans++;
+           
+      }
+       
+    }
+       return ans;
+     
+  }
 };

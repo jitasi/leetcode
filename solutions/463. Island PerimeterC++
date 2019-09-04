@@ -1,28 +1,30 @@
 class Solution {
 public:
-    int islandPerimeter(vector<vector<int>>& grid) {
-      int c = 0;
-      for (int i = 0; i < grid.size(); i++) {
-        int prev = 0;
-        for (int j = 0; j < grid[i].size(); j++) {
-          if (grid[i][j] != prev) {
-            c++;
-            prev = grid[i][j];
-          }
+  int islandPerimeter(vector<vector<int>> &grid) {
+    int c = 0;
+    for (int i = 0; i < grid.size(); i++) {
+      int prev = 0;
+      for (int j = 0; j < grid[i].size(); j++) {
+        if (grid[i][j] != prev) {
+          c++;
+          prev = grid[i][j];
         }
-        if (prev == 1) c++;
       }
-    
-      for (int i = 0; i < grid[0].size(); i++) {
-        int prev = 0;
-        for (int j = 0; j < grid.size(); j++) {
-          if (grid[j][i] != prev) {
-            c++;
-            prev = grid[j][i];
-          }
-        }
-        if (prev == 1) c++;
-      }
-      return c;
+      if (prev == 1)
+        c++;
     }
+
+    for (int i = 0; i < grid[0].size(); i++) {
+      int prev = 0;
+      for (int j = 0; j < grid.size(); j++) {
+        if (grid[j][i] != prev) {
+          c++;
+          prev = grid[j][i];
+        }
+      }
+      if (prev == 1)
+        c++;
+    }
+    return c;
+  }
 };

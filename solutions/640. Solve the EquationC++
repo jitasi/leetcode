@@ -1,26 +1,30 @@
-// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Solve the Equation.
-// Memory Usage: 8.6 MB, less than 38.55% of C++ online submissions for Solve the Equation.
-​
-class Solution {
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Solve the
+// Equation. Memory Usage: 8.6 MB, less than 38.55% of C++ online submissions
+// for Solve the Equation.
+​ class Solution {
 public:
-  // -1x+5-3+2x
-  pair<int, int> simplify(const string& s, int begin, int end) {
-    int sign = 1;
-    int a =  0;
-    int b = 0;
-    int val = 0;
-    for (int i = begin; i < end; i++) {
-      if (s[i] >= '0' && s[i] <= '9') {
-        val = val * 10 + s[i] - '0';
-      } else if (s[i] == '+' || s[i] == '-') {
-        // process val.
+    // -1x+5-3+2x
+  pair<int, int> simplify(const string &s, int begin, int end) {
+       int sign = 1;
+       int a =  0;
+       int b = 0;
+       int val = 0;
+       for (int i = begin; i < end; i++) {
+           if (s[i] >= '0' && s[i] <= '9') {
+               val = val * 10 + s[i] - '0';
+           
+      }
+      else if (s[i] == '+' || s[i] == '-') {
+                // process val.
         b += sign * val;
-        val = 0;
-        
-        // sign for next val
-        sign = s[i] == '-'? -1 : 1;
-      } else if (s[i] == 'x') {
-        if (val == 0 &&
-            ((i == begin) || (i > begin && s[i - 1] != '0'))) val = 1;
-        a += sign * val;
-        val = 0;
+               val = 0;
+               
+         // sign for next val
+        sign = s[i] == '-' ? -1 : 1;
+           
+      }
+      else if (s[i] == 'x') {
+               if (val == 0 &&
+           ((i == begin) || (i > begin && s[i - 1] != '0'))) val = 1;
+               a += sign * val;
+               val = 0;

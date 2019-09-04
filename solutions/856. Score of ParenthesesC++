@@ -1,23 +1,30 @@
-// Runtime: 4 ms, faster than 89.71% of C++ online submissions for Score of Parentheses.
-// Memory Usage: 8.6 MB, less than 54.56% of C++ online submissions for Score of Parentheses.
+// Runtime: 4 ms, faster than 89.71% of C++ online submissions for Score of
+// Parentheses. Memory Usage: 8.6 MB, less than 54.56% of C++ online submissions
+// for Score of Parentheses.
 
 class Solution {
 public:
-  int scoreOfParentheses(const string& S, int from, int to) {
-    if (from >= to) return 0;
-    if (from + 1 == to) return 1;
-    
+  int scoreOfParentheses(const string &S, int from, int to) {
+    if (from >= to)
+      return 0;
+    if (from + 1 == to)
+      return 1;
+
     int pos = from;
     int cnt = 1;
     while (cnt != 0) {
-      if (S[++pos] == '(') cnt++;
-      else cnt--;
+      if (S[++pos] == '(')
+        cnt++;
+      else
+        cnt--;
     }
-    
-    if (pos == to) return 2 * scoreOfParentheses(S, from + 1, to - 1);
-    return scoreOfParentheses(S, from, pos) + scoreOfParentheses(S, pos + 1, to);
+
+    if (pos == to)
+      return 2 * scoreOfParentheses(S, from + 1, to - 1);
+    return scoreOfParentheses(S, from, pos) +
+           scoreOfParentheses(S, pos + 1, to);
   }
-  
+
   int scoreOfParentheses(string S) {
     return scoreOfParentheses(S, 0, S.size() - 1);
   }

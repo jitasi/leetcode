@@ -1,23 +1,24 @@
-// Runtime: 8 ms, faster than 97.56% of C++ online submissions for Search a 2D Matrix.
-// Memory Usage: 9.8 MB, less than 63.86% of C++ online submissions for Search a 2D Matrix.
-​
-class Solution {
+// Runtime: 8 ms, faster than 97.56% of C++ online submissions for Search a 2D
+// Matrix. Memory Usage: 9.8 MB, less than 63.86% of C++ online submissions for
+// Search a 2D Matrix.
+​ class Solution {
 public:
-  bool searchMatrix(vector<vector<int>>& matrix, int target) {
-    const int rows = matrix.size();
-    if (rows == 0) return false;
-    const int cols = matrix[0].size();
-    if (cols == 0) return false;
-    
+   bool searchMatrix(vector<vector<int>> &matrix, int target) {
+       const int rows = matrix.size();
+       if (rows == 0) return false;
+       const int cols = matrix[0].size();
+       if (cols == 0) return false;
+       
     int x = 0;
-    int y = cols - 1;
-    while (x < rows && y >= 0) {
-//      cout << x << ", " << y << endl;
-//      cout << matrix[x][y] << ", " << target << endl;
-      if (matrix[x][y] == target) return true;
-      if (matrix[x][y] < target) x++;
-      else y--;
-    }
-    return false;
+       int y = cols - 1;
+       while (x < rows && y >= 0) {
+      //      cout << x << ", " << y << endl;
+      //      cout << matrix[x][y] << ", " << target << endl;
+           if (matrix[x][y] == target) return true;
+           if (matrix[x][y] < target) x++;
+           else y--;
+       
+    }
+       return false;
   }
 };

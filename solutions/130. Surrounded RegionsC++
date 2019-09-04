@@ -1,28 +1,35 @@
-// Runtime: 32 ms, faster than 83.30% of C++ online submissions for Surrounded Regions.
-// Memory Usage: 14.4 MB, less than 58.54% of C++ online submissions for Surrounded Regions.
+// Runtime: 32 ms, faster than 83.30% of C++ online submissions for Surrounded
+// Regions. Memory Usage: 14.4 MB, less than 58.54% of C++ online submissions
+// for Surrounded Regions.
 
 class Solution {
 public:
   const int dirs[4][2] = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
-  
-  void solve(vector<vector<char>>& board) {
+
+  void solve(vector<vector<char>> &board) {
     const int rows = board.size();
-    if (rows <= 1) return; 
+    if (rows <= 1)
+      return;
     const int cols = board[0].size();
-    if (cols <= 1) return; 
-    
+    if (cols <= 1)
+      return;
+
     queue<pair<int, int>> q;
     for (int i = 0; i < rows; i++) {
-      if (board[i][0] == 'O') q.push({i, 0});
-      if (board[i][cols - 1] == 'O') q.push({i, cols - 1});
+      if (board[i][0] == 'O')
+        q.push({i, 0});
+      if (board[i][cols - 1] == 'O')
+        q.push({i, cols - 1});
     }
     for (int j = 1; j < cols - 1; j++) {
-      if (board[0][j] == 'O') q.push({0, j});
-      if (board[rows - 1][j] == 'O') q.push({rows - 1, j});
+      if (board[0][j] == 'O')
+        q.push({0, j});
+      if (board[rows - 1][j] == 'O')
+        q.push({rows - 1, j});
     }
 
     while (!q.empty()) {
-      const auto& pt = q.front();
+      const auto &pt = q.front();
       board[pt.first][pt.second] = '$';
       for (int k = 0; k < 4; k++) {
         int x = pt.first + dirs[k][0];
@@ -33,11 +40,13 @@ public:
       }
       q.pop();
     }
-    
+
     for (int i = 0; i < rows; i++)
       for (int j = 0; j < cols; j++) {
-        if (board[i][j] == '$') board[i][j] = 'O';
-        else board[i][j] = 'X';
-      }  
+        if (board[i][j] == '$')
+          board[i][j] = 'O';
+        else
+          board[i][j] = 'X';
+      }
   }
 };

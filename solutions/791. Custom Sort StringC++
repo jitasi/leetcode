@@ -1,18 +1,22 @@
 class Solution {
 public:
-    string customSortString(string S, string T) {
-      if (T.size() <= 1 || S.empty()) return T;
-      
-      unordered_map<char, int> m;
-      for (char ch : S) {
-        m[ch] = m.size();
-      }
-      sort(T.begin(), T.end(), [&m](char a, char b) {
-        if (m.count(a) > 0 && m.count(b) > 0) return m[a] < m[b];
-        if (m.count(a) > 0 && m.count(b) == 0) return true;
-         if (m.count(a) == 0 && m.count(b) > 0) return false;
-        return a < b;
-      });
+  string customSortString(string S, string T) {
+    if (T.size() <= 1 || S.empty())
       return T;
+
+    unordered_map<char, int> m;
+    for (char ch : S) {
+      m[ch] = m.size();
     }
+    sort(T.begin(), T.end(), [&m](char a, char b) {
+      if (m.count(a) > 0 && m.count(b) > 0)
+        return m[a] < m[b];
+      if (m.count(a) > 0 && m.count(b) == 0)
+        return true;
+      if (m.count(a) == 0 && m.count(b) > 0)
+        return false;
+      return a < b;
+    });
+    return T;
+  }
 };

@@ -9,21 +9,22 @@
  */
 class Solution {
 public:
-    pair<int, int> _rob(TreeNode* root) {
-      if (root == nullptr) {
-        return {0, 0};
-      }
-      pair<int, int> ret;
-      auto l = _rob(root->left);
-      auto r = _rob(root->right);
-      ret.second = l.first + r.first;
-      ret.first = root->val + l.second + r.second;
-      if (ret.second > ret.first) ret.first = ret.second;
-      return ret;
+  pair<int, int> _rob(TreeNode *root) {
+    if (root == nullptr) {
+      return {0, 0};
     }
-  
-    int rob(TreeNode* root) {
-      auto ret = _rob(root);  
-      return ret.first > ret.second? ret.first : ret.second;
-    }
+    pair<int, int> ret;
+    auto l = _rob(root->left);
+    auto r = _rob(root->right);
+    ret.second = l.first + r.first;
+    ret.first = root->val + l.second + r.second;
+    if (ret.second > ret.first)
+      ret.first = ret.second;
+    return ret;
+  }
+
+  int rob(TreeNode *root) {
+    auto ret = _rob(root);
+    return ret.first > ret.second ? ret.first : ret.second;
+  }
 };

@@ -1,15 +1,15 @@
 class Solution {
 public:
-    int integerBreak(int n) {
-      int dp[n + 1];
-      dp[1] = 1;
-      for (int i = 2; i <= n; i++) {
-        dp[i] = (i == n)? 1 : i;
-        for (int k = 1; k < i; k++) {
-          dp[i] = std::max(dp[i], dp[k] * dp[i - k]);
-        }
+  int integerBreak(int n) {
+    int dp[n + 1];
+    dp[1] = 1;
+    for (int i = 2; i <= n; i++) {
+      dp[i] = (i == n) ? 1 : i;
+      for (int k = 1; k < i; k++) {
+        dp[i] = std::max(dp[i], dp[k] * dp[i - k]);
       }
-    
-      return dp[n];
     }
+
+    return dp[n];
+  }
 };

@@ -9,28 +9,28 @@
  */
 class Solution {
 public:
-    // pair of diameter, deepth
-    pair<int, int> work(TreeNode* root) {
-      if (root == nullptr) return {0, 0};
-      if (root->right == nullptr && root->left == nullptr) return {0, 0};
-      if (root->right == nullptr) {
-        auto ret = work(root->left);
-        return {max(ret.first, ret.second + 1), ret.second + 1};
-      }
-      if (root->left == nullptr) {
-        auto ret = work(root->right);
-        return {max(ret.first, ret.second + 1), ret.second + 1};
-      }
-      
-      auto left_ret = work(root->left);
-      auto right_ret = work(root->right);
-      int diameter = max(max(left_ret.first, right_ret.first),
-                         2 + left_ret.second + right_ret.second);
-      int deepth = max(left_ret.second, right_ret.second) + 1;
-      return {diameter, deepth};
+  // pair of diameter, deepth
+  pair<int, int> work(TreeNode *root) {
+    if (root == nullptr)
+      return {0, 0};
+    if (root->right == nullptr && root->left == nullptr)
+      return {0, 0};
+    if (root->right == nullptr) {
+      auto ret = work(root->left);
+      return {max(ret.first, ret.second + 1), ret.second + 1};
     }
-  
-    int diameterOfBinaryTree(TreeNode* root) {
-      return work(root).first;      
+    if (root->left == nullptr) {
+      auto ret = work(root->right);
+      return {max(ret.first, ret.second + 1), ret.second + 1};
     }
+
+    auto left_ret = work(root->left);
+    auto right_ret = work(root->right);
+    int diameter = max(max(left_ret.first, right_ret.first),
+                       2 + left_ret.second + right_ret.second);
+    int deepth = max(left_ret.second, right_ret.second) + 1;
+    return {diameter, deepth};
+  }
+
+  int diameterOfBinaryTree(TreeNode *root) { return work(root).first; }
 };

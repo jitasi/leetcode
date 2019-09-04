@@ -1,47 +1,54 @@
-// Runtime: 52 ms, faster than 95.34% of C++ online submissions for Number of Enclaves.
-// Memory Usage: 15.1 MB, less than 48.73% of C++ online submissions for Number of Enclaves.
-​
-class Solution {
+// Runtime: 52 ms, faster than 95.34% of C++ online submissions for Number of
+// Enclaves. Memory Usage: 15.1 MB, less than 48.73% of C++ online submissions
+// for Number of Enclaves.
+​ class Solution {
 public:
-  const int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-  
-  void TestBit(vector<vector<int>>& A, stack<pair<int, int>>& s, int x, int y) {
-    if (A[x][y] == 1) {
-      s.push({x, y});
-      A[x][y] = 0;
-    }    
+   const int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+   
+  void TestBit(vector<vector<int>> &A, stack<pair<int, int>> &s, int x,
+                int y) {
+       if (A[x][y] == 1) {
+           s.push({x, y});
+           A[x][y] = 0;
+       
+    }
+       
   }
-  
-  int numEnclaves(vector<vector<int>>& A) {
-    const int rows = A.size();
-    const int cols = A[0].size();
-    
+   
+  int numEnclaves(vector<vector<int>> &A) {
+       const int rows = A.size();
+       const int cols = A[0].size();
+       
     stack<pair<int, int>> s;
-    for (int i = 0; i < cols; i++) {
-      TestBit(A, s, 0, i);
-      TestBit(A, s, rows - 1, i);
-    }
-    for (int i = 1; i < rows - 1; i++) {
-      TestBit(A, s, i, 0);
-      TestBit(A, s, i, cols - 1);
-    }
-    
+       for (int i = 0; i < cols; i++) {
+           TestBit(A, s, 0, i);
+           TestBit(A, s, rows - 1, i);
+       
+    }
+       for (int i = 1; i < rows - 1; i++) {
+           TestBit(A, s, i, 0);
+           TestBit(A, s, i, cols - 1);
+       
+    }
+       
     while (!s.empty()) {
-      auto t = s.top();
-      s.pop();
-      for (const auto& dir: dirs) {
-        const int x = t.first + dir[0];
-        const int y = t.second + dir[1];
-        if (x < 1 || y < 1 || x >= rows || y >= cols) continue;
-        TestBit(A, s, x, y);
-      }
-    }
-      
+           auto t = s.top();
+           s.pop();
+           for (const auto &dir : dirs) {
+               const int x = t.first + dir[0];
+               const int y = t.second + dir[1];
+               if (x < 1 || y < 1 || x >= rows || y >= cols) continue;
+               TestBit(A, s, x, y);
+           
+      }
+       
+    }
+         
     int ans = 0;
-    for (int i = 0; i < rows; i++)
+       for (int i = 0; i < rows; i++)
       for (int j = 0; j < cols; j++)
         if (A[i][j] == 1) ans++;
-      
+         
     return ans;
   }
 };

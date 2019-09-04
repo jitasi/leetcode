@@ -1,20 +1,22 @@
 
 class Solution {
 public:
-  bool valid(int n, int* st, int cur, int c) {
+  bool valid(int n, int *st, int cur, int c) {
     for (int i = 0; i < cur; i++) {
-      if (st[i] == c) return false;
-      if (cur - i == abs(c - st[i])) return false;
+      if (st[i] == c)
+        return false;
+      if (cur - i == abs(c - st[i]))
+        return false;
     }
     return true;
   }
-  
-  void solve(int n, int& ans, int* st, int cur) {
+
+  void solve(int n, int &ans, int *st, int cur) {
     if (cur == n) {
       ans++;
       return;
     }
-    
+
     for (int i = 0; i < n; i++) {
       if (valid(n, st, cur, i)) {
         st[cur] = i;
@@ -22,9 +24,10 @@ public:
       }
     }
   }
-  
+
   int totalNQueens(int n) {
-    if (n == 0) return 1;
+    if (n == 0)
+      return 1;
     int ans = 0;
     int st[n];
     solve(n, ans, st, 0);

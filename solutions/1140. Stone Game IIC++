@@ -1,31 +1,32 @@
 /* vim: set ft=cpp : */
 ​
-// Runtime: 4 ms, faster than 90.81% of C++ online submissions for Stone Game II.
-// Memory Usage: 9.4 MB, less than 100.00% of C++ online submissions for Stone Game II.
-​
-class Solution {
+    // Runtime: 4 ms, faster than 90.81% of C++ online submissions for Stone
+    // Game II. Memory Usage: 9.4 MB, less than 100.00% of C++ online
+    // submissions for Stone Game II.
+        ​ class Solution {
 public:
-  unordered_map<int, int> dp;  // key: from << 6 + m
+   unordered_map<int, int> dp;
+    // key: from << 6 + m
   
-  int helper(const vector<int>& suffix_sum, int from, int m) {
-    const int max_taken_to = from + (m << 1);
-    if (max_taken_to >= suffix_sum.size()) return suffix_sum[from];
-    
+  int helper(const vector<int> &suffix_sum, int from, int m) {
+       const int max_taken_to = from + (m << 1);
+       if (max_taken_to >= suffix_sum.size()) return suffix_sum[from];
+       
     const int key = (from << 6) + m;
-    if (dp.count(key) > 0) return dp[key];
-    
+       if (dp.count(key) > 0) return dp[key];
+       
     int ans = INT_MAX;
-    for (int i = from + 1; i <= max_taken_to; i++)
+       for (int i = from + 1; i <= max_taken_to; i++)
       ans = min(ans, helper(suffix_sum, i, max(m, i - from)));
-    
+       
     return dp[key] = suffix_sum[from] - ans;
   }
-  
-  int stoneGameII(vector<int>& piles) {
-    const int len = piles.size();
-    for (int i = len - 2; i >= 0; i--) 
+   
+  int stoneGameII(vector<int> &piles) {
+       const int len = piles.size();
+       for (int i = len - 2; i >= 0; i--) 
       piles[i] += piles[i + 1];
-    
+       
     return helper(piles, 0, 1);
   }
 };

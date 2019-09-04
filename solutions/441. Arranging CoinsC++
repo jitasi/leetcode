@@ -1,9 +1,10 @@
-// Runtime: 4 ms, faster than 91.98% of C++ online submissions for Arranging Coins.
-// Memory Usage: 8.1 MB, less than 76.55% of C++ online submissions for Arranging Coins.
-​
-class Solution {
+// Runtime: 4 ms, faster than 91.98% of C++ online submissions for Arranging
+// Coins. Memory Usage: 8.1 MB, less than 76.55% of C++ online submissions for
+// Arranging Coins.
+​ class Solution {
 public:
-  int arrangeCoins(int n) {
-    return (-1 + sqrt(1 + 8.0 * n)) / 2;      
+   int arrangeCoins(int n) {
+       return (-1 + sqrt(1 + 8.0 * n)) / 2;
+         
   }
 };

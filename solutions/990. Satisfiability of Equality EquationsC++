@@ -1,36 +1,39 @@
-// Runtime: 8 ms, faster than 81.70% of C++ online submissions for Satisfiability of Equality Equations.
-// Memory Usage: 9.6 MB, less than 45.55% of C++ online submissions for Satisfiability of Equality Equations.
-​
-class Solution {
+// Runtime: 8 ms, faster than 81.70% of C++ online submissions for
+// Satisfiability of Equality Equations. Memory Usage: 9.6 MB, less than 45.55%
+// of C++ online submissions for Satisfiability of Equality Equations.
+​ class Solution {
 public:
-  unordered_map<char, char> m;
-  
+   unordered_map<char, char> m;
+   
   char f(char ch) {
-    while (ch != m[ch]) ch = m[ch];
-    return ch;
+       while (ch != m[ch]) ch = m[ch];
+       return ch;
   }
-  
+   
   void u(char ch1, char ch2) {
-    const char g1 = f(ch1);
-    const char g2 = f(ch2);
-    if (g1 != g2) m[g1] = g2;
+       const char g1 = f(ch1);
+       const char g2 = f(ch2);
+       if (g1 != g2) m[g1] = g2;
   }
-  
-  bool equationsPossible(vector<string>& equations) {
-    for (const auto& equ : equations) {
-      const char ch1 = equ[0];
-      const char ch2 = equ[equ.size() - 1];
-      if (m.count(ch1) == 0) m[ch1] = ch1;
-      if (m.count(ch2) == 0) m[ch2] = ch2;
-      if (equ[1] == '=') u(ch1, ch2);
-    }
-    
-    for (const auto& equ : equations) {
-      if (equ[1] == '=') continue;
-      const char g1 = f(equ[0]);
-      const char g2 = f(equ[equ.size() - 1]);
-      if (g1 == g2) return false;
-    }    
+   
+  bool equationsPossible(vector<string> &equations) {
+       for (const auto &equ : equations) {
+           const char ch1 = equ[0];
+           const char ch2 = equ[equ.size() - 1];
+           if (m.count(ch1) == 0) m[ch1] = ch1;
+           if (m.count(ch2) == 0) m[ch2] = ch2;
+           if (equ[1] == '=') u(ch1, ch2);
+       
+    }
+       
+    for (const auto &equ : equations) {
+           if (equ[1] == '=') continue;
+           const char g1 = f(equ[0]);
+           const char g2 = f(equ[equ.size() - 1]);
+           if (g1 == g2) return false;
+       
+    }
+       
     
     return true;
   }

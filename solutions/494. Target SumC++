@@ -1,28 +1,29 @@
 class Solution {
 public:
-    void add(map<int, int>& m, int v, int c) {
-      if (m.find(v) != m.end()) {
-            m[v] += c;
-          } else {
-            m[v] = c;
-          }
+  void add(map<int, int> &m, int v, int c) {
+    if (m.find(v) != m.end()) {
+      m[v] += c;
+    } else {
+      m[v] = c;
     }
-  
-    int findTargetSumWays(vector<int>& nums, int S) {
-      map<int, int> m;
-      add(m, nums[0], 1);
-      add(m, -nums[0], 1);
-      
-      for (int i = 1; i < nums.size(); i++) {
-        map<int, int> new_m;
-        for (auto it = m.begin(); it != m.end(); it++) {
-          add(new_m, it->first + nums[i], it->second);
-          add(new_m, it->first - nums[i], it->second);
-        }        
-        m = new_m;
+  }
+
+  int findTargetSumWays(vector<int> &nums, int S) {
+    map<int, int> m;
+    add(m, nums[0], 1);
+    add(m, -nums[0], 1);
+
+    for (int i = 1; i < nums.size(); i++) {
+      map<int, int> new_m;
+      for (auto it = m.begin(); it != m.end(); it++) {
+        add(new_m, it->first + nums[i], it->second);
+        add(new_m, it->first - nums[i], it->second);
       }
-      
-      if (m.find(S) != m.end()) return m[S];
-      return 0;
+      m = new_m;
     }
+
+    if (m.find(S) != m.end())
+      return m[S];
+    return 0;
+  }
 };

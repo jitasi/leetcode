@@ -1,24 +1,26 @@
-// Runtime: 96 ms, faster than 31.71% of C++ online submissions for Image Overlap.
-// Memory Usage: 12.5 MB, less than 14.60% of C++ online submissions for Image Overlap.
-
+// Runtime: 96 ms, faster than 31.71% of C++ online submissions for Image
+// Overlap. Memory Usage: 12.5 MB, less than 14.60% of C++ online submissions
+// for Image Overlap.
 
 class Solution {
 public:
-  int largestOverlap(vector<vector<int>>& A, vector<vector<int>>& B) {
+  int largestOverlap(vector<vector<int>> &A, vector<vector<int>> &B) {
     const int len = A.size();
-    unordered_set<int> as; 
+    unordered_set<int> as;
     unordered_set<int> bs;
     for (int i = 0; i < len; i++) {
       for (int j = 0; j < len; j++) {
-        if (A[i][j] == 1) as.insert(i * len * 2 + j);
-        if (B[i][j] == 1) bs.insert(i * len * 2 + j);
+        if (A[i][j] == 1)
+          as.insert(i * len * 2 + j);
+        if (B[i][j] == 1)
+          bs.insert(i * len * 2 + j);
       }
     }
-    
+
     int ans = 0;
     unordered_map<int, int> cnts;
-    for (const int a: as) {
-      for (const int b: bs) {
+    for (const int a : as) {
+      for (const int b : bs) {
         cnts[a - b]++;
         ans = std::max(ans, cnts[a - b]);
       }

@@ -1,19 +1,20 @@
-// Runtime: 36 ms, faster than 77.73% of C++ online submissions for Count Complete Tree Nodes.
-// Memory Usage: 28.5 MB, less than 89.87% of C++ online submissions for Count Complete Tree Nodes.
+// Runtime: 36 ms, faster than 77.73% of C++ online submissions for Count
+// Complete Tree Nodes. Memory Usage: 28.5 MB, less than 89.87% of C++ online
+// submissions for Count Complete Tree Nodes.
 ​
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
-class Solution {
+    /**
+     * Definition for a binary tree node.
+     * struct TreeNode {
+     *     int val;
+     *     TreeNode *left;
+     *     TreeNode *right;
+     *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+     * };
+     */
+    class Solution {
 public:
-  int countNodes(TreeNode* root) {
-    if (root == nullptr) return 0;
-    return 1 + countNodes(root->left) + countNodes(root->right);
+   int countNodes(TreeNode *root) {
+       if (root == nullptr) return 0;
+       return 1 + countNodes(root->left) + countNodes(root->right);
   }
 };

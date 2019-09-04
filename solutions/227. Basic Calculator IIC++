@@ -1,40 +1,43 @@
-// Runtime: 12 ms, faster than 95.48% of C++ online submissions for Basic Calculator II.
-// Memory Usage: 12.3 MB, less than 8.52% of C++ online submissions for Basic Calculator II.
+// Runtime: 12 ms, faster than 95.48% of C++ online submissions for Basic
+// Calculator II. Memory Usage: 12.3 MB, less than 8.52% of C++ online
+// submissions for Basic Calculator II.
 
 class Solution {
 public:
-  
   int calculate(string s) {
-    
-    char op = '+';  // + - * /
+
+    char op = '+'; // + - * /
     long cur_num = 0;
     stack<long> vals;
     s = s + '+';
-    for (const char ch: s) {
-      if (ch == ' ') continue;
-      
-//      cout << ch;
+    for (const char ch : s) {
+      if (ch == ' ')
+        continue;
+
+      //      cout << ch;
       if (ch >= '0' && ch <= '9') {
         cur_num = cur_num * 10 + ch - '0';
         continue;
       }
-      
+
       if (op == '+') {
         vals.push(cur_num);
       } else if (op == '-') {
         vals.push(-cur_num);
       } else /* if (op == '*' || op == '/') */ {
         const int prev = vals.top();
-        vals.pop();        
-        if (op == '*') vals.push(prev * cur_num);
-        else vals.push(prev / cur_num);
+        vals.pop();
+        if (op == '*')
+          vals.push(prev * cur_num);
+        else
+          vals.push(prev / cur_num);
       }
-      
+
       cur_num = 0;
       op = ch;
     }
-//    cout << endl;
-    
+    //    cout << endl;
+
     int ans = 0;
     while (!vals.empty()) {
       ans += vals.top();

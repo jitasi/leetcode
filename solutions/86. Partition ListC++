@@ -1,38 +1,45 @@
-// Runtime: 4 ms, faster than 98.54% of C++ online submissions for Partition List.
-// Memory Usage: 8.6 MB, less than 72.11% of C++ online submissions for Partition List.
-​
-​
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
-class Solution {
-public:  
-  ListNode* partition(ListNode* head, int x) {
-    ListNode small(0);
-    ListNode bigger(0);
-    
+// Runtime: 4 ms, faster than 98.54% of C++ online submissions for Partition
+// List. Memory Usage: 8.6 MB, less than 72.11% of C++ online submissions for
+// Partition List.
+​ ​
+    /**
+     * Definition for singly-linked list.
+     * struct ListNode {
+     *     int val;
+     *     ListNode *next;
+     *     ListNode(int x) : val(x), next(NULL) {}
+     * };
+     */
+    class Solution {
+public:
+   
+  ListNode *partition(ListNode *head, int x) {
+       ListNode small(0);
+       ListNode bigger(0);
+       
     ListNode *s = &small;
-    ListNode *b = &bigger;
-    while (head != nullptr) {
-      if (head->val < x) {
-        s->next = head;
-        s = s->next;
-      } else {
-        b->next = head;
-        b = b->next;
-      }
-      head = head->next;
-    }
-    s->next = b->next = nullptr;
-    
+       ListNode *b = &bigger;
+       while (head != nullptr) {
+           if (head->val < x) {
+               s->next = head;
+               s = s->next;
+           
+      }
+      else {
+               b->next = head;
+               b = b->next;
+           
+      }
+           head = head->next;
+       
+    }
+       s->next = b->next = nullptr;
+       
     if (bigger.next != nullptr) {
-      s->next = bigger.next;
-    }   
+           s->next = bigger.next;
+       
+    }
+      
     return small.next;
   }
 };

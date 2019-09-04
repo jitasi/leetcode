@@ -1,32 +1,34 @@
 /* vim: set ft=cpp : */
 ​
-// Runtime: 164 ms, faster than 43.02% of C++ online submissions for Print in Order.
-// Memory Usage: 9.2 MB, less than 100.00% of C++ online submissions for Print in Order.
-​
-class Foo {
+    // Runtime: 164 ms, faster than 43.02% of C++ online submissions for Print
+    // in Order. Memory Usage: 9.2 MB, less than 100.00% of C++ online
+    // submissions for Print in Order.
+        ​ class Foo {
 public:
-    std::promise<void> barrier_1, barrier_2;
-  
-    Foo() {
+     std::promise<void> barrier_1, barrier_2;
+   
+    Foo(){
         
-    }
-​
+   } ​
     void first(function<void()> printFirst) {
-        // printFirst() outputs "first". Do not change or remove this line.
+            // printFirst() outputs "first". Do not change or remove this line.
         printFirst();
-        barrier_1.set_value();
-    }
-​
+           barrier_1.set_value();
+     
+  }
+  ​
     void second(function<void()> printSecond) {
-        barrier_1.get_future().wait();
-        // printSecond() outputs "second". Do not change or remove this line.
+           barrier_1.get_future().wait();
+            // printSecond() outputs "second". Do not change or remove this line.
         printSecond();
-        barrier_2.set_value();
-    }
-​
+           barrier_2.set_value();
+     
+  }
+  ​
     void third(function<void()> printThird) {
-        barrier_2.get_future().wait();
-        // printThird() outputs "third". Do not change or remove this line.
+           barrier_2.get_future().wait();
+            // printThird() outputs "third". Do not change or remove this line.
         printThird();
-    }
+     
+  }
 };

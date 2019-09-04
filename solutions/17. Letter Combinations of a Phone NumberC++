@@ -1,25 +1,25 @@
 class Solution {
 public:
-    vector<string> letterCombinations(string digits) {
-      vector<string> m = {
-        "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-      
-      vector<string> ret;
-      for (char c : digits) {
-        const int l = ret.size();
-        vector<string> tmp;
-        for (char ch : m[c - '0']) {
-          if (l == 0) {
-            tmp.push_back(string(1, ch));
-          } else {
-            for (int i = 0; i < l; i++) {
-              tmp.push_back(ret[i] + string(1, ch));
-            }
+  vector<string> letterCombinations(string digits) {
+    vector<string> m = {"",    "",    "abc",  "def", "ghi",
+                        "jkl", "mno", "pqrs", "tuv", "wxyz"};
+
+    vector<string> ret;
+    for (char c : digits) {
+      const int l = ret.size();
+      vector<string> tmp;
+      for (char ch : m[c - '0']) {
+        if (l == 0) {
+          tmp.push_back(string(1, ch));
+        } else {
+          for (int i = 0; i < l; i++) {
+            tmp.push_back(ret[i] + string(1, ch));
           }
         }
-        ret.swap(tmp);
       }
-      
-      return ret;
+      ret.swap(tmp);
     }
+
+    return ret;
+  }
 };

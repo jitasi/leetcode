@@ -1,12 +1,13 @@
-// Runtime: 160 ms, faster than 77.79% of C++ online submissions for Maximum Length of Repeated Subarray.
-// Memory Usage: 13.4 MB, less than 70.62% of C++ online submissions for Maximum Length of Repeated 
+// Runtime: 160 ms, faster than 77.79% of C++ online submissions for Maximum
+// Length of Repeated Subarray. Memory Usage: 13.4 MB, less than 70.62% of C++
+// online submissions for Maximum Length of Repeated
 
 class Solution {
 public:
-  int findLength(vector<int>& A, vector<int>& B) {
+  int findLength(vector<int> &A, vector<int> &B) {
     const int lena = A.size();
     const int lenb = B.size();
-    
+
     int ans = 0;
     int dp[lenb][lena];
     for (int i = 0; i < lenb; i++) {
@@ -22,7 +23,7 @@ public:
         }
       }
     }
-      
+
     return ans;
   }
 };

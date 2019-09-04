@@ -1,6 +1,6 @@
 class Solution {
-public:  
-  vector<int> maxSumOfThreeSubarrays(vector<int>& nums, int k) {
+public:
+  vector<int> maxSumOfThreeSubarrays(vector<int> &nums, int k) {
     const int len = nums.size();
     int part_sum[len];
     part_sum[0] = 0;
@@ -8,7 +8,7 @@ public:
       part_sum[0] += nums[i];
     for (int i = 1; i < len - k + 1; i++)
       part_sum[i] = part_sum[i - 1] + nums[i + k - 1] - nums[i - 1];
-    
+
     int left_max[len];
     int left_max_idx[len];
     left_max[0] = part_sum[0];
@@ -22,7 +22,7 @@ public:
         left_max_idx[i] = left_max_idx[i - 1];
       }
     }
-      
+
     int right_max[len];
     int right_max_idx[len];
     right_max[len - k] = part_sum[len - k];
@@ -36,17 +36,17 @@ public:
         right_max_idx[i] = right_max_idx[i + 1];
       }
     }
-/*    
-    for (int i = 0; i <= len - k; i++) {
-      cout << left_max[i] << "/" << left_max_idx[i] << ", ";
-    }
-    cout << endl;
-    for (int i = 0; i <= len - k; i++) {
-      cout << right_max[i] << "/" << right_max_idx[i] << ", ";
-    }
-    cout << endl;
-*/
-    
+    /*
+        for (int i = 0; i <= len - k; i++) {
+          cout << left_max[i] << "/" << left_max_idx[i] << ", ";
+        }
+        cout << endl;
+        for (int i = 0; i <= len - k; i++) {
+          cout << right_max[i] << "/" << right_max_idx[i] << ", ";
+        }
+        cout << endl;
+    */
+
     int m = 0;
     int l;
     int c;
@@ -58,10 +58,10 @@ public:
         l = left_max_idx[i - k];
         c = i;
         r = right_max_idx[i + k];
-//        cout << m << " => " << l << ", " << c << ", " << r << endl;
+        //        cout << m << " => " << l << ", " << c << ", " << r << endl;
       }
     }
-    
+
     return {l, c, r};
   }
 };

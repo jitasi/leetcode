@@ -1,35 +1,35 @@
-// Runtime: 140 ms, faster than 24.73% of C++ online submissions for Split Array Largest Sum.
-// Memory Usage: 8.9 MB, less than 39.28% of C++ online submissions for Split Array Largest Sum.
-
+// Runtime: 140 ms, faster than 24.73% of C++ online submissions for Split Array
+// Largest Sum. Memory Usage: 8.9 MB, less than 39.28% of C++ online submissions
+// for Split Array Largest Sum.
 
 class Solution {
 public:
-  int splitArray(vector<int>& nums, int m) {
+  int splitArray(vector<int> &nums, int m) {
     const int len = nums.size();
-    
+
     long sum[len + 1];
     sum[0] = 0;
     for (int i = 0; i < len; i++) {
       sum[i + 1] = sum[i] + nums[i];
     }
-    
+
     //   1 2 3 4 5 6
-    //     k   i 
-    
+    //     k   i
+
     long dp[len + 1][m + 1];
     for (int i = 0; i <= len; i++)
       for (int j = 0; j <= m; j++)
         dp[i][j] = sum[len];
     dp[0][0] = 0;
-    
+
     long val;
     for (int m_i = 1; m_i <= m; m_i++) {
       for (int i = 1; i <= len; i++) {
-        for (int k = m_i - 1; k < i ; k++) {
+        for (int k = m_i - 1; k < i; k++) {
           val = max(dp[k][m_i - 1], sum[i] - sum[k]);
           dp[i][m_i] = min(dp[i][m_i], val);
         }
-//        cout << m_i << "," << i << ", " << dp[i][m_i] << endl;
+        //        cout << m_i << "," << i << ", " << dp[i][m_i] << endl;
       }
     }
     return dp[len][m];

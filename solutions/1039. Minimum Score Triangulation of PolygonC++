@@ -1,13 +1,13 @@
-// Runtime: 4 ms, faster than 98.09% of C++ online submissions for Minimum Score Triangulation of Polygon.
-// Memory Usage: 8.9 MB, less than 100.00% of C++ online submissions for Minimum Score Triangulation of Polygon.
-
+// Runtime: 4 ms, faster than 98.09% of C++ online submissions for Minimum Score
+// Triangulation of Polygon. Memory Usage: 8.9 MB, less than 100.00% of C++
+// online submissions for Minimum Score Triangulation of Polygon.
 
 class Solution {
 public:
-  int minScoreTriangulation(vector<int>& A) {
+  int minScoreTriangulation(vector<int> &A) {
     const int len = A.size();
     vector<vector<int>> dp(len, vector<int>(len, 0));
-    
+
     for (int i = 2; i < len; i++) {
       dp[i - 2][i] = A[i - 2] * A[i - 1] * A[i];
     }
@@ -19,7 +19,7 @@ public:
           if (dp[i][j] == 0 || loc < dp[i][j]) {
             dp[i][j] = loc;
           }
-//          cout << i << ", " << j << ": " << dp[i][j]  << endl;
+          //          cout << i << ", " << j << ": " << dp[i][j]  << endl;
         }
       }
     }

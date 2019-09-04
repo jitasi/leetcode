@@ -1,17 +1,19 @@
-// Runtime: 4 ms, faster than 91.45% of C++ online submissions for Longest Palindrome.
-// Memory Usage: 9 MB, less than 22.24% of C++ online submissions for Longest Palindrome.
-​
-class Solution {
+// Runtime: 4 ms, faster than 91.45% of C++ online submissions for Longest
+// Palindrome. Memory Usage: 9 MB, less than 22.24% of C++ online submissions
+// for Longest Palindrome.
+​ class Solution {
 public:
-  int longestPalindrome(string s) {
-    unordered_map<char, int> m;
-    for (const char ch: s) m[ch]++;
-    int ans = 0;
-    bool has_odd = false;
-    for (const auto& kv: m) {
-      ans += kv.second >> 1;
-      has_odd = has_odd || (kv.second & 1 == 1);
-    }
-    return (ans << 1) + (has_odd? 1 : 0);
-  }
+   int longestPalindrome(string s) {
+       unordered_map<char, int> m;
+       for (const char ch : s) m[ch]++;
+       int ans = 0;
+       bool has_odd = false;
+       for (const auto &kv : m) {
+           ans += kv.second >> 1;
+           has_odd = has_odd || (kv.second & 1 == 1);
+       
+    }
+       return (ans << 1) + (has_odd ? 1 : 0);
+     
+  }
 };

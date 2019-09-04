@@ -1,36 +1,41 @@
 /* vim: set ft=cpp : */
 ​
-// Runtime: 36 ms, faster than 93.17% of C++ online submissions for Shortest Bridge.
-// Memory Usage: 13.3 MB, less than 81.18% of C++ online submissions for Shortest Bridge.
-​
-class Solution {
+    // Runtime: 36 ms, faster than 93.17% of C++ online submissions for Shortest
+    // Bridge. Memory Usage: 13.3 MB, less than 81.18% of C++ online submissions
+    // for Shortest Bridge.
+        ​ class Solution {
 public:
-  int rows;
-  int cols;
-  
+   int rows;
+   int cols;
+   
   const int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-  
-  void dfs(vector<vector<int>>& A, int i, int j, queue<pair<int, int>>& borders) {
-    if (i < 0 || i >= rows || j < 0 || j >= cols || A[i][j] < 0) return;
-    
-    if (A[i][j] == 0) {  
+   
+  void dfs(vector<vector<int>> &A, int i, int j,
+            queue<pair<int, int>> &borders) {
+       if (i < 0 || i >= rows || j < 0 || j >= cols || A[i][j] < 0) return;
+       
+    if (A[i][j] == 0) {
+       
       borders.push({i, j});
-      A[i][j] = -2;  // mark water connect to land.
+           A[i][j] = -2;
+        // mark water connect to land.
       return;
-    }
-    
+       
+    }
+       
     A[i][j] = -1;
-    for (const auto&d : dirs) dfs(A, i + d[0], j + d[1], borders);
-  } 
-  
-  int shortestBridge(vector<vector<int>>& A) {
-    rows = A.size();
-    cols = A[0].size();
-     
-    int i, j;   // find the pos of any land from the first island.
+       for (const auto &d : dirs) dfs(A, i + d[0], j + d[1], borders);
+  }
+   
+  int shortestBridge(vector<vector<int>> &A) {
+       rows = A.size();
+       cols = A[0].size();
+        
+    int i, j;
+      // find the pos of any land from the first island.
     bool found = false;
-    for (i = 0; i < rows; i++) {
-      for (j = 0; j < cols; j++) {
-       if (A[i][j] == 1) {
-          found = true;
-          break;
+       for (i = 0; i < rows; i++) {
+           for (j = 0; j < cols; j++) {
+              if (A[i][j] == 1) {
+                   found = true;
+                   break;

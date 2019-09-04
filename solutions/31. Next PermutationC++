@@ -1,35 +1,41 @@
 class Solution {
 public:
-  
-  // Runtime: 8 ms, faster than 90.71% of C++ online submissions for Next Permutation.
-  // Memory Usage: 8.7 MB, less than 49.97% of C++ online submissions for Next Permutation.
-    void nextPermutation(vector<int>& nums) {
-      const int len = nums.size();
-      int p = -1;
-      for (int i = len - 2; i >= 0; i--) {
-        if (nums[i] < nums[i + 1]) {
-          p = i;
-          break;
-        }
-      }
-      if (p == -1) {
-        std::reverse(nums.begin(), nums.end());
-        return;
-      }
-      
+   
+   // Runtime: 8 ms, faster than 90.71% of C++ online submissions for Next Permutation.
+   // Memory Usage: 8.7 MB, less than 49.97% of C++ online submissions for Next Permutation.
+    void nextPermutation(vector<int> &nums) {
+         const int len = nums.size();
+         int p = -1;
+         for (int i = len - 2; i >= 0; i--) {
+             if (nums[i] < nums[i + 1]) {
+                 p = i;
+                 break;
+             
+      }
+         
+    }
+         if (p == -1) {
+             std::reverse(nums.begin(), nums.end());
+             return;
+         
+    }
+         
       int q = p + 1;
-      for (int i = len - 1; i >= p + 2; i--) {
-        if (nums[p] < nums[i]) {
-          q = i;
-          break;
-        }
-      }
-      
+         for (int i = len - 1; i >= p + 2; i--) {
+             if (nums[p] < nums[i]) {
+                 q = i;
+                 break;
+             
+      }
+         
+    }
+         
       swap(nums[p], nums[q]);
-      reverse(nums.begin() + p + 1, nums.end());
-      return;
-    } 
-/*
+         reverse(nums.begin() + p + 1, nums.end());
+         return;
+     
+  }
+  /*
     void nextPermutation(vector<int>& nums) {
       const int len = nums.size();
       int p = -1;

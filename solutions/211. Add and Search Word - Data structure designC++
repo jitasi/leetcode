@@ -1,38 +1,43 @@
-// Runtime: 156 ms, faster than 28.09% of C++ online submissions for Add and Search Word - Data structure design.
-// Memory Usage: 106.9 MB, less than 15.81% of C++ online submissions for Add and Search Word - Data structure design.
-​
-class WordDictionary {
+// Runtime: 156 ms, faster than 28.09% of C++ online submissions for Add and
+// Search Word - Data structure design. Memory Usage: 106.9 MB, less than 15.81%
+// of C++ online submissions for Add and Search Word - Data structure design.
+​ class WordDictionary {
 public:
-    class TrieNode {
-     public:
-      TrieNode* children[26];
-      bool isWord;
-      TrieNode() {
-        isWord = false;
-        for (int i = 0; i < 26; i++) children[i] = nullptr;
-      }
-    };
-  
-    TrieNode* root;
-      
+     class TrieNode {
+        public :
+      TrieNode *children[26];
+         bool isWord;
+         TrieNode() {
+             isWord = false;
+             for (int i = 0; i < 26; i++) children[i] = nullptr;
+         
+    }
+     
+  };
+   
+    TrieNode *root;
+       
     /** Initialize your data structure here. */
     WordDictionary() {
-      root = new TrieNode();
-    }
-    
+         root = new TrieNode();
+     
+  }
+     
     /** Adds a word into the data structure. */
     void addWord(string word) {
-      TrieNode* cur = root;
-      for (const char ch: word) {
-        if (cur->children[ch - 'a'] == nullptr) 
+         TrieNode *cur = root;
+         for (const char ch : word) {
+             if (cur->children[ch - 'a'] == nullptr) 
           cur->children[ch - 'a'] = new TrieNode();
-        cur = cur->children[ch - 'a'];
-      }
-      cur->isWord = true;
-    }
-    
-    bool search(string word, TrieNode* cur, int from) {
-      if (from == word.size())
+             cur = cur->children[ch - 'a'];
+         
+    }
+         cur->isWord = true;
+     
+  }
+     
+    bool search(string word, TrieNode *cur, int from) {
+         if (from == word.size())
         return cur->isWord;
-      
+         
       if (word[from] == '.') {

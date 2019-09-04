@@ -1,18 +1,19 @@
-// Runtime: 64 ms, faster than 35.26% of C++ online submissions for Maximum Product of Word Lengths.
-// Memory Usage: 12.9 MB, less than 59.82% of C++ online submissions for Maximum Product of Word Lengths.
-​
-class Solution {
+// Runtime: 64 ms, faster than 35.26% of C++ online submissions for Maximum
+// Product of Word Lengths. Memory Usage: 12.9 MB, less than 59.82% of C++
+// online submissions for Maximum Product of Word Lengths.
+​ class Solution {
 public:
-  int maxProduct(vector<string>& words) {
-    vector<int> bits(words.size(), 0);
-    for (int i = 0; i < words.size(); i++)
+   int maxProduct(vector<string> &words) {
+       vector<int> bits(words.size(), 0);
+       for (int i = 0; i < words.size(); i++)
       for (const char ch : words[i])
         bits[i] |= (1 << (ch - 'a'));
-​
+    ​
     int ans = 0;
-    for (int i = 0; i < words.size(); i++)
+       for (int i = 0; i < words.size(); i++)
       for (int j = i + 1; j < words.size(); j++)
-        if ((bits[i] & bits[j]) == 0) ans = std::max(ans, int (words[i].size() * words[j].size()));
-    return ans;
+        if ((bits[i] & bits[j]) == 0) ans =
+        std::max(ans, int(words[i].size() * words[j].size()));
+       return ans;
   }
 };

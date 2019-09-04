@@ -1,9 +1,11 @@
 class Solution {
 public:
   bool isPowerOfFour(int num) {
-    if (num <= 0) return false;
+    if (num <= 0)
+      return false;
     const int n = num & (num - 1);
-    if (n != 0) return false;
+    if (n != 0)
+      return false;
     return num & 0x55555555;
   }
 };

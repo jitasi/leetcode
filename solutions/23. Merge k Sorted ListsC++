@@ -9,39 +9,40 @@
  */
 class Solution {
 public:
-    ListNode* mergeKLists(vector<ListNode*>& lists) {      
-      ListNode* head = nullptr;
+  ListNode *mergeKLists(vector<ListNode *> &lists) {
+    ListNode *head = nullptr;
 
-      if (lists.empty()) return head;
-      
-      auto cmp = [](
-        const ListNode* a, const ListNode* b) {
-        return a->val > b->val;
-      };
-      priority_queue<ListNode *, vector<ListNode *>, decltype(cmp)> queue(cmp);
-      
-      for (int i = 0; i < lists.size(); i++) {
-        if (lists[i] != nullptr) queue.push(lists[i]);
-      }
-      
-      ListNode* cur = nullptr; 
-      while (!queue.empty()) {
-        ListNode* tmp = queue.top();
-        queue.pop();
-        if (tmp->next != nullptr) {
-          queue.push(tmp->next);
-        }
-        if (head == nullptr) {
-          head = tmp;
-          cur = tmp;
-        } else {
-          cur->next = tmp;
-          cur = tmp;
-        }
-      }
-      if (cur != nullptr)
-        cur->next = nullptr;
-      
+    if (lists.empty())
       return head;
+
+    auto cmp = [](const ListNode *a, const ListNode *b) {
+      return a->val > b->val;
+    };
+    priority_queue<ListNode *, vector<ListNode *>, decltype(cmp)> queue(cmp);
+
+    for (int i = 0; i < lists.size(); i++) {
+      if (lists[i] != nullptr)
+        queue.push(lists[i]);
     }
+
+    ListNode *cur = nullptr;
+    while (!queue.empty()) {
+      ListNode *tmp = queue.top();
+      queue.pop();
+      if (tmp->next != nullptr) {
+        queue.push(tmp->next);
+      }
+      if (head == nullptr) {
+        head = tmp;
+        cur = tmp;
+      } else {
+        cur->next = tmp;
+        cur = tmp;
+      }
+    }
+    if (cur != nullptr)
+      cur->next = nullptr;
+
+    return head;
+  }
 };

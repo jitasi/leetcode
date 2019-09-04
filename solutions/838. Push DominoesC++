@@ -1,38 +1,43 @@
-// Runtime: 24 ms, faster than 92.34% of C++ online submissions for Push Dominoes.
-// Memory Usage: 11.7 MB, less than 81.72% of C++ online submissions for Push Dominoes.
-
+// Runtime: 24 ms, faster than 92.34% of C++ online submissions for Push
+// Dominoes. Memory Usage: 11.7 MB, less than 81.72% of C++ online submissions
+// for Push Dominoes.
 
 class Solution {
 public:
-  void mark(string& dominoes, int from, int to, char ch) {
-//    cout << ch << " " << from << ", " << to << endl;
+  void mark(string &dominoes, int from, int to, char ch) {
+    //    cout << ch << " " << from << ", " << to << endl;
     for (int i = from; i <= to; i++)
       dominoes[i] = ch;
   }
 
-  void mark(string& dominoes, int from, int to) {
-//    cout << "LR " << from << ", " << to << endl; 
+  void mark(string &dominoes, int from, int to) {
+    //    cout << "LR " << from << ", " << to << endl;
     while (from < to) {
       dominoes[from++] = 'R';
       dominoes[to--] = 'L';
     }
   }
-  
+
   string pushDominoes(string dominoes) {
     int start = 0;
     for (int i = 0; i < dominoes.size(); i++) {
-      if (dominoes[i] == '.') continue;
-      
+      if (dominoes[i] == '.')
+        continue;
+
       if (dominoes[i] == 'L') {
-        if (dominoes[start] == '.') mark(dominoes, start, i - 1, 'L');
-        else /* dominoes[start] == 'R' */ mark(dominoes, start + 1, i - 1);
+        if (dominoes[start] == '.')
+          mark(dominoes, start, i - 1, 'L');
+        else /* dominoes[start] == 'R' */
+          mark(dominoes, start + 1, i - 1);
         start = i + 1;
       } else /* dominoes[i] == 'R' */ {
-        if (dominoes[start] == 'R') mark(dominoes, start + 1, i - 1, 'R');
+        if (dominoes[start] == 'R')
+          mark(dominoes, start + 1, i - 1, 'R');
         start = i;
       }
     }
-    if (dominoes[start] == 'R') mark(dominoes, start + 1, dominoes.size() - 1, 'R');
+    if (dominoes[start] == 'R')
+      mark(dominoes, start + 1, dominoes.size() - 1, 'R');
     return dominoes;
   }
 };

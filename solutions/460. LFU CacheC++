@@ -5,48 +5,52 @@ class LFUCache {
 public:
   int capacity;
   int min_freq;
-  unordered_map<int, pair<int, int>> m;  // key -> val, freq
-  unordered_map<int, list<int>> freq;  // freq -> keys
-  unordered_map<int, list<int>::iterator> iter;  // key -> it of freq[key]
-  
+  unordered_map<int, pair<int, int>> m;         // key -> val, freq
+  unordered_map<int, list<int>> freq;           // freq -> keys
+  unordered_map<int, list<int>::iterator> iter; // key -> it of freq[key]
+
   LFUCache(int capacity) {
     this->capacity = capacity;
     min_freq = 0;
   }
-    
+
   // returns val or -1.
   int get(int key) {
-    if (m.count(key) == 0) return -1;
-    
+    if (m.count(key) == 0)
+      return -1;
+
     // update freq, iter, m
-    auto& old_freq_list = freq[m[key].second];
+    auto &old_freq_list = freq[m[key].second];
     m[key].second++;
-    auto& new_freq_list = freq[m[key].second];
+    auto &new_freq_list = freq[m[key].second];
     old_freq_list.erase(iter[key]);
     new_freq_list.push_back(key);
     iter[key] = --new_freq_list.end();
-    
+
     // update min_freq
-    if (freq[min_freq].size() == 0) min_freq++;
-    
+    if (freq[min_freq].size() == 0)
+      min_freq++;
+
     return m[key].first;
   }
-    
+
   // update or insert
   // evict policy: 1) Least frequently used; 2) Least recently used.
   void put(int key, int value) {
-    if (capacity <= 0) return;
-    if (get(key) != -1) {  // get(keuy) 1) check the existence of key; 2) update lfu.
+    if (capacity <= 0)
+      return;
+    if (get(key) !=
+        -1) { // get(keuy) 1) check the existence of key; 2) update lfu.
       m[key].first = value;
       return;
-    } 
-    
+    }
+
     if (capacity == m.size()) {
       m.erase(freq[min_freq].front());
       iter.erase(freq[min_freq].front());
       freq[min_freq].pop_front();
     }
-    
+
     m[key] = {value, 1};
     freq[1].push_back(key);
     iter[key] = --freq[1].end();

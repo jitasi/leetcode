@@ -1,11 +1,12 @@
-// Runtime: 12 ms, faster than 35.25% of C++ online submissions for Single Element in a Sorted Array.
-// Memory Usage: 9.7 MB, less than 5.14% of C++ online submissions for Single Element in a Sorted Array.
+// Runtime: 12 ms, faster than 35.25% of C++ online submissions for Single
+// Element in a Sorted Array. Memory Usage: 9.7 MB, less than 5.14% of C++
+// online submissions for Single Element in a Sorted Array.
 
 class Solution {
 public:
-  int singleNonDuplicate(vector<int>& nums) {
+  int singleNonDuplicate(vector<int> &nums) {
     int ans = 0;
-    for (const int num: nums)
+    for (const int num : nums)
       ans ^= num;
     return ans;
   }

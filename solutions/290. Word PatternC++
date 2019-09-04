@@ -1,35 +1,38 @@
 class Solution {
 public:
-    vector<string> split(const string& str) {
-      vector<string> strs;
-      int p = 0;
-      int q = 1;
-      while (q <= str.length()) {
-        if (q < str.length() && str[q] != ' ') {
-          q++;
-          continue;
-        }
-        strs.push_back(str.substr(p, q - p));
-        p = q + 1;
-        q = p + 1;
+  vector<string> split(const string &str) {
+    vector<string> strs;
+    int p = 0;
+    int q = 1;
+    while (q <= str.length()) {
+      if (q < str.length() && str[q] != ' ') {
+        q++;
+        continue;
       }
-      return strs;
+      strs.push_back(str.substr(p, q - p));
+      p = q + 1;
+      q = p + 1;
     }
-  
-    bool wordPattern(string pattern, string str) {
-      map<char, string> m;
-      set<string> s;
-      vector<string> strs = split(str);
-      if (strs.size() != pattern.length()) return false;
-      for (int i = 0; i < pattern.length(); i++) {
-        if (m.find(pattern[i]) != m.end()) {
-          if (m[pattern[i]] != strs[i]) return false;
-        } else {
-          if (s.find(strs[i]) != s.end()) return false;
-          m[pattern[i]] = strs[i];
-          s.insert(strs[i]);
-        }
+    return strs;
+  }
+
+  bool wordPattern(string pattern, string str) {
+    map<char, string> m;
+    set<string> s;
+    vector<string> strs = split(str);
+    if (strs.size() != pattern.length())
+      return false;
+    for (int i = 0; i < pattern.length(); i++) {
+      if (m.find(pattern[i]) != m.end()) {
+        if (m[pattern[i]] != strs[i])
+          return false;
+      } else {
+        if (s.find(strs[i]) != s.end())
+          return false;
+        m[pattern[i]] = strs[i];
+        s.insert(strs[i]);
       }
-      return true;
     }
+    return true;
+  }
 };

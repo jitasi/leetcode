@@ -1,22 +1,25 @@
-// Runtime: 4 ms, faster than 97.12% of C++ online submissions for Filling Bookcase Shelves.
-// Memory Usage: 9.6 MB, less than 100.00% of C++ online submissions for Filling Bookcase Shelves.
-​
-class Solution {
+// Runtime: 4 ms, faster than 97.12% of C++ online submissions for Filling
+// Bookcase Shelves. Memory Usage: 9.6 MB, less than 100.00% of C++ online
+// submissions for Filling Bookcase Shelves.
+​ class Solution {
 public:
-  int minHeightShelves(vector<vector<int>>& books, int shelf_width) {
-    vector<int> dp(books.size() + 1, INT_MAX);
-    dp[0] = 0;
-    for (int i = 0; i < books.size(); i++) {
-      dp[i + 1] = dp[i] + books[i][1];  // i-th book starts a new level
+   int minHeightShelves(vector<vector<int>> &books, int shelf_width) {
+       vector<int> dp(books.size() + 1, INT_MAX);
+       dp[0] = 0;
+       for (int i = 0; i < books.size(); i++) {
+           dp[i + 1] = dp[i] + books[i][1];
+        // i-th book starts a new level
       int cur_w = books[i][0];
-      int cur_h = books[i][1];
-      for (int j = i - 1; j >= 0; j--) {
-        cur_w += books[j][0];
-        if (cur_w > shelf_width) break;
-        cur_h = max(cur_h, books[j][1]);
-        dp[i + 1] = min(dp[i + 1], dp[j] + cur_h);
-      }
-    }
-    return dp[books.size()];
+           int cur_h = books[i][1];
+           for (int j = i - 1; j >= 0; j--) {
+               cur_w += books[j][0];
+               if (cur_w > shelf_width) break;
+               cur_h = max(cur_h, books[j][1]);
+               dp[i + 1] = min(dp[i + 1], dp[j] + cur_h);
+           
+      }
+       
+    }
+       return dp[books.size()];
   }
 };

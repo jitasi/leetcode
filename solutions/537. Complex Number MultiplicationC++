@@ -1,18 +1,20 @@
-// Runtime: 4 ms, faster than 87.74% of C++ online submissions for Complex Number Multiplication.
-// Memory Usage: 8.5 MB, less than 54.35% of C++ online submissions for Complex Number Multiplication.
+// Runtime: 4 ms, faster than 87.74% of C++ online submissions for Complex
+// Number Multiplication. Memory Usage: 8.5 MB, less than 54.35% of C++ online
+// submissions for Complex Number Multiplication.
 
 class Solution {
 public:
-  void parse(const string& c, int& a, int& b) {
+  void parse(const string &c, int &a, int &b) {
     int pos = c.find('+');
     a = std::atoi(c.substr(0, pos).c_str());
     b = std::atoi(c.substr(pos + 1, c.size() - pos - 1).c_str());
   }
-  
+
   string complexNumberMultiply(string a, string b) {
     int a1, b1, a2, b2;
     parse(a, a1, b1);
     parse(b, a2, b2);
-    return to_string(a1 * a2 - b1 * b2) + "+" + to_string(a1 * b2 + a2 * b1) + "i";
+    return to_string(a1 * a2 - b1 * b2) + "+" + to_string(a1 * b2 + a2 * b1) +
+           "i";
   }
 };

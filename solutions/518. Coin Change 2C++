@@ -1,24 +1,28 @@
-// Runtime: 32 ms, faster than 24.17% of C++ online submissions for Coin Change 2.
-// Memory Usage: 22.6 MB, less than 11.38% of C++ online submissions for Coin Change 2.
+// Runtime: 32 ms, faster than 24.17% of C++ online submissions for Coin
+// Change 2. Memory Usage: 22.6 MB, less than 11.38% of C++ online submissions
+// for Coin Change 2.
 
 class Solution {
 public:
-  int change(int amount, vector<int>& coins) {
+  int change(int amount, vector<int> &coins) {
     const int len = coins.size();
-    if (amount == 0) return 1;
-    if (len == 0) return 0;
-    
+    if (amount == 0)
+      return 1;
+    if (len == 0)
+      return 0;
+
     vector<vector<int>> dp(amount + 1, vector<int>(len, 0));
-    
-    for (int j = 0; j < len; j++) dp[0][j] = 1;
-    
+
+    for (int j = 0; j < len; j++)
+      dp[0][j] = 1;
+
     for (int i = 1; i <= amount; i++) {
       for (int j = 0; j < len; j++) {
-        dp[i][j] = (j >= 1? dp[i][j - 1] : 0) + (i >= coins[j]? dp[i - coins[j]][j] : 0); 
-        
+        dp[i][j] = (j >= 1 ? dp[i][j - 1] : 0) +
+                   (i >= coins[j] ? dp[i - coins[j]][j] : 0);
       }
     }
-//    cout << dp[1][0] << ", " << dp[2][0] << ", " << dp[2][1] << endl;
+    //    cout << dp[1][0] << ", " << dp[2][0] << ", " << dp[2][1] << endl;
     return dp[amount][len - 1];
   }
 };

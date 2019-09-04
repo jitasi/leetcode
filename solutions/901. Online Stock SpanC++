@@ -1,21 +1,19 @@
-// Runtime: 300 ms, faster than 80.93% of C++ online submissions for Online Stock Span.
-// Memory Usage: 71.7 MB, less than 63.32% of C++ online submissions for Online Stock Span.
-
+// Runtime: 300 ms, faster than 80.93% of C++ online submissions for Online
+// Stock Span. Memory Usage: 71.7 MB, less than 63.32% of C++ online submissions
+// for Online Stock Span.
 
 class StockSpanner {
 public:
-  stack<pair<int, int>> s;  // price, day
+  stack<pair<int, int>> s; // price, day
   int day;
-  
-  StockSpanner() {
-    day = 0;
-  }
-    
-  int next(int price) {  
+
+  StockSpanner() { day = 0; }
+
+  int next(int price) {
     while (!s.empty() && s.top().first <= price) {
       s.pop();
     }
-    const int last_day = s.empty()? 0 : s.top().second + 1;
+    const int last_day = s.empty() ? 0 : s.top().second + 1;
     s.push({price, day++});
     return day - last_day;
   }

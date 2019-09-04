@@ -1,23 +1,28 @@
-// Runtime: 16 ms, faster than 97.74% of C++ online submissions for Delete Columns to Make Sorted III.
-// Memory Usage: 10 MB, less than 49.54% of C++ online submissions for Delete Columns to Make Sorted III.
-​
-class Solution {
+// Runtime: 16 ms, faster than 97.74% of C++ online submissions for Delete
+// Columns to Make Sorted III. Memory Usage: 10 MB, less than 49.54% of C++
+// online submissions for Delete Columns to Make Sorted III.
+​ class Solution {
 public:
-  int minDeletionSize(vector<string>& A) {
-    const int len = A[0].size();
-    vector<int> dp(len, 1);    
+   int minDeletionSize(vector<string> &A) {
+       const int len = A[0].size();
+       vector<int> dp(len, 1);
+       
     for (int i = 1; i < len; i++) {
-      for (int k = 0; k < i; k++) {
-        bool ok = true;
-        for (const string& a : A) {
-          if (a[k] > a[i]) {
-            ok = false;
-            break;
-          }
-        }
-        if (ok) dp[i] = max(dp[i], 1 + dp[k]);
-      }
-    }
-    return len - *max_element(dp.begin(), dp.end());
+           for (int k = 0; k < i; k++) {
+               bool ok = true;
+               for (const string &a : A) {
+                   if (a[k] > a[i]) {
+                       ok = false;
+                       break;
+                   
+          }
+               
+        }
+               if (ok) dp[i] = max(dp[i], 1 + dp[k]);
+           
+      }
+       
+    }
+       return len - *max_element(dp.begin(), dp.end());
   }
 };

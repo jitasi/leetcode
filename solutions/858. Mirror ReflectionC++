@@ -1,5 +1,6 @@
-// Runtime: 4 ms, faster than 87.22% of C++ online submissions for Mirror Reflection.
-// Memory Usage: 8.3 MB, less than 45.19% of C++ online submissions for Mirror Reflection.
+// Runtime: 4 ms, faster than 87.22% of C++ online submissions for Mirror
+// Reflection. Memory Usage: 8.3 MB, less than 45.19% of C++ online submissions
+// for Mirror Reflection.
 
 class Solution {
 public:
@@ -8,8 +9,10 @@ public:
       p /= 2;
       q /= 2;
     }
-    if (p % 2 == 0) return 2;
-    if (q % 2 == 0) return 0;
+    if (p % 2 == 0)
+      return 2;
+    if (q % 2 == 0)
+      return 0;
     return 1;
   }
 };

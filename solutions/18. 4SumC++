@@ -1,21 +1,23 @@
 // Runtime: 32 ms, faster than 75.18% of C++ online submissions for 4Sum.
 // Memory Usage: 9.4 MB, less than 66.74% of C++ online submissions for 4Sum.
 
-
 class Solution {
 public:
-  vector<vector<int>> fourSum(vector<int>& nums, int target) {
-    if (nums.size() < 4) return {};
+  vector<vector<int>> fourSum(vector<int> &nums, int target) {
+    if (nums.size() < 4)
+      return {};
     std::sort(nums.begin(), nums.end());
-    
+
     vector<vector<int>> ans;
     for (int i = 0; i < nums.size() - 3; i++) {
-      if (i > 0 && nums[i] == nums[i - 1]) continue;
-      
+      if (i > 0 && nums[i] == nums[i - 1])
+        continue;
+
       const int target3 = target - nums[i];
       for (int j = i + 1; j < nums.size() - 2; j++) {
-        if (j > i + 1 && nums[j] == nums[j - 1]) continue;
-        
+        if (j > i + 1 && nums[j] == nums[j - 1])
+          continue;
+
         const int target2 = target3 - nums[j];
         int p = j + 1;
         int q = nums.size() - 1;
@@ -24,14 +26,15 @@ public:
             p++;
             continue;
           }
-          
+
           const int sum2 = nums[p] + nums[q];
           if (sum2 < target2) {
             p++;
           } else if (sum2 > target2) {
             q--;
           } else {
-//            cout << i << ", " << j << "," << p << "," << q << endl;
+            //            cout << i << ", " << j << "," << p << "," << q <<
+            //            endl;
             ans.push_back({nums[i], nums[j], nums[p], nums[q]});
             p++;
             q--;

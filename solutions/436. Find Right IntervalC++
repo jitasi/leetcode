@@ -1,23 +1,23 @@
-// Runtime: 100 ms, faster than 73.91% of C++ online submissions for Find Right Interval.
-// Memory Usage: 24.3 MB, less than 20.19% of C++ online submissions for Find Right Interval.
-​
-​
-class Solution {
+// Runtime: 100 ms, faster than 73.91% of C++ online submissions for Find Right
+// Interval. Memory Usage: 24.3 MB, less than 20.19% of C++ online submissions
+// for Find Right Interval.
+​ ​ class Solution {
 public:
-  vector<int> findRightInterval(vector<vector<int>>& intervals) {
-    map<int, int> idx;
-    for (int i = 0; i < intervals.size(); i++) idx[intervals[i][0]] = i;
-    
+   vector<int> findRightInterval(vector<vector<int>> &intervals) {
+       map<int, int> idx;
+       for (int i = 0; i < intervals.size(); i++) idx[intervals[i][0]] = i;
+       
     vector<int> ans(intervals.size());
-    for (int i = 0; i < intervals.size(); i++) {
-      const auto it = idx.lower_bound(intervals[i][1]);
-      ans[i] = it == idx.end()? -1 : it->second;
-    }
-    return ans;
+       for (int i = 0; i < intervals.size(); i++) {
+           const auto it = idx.lower_bound(intervals[i][1]);
+           ans[i] = it == idx.end() ? -1 : it->second;
+       
+    }
+       return ans;
   }
 };
 ​
-/*
-[ [3,4], [2,3], [1,2] ]
-[ [1,4], [2,3], [3,4] ]
-*/
+    /*
+    [ [3,4], [2,3], [1,2] ]
+    [ [1,4], [2,3], [3,4] ]
+    */

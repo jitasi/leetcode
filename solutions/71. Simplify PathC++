@@ -1,32 +1,34 @@
 class Solution {
 public:
-    string simplifyPath(string path) {
-      stack<string> s;
-      int start = 0;
-      string token;
-      path += "/";
-      for (int e = 0; e < path.size(); e++) {
-        if (path[e] == '/') {
-          if (start != e) {
-            token = path.substr(start, e - start);
-            if (token == "..") {
-              if (!s.empty())
-                s.pop();
-            }
-            else if (token != ".")  s.push(token);
-          }
-          start = e + 1;
-        } 
+  string simplifyPath(string path) {
+    stack<string> s;
+    int start = 0;
+    string token;
+    path += "/";
+    for (int e = 0; e < path.size(); e++) {
+      if (path[e] == '/') {
+        if (start != e) {
+          token = path.substr(start, e - start);
+          if (token == "..") {
+            if (!s.empty())
+              s.pop();
+          } else if (token != ".")
+            s.push(token);
+        }
+        start = e + 1;
       }
-      
-      string ans = "";
-      while (!s.empty()) {
-        if (ans.empty()) ans = s.top();
-        else ans = s.top() + "/" + ans;
-        s.pop();
-      }
-      ans = "/" + ans;
-      
-      return ans;
     }
+
+    string ans = "";
+    while (!s.empty()) {
+      if (ans.empty())
+        ans = s.top();
+      else
+        ans = s.top() + "/" + ans;
+      s.pop();
+    }
+    ans = "/" + ans;
+
+    return ans;
+  }
 };

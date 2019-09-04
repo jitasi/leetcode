@@ -1,24 +1,24 @@
-// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Minimum Cost For Tickets.
-// Memory Usage: 8.6 MB, less than 97.50% of C++ online submissions for Minimum Cost For Tickets.
-
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Minimum Cost
+// For Tickets. Memory Usage: 8.6 MB, less than 97.50% of C++ online submissions
+// for Minimum Cost For Tickets.
 
 class Solution {
 public:
-  int mincostTickets(vector<int>& days, vector<int>& costs) {
+  int mincostTickets(vector<int> &days, vector<int> &costs) {
     int dp[days.size()];
     dp[0] = std::min(costs[0], std::min(costs[1], costs[2]));
-    
+
     int j;
     int diff;
     for (int i = 1; i < days.size(); i++) {
-      dp[i] = dp[i - 1] + dp[0];   
+      dp[i] = dp[i - 1] + dp[0];
 
       j = i - 1;
       while (j >= 0 && (diff = days[i] - days[j]) < 30) {
         if (diff < 7) {
-          dp[i] = std::min(dp[i], costs[1] + (j > 0? dp[j - 1] : 0));
+          dp[i] = std::min(dp[i], costs[1] + (j > 0 ? dp[j - 1] : 0));
         }
-        dp[i] = std::min(dp[i], costs[2] + (j > 0? dp[j - 1] : 0));        
+        dp[i] = std::min(dp[i], costs[2] + (j > 0 ? dp[j - 1] : 0));
         j--;
       }
     }

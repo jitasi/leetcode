@@ -1,6 +1,6 @@
-// Runtime: 8 ms, faster than 98.92% of C++ online submissions for Bitwise AND of Numbers Range.
-// Memory Usage: 8.3 MB, less than 13.01% of C++ online submissions for Bitwise AND of Numbers Range.
-
+// Runtime: 8 ms, faster than 98.92% of C++ online submissions for Bitwise AND
+// of Numbers Range. Memory Usage: 8.3 MB, less than 13.01% of C++ online
+// submissions for Bitwise AND of Numbers Range.
 
 class Solution {
 public:
@@ -12,7 +12,7 @@ public:
       // . n & -n = 0000010
       // n & ~(n & -n) = 0010100
       n &= ~(n & (-n));
-    } 
+    }
     return n;
   }
 };

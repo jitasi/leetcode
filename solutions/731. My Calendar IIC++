@@ -1,29 +1,31 @@
-// Runtime: 132 ms, faster than 67.34% of C++ online submissions for My Calendar II.
-// Memory Usage: 32.9 MB, less than 61.47% of C++ online submissions for My Calendar II.
+// Runtime: 132 ms, faster than 67.34% of C++ online submissions for My Calendar
+// II. Memory Usage: 32.9 MB, less than 61.47% of C++ online submissions for My
+// Calendar II.
 
 class MyCalendarTwo {
 public:
   set<pair<int, int>> booked;
   set<pair<int, int>> overlapped;
-  
-  MyCalendarTwo() {
-  }
-    
+
+  MyCalendarTwo() {}
+
   bool book(int start, int end) {
     // check not overlap with overlapped;
     // else return false
-    for (const auto& pt : overlapped) {
-      if (max(start, pt.first) < min(end, pt.second)) return false;
+    for (const auto &pt : overlapped) {
+      if (max(start, pt.first) < min(end, pt.second))
+        return false;
     }
-    
+
     // calculate the overlap
-    for (const auto& pt: booked) {
+    for (const auto &pt : booked) {
       // non overlap.   start end . first second
       // .              first second  start end
-      if (max(start, pt.first) >= min(end, pt.second)) continue;
+      if (max(start, pt.first) >= min(end, pt.second))
+        continue;
       overlapped.insert({max(start, pt.first), min(end, pt.second)});
     }
-    
+
     booked.insert({start, end});
     return true;
   }

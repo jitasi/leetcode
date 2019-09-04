@@ -1,43 +1,43 @@
-// Runtime: 20 ms, faster than 98.96% of C++ online submissions for Exclusive Time of Functions.
-// Memory Usage: 11.5 MB, less than 68.66% of C++ online submissions for Exclusive Time of Functions.
-
+// Runtime: 20 ms, faster than 98.96% of C++ online submissions for Exclusive
+// Time of Functions. Memory Usage: 11.5 MB, less than 68.66% of C++ online
+// submissions for Exclusive Time of Functions.
 
 class Solution {
 public:
-  vector<int> exclusiveTime(int n, vector<string>& logs) {
+  vector<int> exclusiveTime(int n, vector<string> &logs) {
     vector<int> ans(n, 0);
-    
+
     stack<int> threads;
     int last_start = 0;
-    
+
     int pos;
     int thread;
     bool start;
     int ts;
-    for (const string& log: logs) {
+    for (const string &log : logs) {
       pos = log.find(':');
       thread = std::atoi(log.substr(0, pos).c_str());
       start = log[pos + 1] == 's';
       pos = log.rfind(':');
       ts = std::atoi(log.substr(pos + 1, log.size() - pos).c_str());
-      
+
       if (start) {
         // new thread starts
         if (!threads.empty()) {
           // stop old thread
           ans[threads.top()] += ts - last_start;
         }
-    
+
         last_start = ts;
         threads.push(thread);
       } else {
         ans[thread] += ts - last_start + 1;
-        
+
         last_start = ts + 1;
         threads.pop();
       }
     }
-    
+
     return ans;
   }
 };

@@ -1,42 +1,55 @@
 // Runtime: 4 ms, faster than 91.98% of C++ online submissions for Valid Number.
-// Memory Usage: 8 MB, less than 91.73% of C++ online submissions for Valid Number.
-​
-class Solution {
+// Memory Usage: 8 MB, less than 91.73% of C++ online submissions for Valid
+// Number.
+​ class Solution {
 public:
-  bool isNumber(string s) {
-    int l = 0;
-    int r = s.size() - 1;
-    while (r >= 0 && s[r] == ' ') r--;
-    while (l <= r && s[l] == ' ') l++;
-    if (l > r || s[l] == 'e' || s[r] == 'e') return false;  // empty or "2e" or "e2" or "e"
-    if (l == r && s[l] == '.') return false;   // "."
-    if (s[r] == '+' || s[r] == '-') return false;  // "4e+"
+   bool isNumber(string s) {
+       int l = 0;
+       int r = s.size() - 1;
+       while (r >= 0 && s[r] == ' ') r--;
+       while (l <= r && s[l] == ' ') l++;
+       if (l > r || s[l] == 'e' || s[r] == 'e') return false;
+      // empty or "2e" or "e2" or "e"
+    if (l == r && s[l] == '.') return false;
+      // "."
+    if (s[r] == '+' || s[r] == '-') return false;
+      // "4e+"
     
     int num_digits = 0;
-    bool allow_e = true;
-    bool allow_sign = true;
-    bool allow_dot = true;
-    for (int i = l; i <= r; i++) {
-      if (s[i] == '+' || s[i] == '-') {
-        if (!allow_sign) return false;
-        allow_sign = false;
-      } else if (s[i] == 'e') {
-        if (!allow_e || num_digits == 0) return false;
-        allow_e = false;
-        allow_sign = true;
-        allow_dot = false;
-        num_digits = 0;
-      } else if (s[i] == '.') {
-        if (!allow_dot) return false;
-        allow_sign = false;
-        allow_dot = false;
-      } else if (s[i] < '0' || s[i] > '9') {
-        return false;
-      } else {
-        allow_sign = false;
-        num_digits++;
-      }
-    }
-    return num_digits > 0;
+       bool allow_e = true;
+       bool allow_sign = true;
+       bool allow_dot = true;
+       for (int i = l; i <= r; i++) {
+           if (s[i] == '+' || s[i] == '-') {
+               if (!allow_sign) return false;
+               allow_sign = false;
+           
+      }
+      else if (s[i] == 'e') {
+               if (!allow_e || num_digits == 0) return false;
+               allow_e = false;
+               allow_sign = true;
+               allow_dot = false;
+               num_digits = 0;
+           
+      }
+      else if (s[i] == '.') {
+               if (!allow_dot) return false;
+               allow_sign = false;
+               allow_dot = false;
+           
+      }
+      else if (s[i] < '0' || s[i] > '9') {
+               return false;
+           
+      }
+      else {
+               allow_sign = false;
+               num_digits++;
+           
+      }
+       
+    }
+       return num_digits > 0;
   }
 };

@@ -1,13 +1,15 @@
-// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Water and Jug Problem.
-// Memory Usage: 8.2 MB, less than 12.32% of C++ online submissions for Water and Jug Problem.
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Water and
+// Jug Problem. Memory Usage: 8.2 MB, less than 12.32% of C++ online submissions
+// for Water and Jug Problem.
 
 class Solution {
 public:
   int gcd(int x, int y) {
-    if (y == 0) return x;
+    if (y == 0)
+      return x;
     return gcd(y, x % y);
   }
-  
+
   bool canMeasureWater(int x, int y, int z) {
     return z == 0 || (x + y >= z && z % gcd(x, y) == 0);
   }

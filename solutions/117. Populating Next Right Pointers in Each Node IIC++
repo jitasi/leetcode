@@ -1,5 +1,6 @@
-// Runtime: 392 ms, faster than 92.37% of C++ online submissions for Populating Next Right Pointers in Each Node II.
-// Memory Usage: 66.7 MB, less than 64.34% of C++ online submissions for Populating Next Right Pointers in Each Node II.
+// Runtime: 392 ms, faster than 92.37% of C++ online submissions for Populating
+// Next Right Pointers in Each Node II. Memory Usage: 66.7 MB, less than 64.34%
+// of C++ online submissions for Populating Next Right Pointers in Each Node II.
 
 /*
 // Definition for a Node.
@@ -22,55 +23,61 @@ public:
 */
 class Solution {
 public:
-    Node* connect(Node* root) {
-      if (root == nullptr) return nullptr;
-           
-      root->next = nullptr;
-      if (root->right == nullptr && root->left == nullptr) 
-        return root;
-      
-      if (root->left != nullptr)
-        root->left->next = root->right;
-      if (root->right != nullptr)
-        root->right->next = nullptr;
-      
-      work(root->right);
-      work(root->left);
+  Node *connect(Node *root) {
+    if (root == nullptr)
+      return nullptr;
+
+    root->next = nullptr;
+    if (root->right == nullptr && root->left == nullptr)
       return root;
-    }  
-    
-    void work(Node * root) {
-      if (root == nullptr) return;
-      
-      if (root->right == nullptr && root->left == nullptr) 
-        return;
-      
-      if (root->right != nullptr && root->left != nullptr) {
-        root->left->next = root->right;
-//        cout << root->left->val << " --> " << root->left->next->val << endl;
-      }
-              
-      // find next
-      Node *tmp = root;
-      while(tmp->next != nullptr 
-            && tmp->next->left == nullptr 
-            && tmp->next->right == nullptr) {
-        tmp = tmp->next;
-      }
+
+    if (root->left != nullptr)
+      root->left->next = root->right;
+    if (root->right != nullptr)
+      root->right->next = nullptr;
+
+    work(root->right);
+    work(root->left);
+    return root;
+  }
+
+  void work(Node *root) {
+    if (root == nullptr)
+      return;
+
+    if (root->right == nullptr && root->left == nullptr)
+      return;
+
+    if (root->right != nullptr && root->left != nullptr) {
+      root->left->next = root->right;
+      //        cout << root->left->val << " --> " << root->left->next->val <<
+      //        endl;
+    }
+
+    // find next
+    Node *tmp = root;
+    while (tmp->next != nullptr && tmp->next->left == nullptr &&
+           tmp->next->right == nullptr) {
       tmp = tmp->next;
-      if (tmp == nullptr) ;
-      else if (tmp->left != nullptr ) tmp = tmp->left;
-      else tmp = tmp->right;
-      if (root->right != nullptr) {
-        root->right->next = tmp;
-//        cout << root->right->val << " --> " << ((root->right->next == nullptr)? 0 : root->right->next->val) << endl;
-      }
-      else {
-        root->left->next = tmp;
-//        cout << root->left->val << " --> " << ((root->left->next == nullptr)? 0 : root->left->next->val) << endl;
-      }
-      
-      work(root->right);
-      work(root->left);
-   }
+    }
+    tmp = tmp->next;
+    if (tmp == nullptr)
+      ;
+    else if (tmp->left != nullptr)
+      tmp = tmp->left;
+    else
+      tmp = tmp->right;
+    if (root->right != nullptr) {
+      root->right->next = tmp;
+      //        cout << root->right->val << " --> " << ((root->right->next ==
+      //        nullptr)? 0 : root->right->next->val) << endl;
+    } else {
+      root->left->next = tmp;
+      //        cout << root->left->val << " --> " << ((root->left->next ==
+      //        nullptr)? 0 : root->left->next->val) << endl;
+    }
+
+    work(root->right);
+    work(root->left);
+  }
 };

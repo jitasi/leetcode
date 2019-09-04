@@ -1,21 +1,23 @@
-// Runtime: 32 ms, faster than 20.06% of C++ online submissions for Remove K Digits.
-// Memory Usage: 9.1 MB, less than 73.67% of C++ online submissions for Remove K Digits.
-​
-class Solution {
+// Runtime: 32 ms, faster than 20.06% of C++ online submissions for Remove K
+// Digits. Memory Usage: 9.1 MB, less than 73.67% of C++ online submissions for
+// Remove K Digits.
+​ class Solution {
 public:
-  string removeKdigits(string num, int k) {
-    const int len = num.size();
-    
-    while(k-- > 0) {
-      int i = 0;
-      for (; i < len - 1; i++) {
-        if (num[i] > num[i + 1]) break;
-      }
-      num.erase(num.begin() + i);
-    }
-    int idx = 0;
-    while (idx < num.size() && num[idx] == '0') idx++;
-    if (idx == num.size()) return "0";
-    return num.substr(idx, num.size() - idx);
+   string removeKdigits(string num, int k) {
+       const int len = num.size();
+       
+    while (k-- > 0) {
+           int i = 0;
+           for (; i < len - 1; i++) {
+               if (num[i] > num[i + 1]) break;
+           
+      }
+           num.erase(num.begin() + i);
+       
+    }
+       int idx = 0;
+       while (idx < num.size() && num[idx] == '0') idx++;
+       if (idx == num.size()) return "0";
+       return num.substr(idx, num.size() - idx);
   }
 };

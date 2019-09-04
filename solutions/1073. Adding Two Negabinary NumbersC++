@@ -1,23 +1,22 @@
-// Runtime: 12 ms, faster than 77.88% of C++ online submissions for Adding Two Negabinary Numbers.
-// Memory Usage: 8.9 MB, less than 100.00% of C++ online submissions for Adding Two Negabinary Numbers.
+// Runtime: 12 ms, faster than 77.88% of C++ online submissions for Adding Two
+// Negabinary Numbers. Memory Usage: 8.9 MB, less than 100.00% of C++ online
+// submissions for Adding Two Negabinary Numbers.
 
 class Solution {
 public:
-  
-  vector<int> addNegabinary(vector<int>& arr1, vector<int>& arr2) {
+  vector<int> addNegabinary(vector<int> &arr1, vector<int> &arr2) {
     const int len1 = arr1.size();
     const int len2 = arr2.size();
-    
+
     // arr1[0] the least significant bit.
     reverse(arr1.begin(), arr1.end());
     reverse(arr2.begin(), arr2.end());
-    
+
     vector<int> ret(max(len1, len2) + 2, 0);
     for (int i = 0; i < len1; i++)
       ret[i] = arr1[i];
     for (int i = 0; i < len2; i++)
       ret[i] += arr2[i];
-    
 
     // process carrier
     for (int i = 0; i < ret.size(); i++) {
@@ -28,21 +27,22 @@ public:
           ret[i] -= 2;
         }
       }
-      
+
       const int c = ret[i] / 2;
-      ret[i] %= 2;     
+      ret[i] %= 2;
       // 1 + 1 == 110
       if (c > 0) {
         ret[i + 1] += c;
         ret[i + 2] += c;
       }
     }
-    
+
     // remove leading 0s.
     int last = ret.size() - 1;
-    while (last > 0 && ret[last] == 0) last--;
+    while (last > 0 && ret[last] == 0)
+      last--;
     ret.resize(last + 1);
-    
+
     // final result.
     reverse(ret.begin(), ret.end());
     return ret;

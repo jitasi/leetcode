@@ -1,44 +1,51 @@
-// TLE 
+// TLE
 // "2147483648"
 // -2147483648
-​
-​
-class Solution {
+​ ​ class Solution {
 public:
-  unordered_map<string, long> AddMultiply(string num, int l, int r) {
-    if (r - l == 1) return {{string(1, num[l]), num[l] - '0'}};
-    
+   unordered_map<string, long> AddMultiply(string num, int l, int r) {
+       if (r - l == 1) return {{string(1, num[l]), num[l] - '0'}};
+       
     unordered_map<string, long> ans;
-    if (num[l] != '0') {
-      ans[num.substr(l, r - l)] = stoll(num.substr(l, r - l).c_str());
-//      cout << l << ", " << num.substr(l, r - l) << endl;
-    }
-    for (int i = l + 1; i < r; i++) {
-      if (i - l > 1 && num[l] == '0') continue;
-      const string left = num.substr(l, i - l);
-      const int left_part = stoll(left.c_str());
-      for (const auto& kv_right: AddMultiply(num, i, r)) {
-        ans[left + "*" + kv_right.first] = left_part * kv_right.second;
-      }
-    }
-    return ans;
+       if (num[l] != '0') {
+           ans[num.substr(l, r - l)] = stoll(num.substr(l, r - l).c_str());
+      //      cout << l << ", " << num.substr(l, r - l) << endl;
+       
+    }
+       for (int i = l + 1; i < r; i++) {
+           if (i - l > 1 && num[l] == '0') continue;
+           const string left = num.substr(l, i - l);
+           const int left_part = stoll(left.c_str());
+           for (const auto &kv_right : AddMultiply(num, i, r)) {
+               ans[left + "*" + kv_right.first] = left_part * kv_right.second;
+           
+      }
+       
+    }
+       return ans;
   }
-  
+   
   unordered_map<string, long> addOperators(string num, int l, int r) {
-    if (r - l == 1) return {{string(1, num[l]), num[l] - '0'}};
-    
+       if (r - l == 1) return {{string(1, num[l]), num[l] - '0'}};
+       
     unordered_map<string, long> ans = AddMultiply(num, l, r);
-    if (num[l] != '0') {
-      ans[num.substr(l, r - l)] = stoll(num.substr(l, r - l).c_str());
-//      cout << l << ", " << num.substr(l, r - l) << endl;
-    }
-    for (int i = l + 1; i < r; i++) {
-      const auto left_part = addOperators(num, l, i);
-      const auto right_part = AddMultiply(num, i, r);
-      for (const auto& kv_left: left_part) {
-        for (const auto& kv_right: right_part) {
-          ans[kv_left.first + "+" + kv_right.first] = kv_left.second + kv_right.second;
-          ans[kv_left.first + "-" + kv_right.first] = kv_left.second - kv_right.second;
-        }
-      }
-    }
+       if (num[l] != '0') {
+           ans[num.substr(l, r - l)] = stoll(num.substr(l, r - l).c_str());
+      //      cout << l << ", " << num.substr(l, r - l) << endl;
+       
+    }
+       for (int i = l + 1; i < r; i++) {
+           const auto left_part = addOperators(num, l, i);
+           const auto right_part = AddMultiply(num, i, r);
+           for (const auto &kv_left : left_part) {
+               for (const auto &kv_right : right_part) {
+                   ans[kv_left.first + "+" + kv_right.first] =
+              kv_left.second + kv_right.second;
+                   ans[kv_left.first + "-" + kv_right.first] =
+              kv_left.second - kv_right.second;
+               
+        }
+           
+      }
+       
+    }

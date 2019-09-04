@@ -1,24 +1,28 @@
-// Runtime: 36 ms, faster than 58.28% of C++ online submissions for Longest Increasing Subsequence.
-// Memory Usage: 8.7 MB, less than 52.20% of C++ online submissions for Longest Increasing Subsequence.
-​
-class Solution {
+// Runtime: 36 ms, faster than 58.28% of C++ online submissions for Longest
+// Increasing Subsequence. Memory Usage: 8.7 MB, less than 52.20% of C++ online
+// submissions for Longest Increasing Subsequence.
+​ class Solution {
 public:
-    int lengthOfLIS(vector<int>& nums) {
-      const int len = nums.size();
-      if (len <= 1) return len;
-      
+     int lengthOfLIS(vector<int> &nums) {
+         const int len = nums.size();
+         if (len <= 1) return len;
+         
       vector<int> dp(len);
-      dp[0] = 1;
-      int ans = 1;
-      for (int i = 1; i < len; i++) {
-        dp[i] = 1;
-        for (int j = 0; j < i; j++) {
-          if (nums[j] < nums[i] && dp[j] + 1 > dp[i]) {
-            dp[i] = dp[j] + 1;
-          }
-        }
-        ans = max(ans, dp[i]);
-      }
-      return ans;
-    }
+         dp[0] = 1;
+         int ans = 1;
+         for (int i = 1; i < len; i++) {
+             dp[i] = 1;
+             for (int j = 0; j < i; j++) {
+                 if (nums[j] < nums[i] && dp[j] + 1 > dp[i]) {
+                     dp[i] = dp[j] + 1;
+                 
+        }
+             
+      }
+             ans = max(ans, dp[i]);
+         
+    }
+         return ans;
+     
+  }
 };

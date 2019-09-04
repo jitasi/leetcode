@@ -1,9 +1,11 @@
-// Runtime: 4 ms, faster than 81.76% of C++ online submissions for Guess Number Higher or Lower.
-// Memory Usage: 8.3 MB, less than 5.88% of C++ online submissions for Guess Number Higher or Lower.
+// Runtime: 4 ms, faster than 81.76% of C++ online submissions for Guess Number
+// Higher or Lower. Memory Usage: 8.3 MB, less than 5.88% of C++ online
+// submissions for Guess Number Higher or Lower.
 
 // Forward declaration of guess API.
 // @param num, your guess
-// @return -1 if my number is lower, 1 if my number is higher, otherwise return 0
+// @return -1 if my number is lower, 1 if my number is higher, otherwise return
+// 0
 int guess(int num);
 
 class Solution {
@@ -14,9 +16,12 @@ public:
     while (first < last) {
       const long mid = first + (last - first) / 2;
       const int r = guess(mid);
-      if (r == 0) return mid;
-      if (r == -1) last = mid;
-      else first = mid + 1;
+      if (r == 0)
+        return mid;
+      if (r == -1)
+        last = mid;
+      else
+        first = mid + 1;
     }
     return -1;
   }

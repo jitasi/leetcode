@@ -1,46 +1,47 @@
-// Runtime: 64 ms, faster than 74.01% of C++ online submissions for Insert Delete GetRandom O(1) - Duplicates allowed.
-// Memory Usage: 24.3 MB, less than 48.62% of C++ online submissions for Insert Delete GetRandom O(1) - Duplicates allowed.
-
+// Runtime: 64 ms, faster than 74.01% of C++ online submissions for Insert
+// Delete GetRandom O(1) - Duplicates allowed. Memory Usage: 24.3 MB, less
+// than 48.62% of C++ online submissions for Insert Delete GetRandom O(1) -
+// Duplicates allowed.
 
 class RandomizedCollection {
 public:
-    vector<int> v;  // keep the val
-    unordered_map<int, set<int>> m;  // val to pos in v;
-  
-    /** Initialize your data structure here. */
-    RandomizedCollection() {        
+  vector<int> v;                  // keep the val
+  unordered_map<int, set<int>> m; // val to pos in v;
+
+  /** Initialize your data structure here. */
+  RandomizedCollection() {}
+
+  /** Inserts a value to the collection. Returns true if the collection did not
+   * already contain the specified element. */
+  bool insert(int val) {
+    m[val].insert(v.size());
+    v.push_back(val);
+    return m[val].size() == 1;
+  }
+
+  /** Removes a value from the collection. Returns true if the collection
+   * contained the specified element. */
+  bool remove(int val) {
+    if (m[val].size() <= 0)
+      return false;
+
+    int pos = *(m[val].begin());
+    m[val].erase(pos);
+
+    int last = v.size() - 1;
+    int last_val = v.back();
+
+    if (pos != last) {
+      swap(v[pos], v[last]);
+      m[last_val].erase(last);
+      m[last_val].insert(pos);
     }
-    
-    /** Inserts a value to the collection. Returns true if the collection did not already contain the specified element. */
-    bool insert(int val) {
-      m[val].insert(v.size());
-      v.push_back(val);
-      return m[val].size() == 1;
-    }
-      
-    /** Removes a value from the collection. Returns true if the collection contained the specified element. */
-    bool remove(int val) {
-      if (m[val].size() <= 0) return false;
-      
-      int pos = *(m[val].begin());
-      m[val].erase(pos);
-      
-      int last = v.size() - 1;
-      int last_val = v.back();
-      
-      if (pos != last) {
-        swap(v[pos], v[last]);
-        m[last_val].erase(last);
-        m[last_val].insert(pos);
-      }  
-      v.resize(last);
-      return true;
-    }
-    
-    /** Get a random element from the collection. */
-    int getRandom() {
-      return v[random() % v.size()];
-    }
+    v.resize(last);
+    return true;
+  }
+
+  /** Get a random element from the collection. */
+  int getRandom() { return v[random() % v.size()]; }
 };
 
 /**

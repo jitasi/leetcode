@@ -1,15 +1,17 @@
 
 class Solution {
 public:
-  bool valid(int n, int* st, int cur, int c) {
+  bool valid(int n, int *st, int cur, int c) {
     for (int i = 0; i < cur; i++) {
-      if (st[i] == c) return false;
-      if (cur - i == abs(c - st[i])) return false;
+      if (st[i] == c)
+        return false;
+      if (cur - i == abs(c - st[i]))
+        return false;
     }
     return true;
   }
-  
-  void solve(int n, vector<vector<string>>& ans, int* st, int cur) {
+
+  void solve(int n, vector<vector<string>> &ans, int *st, int cur) {
     if (cur == n) {
       vector<string> sol;
       for (int p = 0; p < n; p++) {
@@ -21,13 +23,13 @@ public:
         row += "Q";
         for (i++; i < n; i++) {
           row += ".";
-        }       
+        }
         sol.push_back(row);
       }
       ans.push_back(sol);
       return;
     }
-    
+
     for (int i = 0; i < n; i++) {
       if (valid(n, st, cur, i)) {
         st[cur] = i;
@@ -35,12 +37,13 @@ public:
       }
     }
   }
-  
+
   vector<vector<string>> solveNQueens(int n) {
-    if (n == 0) return {};
+    if (n == 0)
+      return {};
     vector<vector<string>> ans;
     int st[n];
     solve(n, ans, st, 0);
-    return ans;        
+    return ans;
   }
 };

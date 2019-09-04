@@ -1,8 +1,9 @@
 class Solution {
 public:
-  int largestRectangleArea(vector<int>& heights) {
-    if (heights.size() == 0) return 0;
-    
+  int largestRectangleArea(vector<int> &heights) {
+    if (heights.size() == 0)
+      return 0;
+
     stack<int> s;
     s.push(0);
     int ans = heights[0];
@@ -12,15 +13,16 @@ public:
         s.push(i++);
         continue;
       }
-      
+
       // heights[s.top()] > heights[i]
       const int prev = s.top();
       s.pop();
-      const int max_area = s.empty()? heights[prev] * i
-        : heights[prev] * (i - s.top() - 1);
-      if (max_area > ans) ans = max_area;
+      const int max_area =
+          s.empty() ? heights[prev] * i : heights[prev] * (i - s.top() - 1);
+      if (max_area > ans)
+        ans = max_area;
     }
-    
+
     return ans;
   }
 };

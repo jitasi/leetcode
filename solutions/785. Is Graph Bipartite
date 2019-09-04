@@ -1,29 +1,31 @@
-// Runtime: 40 ms, faster than 16.56% of C++ online submissions for Is Graph Bipartite?.
-// Memory Usage: 25.7 MB, less than 5.03% of C++ online submissions for Is Graph Bipartite?.
-​
-class Solution {
+// Runtime: 40 ms, faster than 16.56% of C++ online submissions for Is Graph
+// Bipartite?. Memory Usage: 25.7 MB, less than 5.03% of C++ online submissions
+// for Is Graph Bipartite?.
+​ class Solution {
 public:
-  int f(const vector<int> grps, int idx) {
-    while (grps[idx] != -1) idx = grps[idx];
-    return idx;
+   int f(const vector<int> grps, int idx) {
+       while (grps[idx] != -1) idx = grps[idx];
+       return idx;
   }
-  
-  bool isBipartite(vector<vector<int>>& graph) {
-    const int num_nodes = graph.size();
-    if (num_nodes <= 2) return true;
-    
+   
+  bool isBipartite(vector<vector<int>> &graph) {
+       const int num_nodes = graph.size();
+       if (num_nodes <= 2) return true;
+       
     vector<int> grps(num_nodes, -1);
-    for (int i = 0; i < num_nodes; i++) {
-      if (graph[i].empty()) continue;
-      int src_grp = f(grps, i);
-      int des_grp = f(grps, graph[i][0]);
-      if (src_grp == des_grp) return false;
-      
+       for (int i = 0; i < num_nodes; i++) {
+           if (graph[i].empty()) continue;
+           int src_grp = f(grps, i);
+           int des_grp = f(grps, graph[i][0]);
+           if (src_grp == des_grp) return false;
+           
       for (int j = 1; j < graph[i].size(); j++) {
-        if (src_grp == f(grps, graph[i][j])) return false;
-        grps[graph[i][j]] = des_grp;
-      }
-    }
-    return true;
+               if (src_grp == f(grps, graph[i][j])) return false;
+               grps[graph[i][j]] = des_grp;
+           
+      }
+       
+    }
+       return true;
   }
 };

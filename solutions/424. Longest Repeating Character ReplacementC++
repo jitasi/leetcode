@@ -1,5 +1,6 @@
-// Runtime: 8 ms, faster than 98.64% of C++ online submissions for Longest Repeating Character Replacement.
-// Memory Usage: 9.5 MB, less than 39.98% of C++ online submissions for Longest Repeating Character Replacement.
+// Runtime: 8 ms, faster than 98.64% of C++ online submissions for Longest
+// Repeating Character Replacement. Memory Usage: 9.5 MB, less than 39.98% of
+// C++ online submissions for Longest Repeating Character Replacement.
 class Solution {
 public:
   int characterReplacement(string s, int k) {
@@ -7,12 +8,13 @@ public:
     int max_cnt = 0;
     int cnt[26];
     int start = 0;
-    for (int i = 0; i < 26; i++) cnt[i] = 0;
+    for (int i = 0; i < 26; i++)
+      cnt[i] = 0;
     // ABBAAC
     // s    i
     // A: 3 B: 2 C: 1
     // max_cnt = 3
-    // i - start + 1 - max_cnt = 3  
+    // i - start + 1 - max_cnt = 3
     // suppoing k = 2
     for (int i = 0; i < s.size(); i++) {
       max_cnt = std::max(max_cnt, ++cnt[s[i] - 'A']);

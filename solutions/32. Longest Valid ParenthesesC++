@@ -2,21 +2,25 @@ class Solution {
 public:
   int longestValidParentheses(string s) {
     const int len = s.size();
-    if (len < 2) return 0;
-    
+    if (len < 2)
+      return 0;
+
     int max_len = 0;
-    
+
     int cnt = 0;
     int cur_len = 0;
     for (int i = 0; i < len; i++) {
-      if (s[i] == '(') cnt++; else cnt--;
-      
+      if (s[i] == '(')
+        cnt++;
+      else
+        cnt--;
+
       if (cnt < 0) {
         cnt = 0;
         cur_len = 0;
         continue;
-      } 
-      
+      }
+
       cur_len++;
       if (cnt == 0) {
         max_len = max(cur_len, max_len);
@@ -26,50 +30,53 @@ public:
     cnt = 0;
     cur_len = 0;
     for (int i = len - 1; i >= 0; i--) {
-      if (s[i] == ')') cnt++; else cnt--;
-      
+      if (s[i] == ')')
+        cnt++;
+      else
+        cnt--;
+
       if (cnt < 0) {
         cnt = 0;
         cur_len = 0;
         continue;
-      } 
-      
+      }
+
       cur_len++;
       if (cnt == 0) {
         max_len = max(cur_len, max_len);
       }
     }
-    
+
     return max_len;
   }
 
-/*
-    int longestValidParentheses(string s) {
-      const int len = s.size();
-      if (len < 2) return 0;
-      
-      int dp[len][len];     
-      for (int i = 0; i < len; i++)
-        for (int j = 0; j < len; j++)
-          dp[i][j] = 0;
-      
-      for (int l = 1; l <= len - 1; l++) {
-        for (int i = 0; i < len - l; i++) {
-          const int j = i + l;
-          int m = 0;
-          for (int k = i; k < j; k++) {
-            int t = dp[i][k] + dp[k+1][j];
-            if (t > m) m = t;
+  /*
+      int longestValidParentheses(string s) {
+        const int len = s.size();
+        if (len < 2) return 0;
+
+        int dp[len][len];
+        for (int i = 0; i < len; i++)
+          for (int j = 0; j < len; j++)
+            dp[i][j] = 0;
+
+        for (int l = 1; l <= len - 1; l++) {
+          for (int i = 0; i < len - l; i++) {
+            const int j = i + l;
+            int m = 0;
+            for (int k = i; k < j; k++) {
+              int t = dp[i][k] + dp[k+1][j];
+              if (t > m) m = t;
+            }
+            if (s[i] == '(' && s[j] == ')') {
+              int t = 2 + dp[i+1][j-1];
+              if (t > m) m = t;
+            }
+            dp[i][j] = m;
           }
-          if (s[i] == '(' && s[j] == ')') {
-            int t = 2 + dp[i+1][j-1];
-            if (t > m) m = t;
-          }
-          dp[i][j] = m;
         }
+
+        return dp[0][len - 1];
       }
-      
-      return dp[0][len - 1];
-    }
-*/
+  */
 };

@@ -1,13 +1,13 @@
 class Solution {
 public:
-  int maxSumAfterPartitioning(vector<int>& A, int K) {
+  int maxSumAfterPartitioning(vector<int> &A, int K) {
     const int len = A.size();
     if (len <= K) {
       return len * (*max_element(A.begin(), A.end()));
     }
-    
+
     // dp[i][j] : max sum from A[i] to A[j], inclusive
-    int dp[len][len];    
+    int dp[len][len];
     // init
     for (int l = 0; l < K; l++) {
       for (int i = 0; i < len - l; i++) {
@@ -22,17 +22,17 @@ public:
         const int j = i + l;
         dp[i][j] = 0;
         for (int k = i; k < i + K; k++) {
-          dp[i][j] = max(dp[i][j], dp[i][k] + dp[k+1][j]);
+          dp[i][j] = max(dp[i][j], dp[i][k] + dp[k + 1][j]);
         }
       }
     }
-/*  for (int i = 0; i < len; i++) {
-      for (int j = 0; j < len; j++) {
-        cout << dp[i][j] << ", ";
-      }
-      cout << endl;
-    }
-*/    
+    /*  for (int i = 0; i < len; i++) {
+          for (int j = 0; j < len; j++) {
+            cout << dp[i][j] << ", ";
+          }
+          cout << endl;
+        }
+    */
     return dp[0][len - 1];
   }
 };

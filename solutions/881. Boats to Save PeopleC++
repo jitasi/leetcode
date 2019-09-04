@@ -1,12 +1,12 @@
-// Runtime: 116 ms, faster than 85.79% of C++ online submissions for Boats to Save People.
-// Memory Usage: 14 MB, less than 60.17% of C++ online submissions for Boats to Save People.
-
+// Runtime: 116 ms, faster than 85.79% of C++ online submissions for Boats to
+// Save People. Memory Usage: 14 MB, less than 60.17% of C++ online submissions
+// for Boats to Save People.
 
 class Solution {
 public:
-  int numRescueBoats(vector<int>& people, int limit) {
+  int numRescueBoats(vector<int> &people, int limit) {
     int ans = 0;
-    
+
     std::sort(people.begin(), people.end());
     int start = 0;
     int end = people.size() - 1;
@@ -17,6 +17,6 @@ public:
       }
       end--;
     }
-    return ans + (start == end? 1 : 0);
+    return ans + (start == end ? 1 : 0);
   }
 };

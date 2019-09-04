@@ -1,25 +1,29 @@
 class Solution {
 public:
-    bool searchMatrix(vector<vector<int>>& matrix, int target) {      
-      const int rows = matrix.size();
-      if (rows == 0) return false;
-      
-      const int cols = matrix[0].size();
-      if (cols == 0) return false;
-            
-      int cur_row = 0;
-      int cur_col = cols - 1;
-      int cur = matrix[cur_row][cur_col];
-      while (cur != target) {
-        if (cur > target) {
-          cur_col--;
-          if (cur_col < 0) return false;
-        } else {
-          cur_row++;
-          if (cur_row >= rows) return false;
-        }
-        cur = matrix[cur_row][cur_col];
+  bool searchMatrix(vector<vector<int>> &matrix, int target) {
+    const int rows = matrix.size();
+    if (rows == 0)
+      return false;
+
+    const int cols = matrix[0].size();
+    if (cols == 0)
+      return false;
+
+    int cur_row = 0;
+    int cur_col = cols - 1;
+    int cur = matrix[cur_row][cur_col];
+    while (cur != target) {
+      if (cur > target) {
+        cur_col--;
+        if (cur_col < 0)
+          return false;
+      } else {
+        cur_row++;
+        if (cur_row >= rows)
+          return false;
       }
-      return true;
+      cur = matrix[cur_row][cur_col];
     }
+    return true;
+  }
 };

@@ -1,17 +1,23 @@
-// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Reaching Points.
-// Memory Usage: 8.2 MB, less than 48.85% of C++ online submissions for Reaching Points.
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Reaching
+// Points. Memory Usage: 8.2 MB, less than 48.85% of C++ online submissions for
+// Reaching Points.
 
 class Solution {
 public:
   bool reachingPoints(int sx, int sy, int tx, int ty) {
     while (tx >= sx && ty >= sy) {
-      if (tx == ty) return tx == sx && ty== sy;
+      if (tx == ty)
+        return tx == sx && ty == sy;
       if (ty > tx) {
-        if (tx > sx) ty %= tx;
-        else return (ty - sy) % tx == 0;
+        if (tx > sx)
+          ty %= tx;
+        else
+          return (ty - sy) % tx == 0;
       } else {
-        if (ty > sy) tx %= ty;
-        else return (tx - sx) % ty == 0;
+        if (ty > sy)
+          tx %= ty;
+        else
+          return (tx - sx) % ty == 0;
       }
     }
     return false;

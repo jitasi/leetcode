@@ -1,24 +1,27 @@
-// Runtime: 4 ms, faster than 87.69% of C++ online submissions for Remove Duplicate Letters.
-// Memory Usage: 8.7 MB, less than 67.51% of C++ online submissions for Remove Duplicate Letters.
-​
-class Solution {
+// Runtime: 4 ms, faster than 87.69% of C++ online submissions for Remove
+// Duplicate Letters. Memory Usage: 8.7 MB, less than 67.51% of C++ online
+// submissions for Remove Duplicate Letters.
+​ class Solution {
 public:
-  string removeDuplicateLetters(string s) {
-    vector<int> cnt(26, 0);
-    for (const char ch: s) cnt[ch - 'a']++;
-    
+   string removeDuplicateLetters(string s) {
+       vector<int> cnt(26, 0);
+       for (const char ch : s) cnt[ch - 'a']++;
+       
     vector<bool> visited(26, false);
-    string ans;
-    for (const char ch: s) {
-      cnt[ch - 'a']--;
-      if (visited[ch - 'a']) continue;
-      while (!ans.empty() && ans.back() > ch && cnt[ans.back() - 'a'] > 0) {
-        visited[ans.back() - 'a'] = false;
-        ans.pop_back();
-      }
-      ans.push_back(ch);
-      visited[ch - 'a'] = true;
-    }
-    return ans;
+       string ans;
+       for (const char ch : s) {
+           cnt[ch - 'a']--;
+           if (visited[ch - 'a']) continue;
+           while (!ans.empty() && ans.back() > ch &&
+                  cnt[ans.back() - 'a'] > 0) {
+               visited[ans.back() - 'a'] = false;
+               ans.pop_back();
+           
+      }
+           ans.push_back(ch);
+           visited[ch - 'a'] = true;
+       
+    }
+       return ans;
   }
 };

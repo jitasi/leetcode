@@ -1,37 +1,41 @@
 class Solution {
 public:
-    int countSubstrings(string s) {
+  int countSubstrings(string s) {
 
-      const int len = s.length();
-      if (len <= 1) return len;
-      
-      // dp[i][j] = true if starting form pos j, len i+1 is Palindromic.
-      bool dp[1000][1000];
-      
-      for (int i = 0; i < len; i++) dp[0][i] = true;
+    const int len = s.length();
+    if (len <= 1)
+      return len;
 
-      int count = len;
-      int longest = 0;
-      
-      for (int i = 0; i < len - 1; i++) {
-        dp[1][i] = s[i] == s[i+1];
-        if (dp[1][i]) count++;
-        if (dp[1][i] && 1 >= longest) {
-            longest = 1;
-        }
+    // dp[i][j] = true if starting form pos j, len i+1 is Palindromic.
+    bool dp[1000][1000];
+
+    for (int i = 0; i < len; i++)
+      dp[0][i] = true;
+
+    int count = len;
+    int longest = 0;
+
+    for (int i = 0; i < len - 1; i++) {
+      dp[1][i] = s[i] == s[i + 1];
+      if (dp[1][i])
+        count++;
+      if (dp[1][i] && 1 >= longest) {
+        longest = 1;
       }
-
-      for (int j = 2; j < len; j++) {
-        for (int i = 0; i < len - j; i++) {
-          dp[j][i] = dp[j-2][i+1] && (s[i] == s[i+j]);
-          if (dp[j][i]) count++;
-          if (dp[j][i] && j >= longest) {
-            longest = j;
-          }
-        }
-        if (longest + 2 <= j) break;
-      }
-      return count;      
-      
     }
+
+    for (int j = 2; j < len; j++) {
+      for (int i = 0; i < len - j; i++) {
+        dp[j][i] = dp[j - 2][i + 1] && (s[i] == s[i + j]);
+        if (dp[j][i])
+          count++;
+        if (dp[j][i] && j >= longest) {
+          longest = j;
+        }
+      }
+      if (longest + 2 <= j)
+        break;
+    }
+    return count;
+  }
 };

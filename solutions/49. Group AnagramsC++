@@ -1,24 +1,24 @@
 class Solution {
 public:
-    vector<vector<string>> groupAnagrams(vector<string>& strs) {
-      unordered_map<string, int> m;
-      vector<vector<string>> ret;
-      
-      for (auto str : strs) {
-        string cnts;
-        cnts.resize(26, 0);
-        for (auto c : str) {
-          cnts[c-'a']++;
-        }
-        
-        if (m.find(cnts) != m.end()) {
-          ret[m[cnts]].push_back(str);
-        } else {
-          m[cnts] = ret.size();
-          ret.push_back({str});
-        }
+  vector<vector<string>> groupAnagrams(vector<string> &strs) {
+    unordered_map<string, int> m;
+    vector<vector<string>> ret;
+
+    for (auto str : strs) {
+      string cnts;
+      cnts.resize(26, 0);
+      for (auto c : str) {
+        cnts[c - 'a']++;
       }
-      
-      return ret;
+
+      if (m.find(cnts) != m.end()) {
+        ret[m[cnts]].push_back(str);
+      } else {
+        m[cnts] = ret.size();
+        ret.push_back({str});
+      }
     }
+
+    return ret;
+  }
 };

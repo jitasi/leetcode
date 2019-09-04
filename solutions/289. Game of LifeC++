@@ -1,31 +1,37 @@
 // Runtime: 4 ms, faster than 88.55% of C++ online submissions for Game of Life.
-// Memory Usage: 8.7 MB, less than 73.93% of C++ online submissions for Game of Life.
+// Memory Usage: 8.7 MB, less than 73.93% of C++ online submissions for Game of
+// Life.
 
 // https://segmentfault.com/a/1190000003819277
 
 class Solution {
 public:
-  const int dirs[8][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}, {1, 1}, {1, -1},{-1, 1},{-1, -1}};
-  
-  void gameOfLife(vector<vector<int>>& board) {
+  const int dirs[8][2] = {{-1, 0}, {1, 0},  {0, -1}, {0, 1},
+                          {1, 1},  {1, -1}, {-1, 1}, {-1, -1}};
+
+  void gameOfLife(vector<vector<int>> &board) {
     const int rows = board.size();
-    if (rows == 0) return;
+    if (rows == 0)
+      return;
     const int cols = board[0].size();
-    if (cols == 0) return;
-    
+    if (cols == 0)
+      return;
+
     for (int i = 0; i < rows; i++) {
-      for (int j = 0; j < cols; j++) {        
+      for (int j = 0; j < cols; j++) {
         int cnt = 0;
         for (int k = 0; k < 8; k++) {
           const int x = i + dirs[k][0];
           const int y = j + dirs[k][1];
-          if (x < 0 || x >= rows || y < 0 || y >= cols) continue;
+          if (x < 0 || x >= rows || y < 0 || y >= cols)
+            continue;
           cnt += board[x][y] & 1;
         }
-        if ((cnt == 2 && board[i][j] == 1) || (cnt == 3)) board[i][j] |= 2; 
+        if ((cnt == 2 && board[i][j] == 1) || (cnt == 3))
+          board[i][j] |= 2;
       }
     }
-    
+
     for (int i = 0; i < rows; i++)
       for (int j = 0; j < cols; j++)
         board[i][j] >>= 1;

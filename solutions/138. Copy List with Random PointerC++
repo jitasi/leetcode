@@ -1,5 +1,6 @@
-// Runtime: 28 ms, faster than 98.17% of C++ online submissions for Copy List with Random Pointer.
-// Memory Usage: 22.2 MB, less than 36.84% of C++ online submissions for Copy List with Random Pointer.
+// Runtime: 28 ms, faster than 98.17% of C++ online submissions for Copy List
+// with Random Pointer. Memory Usage: 22.2 MB, less than 36.84% of C++ online
+// submissions for Copy List with Random Pointer.
 
 /*
 // Definition for a Node.
@@ -20,27 +21,28 @@ public:
 */
 class Solution {
 public:
-  Node* copyRandomList(Node* head) {
-    if (head == nullptr) return nullptr;
-    
+  Node *copyRandomList(Node *head) {
+    if (head == nullptr)
+      return nullptr;
+
     // before: 1 -> 2 -> 3 -> nullptr
     // after:  1 -> 1c -> 2 -> 2c -> 3 -> 3c -> nullptr
-    Node* cur = head;
+    Node *cur = head;
     while (cur != nullptr) {
-      Node* clone = new Node(cur->val, cur->next, nullptr);
+      Node *clone = new Node(cur->val, cur->next, nullptr);
       cur->next = clone;
       cur = clone->next;
     }
-    
+
     // recover clones' random pointer.
     // 1 -> 1c -> 2 -> 2c -> 3 -> 3c -> nullptr
     //           cur
     cur = head;
     while (cur != nullptr) {
-      cur->next->random = cur->random == nullptr? nullptr : cur->random->next;
+      cur->next->random = cur->random == nullptr ? nullptr : cur->random->next;
       cur = cur->next->next;
     }
-    
+
     // recover next for both
     cur = head;
     Node *clone_head = cur->next;
@@ -48,11 +50,12 @@ public:
     while (cur != nullptr) {
       cur->next = clone_cur->next;
       cur = cur->next;
-      if (cur == nullptr) break;
+      if (cur == nullptr)
+        break;
       clone_cur->next = cur->next;
       clone_cur = clone_cur->next;
     }
-    
+
     return clone_head;
   }
 };

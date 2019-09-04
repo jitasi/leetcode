@@ -2,32 +2,34 @@ class Solution {
 public:
   int longestPalindromeSubseq(string s) {
     const int len = s.size();
-    
-    // dp[i][j]: length of longest Palindromic Subsequence from s[i..j], inclusive
+
+    // dp[i][j]: length of longest Palindromic Subsequence from s[i..j],
+    // inclusive
     int dp[len][len];
-    for (int i = 0; i < len; i++) dp[i][i] = 1;
+    for (int i = 0; i < len; i++)
+      dp[i][i] = 1;
     for (int i = 0; i < len - 1; i++) {
-      dp[i][i+1] = (s[i] == s[i + 1])? 2 : 1;
-    }    
-    
+      dp[i][i + 1] = (s[i] == s[i + 1]) ? 2 : 1;
+    }
+
     for (int l = 2; l < len; l++) {
       for (int i = 0; i < len - l; i++) {
         const int j = i + l;
-        if (s[i] == s[j]) 
-          dp[i][j] = dp[i+1][j-1] + 2;
+        if (s[i] == s[j])
+          dp[i][j] = dp[i + 1][j - 1] + 2;
         else
-          dp[i][j] = max(dp[i+1][j], dp[i][j-1]);
+          dp[i][j] = max(dp[i + 1][j], dp[i][j - 1]);
       }
     }
-/*
-    for (int i = 0; i < len; i++) {
-      for (int j = i; j < len; j++) {
-        cout << dp[i][j] << ",";
-      }
-      cout << endl;
-    }
-*/
-    return dp[0][len-1];
+    /*
+        for (int i = 0; i < len; i++) {
+          for (int j = i; j < len; j++) {
+            cout << dp[i][j] << ",";
+          }
+          cout << endl;
+        }
+    */
+    return dp[0][len - 1];
   }
 };
 

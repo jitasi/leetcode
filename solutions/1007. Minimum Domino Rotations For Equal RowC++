@@ -1,9 +1,10 @@
-// Runtime: 120 ms, faster than 45.01% of C++ online submissions for Minimum Domino Rotations For Equal Row.
-// Memory Usage: 19.1 MB, less than 32.54% of C++ online submissions for Minimum Domino Rotations For Equal Row.
+// Runtime: 120 ms, faster than 45.01% of C++ online submissions for Minimum
+// Domino Rotations For Equal Row. Memory Usage: 19.1 MB, less than 32.54% of
+// C++ online submissions for Minimum Domino Rotations For Equal Row.
 
 class Solution {
 public:
-  int minDominoRotations(vector<int>& A, vector<int>& B) {
+  int minDominoRotations(vector<int> &A, vector<int> &B) {
     const int len = A.size();
     int ans = -1;
     for (int j = 1; j <= 6; j++) {
@@ -15,15 +16,20 @@ public:
           success = false;
           break;
         }
-        if (A[i] == j && B[i] == j) continue;
-        
-        if (A[i] == j) swaps_b++;
-        else swaps_a++;
+        if (A[i] == j && B[i] == j)
+          continue;
+
+        if (A[i] == j)
+          swaps_b++;
+        else
+          swaps_a++;
       }
       if (success) {
         swaps_a = std::min(swaps_a, swaps_b);
-        if (ans == -1) ans = swaps_a;
-        else ans = std::min(ans, swaps_a);
+        if (ans == -1)
+          ans = swaps_a;
+        else
+          ans = std::min(ans, swaps_a);
       }
     }
     return ans;

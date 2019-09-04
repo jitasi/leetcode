@@ -10,23 +10,27 @@
 class Solution {
 public:
   vector<vector<int>> ret;
-  
-  void helper(TreeNode* root, int level) {
-    if (root == NULL) return;
-    
-    if (ret.size() <= level) ret.push_back({root->val});
-    else ret[level].push_back(root->val);
-    
-    helper(root->left, level+1);
-    helper(root->right, level+1);
+
+  void helper(TreeNode *root, int level) {
+    if (root == NULL)
+      return;
+
+    if (ret.size() <= level)
+      ret.push_back({root->val});
+    else
+      ret[level].push_back(root->val);
+
+    helper(root->left, level + 1);
+    helper(root->right, level + 1);
   }
-  
-  vector<vector<int>> levelOrderBottom(TreeNode* root) {
-    if (root == NULL) return ret;
+
+  vector<vector<int>> levelOrderBottom(TreeNode *root) {
+    if (root == NULL)
+      return ret;
     ret.push_back({root->val});
     helper(root->left, 1);
     helper(root->right, 1);
-    
+
     reverse(ret.begin(), ret.end());
     return ret;
   }

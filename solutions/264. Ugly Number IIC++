@@ -1,18 +1,20 @@
-// Runtime: 136 ms, faster than 14.75% of C++ online submissions for Ugly Number II.
-// Memory Usage: 13.1 MB, less than 15.04% of C++ online submissions for Ugly Number II.
+// Runtime: 136 ms, faster than 14.75% of C++ online submissions for Ugly Number
+// II. Memory Usage: 13.1 MB, less than 15.04% of C++ online submissions for
+// Ugly Number II.
 
 class Solution {
 public:
   int nthUglyNumber(int n) {
     priority_queue<long, vector<long>, greater<long>> pq;
     pq.push(1);
-    
+
     long cur;
     while (n-- > 0) {
       cur = pq.top();
       pq.pop();
-      while (!pq.empty() && cur == pq.top()) pq.pop();
-      
+      while (!pq.empty() && cur == pq.top())
+        pq.pop();
+
       pq.push(cur * 2);
       pq.push(cur * 3);
       pq.push(cur * 5);

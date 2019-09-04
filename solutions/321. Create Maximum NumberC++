@@ -1,36 +1,40 @@
-// Runtime: 156 ms, faster than 34.15% of C++ online submissions for Create Maximum Number.
-// Memory Usage: 25.2 MB, less than 43.15% of C++ online submissions for Create Maximum Number.
-​
-class Solution {
+// Runtime: 156 ms, faster than 34.15% of C++ online submissions for Create
+// Maximum Number. Memory Usage: 25.2 MB, less than 43.15% of C++ online
+// submissions for Create Maximum Number.
+​ class Solution {
 public:
-  vector<int> getMaxK(const vector<int>& nums, int k) {
-    vector<int> ans;
-    int drop = nums.size() - k;
-    for (const int n: nums) {
-      while (!ans.empty() && ans.back() < n && drop > 0) {
-        drop--;
-        ans.pop_back();
-      }
-      ans.push_back(n);
-    }
-    ans.resize(k);
-    return ans;
+   vector<int> getMaxK(const vector<int> &nums, int k) {
+       vector<int> ans;
+       int drop = nums.size() - k;
+       for (const int n : nums) {
+           while (!ans.empty() && ans.back() < n && drop > 0) {
+               drop--;
+               ans.pop_back();
+           
+      }
+           ans.push_back(n);
+       
+    }
+       ans.resize(k);
+       return ans;
   }
-  
+   
   vector<int> mergeVector(vector<int> nums1, vector<int> nums2) {
-    vector<int> ans;
-    while (!nums1.empty() || !nums2.empty()) {
-      vector<int> &tmp = (nums1 > nums2) ? nums1 : nums2;
-      ans.push_back(tmp[0]);
-      tmp.erase(tmp.begin());
-    }
-    return ans;
+       vector<int> ans;
+       while (!nums1.empty() || !nums2.empty()) {
+           vector<int> &tmp = (nums1 > nums2) ? nums1 : nums2;
+           ans.push_back(tmp[0]);
+           tmp.erase(tmp.begin());
+       
+    }
+       return ans;
   }
-  
-  vector<int> maxNumber(vector<int>& nums1, vector<int>& nums2, int k) {
-    vector<int> ans;
-    for (int i = max(0, k - (int)nums2.size()); i <= min((int)nums1.size(), k); i++)
+   
+  vector<int> maxNumber(vector<int> &nums1, vector<int> &nums2, int k) {
+       vector<int> ans;
+       for (int i = max(0, k - (int)nums2.size());
+            i <= min((int)nums1.size(), k); i++)
       ans = max(ans, mergeVector(getMaxK(nums1, i), getMaxK(nums2, k - i)));
-    return ans;
+       return ans;
   }
 };

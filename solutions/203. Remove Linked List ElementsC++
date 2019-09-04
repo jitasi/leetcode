@@ -8,12 +8,14 @@
  */
 class Solution {
 public:
-  ListNode* removeElements(ListNode* head, int val) {
-    while (head != NULL && head->val == val) head = head->next;
-    if (head == NULL) return NULL;
+  ListNode *removeElements(ListNode *head, int val) {
+    while (head != NULL && head->val == val)
+      head = head->next;
+    if (head == NULL)
+      return NULL;
 
-    ListNode* p = head;
-    ListNode* q = p->next;
+    ListNode *p = head;
+    ListNode *q = p->next;
     while (q != NULL) {
       if (q->val == val) {
         q = q->next;

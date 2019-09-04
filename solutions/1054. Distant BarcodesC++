@@ -1,32 +1,37 @@
-// Runtime: 216 ms, faster than 80.25% of C++ online submissions for Distant Barcodes.
-// Memory Usage: 19.2 MB, less than 100.00% of C++ online submissions for Distant Barcodes.
-​
-class Solution {
+// Runtime: 216 ms, faster than 80.25% of C++ online submissions for Distant
+// Barcodes. Memory Usage: 19.2 MB, less than 100.00% of C++ online submissions
+// for Distant Barcodes.
+​ class Solution {
 public:
-  vector<int> rearrangeBarcodes(vector<int>& barcodes) {
-    unordered_map<int, int> m;
-    int m_cnt = 0;
-    int m_barcode;
-    for (const int b : barcodes) {      
+   vector<int> rearrangeBarcodes(vector<int> &barcodes) {
+       unordered_map<int, int> m;
+       int m_cnt = 0;
+       int m_barcode;
+       for (const int b : barcodes) {
+           
       m_cnt = max(m_cnt, ++m[b]);
-      m_barcode = m_cnt == m[b]? b : m_barcode;
-    }
-    
+           m_barcode = m_cnt == m[b] ? b : m_barcode;
+       
+    }
+       
     int pos = 0;
-    while(m[m_barcode]-- > 0) {
-      barcodes[pos] = m_barcode;
-      pos += 2;
-    }
-    const int len = barcodes.size();
-    if (pos >= len) pos = 1;
-    
+       while (m[m_barcode]-- > 0) {
+           barcodes[pos] = m_barcode;
+           pos += 2;
+       
+    }
+       const int len = barcodes.size();
+       if (pos >= len) pos = 1;
+       
     for (auto [k, v] : m) {
-      while(v-- > 0) {
-        barcodes[pos] = k;
-        pos += 2;
-        if (pos >= len) pos = 1;
-      }
-    }
-    return barcodes;
+           while (v-- > 0) {
+               barcodes[pos] = k;
+               pos += 2;
+               if (pos >= len) pos = 1;
+           
+      }
+       
+    }
+       return barcodes;
   }
 };

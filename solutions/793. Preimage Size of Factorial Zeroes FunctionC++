@@ -1,29 +1,30 @@
-// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Preimage Size of Factorial Zeroes Function.
-// Memory Usage: 8.2 MB, less than 48.18% of C++ online submissions for Preimage Size of Factorial Zeroes Function.
-​
-class Solution {
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Preimage
+// Size of Factorial Zeroes Function. Memory Usage: 8.2 MB, less than 48.18% of
+// C++ online submissions for Preimage Size of Factorial Zeroes Function.
+​ class Solution {
 public:
-  long numOfTrailingZeros(long x) {
-    long ans = 0;   
-    for (; x > 0; x /= 5) {
-      ans += x / 5;
-    }
-    return ans;
+   long numOfTrailingZeros(long x) {
+       long ans = 0;
+       for (; x > 0; x /= 5) {
+           ans += x / 5;
+       
+    }
+       return ans;
   }
-  
+   
   int work(int K) {
-    long l = 0;
-    long r = 5L * (K + 1);
-    while (l < r) {
-      const long m = l + (r - l) / 2;
-      const long n = numOfTrailingZeros(m);
-      if (n <= K) l = m + 1;
-      else r = m;
-    }
-    return l;
+       long l = 0;
+       long r = 5L * (K + 1);
+       while (l < r) {
+           const long m = l + (r - l) / 2;
+           const long n = numOfTrailingZeros(m);
+           if (n <= K) l = m + 1;
+           else r = m;
+       
+    }
+       return l;
   }
-  
+   
   int preimageSizeFZF(int K) {
-    return work(K) - work(K - 1);
-  }
+    return work(K) - work(K - 1); }
 };

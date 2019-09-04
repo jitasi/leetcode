@@ -1,6 +1,8 @@
-// Runtime: 4 ms, faster than 99.42% of C++ online submissions for Maximum Binary Tree II.
-// Memory Usage: 11.3 MB, less than 87.41% of C++ online submissions for Maximum Binary Tree II.
+/* vim: set ft=cpp : */
 
+// Runtime: 4 ms, faster than 99.42% of C++ online submissions for Maximum
+// Binary Tree II. Memory Usage: 11.3 MB, less than 87.41% of C++ online
+// submissions for Maximum Binary Tree II.
 
 /**
  * Definition for a binary tree node.
@@ -13,18 +15,18 @@
  */
 class Solution {
 public:
-  TreeNode* insertIntoMaxTree(TreeNode* root, int val) {
+  TreeNode *insertIntoMaxTree(TreeNode *root, int val) {
     if (root == nullptr) {
       return new TreeNode(val);
     }
-    
+
     if (root->val < val) {
-      TreeNode* new_root = new TreeNode(val);
+      TreeNode *new_root = new TreeNode(val);
       new_root->left = root;
       new_root->right = nullptr;
       return new_root;
     }
-    
+
     root->right = insertIntoMaxTree(root->right, val);
     return root;
   }

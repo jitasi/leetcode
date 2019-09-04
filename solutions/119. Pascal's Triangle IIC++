@@ -1,18 +1,19 @@
 class Solution {
 public:
-    vector<int> getRow(int rowIndex) {
-      if (rowIndex == 0) return {1};
-      vector<int> ret(rowIndex+1);
+  vector<int> getRow(int rowIndex) {
+    if (rowIndex == 0)
+      return {1};
+    vector<int> ret(rowIndex + 1);
 
-      ret[0] = 1;
-      for (int i = 1; i <= (rowIndex + 1) / 2; i++) {
-        long long t = ((long long) ret[i-1]) * (rowIndex - i + 1) / i;
-        ret[i] = t;
-      }
-      for (int i = (rowIndex + 1) / 2; i <= rowIndex; i++) {
-         ret[i] = ret[rowIndex - i];
-      }   
- 
-      return ret;
+    ret[0] = 1;
+    for (int i = 1; i <= (rowIndex + 1) / 2; i++) {
+      long long t = ((long long)ret[i - 1]) * (rowIndex - i + 1) / i;
+      ret[i] = t;
     }
+    for (int i = (rowIndex + 1) / 2; i <= rowIndex; i++) {
+      ret[i] = ret[rowIndex - i];
+    }
+
+    return ret;
+  }
 };

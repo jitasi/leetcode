@@ -9,18 +9,19 @@
  */
 class Solution {
 public:
-    TreeNode* helper(vector<int>& nums, int b, int e) { 
-      if (b > e) return NULL;
-      
-      const int mid = (e - b + 1) / 2 + b;
-      TreeNode* root = (TreeNode*)malloc(sizeof(TreeNode));
-      root->val = nums[mid];
-      root->left = helper(nums, b, mid - 1);
-      root->right = helper(nums, mid + 1, e);
-      return root;
-    }
-  
-    TreeNode* sortedArrayToBST(vector<int>& nums) {
-      return helper(nums, 0, nums.size()-1);
-    }
+  TreeNode *helper(vector<int> &nums, int b, int e) {
+    if (b > e)
+      return NULL;
+
+    const int mid = (e - b + 1) / 2 + b;
+    TreeNode *root = (TreeNode *)malloc(sizeof(TreeNode));
+    root->val = nums[mid];
+    root->left = helper(nums, b, mid - 1);
+    root->right = helper(nums, mid + 1, e);
+    return root;
+  }
+
+  TreeNode *sortedArrayToBST(vector<int> &nums) {
+    return helper(nums, 0, nums.size() - 1);
+  }
 };

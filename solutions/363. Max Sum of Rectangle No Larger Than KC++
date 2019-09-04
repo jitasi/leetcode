@@ -1,16 +1,19 @@
-// Runtime: 404 ms, faster than 77.10% of C++ online submissions for Max Sum of Rectangle No Larger Than K.
+// Runtime: 404 ms, faster than 77.10% of C++ online submissions for Max Sum of
+// Rectangle No Larger Than K.
 Memory Usage: 107.9 MB, less than 5.21% of C++ online submissions for Max Sum of Rectangle No Larger Than K.
 
 // https://www.cnblogs.com/grandyang/p/5617660.html
 
 class Solution {
 public:
-  int maxSumSubmatrix(vector<vector<int>>& matrix, int k) {
+  int maxSumSubmatrix(vector<vector<int>> &matrix, int k) {
     int rows = matrix.size();
-    if (rows == 0) return 0;
+    if (rows == 0)
+      return 0;
     int cols = matrix[0].size();
-    if (cols == 0) return 0;
-    
+    if (cols == 0)
+      return 0;
+
     if (rows > cols * 10) {
       vector<vector<int>> nm(cols, vector<int>(rows));
       for (int i = 0; i < rows; i++)
@@ -19,21 +22,21 @@ public:
       matrix.swap(nm);
       swap(rows, cols);
     }
-    
+
     vector<vector<int>> part_sum(rows, vector<int>(cols, 0));
-    for (int j = 0; j < cols; j++ ) {
+    for (int j = 0; j < cols; j++) {
       part_sum[0][j] = matrix[0][j];
       for (int i = 1; i < rows; i++) {
         part_sum[i][j] = part_sum[i - 1][j] + matrix[i][j];
       }
     }
-    
+
     int ans = INT_MIN;
     for (int i1 = 0; i1 < rows; i1++) {
       for (int i2 = 0; i2 <= i1; i2++) {
         vector<int> oned(cols, 0);
         for (int j = 0; j < cols; j++) {
-          oned[j] = part_sum[i1][j] - (i2 > 0? part_sum[i2 - 1][j] : 0);
+          oned[j] = part_sum[i1][j] - (i2 > 0 ? part_sum[i2 - 1][j] : 0);
         }
 
         set<int> s = {0};
@@ -46,8 +49,9 @@ public:
           auto it = s.lower_bound(area - k);
           if (it != s.end()) {
             int local = area - *it;
-            if (local <= k) ans = max(ans, local);
-          }          
+            if (local <= k)
+              ans = max(ans, local);
+          }
           s.insert(area);
         }
       }

@@ -1,56 +1,66 @@
-// Runtime: 68 ms, faster than 65.98% of C++ online submissions for Word Search II.
-// Memory Usage: 35.8 MB, less than 49.52% of C++ online submissions for Word Search II.
+// Runtime: 68 ms, faster than 65.98% of C++ online submissions for Word Search
+// II. Memory Usage: 35.8 MB, less than 49.52% of C++ online submissions for
+// Word Search II.
 
 class Solution {
 public:
   struct Trie {
-    Trie* child[26];
+    Trie *child[26];
     bool isWord;
-    
+
     Trie() {
       isWord = false;
-      for (int i = 0; i < 26; i++) child[i] = nullptr;
+      for (int i = 0; i < 26; i++)
+        child[i] = nullptr;
     }
   };
-  
-  void AddWord(Trie* root, const string& word) {
-    for (const char ch: word) {
-      if (root->child[ch - 'a'] == nullptr) root->child[ch - 'a'] = new Trie();
+
+  void AddWord(Trie *root, const string &word) {
+    for (const char ch : word) {
+      if (root->child[ch - 'a'] == nullptr)
+        root->child[ch - 'a'] = new Trie();
       root = root->child[ch - 'a'];
     }
     root->isWord = true;
   }
-  
-  const int dirs[4][2] = {{-1,0}, {1,0}, {0,-1}, {0,1}};
 
-  void dfs(vector<vector<char>>& board, Trie* root, unordered_set<string>& ans, string prefix, int i, int j) {
+  const int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+  void dfs(vector<vector<char>> &board, Trie *root, unordered_set<string> &ans,
+           string prefix, int i, int j) {
     const string t = prefix + string(1, board[i][j]);
-    
-    if (root->isWord) ans.insert(t);
-    
+
+    if (root->isWord)
+      ans.insert(t);
+
     board[i][j] = '$';
     for (int k = 0; k < 4; k++) {
       const int x = i + dirs[k][0];
       const int y = j + dirs[k][1];
-      if (x < 0 || x >= rows || y < 0 || y >= cols || board[x][y] == '$') continue;
-      if (root->child[board[x][y] - 'a'] == nullptr) continue;
-      dfs(board, root->child[board[x][y] -'a'], ans, t, x, y);
+      if (x < 0 || x >= rows || y < 0 || y >= cols || board[x][y] == '$')
+        continue;
+      if (root->child[board[x][y] - 'a'] == nullptr)
+        continue;
+      dfs(board, root->child[board[x][y] - 'a'], ans, t, x, y);
     }
     board[i][j] = t.back();
   }
-  
+
   int rows;
   int cols;
-                             
-  vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
+
+  vector<string> findWords(vector<vector<char>> &board, vector<string> &words) {
     rows = board.size();
-    if (rows == 0) return {};
+    if (rows == 0)
+      return {};
     cols = board[0].size();
-    if (cols == 0) return {};
-    
-    Trie* root = new Trie();
-    for (const string& w: words) AddWord(root, w);
-    
+    if (cols == 0)
+      return {};
+
+    Trie *root = new Trie();
+    for (const string &w : words)
+      AddWord(root, w);
+
     unordered_set<string> ans;
     for (int i = 0; i < rows; i++)
       for (int j = 0; j < cols; j++)

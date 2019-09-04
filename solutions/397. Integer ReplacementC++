@@ -1,5 +1,6 @@
-// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Integer Replacement.
-// Memory Usage: 8.3 MB, less than 68.91% of C++ online submissions for Integer Replacement.
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Integer
+// Replacement. Memory Usage: 8.3 MB, less than 68.91% of C++ online submissions
+// for Integer Replacement.
 
 class Solution {
 public:
@@ -8,8 +9,10 @@ public:
     long t = n;
     while (t != 1) {
       if (t & 1 != 0) {
-        if (t != 3 && (t & 2) == 2) t++;
-        else t--;
+        if (t != 3 && (t & 2) == 2)
+          t++;
+        else
+          t--;
         cnt++;
       }
       t >>= 1;

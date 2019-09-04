@@ -1,40 +1,44 @@
 class Solution {
 public:
-    vector<int> spiralOrder(vector<vector<int>>& matrix) {
-      if (matrix.empty()) return {};
-      
-      int row_start = 0;
-      int row_end = matrix.size() - 1;
-      int col_start = 0;
-      int col_end = matrix[0].size() - 1;
-      
-      const int cnt = matrix.size() * matrix[0].size();
-      vector<int> ans(cnt);
-      int c = 0;
-      while (row_start <= row_end || col_start <= col_end) {
-        for (int i = col_start; i <= col_end; i++) {
-          ans[c++] = matrix[row_start][i];
-        }
-        if (c == cnt) break;
-        row_start++;
-        
-        for (int i = row_start; i <= row_end; i++) {
-          ans[c++] = matrix[i][col_end];
-        }
-        if (c == cnt) break;
-        col_end--;
-        
-        for (int i = col_end; i >= col_start; i--) {
-          ans[c++] = matrix[row_end][i];
-        }
-        if (c == cnt) break;
-        row_end--;
-        
-        for (int i = row_end; i >= row_start; i--) {
-          ans[c++] = matrix[i][col_start];
-        }        
-        col_start++;
-      } 
-      return ans;
+  vector<int> spiralOrder(vector<vector<int>> &matrix) {
+    if (matrix.empty())
+      return {};
+
+    int row_start = 0;
+    int row_end = matrix.size() - 1;
+    int col_start = 0;
+    int col_end = matrix[0].size() - 1;
+
+    const int cnt = matrix.size() * matrix[0].size();
+    vector<int> ans(cnt);
+    int c = 0;
+    while (row_start <= row_end || col_start <= col_end) {
+      for (int i = col_start; i <= col_end; i++) {
+        ans[c++] = matrix[row_start][i];
+      }
+      if (c == cnt)
+        break;
+      row_start++;
+
+      for (int i = row_start; i <= row_end; i++) {
+        ans[c++] = matrix[i][col_end];
+      }
+      if (c == cnt)
+        break;
+      col_end--;
+
+      for (int i = col_end; i >= col_start; i--) {
+        ans[c++] = matrix[row_end][i];
+      }
+      if (c == cnt)
+        break;
+      row_end--;
+
+      for (int i = row_end; i >= row_start; i--) {
+        ans[c++] = matrix[i][col_start];
+      }
+      col_start++;
     }
+    return ans;
+  }
 };

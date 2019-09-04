@@ -1,6 +1,6 @@
-// Runtime: 20 ms, faster than 95.57% of C++ online submissions for Reverse Nodes in k-Group.
-// Memory Usage: 9.7 MB, less than 89.02% of C++ online submissions for Reverse Nodes in k-Group.
-
+// Runtime: 20 ms, faster than 95.57% of C++ online submissions for Reverse
+// Nodes in k-Group. Memory Usage: 9.7 MB, less than 89.02% of C++ online
+// submissions for Reverse Nodes in k-Group.
 
 /**
  * Definition for singly-linked list.
@@ -12,7 +12,7 @@
  */
 class Solution {
 public:
-  int ListLen(ListNode* head) {
+  int ListLen(ListNode *head) {
     int cnt = 0;
     while (head != nullptr) {
       cnt++;
@@ -20,48 +20,51 @@ public:
     }
     return cnt;
   }
-  
-  void PrintList(ListNode* head) {
+
+  void PrintList(ListNode *head) {
     while (head != nullptr) {
       cout << head->val << ", ";
       head = head->next;
     }
     cout << endl;
   }
-  
+
   // input  a b c d e f g   k=5
   // return e d c b a f g   first k reversed
   // *last_reversed point to a, the last in the reversed list.
-  ListNode* ReverseFirstK(ListNode* head, int k, ListNode** last_reversed) {
+  ListNode *ReverseFirstK(ListNode *head, int k, ListNode **last_reversed) {
     int cnt = 1;
-    ListNode* prev = head;
-    ListNode* cur = prev->next;
-    ListNode* next = cur->next;
+    ListNode *prev = head;
+    ListNode *cur = prev->next;
+    ListNode *next = cur->next;
     while (++cnt <= k) {
       cur->next = prev;
       prev = cur;
       cur = next;
-      if (cur == nullptr) break;
+      if (cur == nullptr)
+        break;
       next = cur->next;
     }
     head->next = cur;
     *last_reversed = head;
-//    PrintList(prev);
+    //    PrintList(prev);
     return prev;
   }
-    
-  ListNode* reverseKGroup(ListNode* head, int k) {
-    if (k == 1) return head;
+
+  ListNode *reverseKGroup(ListNode *head, int k) {
+    if (k == 1)
+      return head;
     int len = ListLen(head);
     len = len / k * k;
-    if (len < k) return head;    
+    if (len < k)
+      return head;
 
-//    cout << "======" << endl;
-    ListNode* last_reversed;
-    ListNode* new_head = ReverseFirstK(head, k, &last_reversed);
+    //    cout << "======" << endl;
+    ListNode *last_reversed;
+    ListNode *new_head = ReverseFirstK(head, k, &last_reversed);
     len -= k;
-        
-    ListNode* t;  // head of the first k reversed list 
+
+    ListNode *t; // head of the first k reversed list
     while (len > 0) {
       len -= k;
       t = last_reversed;

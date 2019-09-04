@@ -9,22 +9,22 @@
  */
 class Solution {
 public:
-    void rightSideView(TreeNode* root, vector<int>* ret, int level) {
-      if (ret->size() < (level + 1)) {
-        ret->push_back(root->val);
-      } else {
-        ret->at(level) = root->val;
-      }
-      if (root->left != nullptr)
-        rightSideView(root->left, ret, level + 1);
-      if (root->right != nullptr)
-        rightSideView(root->right, ret, level + 1);
+  void rightSideView(TreeNode *root, vector<int> *ret, int level) {
+    if (ret->size() < (level + 1)) {
+      ret->push_back(root->val);
+    } else {
+      ret->at(level) = root->val;
     }
-  
-    vector<int> rightSideView(TreeNode* root) {
-      vector<int> ret;
-      if (root != nullptr)
-        rightSideView(root, &ret, 0);
-      return ret;
-    }
+    if (root->left != nullptr)
+      rightSideView(root->left, ret, level + 1);
+    if (root->right != nullptr)
+      rightSideView(root->right, ret, level + 1);
+  }
+
+  vector<int> rightSideView(TreeNode *root) {
+    vector<int> ret;
+    if (root != nullptr)
+      rightSideView(root, &ret, 0);
+    return ret;
+  }
 };

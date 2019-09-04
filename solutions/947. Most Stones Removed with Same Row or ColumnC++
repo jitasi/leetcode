@@ -1,15 +1,16 @@
-// Runtime: 36 ms, faster than 95.23% of C++ online submissions for Most Stones Removed with Same Row or Column.
-// Memory Usage: 14.1 MB, less than 80.05% of C++ online submissions for Most Stones Removed with Same Row or Column.
+// Runtime: 36 ms, faster than 95.23% of C++ online submissions for Most Stones
+// Removed with Same Row or Column. Memory Usage: 14.1 MB, less than 80.05% of
+// C++ online submissions for Most Stones Removed with Same Row or Column.
 
-//   0 1 2     
-// 0 X X       
+//   0 1 2
+// 0 X X
 // 1 X . X
 // 2   X X
 //
 
-//   0 1 2 
+//   0 1 2
 // 0 X   X
-// 1   X . 
+// 1   X .
 // 2 X   X
 //
 
@@ -21,24 +22,27 @@ public:
     }
     return i;
   }
-  
+
   void u(int *p, int i, int j) {
     int gi = f(p, i);
     int gj = f(p, j);
-    if (gi != gj) p[gi] = gj;
+    if (gi != gj)
+      p[gi] = gj;
   }
-  
-  int removeStones(vector<vector<int>>& stones) {
+
+  int removeStones(vector<vector<int>> &stones) {
     const int len = stones.size();
-    if (len <= 1) return 0;
-    
+    if (len <= 1)
+      return 0;
+
     int grps[10000 * 2];
-    for (int i = 0; i < 10000 * 2; i++) grps[i] = -1;
-    for (const auto& st : stones) {
+    for (int i = 0; i < 10000 * 2; i++)
+      grps[i] = -1;
+    for (const auto &st : stones) {
       u(grps, st[0], 10000 + st[1]);
     }
     set<int> s;
-    for (const auto& st : stones) {
+    for (const auto &st : stones) {
       s.insert(f(grps, st[0]));
     }
     return len - s.size();

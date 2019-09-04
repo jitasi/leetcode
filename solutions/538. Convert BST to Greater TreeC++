@@ -8,22 +8,23 @@
  * };
  */
 class Solution {
-public: 
-    int work(TreeNode* root, int c) {
-      if (root->right != nullptr) {
-        c = work(root->right, c);
-      }
-      root->val += c;
-      c = root->val;
-      if (root->left != nullptr) {
-        c = work(root->left, c);
-      }
-      return c;
+public:
+  int work(TreeNode *root, int c) {
+    if (root->right != nullptr) {
+      c = work(root->right, c);
     }
-  
-    TreeNode* convertBST(TreeNode* root) {
-      if (root == nullptr) return nullptr;
-      work(root, 0);
-      return root;
+    root->val += c;
+    c = root->val;
+    if (root->left != nullptr) {
+      c = work(root->left, c);
     }
+    return c;
+  }
+
+  TreeNode *convertBST(TreeNode *root) {
+    if (root == nullptr)
+      return nullptr;
+    work(root, 0);
+    return root;
+  }
 };

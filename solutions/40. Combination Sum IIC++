@@ -1,26 +1,28 @@
-// Runtime: 12 ms, faster than 65.94% of C++ online submissions for Combination Sum II.
-// Memory Usage: 9.1 MB, less than 73.52% of C++ online submissions for Combination Sum II.
-​
-class Solution {
+// Runtime: 12 ms, faster than 65.94% of C++ online submissions for Combination
+// Sum II. Memory Usage: 9.1 MB, less than 73.52% of C++ online submissions for
+// Combination Sum II.
+​ class Solution {
 public:
-  void combinationSum2(vector<int>& candidates, int target, int from, 
-                  vector<int>& prefix, vector<vector<int>>& ans) {
-    if (target == 0) ans.push_back(prefix);
-    if (target <= 0) return;
-    
+   void combinationSum2(vector<int> &candidates, int target, int from, 
+                  vector<int> &prefix, vector<vector<int>> &ans) {
+       if (target == 0) ans.push_back(prefix);
+       if (target <= 0) return;
+       
     for (int i = from; i < candidates.size(); i++) {
-      if (i > from && candidates[i - 1] == candidates[i]) continue;
-      prefix.push_back(candidates[i]);
-      combinationSum2(candidates, target - candidates[i], i + 1, prefix, ans);
-      prefix.pop_back();
-    }
+           if (i > from && candidates[i - 1] == candidates[i]) continue;
+           prefix.push_back(candidates[i]);
+           combinationSum2(candidates, target - candidates[i], i + 1, prefix,
+                           ans);
+           prefix.pop_back();
+       
+    }
   }
-  
-  vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
-    vector<vector<int>> ans;
-    vector<int> prefix;
-    sort(candidates.begin(), candidates.end());
-    combinationSum2(candidates, target, 0, prefix, ans);
-    return ans;
+   
+  vector<vector<int>> combinationSum2(vector<int> &candidates, int target) {
+       vector<vector<int>> ans;
+       vector<int> prefix;
+       sort(candidates.begin(), candidates.end());
+       combinationSum2(candidates, target, 0, prefix, ans);
+       return ans;
   }
 };

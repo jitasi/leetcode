@@ -1,12 +1,13 @@
-// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Broken Calculator.
-// Memory Usage: 8.3 MB, less than 53.54% of C++ online submissions for Broken Calculator.
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Broken
+// Calculator. Memory Usage: 8.3 MB, less than 53.54% of C++ online submissions
+// for Broken Calculator.
 
 class Solution {
 public:
   int brokenCalc(int X, int Y) {
     int ans = 0;
     while (Y > X) {
-      Y = Y % 2 == 0? Y / 2 : Y + 1;
+      Y = Y % 2 == 0 ? Y / 2 : Y + 1;
       ans++;
     }
     return ans + X - Y;

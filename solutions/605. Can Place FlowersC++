@@ -1,20 +1,20 @@
 class Solution {
 public:
-    bool canPlaceFlowers(vector<int>& flowerbed, int n) {
-        bool f = true;
-        int c = 0;
-        for (int i = 0; i < flowerbed.size(); i++) {
-          if (flowerbed[i] == 1) {
-            f = false;
-            continue;
-          }
-          if (f && (i == flowerbed.size() - 1 || flowerbed[i+1] == 0)) {
-            c++;
-            f = false;
-          } else {
-            f = true;
-          }
-        }
-      return c >= n;
+  bool canPlaceFlowers(vector<int> &flowerbed, int n) {
+    bool f = true;
+    int c = 0;
+    for (int i = 0; i < flowerbed.size(); i++) {
+      if (flowerbed[i] == 1) {
+        f = false;
+        continue;
+      }
+      if (f && (i == flowerbed.size() - 1 || flowerbed[i + 1] == 0)) {
+        c++;
+        f = false;
+      } else {
+        f = true;
+      }
     }
+    return c >= n;
+  }
 };

@@ -1,25 +1,26 @@
 class Solution {
 public:
-    int longestConsecutive(vector<int>& nums) {
-      if (nums.empty()) return 0;
-      
-      unordered_set<int> s;
-      for (const auto num : nums) {
-        s.insert(num);
-      }
-      
-      int ans = 1;
-      for (auto num: nums) {
-        if (s.find(num - 1) != s.end())
-          continue;
-        
-        int c = 1;
-        while (s.find(++num) != s.end())
-          c++;
-        if (c > ans) {
-          ans = c;
-        }
-      }
-      return ans;
+  int longestConsecutive(vector<int> &nums) {
+    if (nums.empty())
+      return 0;
+
+    unordered_set<int> s;
+    for (const auto num : nums) {
+      s.insert(num);
     }
+
+    int ans = 1;
+    for (auto num : nums) {
+      if (s.find(num - 1) != s.end())
+        continue;
+
+      int c = 1;
+      while (s.find(++num) != s.end())
+        c++;
+      if (c > ans) {
+        ans = c;
+      }
+    }
+    return ans;
+  }
 };

@@ -1,6 +1,6 @@
-// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Distribute Coins in Binary Tree.
-// Memory Usage: 13.4 MB, less than 62.42% of C++ online submissions for Distribute Coins in Binary Tree.
-
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Distribute
+// Coins in Binary Tree. Memory Usage: 13.4 MB, less than 62.42% of C++ online
+// submissions for Distribute Coins in Binary Tree.
 
 /**
  * Definition for a binary tree node.
@@ -13,27 +13,27 @@
  */
 class Solution {
 public:
-    // pair<int, int>:
-    // -- first: the coins to move to its parent, (negative if move from parent)
-    // -- sconds: number of moves to balance.
-    pair<int, int> work(TreeNode* root) {
-      int coins = root->val - 1;
-      int moves = 0;
-      if (root->left != nullptr) {
-        const auto ret = work(root->left);
-        coins += ret.first;
-        moves = ret.second + abs (ret.first);
-      }
-      if (root->right != nullptr) {
-        const auto ret = work(root->right);
-        coins += ret.first;
-        moves += ret.second + abs(ret.first);
-      }
-      return {coins, moves};
+  // pair<int, int>:
+  // -- first: the coins to move to its parent, (negative if move from parent)
+  // -- sconds: number of moves to balance.
+  pair<int, int> work(TreeNode *root) {
+    int coins = root->val - 1;
+    int moves = 0;
+    if (root->left != nullptr) {
+      const auto ret = work(root->left);
+      coins += ret.first;
+      moves = ret.second + abs(ret.first);
     }
-  
-    int distributeCoins(TreeNode* root) {
-      const auto ret = work(root);
-      return ret.second;
+    if (root->right != nullptr) {
+      const auto ret = work(root->right);
+      coins += ret.first;
+      moves += ret.second + abs(ret.first);
     }
+    return {coins, moves};
+  }
+
+  int distributeCoins(TreeNode *root) {
+    const auto ret = work(root);
+    return ret.second;
+  }
 };

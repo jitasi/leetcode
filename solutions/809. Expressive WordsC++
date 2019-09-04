@@ -1,45 +1,50 @@
 /* vim: set ft=cpp : */
 ​
-// Runtime: 12 ms, faster than 34.38% of C++ online submissions for Expressive Words.
-// Memory Usage: 9.5 MB, less than 33.67% of C++ online submissions for Expressive Words.
-​
-class Solution {
+    // Runtime: 12 ms, faster than 34.38% of C++ online submissions for
+    // Expressive Words. Memory Usage: 9.5 MB, less than 33.67% of C++ online
+    // submissions for Expressive Words.
+        ​ class Solution {
 public:
-  string helper(const string& S, vector<int>& cnts) {
-    cnts.clear();
-    char ch  = S[0];
-    int cnt = 1;
-    string dedup_s;
-    for (int i = 1; i < S.size(); i++) {
-      if (S[i] == ch) cnt++;
-      else {
-        dedup_s.push_back(ch);
-        cnts.push_back(cnt);
-        ch = S[i];
-        cnt = 1;
-      }
-    }
-    dedup_s.push_back(ch);
-    cnts.push_back(cnt);  
+   string helper(const string &S, vector<int> &cnts) {
+       cnts.clear();
+       char ch  = S[0];
+       int cnt = 1;
+       string dedup_s;
+       for (int i = 1; i < S.size(); i++) {
+           if (S[i] == ch) cnt++;
+           else {
+               dedup_s.push_back(ch);
+               cnts.push_back(cnt);
+               ch = S[i];
+               cnt = 1;
+           
+      }
+       
+    }
+       dedup_s.push_back(ch);
+       cnts.push_back(cnt);
+     
     return dedup_s;
   }
-  
-  int expressiveWords(string S, vector<string>& words) {
-    vector<int> target_cnts;
-    const string target = helper(S, target_cnts);
-  
+   
+  int expressiveWords(string S, vector<string> &words) {
+       vector<int> target_cnts;
+       const string target = helper(S, target_cnts);
+     
     vector<int> cnts;
-    int ans = 0;
-    for (const string w : words) {
-      const string dedup_w = helper(w, cnts);
-      if (dedup_w != target || cnts.size() != target_cnts.size()) continue;
-      bool ok = true;
-      for (int i = 0; i < target_cnts.size() && ok; i++) {
-        if (target_cnts[i] < cnts[i]) ok = false;
-        if (target_cnts[i] > cnts[i] && target_cnts[i] < 3) ok = false;
-      }
-      ans += ok? 1 : 0;
-    }
-    return ans;
+       int ans = 0;
+       for (const string w : words) {
+           const string dedup_w = helper(w, cnts);
+           if (dedup_w != target || cnts.size() != target_cnts.size()) continue;
+           bool ok = true;
+           for (int i = 0; i < target_cnts.size() && ok; i++) {
+               if (target_cnts[i] < cnts[i]) ok = false;
+               if (target_cnts[i] > cnts[i] && target_cnts[i] < 3) ok = false;
+           
+      }
+           ans += ok ? 1 : 0;
+       
+    }
+       return ans;
   }
 };

@@ -1,18 +1,19 @@
-// Runtime: 4 ms, faster than 68.37% of C++ online submissions for Count Numbers with Unique Digits.
-// Memory Usage: 8.2 MB, less than 48.13% of C++ online submissions for Count Numbers with Unique Digits.
-​
-class Solution {
+// Runtime: 4 ms, faster than 68.37% of C++ online submissions for Count Numbers
+// with Unique Digits. Memory Usage: 8.2 MB, less than 48.13% of C++ online
+// submissions for Count Numbers with Unique Digits.
+​ class Solution {
 public:
-  int countNumbersWithUniqueDigits(int n) {
-    if (n == 0) return 1;
-    
+   int countNumbersWithUniqueDigits(int n) {
+       if (n == 0) return 1;
+       
     int dp[n];
-    dp[0] = 9;
-    int ans = 1 + dp[0];
-    for (int i = 1; i < min(n, 10); i++) {
-      dp[i] = dp[i - 1] * (10 - i);
-      ans += dp[i];
-    }
-    return ans;
+       dp[0] = 9;
+       int ans = 1 + dp[0];
+       for (int i = 1; i < min(n, 10); i++) {
+           dp[i] = dp[i - 1] * (10 - i);
+           ans += dp[i];
+       
+    }
+       return ans;
   }
 };

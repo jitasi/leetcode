@@ -1,6 +1,6 @@
-// Runtime: 60 ms, faster than 94.76% of C++ online submissions for Is Subsequence.
-// Memory Usage: 17.2 MB, less than 29.77% of C++ online submissions for Is Subsequence.
-
+// Runtime: 60 ms, faster than 94.76% of C++ online submissions for Is
+// Subsequence. Memory Usage: 17.2 MB, less than 29.77% of C++ online
+// submissions for Is Subsequence.
 
 class Solution {
 public:
@@ -9,9 +9,10 @@ public:
     int p = 0; // idx of t  "ahbgdc"
     int i = 0; // idx of s  "abc"
     for (; i < s.size() && p < len; i++) {
-      while (p < len && s[i] != t[p++]) ;
+      while (p < len && s[i] != t[p++])
+        ;
     }
-//    cout << p << ", " << i << endl;
+    //    cout << p << ", " << i << endl;
     return i == s.size() && t[p - 1] == s[i - 1];
   }
 };

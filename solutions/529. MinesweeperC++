@@ -1,48 +1,56 @@
 // Runtime: 64 ms, faster than 29.73% of C++ online submissions for Minesweeper.
-// Memory Usage: 14.8 MB, less than 95.48% of C++ online submissions for Minesweeper.
-​
-class Solution {
+// Memory Usage: 14.8 MB, less than 95.48% of C++ online submissions for
+// Minesweeper.
+​ class Solution {
 public:
-  const int dirs[8][2] = {
-    {-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
-  
-  vector<vector<char>> updateBoard(vector<vector<char>>& board, vector<int>& click) {
-    if (board[click[0]][click[1]] == 'M') {
-      board[click[0]][click[1]] = 'X';
-      return board;
-    }
-    
+   const int dirs[8][2] = {
+   {-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
+   
+  vector<vector<char>> updateBoard(vector<vector<char>> &board,
+                                    vector<int> &click) {
+       if (board[click[0]][click[1]] == 'M') {
+           board[click[0]][click[1]] = 'X';
+           return board;
+       
+    }
+       
     const int rows = board.size();
-    const int cols = board[0].size();
-    
+       const int cols = board[0].size();
+       
     stack<pair<int, int>> s;
-    s.push({click[0], click[1]});
-    
+       s.push({click[0], click[1]});
+       
     while (!s.empty()) {
-      const auto cur = s.top();
-      s.pop();
-      if (board[cur.first][cur.second] != 'E') continue;  // already processed
+           const auto cur = s.top();
+           s.pop();
+           if (board[cur.first][cur.second] != 'E') continue;
+        // already processed
       
       int added = 0;
-      int mines = 0;
-      for (const auto& dir : dirs) {
-        const int x = cur.first + dir[0];
-        const int y = cur.second + dir[1];
-        if (x < 0 || y < 0 || x >= rows || y >= cols) continue;
-        if (board[x][y] == 'M') mines++;
-        else { 
-          s.push({x, y});
-          added++;
-        }
-      }
-      board[cur.first][cur.second] = mines == 0? 'B' : ('0' + mines); 
-      if (mines > 0) {
-        while (added > 0) {
-          s.pop();
-          added--;
-        }
-      }
-    }
-    return board;
+           int mines = 0;
+           for (const auto &dir : dirs) {
+               const int x = cur.first + dir[0];
+               const int y = cur.second + dir[1];
+               if (x < 0 || y < 0 || x >= rows || y >= cols) continue;
+               if (board[x][y] == 'M') mines++;
+               else {
+                   s.push({x, y});
+                   added++;
+               
+        }
+           
+      }
+           board[cur.first][cur.second] = mines == 0 ? 'B' : ('0' + mines);
+           if (mines > 0) {
+               while (added > 0) {
+                   s.pop();
+                   added--;
+               
+        }
+           
+      }
+       
+    }
+       return board;
   }
 };

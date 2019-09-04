@@ -1,24 +1,28 @@
-// Runtime: 80 ms, faster than 95.35% of C++ online submissions for Longest Word in Dictionary through Deleting.
-// Memory Usage: 16.3 MB, less than 60.06% of C++ online submissions for Longest Word in Dictionary through Deleting.
+// Runtime: 80 ms, faster than 95.35% of C++ online submissions for Longest Word
+// in Dictionary through Deleting. Memory Usage: 16.3 MB, less than 60.06% of
+// C++ online submissions for Longest Word in Dictionary through Deleting.
 
 class Solution {
 public:
-  string findLongestWord(string s, vector<string>& d) {
-    std::sort(d.begin(), d.end(), [](const string& a, const string& b) {
-      if (a.size() != b.size()) return a.size() > b.size();
+  string findLongestWord(string s, vector<string> &d) {
+    std::sort(d.begin(), d.end(), [](const string &a, const string &b) {
+      if (a.size() != b.size())
+        return a.size() > b.size();
       return a < b;
     });
-    
-//    cout << s.size() << endl;
+
+    //    cout << s.size() << endl;
     const int len = s.size();
-    for (const string& w : d) {
+    for (const string &w : d) {
       int start = 0;
       int i = 0;
       for (; i < w.size() && start < len; i++) {
-        while (start < len && s[start++] != w[i]);
-//        cout << start << ", " << i << endl;
+        while (start < len && s[start++] != w[i])
+          ;
+        //        cout << start << ", " << i << endl;
       }
-      if (i == w.size() && s[start - 1] == w[i - 1]) return w;
+      if (i == w.size() && s[start - 1] == w[i - 1])
+        return w;
     }
     return "";
   }

@@ -1,37 +1,37 @@
-char* addBinary(char* a, char* b) {
+char *addBinary(char *a, char *b) {
   int len_a = strlen(a);
   int len_b = strlen(b);
-  
-  char* ret = NULL;
+
+  char *ret = NULL;
   if (len_a > len_b) {
-    ret = (char *) malloc(sizeof(char) * (len_a + 2));
+    ret = (char *)malloc(sizeof(char) * (len_a + 2));
   } else {
-    ret = (char *) malloc(sizeof(char) * (len_b + 2));
-    
-    char* tmp = a;
+    ret = (char *)malloc(sizeof(char) * (len_b + 2));
+
+    char *tmp = a;
     a = b;
     b = tmp;
-    
+
     int l = len_a;
     len_a = len_b;
     len_b = l;
   }
-  
+
   // a is always longer than b
   int i = 0;
   int c = 0;
   for (; i < len_b; i++) {
-    int t = (a[len_a - i - 1] - '0') + (b[len_b - i - 1] -'0') + c;
+    int t = (a[len_a - i - 1] - '0') + (b[len_b - i - 1] - '0') + c;
     ret[i] = '0' + t % 2;
     c = t / 2;
   }
-  
+
   for (; i < len_a; i++) {
     int t = (a[len_a - i - 1] - '0') + c;
     ret[i] = '0' + t % 2;
-    c = t / 2;   
+    c = t / 2;
   }
-  
+
   int len;
   if (c != 0) {
     len = len_a + 1;
@@ -40,13 +40,13 @@ char* addBinary(char* a, char* b) {
     len = len_a;
   }
   ret[len] = 0;
-  
+
   // Reverse
   for (int i = 0; i < len / 2; i++) {
     char tmp = ret[i];
     ret[i] = ret[len - i - 1];
     ret[len - i - 1] = tmp;
   }
-  
+
   return ret;
 }

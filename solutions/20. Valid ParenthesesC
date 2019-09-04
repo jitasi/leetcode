@@ -1,16 +1,17 @@
-bool isValid(char* s) {
-   char *stack = malloc(strlen(s));
-   int p = -1;
-   for (int i = 0; i < strlen(s); i++) {
-       if (p == -1) {
-           stack[++p] = s[i];
-           continue;
-       }
-       if ((s[i] == ')' && stack[p] == '(') || (s[i] == ']' && stack[p] == '[') || (s[i] == '}' && stack[p] == '{')) {
-           p--;
-       } else {
-           stack[++p] = s[i];
-       }
-   }
-   return p == -1;
+bool isValid(char *s) {
+  char *stack = malloc(strlen(s));
+  int p = -1;
+  for (int i = 0; i < strlen(s); i++) {
+    if (p == -1) {
+      stack[++p] = s[i];
+      continue;
+    }
+    if ((s[i] == ')' && stack[p] == '(') || (s[i] == ']' && stack[p] == '[') ||
+        (s[i] == '}' && stack[p] == '{')) {
+      p--;
+    } else {
+      stack[++p] = s[i];
+    }
+  }
+  return p == -1;
 }

@@ -1,33 +1,35 @@
 class Solution {
 public:
-    vector<pair<int, int>> reconstructQueue(vector<pair<int, int>>& people) {
-      std::sort(people.begin(), people.end(), 
-                [](const pair<int, int>& a, const pair<int, int>& b) {
-                  if (a.second == b.second) return a.first < b.first;
-                  else return a.second < b.second;
-                });
+  vector<pair<int, int>> reconstructQueue(vector<pair<int, int>> &people) {
+    std::sort(people.begin(), people.end(),
+              [](const pair<int, int> &a, const pair<int, int> &b) {
+                if (a.second == b.second)
+                  return a.first < b.first;
+                else
+                  return a.second < b.second;
+              });
 
-      vector<pair<int, int>> ret;
-      int pos = 0;
-      for (const auto& a : people) {
-        if (a.second == 0) {
-          ret.insert(ret.begin() + pos, a);
-          pos++; 
-          continue;
-        }
-        int c = 0;
-        pos = 0;
-        for (const auto& b : ret) {
-          pos++;
-          if (b.first >= a.first) c++;
-          if (c > a.second) {
-            pos--;
-            break;
-          }
-        }      
+    vector<pair<int, int>> ret;
+    int pos = 0;
+    for (const auto &a : people) {
+      if (a.second == 0) {
         ret.insert(ret.begin() + pos, a);
-      
+        pos++;
+        continue;
       }
-      return ret;
+      int c = 0;
+      pos = 0;
+      for (const auto &b : ret) {
+        pos++;
+        if (b.first >= a.first)
+          c++;
+        if (c > a.second) {
+          pos--;
+          break;
+        }
+      }
+      ret.insert(ret.begin() + pos, a);
     }
+    return ret;
+  }
 };

@@ -1,15 +1,17 @@
-// Runtime: 52 ms, faster than 91.56% of C++ online submissions for Decode Ways II.
-// Memory Usage: 13.9 MB, less than 76.66% of C++ online submissions for Decode Ways II.
+// Runtime: 52 ms, faster than 91.56% of C++ online submissions for Decode Ways
+// II. Memory Usage: 13.9 MB, less than 76.66% of C++ online submissions for
+// Decode Ways II.
 
 class Solution {
 public:
   int numDecodings(string s) {
-    if (s.empty()) return 0;
-    
+    if (s.empty())
+      return 0;
+
     const long M = 1e9 + 7;
     long ending_1 = 0, ending_2 = 0, ways = 1;
     long next;
-    for (const char c: s) {
+    for (const char c : s) {
       if (c == '*') {
         next = 9 * ways + 9 * ending_1 + 6 * ending_2;
         ending_1 = ways;
@@ -18,17 +20,17 @@ public:
         if (c == '0')
           next = ending_1 + ending_2;
         else if (c >= '1' && c <= '6')
-          next = ways + ending_1 + ending_2; 
+          next = ways + ending_1 + ending_2;
         else
           next = ways + ending_1;
 
-        ending_1 = (c == '1')? ways : 0;
-        ending_2 = (c == '2')? ways : 0;
+        ending_1 = (c == '1') ? ways : 0;
+        ending_2 = (c == '2') ? ways : 0;
       }
-      
+
       ways = next % M;
     }
-    
+
     return ways;
   }
 };

@@ -1,9 +1,10 @@
-// Runtime: 12 ms, faster than 96.93% of C++ online submissions for Max Points on a Line.
-// Memory Usage: 10.5 MB, less than 56.10% of C++ online submissions for Max Points on a Line.
+// Runtime: 12 ms, faster than 96.93% of C++ online submissions for Max Points
+// on a Line. Memory Usage: 10.5 MB, less than 56.10% of C++ online submissions
+// for Max Points on a Line.
 
 class Solution {
 public:
-  void simplify(int& a, int& b) {
+  void simplify(int &a, int &b) {
     if (a == 0) {
       b = 1;
       return;
@@ -12,7 +13,7 @@ public:
       a = 1;
       return;
     }
-    int net = (((a > 0) && (b < 0)) || ((a < 0) && (b > 0)))? -1 : 1 ;
+    int net = (((a > 0) && (b < 0)) || ((a < 0) && (b > 0))) ? -1 : 1;
     a = abs(a);
     b = abs(b);
     int x = max(a, b);
@@ -25,12 +26,13 @@ public:
     b /= x;
     b *= net;
   }
-  
-  int maxPoints(vector<vector<int>>& points) {
-    if (points.size() <= 1) return points.size();
-    
+
+  int maxPoints(vector<vector<int>> &points) {
+    if (points.size() <= 1)
+      return points.size();
+
     unordered_map<long, int> slope_pairs;
-    
+
     int diff_x, diff_y;
     long s;
     int ans = 0;
@@ -46,7 +48,7 @@ public:
           continue;
         }
         simplify(diff_x, diff_y);
-        s = (unsigned int) diff_y;
+        s = (unsigned int)diff_y;
         s <<= 32;
         s |= diff_x;
         if (slope_pairs.count(s) > 0)
@@ -54,7 +56,7 @@ public:
         else
           slope_pairs[s] = 1;
       }
-      for (const auto& kv: slope_pairs) {
+      for (const auto &kv : slope_pairs) {
         ans = max(kv.second + overlap_pts, ans);
       }
       ans = max(overlap_pts, ans);

@@ -1,32 +1,35 @@
 /
-// https://blog.csdn.net/crazy1235/article/details/51494797
+    // https://blog.csdn.net/crazy1235/article/details/51494797
 
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
-class Solution {
+    /**
+     * Definition for a binary tree node.
+     * struct TreeNode {
+     *     int val;
+     *     TreeNode *left;
+     *     TreeNode *right;
+     *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+     * };
+     */
+    class Solution {
 public:
-  vector<int> postorderTraversal(TreeNode* root) {
-    if (root == nullptr) return {};
-    
-    stack<TreeNode*> s;  // working stack
-    vector<int> ans;  // reversed result
-    
+  vector<int> postorderTraversal(TreeNode *root) {
+    if (root == nullptr)
+      return {};
+
+    stack<TreeNode *> s; // working stack
+    vector<int> ans;     // reversed result
+
     s.push(root);
-    while(!s.empty()) {
+    while (!s.empty()) {
       auto cur = s.top();
       ans.push_back(cur->val);
       s.pop();
-      if (cur->left != nullptr) s.push(cur->left);
-      if (cur->right != nullptr) s.push(cur->right);
+      if (cur->left != nullptr)
+        s.push(cur->left);
+      if (cur->right != nullptr)
+        s.push(cur->right);
     }
-    
+
     reverse(ans.begin(), ans.end());
     return ans;
   }

@@ -1,37 +1,45 @@
 /* vim: set ft=cpp : */
 ​
-// Runtime: 16 ms, faster than 100.00% of C++ online submissions for Largest 1-Bordered Square.
-// Memory Usage: 9.8 MB, less than 100.00% of C++ online submissions for Largest 1-Bordered Square.
-  
-class Solution {
+    // Runtime: 16 ms, faster than 100.00% of C++ online submissions for Largest
+    // 1-Bordered Square. Memory Usage: 9.8 MB, less than 100.00% of C++ online
+    // submissions for Largest 1-Bordered Square.
+   class Solution {
 public:
-  int largest1BorderedSquare(vector<vector<int>>& grid) {
-    const int rows = grid.size();
-    const int cols = grid[0].size();
-    int x_cnts[rows][cols], y_cnts[rows][cols];
-    for (int i = 0; i < grid.size(); i++) {
-      x_cnts[i][0] = grid[i][0];
-      for (int j = 1; j < grid[0].size(); j++)
-        x_cnts[i][j] = grid[i][j] == 0? 0 : x_cnts[i][j - 1] + 1;
-    }
-    for (int j = 0; j < grid[0].size(); j++) {
-      y_cnts[0][j] = grid[0][j];
-      for (int i = 1; i < grid.size(); i++)
-        y_cnts[i][j] = grid[i][j] == 0? 0 : y_cnts[i - 1][j] + 1;
-    }
-    
+   int largest1BorderedSquare(vector<vector<int>> &grid) {
+       const int rows = grid.size();
+       const int cols = grid[0].size();
+       int x_cnts[rows][cols], y_cnts[rows][cols];
+       for (int i = 0; i < grid.size(); i++) {
+           x_cnts[i][0] = grid[i][0];
+           for (int j = 1; j < grid[0].size(); j++)
+        x_cnts[i][j] = grid[i][j] == 0 ? 0 : x_cnts[i][j - 1] + 1;
+       
+    }
+       for (int j = 0; j < grid[0].size(); j++) {
+           y_cnts[0][j] = grid[0][j];
+           for (int i = 1; i < grid.size(); i++)
+        y_cnts[i][j] = grid[i][j] == 0 ? 0 : y_cnts[i - 1][j] + 1;
+       
+    }
+       
     int ans = 0;
-    for (int i = 0; i < grid.size(); i++) {
-      for (int j = 0; j < grid[0].size(); j++) {
-        for (int square = min(x_cnts[i][j], y_cnts[i][j]); square > 0 && square > ans; square--) {
-          if (y_cnts[i][j - square + 1] >= square && x_cnts[i - square + 1][j] >= square) {
-            ans = square;
-            break;
-          }
-        }
-      }
-    }
-    return ans * ans;
+       for (int i = 0; i < grid.size(); i++) {
+           for (int j = 0; j < grid[0].size(); j++) {
+               for (int square = min(x_cnts[i][j], y_cnts[i][j]);
+                    square > 0 && square > ans; square--) {
+                   if (y_cnts[i][j - square + 1] >= square &&
+                       x_cnts[i - square + 1][j] >= square) {
+                       ans = square;
+                       break;
+                   
+          }
+               
+        }
+           
+      }
+       
+    }
+       return ans * ans;
   }
 };
 ​

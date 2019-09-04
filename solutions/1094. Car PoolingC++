@@ -1,20 +1,22 @@
 // Runtime: 8 ms, faster than 93.29% of C++ online submissions for Car Pooling.
-// Memory Usage: 9.8 MB, less than 100.00% of C++ online submissions for Car Pooling.
-​
-class Solution {
+// Memory Usage: 9.8 MB, less than 100.00% of C++ online submissions for Car
+// Pooling.
+​ class Solution {
 public:
-  bool carPooling(vector<vector<int>>& trips, int capacity) {
-    vector<int> demands(1001, 0);
-    for (const auto& t: trips) {
-      demands[t[1]] += t[0];
-      demands[t[2]] -= t[0];
-    }
-    
+   bool carPooling(vector<vector<int>> &trips, int capacity) {
+       vector<int> demands(1001, 0);
+       for (const auto &t : trips) {
+           demands[t[1]] += t[0];
+           demands[t[2]] -= t[0];
+       
+    }
+       
     int sum = 0;
-    for (const int d: demands) {
-      sum += d;
-      if (sum > capacity) return false;
-    }
-    return true;
+       for (const int d : demands) {
+           sum += d;
+           if (sum > capacity) return false;
+       
+    }
+       return true;
   }
 };

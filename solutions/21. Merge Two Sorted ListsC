@@ -5,14 +5,16 @@
  *     struct ListNode *next;
  * };
  */
-struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
-  if (l2 == NULL) return l1;
-  if (l1 == NULL) return l2;
-  
-  struct ListNode* head = NULL;
-  struct ListNode* tail = NULL;
+struct ListNode *mergeTwoLists(struct ListNode *l1, struct ListNode *l2) {
+  if (l2 == NULL)
+    return l1;
+  if (l1 == NULL)
+    return l2;
+
+  struct ListNode *head = NULL;
+  struct ListNode *tail = NULL;
   while (l1 != NULL && l2 != NULL) {
-    struct ListNode* node = NULL;
+    struct ListNode *node = NULL;
     if (l1->val < l2->val) {
       node = l1;
       l1 = l1->next;
@@ -20,16 +22,18 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
       node = l2;
       l2 = l2->next;
     }
-    
+
     if (tail == NULL) {
-        head = tail = node;
+      head = tail = node;
     } else {
       tail->next = node;
       tail = node;
     }
   }
-  
-  if (l1 == NULL) tail->next = l2;
-  if (l2 == NULL) tail->next = l1;
+
+  if (l1 == NULL)
+    tail->next = l2;
+  if (l2 == NULL)
+    tail->next = l1;
   return head;
 }

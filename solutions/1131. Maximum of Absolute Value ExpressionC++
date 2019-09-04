@@ -1,20 +1,23 @@
-// Runtime: 36 ms, faster than 94.42% of C++ online submissions for Maximum of Absolute Value Expression.
-// Memory Usage: 11.3 MB, less than 100.00% of C++ online submissions for Maximum of Absolute Value Expression.
-​
-class Solution {
+// Runtime: 36 ms, faster than 94.42% of C++ online submissions for Maximum of
+// Absolute Value Expression. Memory Usage: 11.3 MB, less than 100.00% of C++
+// online submissions for Maximum of Absolute Value Expression.
+​ class Solution {
 public:
-  int maxAbsValExpr(vector<int>& arr1, vector<int>& arr2) {
-    int ans = 0;
-    for (const int p : {-1, 1}) {
-      for (const int q : {-1, 1}) {
-        int closet = arr1[0] * p + arr2[0] * q;
-        for (int i = 1; i < arr1.size(); i++) {
-          int cur = arr1[i] * p + arr2[i] * q + i;
-          ans = max(ans, cur - closet);
-          closet = min(closet, cur);
-        }
-      }
-    }
-    return ans;
+   int maxAbsValExpr(vector<int> &arr1, vector<int> &arr2) {
+       int ans = 0;
+       for (const int p : {-1, 1}) {
+           for (const int q : {-1, 1}) {
+               int closet = arr1[0] * p + arr2[0] * q;
+               for (int i = 1; i < arr1.size(); i++) {
+                   int cur = arr1[i] * p + arr2[i] * q + i;
+                   ans = max(ans, cur - closet);
+                   closet = min(closet, cur);
+               
+        }
+           
+      }
+       
+    }
+       return ans;
   }
 };

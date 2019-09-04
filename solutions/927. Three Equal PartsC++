@@ -1,47 +1,47 @@
-// Runtime: 40 ms, faster than 91.35% of C++ online submissions for Three Equal Parts.
-// Memory Usage: 12 MB, less than 96.49% of C++ online submissions for Three Equal Parts.
-​
-class Solution {
+// Runtime: 40 ms, faster than 91.35% of C++ online submissions for Three Equal
+// Parts. Memory Usage: 12 MB, less than 96.49% of C++ online submissions for
+// Three Equal Parts.
+​ class Solution {
 public:
-  vector<int> threeEqualParts(vector<int>& A) {
-    const int ones = accumulate(A.begin(), A.end(), 0);
-    if (ones % 3 != 0) return {-1, -1};
-    if (ones == 0) return {0, 2};
-    const int ones_in_part = ones / 3;
-    
+   vector<int> threeEqualParts(vector<int> &A) {
+       const int ones = accumulate(A.begin(), A.end(), 0);
+       if (ones % 3 != 0) return {-1, -1};
+       if (ones == 0) return {0, 2};
+       const int ones_in_part = ones / 3;
+       
     int cnt;
-    
-    // find the first part starting 1
+       
+     // find the first part starting 1
     int first = 0;
-    while (A[first] == 0) first++; 
-    
-    // find the second part starting 1
+       while (A[first] == 0) first++;
+       
+     // find the second part starting 1
     int second = first;
-    cnt = ones_in_part + 1;
-    while(cnt > 0) cnt -= A[second++];
-    second--;
-    
-    // find the last part starting 1
+       cnt = ones_in_part + 1;
+       while (cnt > 0) cnt -= A[second++];
+       second--;
+       
+     // find the last part starting 1
     int last = second;
-    cnt = ones_in_part + 1;
-    while(cnt > 0) cnt -= A[last++];
-    last--;
-    
-    // check
+       cnt = ones_in_part + 1;
+       while (cnt > 0) cnt -= A[last++];
+       last--;
+       
+     // check
     for (int i = last; i < A.size(); i++, first++, second++)
       if (A[i] != A[first] || A[i] != A[second]) return {-1, -1};
-    
+       
     return {first - 1, second};
   }
 };
 ​
-/*
-​
-[1,0,1,1,0]
-[1,1,0,0,1]
-[1,0,1,0,1]
-[0, 1,0,0,1,1]
-[1,1,0,1,1]
-[0,0,0,0,0]
-​
-*/
+    /*
+    ​
+    [1,0,1,1,0]
+    [1,1,0,0,1]
+    [1,0,1,0,1]
+    [0, 1,0,0,1,1]
+    [1,1,0,1,1]
+    [0,0,0,0,0]
+    ​
+    */

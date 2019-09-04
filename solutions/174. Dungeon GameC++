@@ -1,31 +1,35 @@
 
 class Solution {
 public:
-  int calculateMinimumHP(vector<vector<int>>& dungeon) {
+  int calculateMinimumHP(vector<vector<int>> &dungeon) {
     const int rows = dungeon.size();
-    if (rows == 0) return 0;
+    if (rows == 0)
+      return 0;
     const int cols = dungeon[0].size();
-    if (cols == 0) return 0;
-    
-    vector<int> dp(cols, 0);  // min hp when entering.
+    if (cols == 0)
+      return 0;
+
+    vector<int> dp(cols, 0); // min hp when entering.
     int min_req;
-    for (int i = rows - 1; i >= 0; i--) {      
+    for (int i = rows - 1; i >= 0; i--) {
       // entering hp = x
-      // outing hp = y = x + dungeon[i][cols - 1] 
+      // outing hp = y = x + dungeon[i][cols - 1]
       // so: y >= 1, and
       //     y >= dp[i + 1][cols -i]
-      dp[cols - 1] = max(1 - dungeon[i][cols - 1], dp[cols - 1] - dungeon[i][cols - 1]);
-      
-      for (int j = cols - 2; j >= 0; j--) {     
+      dp[cols - 1] =
+          max(1 - dungeon[i][cols - 1], dp[cols - 1] - dungeon[i][cols - 1]);
+
+      for (int j = cols - 2; j >= 0; j--) {
         // entering hp = x
-        // outing hp = y = x + dungeon[i][cols - 1] 
+        // outing hp = y = x + dungeon[i][cols - 1]
         // so: y >= 1 and
         // .   y >= dp[i + 1][j] or dp[i][j + 1]
-        min_req = i == rows -1? dp[j + 1] : min(dp[j], dp[j + 1]);
+        min_req = i == rows - 1 ? dp[j + 1] : min(dp[j], dp[j + 1]);
         dp[j] = max(1 - dungeon[i][j], min_req - dungeon[i][j]);
-        if (dp[j] < 0) dp[j] = 0;
+        if (dp[j] < 0)
+          dp[j] = 0;
       }
     }
-    return dp[0] > 0? dp[0] : 1;
+    return dp[0] > 0 ? dp[0] : 1;
   }
 };

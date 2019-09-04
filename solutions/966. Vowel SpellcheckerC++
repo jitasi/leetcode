@@ -1,40 +1,46 @@
 /* vim: set ft=cpp : */
 ​
-// Runtime: 72 ms, faster than 95.85% of C++ online submissions for Vowel Spellchecker.
-// Memory Usage: 28.4 MB, less than 77.50% of C++ online submissions for Vowel Spellchecker.
-​
-class Solution {
+    // Runtime: 72 ms, faster than 95.85% of C++ online submissions for Vowel
+    // Spellchecker. Memory Usage: 28.4 MB, less than 77.50% of C++ online
+    // submissions for Vowel Spellchecker.
+        ​ class Solution {
 public:
-  vector<string> spellchecker(vector<string>& wordlist, vector<string>& queries) {
-    unordered_set<string> exact_match(wordlist.begin(), wordlist.end());
-    
+   vector<string> spellchecker(vector<string> &wordlist,
+                               vector<string> &queries) {
+       unordered_set<string> exact_match(wordlist.begin(), wordlist.end());
+       
     const unordered_set<char> vowels({'a', 'e', 'i', 'o', 'u'});
-    
+       
     unordered_map<string, string> capitlization_match;
-    unordered_map<string, string> vowel_match;
-    for (const string& w: wordlist) {
-      string low = w;
-      for (int i = 0; i < low.size(); i++)
+       unordered_map<string, string> vowel_match;
+       for (const string &w : wordlist) {
+           string low = w;
+           for (int i = 0; i < low.size(); i++)
         if (low[i] >= 'A' && low[i] <= 'Z') low[i] = low[i] - 'A' + 'a';
-      string v = low;
-      for (int i = 0; i < v.size(); i++)
+           string v = low;
+           for (int i = 0; i < v.size(); i++)
         if (vowels.count(v[i]) > 0) v[i] = '*';
-      if (capitlization_match.count(low) == 0) capitlization_match[low] = w;
-      if (vowel_match.count(v) == 0) vowel_match[v] = w;
-    }
-       
+           if (capitlization_match.count(low) == 0) capitlization_match[low] =
+          w;
+           if (vowel_match.count(v) == 0) vowel_match[v] = w;
+       
+    }
+          
     for (int i = 0; i < queries.size(); i++) {
-      if (exact_match.count(queries[i]) > 0) continue;
-      string low = queries[i];   
+           if (exact_match.count(queries[i]) > 0) continue;
+           string low = queries[i];
+        
       for (int j = 0; j < queries[i].size(); j++)
         if (low[j] >= 'A' && low[j] <= 'Z') low[j] = low[j] - 'A' + 'a';
-      string v = low;
-      for (int j = 0; j < queries[i].size(); j++)
-        if (vowels.count(v[j]) > 0) v[j] = '*'; 
-      if (capitlization_match.count(low) > 0) queries[i] = capitlization_match[low];
-      else if (vowel_match.count(v) > 0) queries[i] = vowel_match[v];
-      else queries[i] = "";
-    }
-    return queries;
+           string v = low;
+           for (int j = 0; j < queries[i].size(); j++)
+        if (vowels.count(v[j]) > 0) v[j] = '*';
+           if (capitlization_match.count(low) > 0) queries[i] =
+          capitlization_match[low];
+           else if (vowel_match.count(v) > 0) queries[i] = vowel_match[v];
+           else queries[i] = "";
+       
+    }
+       return queries;
   }
 };

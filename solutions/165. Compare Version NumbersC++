@@ -1,33 +1,36 @@
-// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Compare Version Numbers.
-// Memory Usage: 8.5 MB, less than 45.93% of C++ online submissions for Compare Version Numbers.
-​
-class Solution {
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Compare
+// Version Numbers. Memory Usage: 8.5 MB, less than 45.93% of C++ online
+// submissions for Compare Version Numbers.
+​ class Solution {
 public:
-  void parse(const string version, vector<int>& v) {
-    const int len = version.size();
-    int i = 0;
-    int val = 0;
-    while (i < len) {
-      while (i < len && version[i] != '.') 
+   void parse(const string version, vector<int> &v) {
+       const int len = version.size();
+       int i = 0;
+       int val = 0;
+       while (i < len) {
+           while (i < len && version[i] != '.') 
         val = val * 10 + version[i++] - '0';
-      v.push_back(val);
-      val = 0;
-      i++;  // skip dot.
-    }
-    while(!v.empty() && v.back() == 0) v.pop_back();
-  }
+           v.push_back(val);
+           val = 0;
+           i++;
+        // skip dot.
   
+    }
+       while (!v.empty() && v.back() == 0) v.pop_back();
+  }
+   
   int compareVersion(string version1, string version2) {
-    vector<int> v1, v2;
-    parse(version1, v1);
-    parse(version2, v2);
-    const int l = min(v1.size(), v2.size());
-    for (int i = 0; i < l; i++) {
-      if (v1[i] < v2[i]) return -1;
-      if (v1[i] > v2[i]) return 1;
-    }
-    if (v1.size() > v2.size()) return 1;
-    if (v1.size() < v2.size()) return -1;
-    return 0;
+       vector<int> v1, v2;
+       parse(version1, v1);
+       parse(version2, v2);
+       const int l = min(v1.size(), v2.size());
+       for (int i = 0; i < l; i++) {
+           if (v1[i] < v2[i]) return -1;
+           if (v1[i] > v2[i]) return 1;
+       
+    }
+       if (v1.size() > v2.size()) return 1;
+       if (v1.size() < v2.size()) return -1;
+       return 0;
   }
 };

@@ -1,6 +1,4 @@
 class Solution {
 public:
-    int hammingDistance(int x, int y) {
-        
-    }
+  int hammingDistance(int x, int y) {}
 };

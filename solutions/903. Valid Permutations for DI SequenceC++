@@ -1,52 +1,47 @@
-// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Valid Permutations for DI Sequence.
-// Memory Usage: 9.5 MB, less than 56.16% of C++ online submissions for Valid Permutations for DI Sequence.
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Valid
+// Permutations for DI Sequence. Memory Usage: 9.5 MB, less than 56.16% of C++
+// online submissions for Valid Permutations for DI Sequence.
 ​
-// https://leetcode.com/problems/valid-permutations-for-di-sequence/discuss/168289/Share-my-O%28N3%29-greater-O%28N2%29-C++-DP-solution.-Including-the-thoughts-of-improvement.
-// https://leetcode.com/problems/valid-permutations-for-di-sequence/discuss/168612/Top-down-with-Memo-greater-Bottom-up-DP-greater-N3-DP-greater-N2-DP-greater-O%28N%29-space
-​
-class Solution {
+    // https://leetcode.com/problems/valid-permutations-for-di-sequence/discuss/168289/Share-my-O%28N3%29-greater-O%28N2%29-C++-DP-solution.-Including-the-thoughts-of-improvement.
+    // https://leetcode.com/problems/valid-permutations-for-di-sequence/discuss/168612/Top-down-with-Memo-greater-Bottom-up-DP-greater-N3-DP-greater-N2-DP-greater-O%28N%29-space
+    ​ class Solution {
 public:
-  const int MOD = 1000000007;
-​
+   const int MOD = 1000000007;
+  ​
   int numPermsDISequence(string S) {
-    const int len = S.length() + 1;  // length of sequence
-    // dp[j]: sequence length X, sequence ending at j or less; init to length 1.
+       const int len = S.length() + 1;
+      // length of sequence
+     // dp[j]: sequence length X, sequence ending at j or less; init to length 1.
     vector<int> dp(len + 1, 0);
-    dp[1] = 1;
-    
+       dp[1] = 1;
+       
     int ans = 0;
-    for (int i = 2; i <= len; i++) {
-      vector<int> new_dp(len + 1, 0);
-      for (int j = 1; j <= i; j++) {
-        if (S[i - 2] == 'D')
+       for (int i = 2; i <= len; i++) {
+           vector<int> new_dp(len + 1, 0);
+           for (int j = 1; j <= i; j++) {
+               if (S[i - 2] == 'D')
           new_dp[j] = (new_dp[j - 1] + (dp[i - 1] - dp[j - 1]) % MOD) % MOD;
-        else
-          new_dp[j] = (new_dp[j - 1] + dp[j - 1]) % MOD;
-      }
-      dp.swap(new_dp);
-      new_dp.clear();
-    }    
+               else          new_dp[j] = (new_dp[j - 1] + dp[j - 1]) % MOD;
+           
+      }
+           dp.swap(new_dp);
+           new_dp.clear();
+       
+    }
+       
     return (dp[len] + MOD) % MOD;
-  }  
-/*  
-  int numPermsDISequence(string S) {
-    const int len = S.length() + 1;  // length of sequence
-    int dp[len + 1][len + 1];  // dp[i][j]: sequence length i, sequence ending at j or less;
-    for (int i = 0; i <= len; i++)
-      for (int j = 0; j <= len; j++)
-        dp[i][j] = 0;
-    dp[1][1] = 1;
-    
-    int ans = 0;
-    for (int i = 2; i <= len; i++) {
-      for (int j = 1; j <= i; j++) {
-        if (S[i - 2] == 'D')
-          dp[i][j] = (dp[i][j - 1] + (dp[i - 1][i - 1] - dp[i - 1][j - 1]) % MOD) % MOD;
-        else
-          dp[i][j] = (dp[i][j - 1] + (dp[i - 1][j - 1] - dp[i - 1][0]) % MOD) % MOD;
-      }
-    }    
-    return (dp[len][len] + MOD) % MOD;
-  }
-*/
+  }
+   
+  /*  
+    int numPermsDISequence(string S) {
+      const int len = S.length() + 1;  // length of sequence
+      int dp[len + 1][len + 1];  // dp[i][j]: sequence length i, sequence ending
+   at j or less;    for (int i = 0; i <= len; i++)      for (int j = 0; j <=
+   len; j++)        dp[i][j] = 0;    dp[1][1] = 1;        int ans = 0;    for
+   (int i = 2; i <= len; i++) {      for (int j = 1; j <= i; j++) {        if
+   (S[i - 2] == 'D')          dp[i][j] = (dp[i][j - 1] + (dp[i - 1][i - 1] -
+   dp[i - 1][j - 1]) % MOD) % MOD;        else          dp[i][j] = (dp[i][j - 1]
+   + (dp[i - 1][j - 1] - dp[i - 1][0]) % MOD) % MOD;      }    }        return
+   (dp[len][len] + MOD) % MOD;  }
+  */
 };

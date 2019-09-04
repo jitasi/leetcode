@@ -1,32 +1,38 @@
 /* vim: set ft=cpp : */
 ​
-// Runtime: 208 ms, faster than 38.26% of C++ online submissions for Smallest Sufficient Team.
-// Memory Usage: 62.7 MB, less than 100.00% of C++ online submissions for Smallest Sufficient Team.
-​
-class Solution {
+    // Runtime: 208 ms, faster than 38.26% of C++ online submissions for
+    // Smallest Sufficient Team. Memory Usage: 62.7 MB, less than 100.00% of C++
+    // online submissions for Smallest Sufficient Team.
+        ​ class Solution {
 public:
-  
-  vector<int> smallestSufficientTeam(vector<string>& req_skills, vector<vector<string>>& people) {  
+   
+  vector<int> smallestSufficientTeam(vector<string> &req_skills,
+                                      vector<vector<string>> &people) {
+     
     unordered_map<string, int> skill_idx;
-    for (int i = 0; i < req_skills.size(); i++)
+       for (int i = 0; i < req_skills.size(); i++)
       skill_idx[req_skills[i]] = 1 << i;
-    
+       
     unordered_map<int, vector<int>> dp;
-    dp.reserve(1 << req_skills.size());
-    dp[0] = {};
-    
+       dp.reserve(1 << req_skills.size());
+       dp[0] = {};
+       
     for (int i = 0; i < people.size(); i++) {
-      int cur_skills = 0;
-      for (const string& skill : people[i])
+           int cur_skills = 0;
+           for (const string &skill : people[i])
         cur_skills |= skill_idx[skill];
-      
-      for (auto kv: dp) {
-        const int all_skills = kv.first | cur_skills;
-        if (dp.count(all_skills) == 0 || dp[all_skills].size() > 1 + dp[kv.first].size()) {
-          dp[all_skills] = kv.second;
-          dp[all_skills].push_back(i);
-        }
-      }
-    }
-    return dp[(1 << req_skills.size()) - 1];
+           
+      for (auto kv : dp) {
+               const int all_skills = kv.first | cur_skills;
+               if (dp.count(all_skills) == 0 ||
+                   dp[all_skills].size() > 1 + dp[kv.first].size()) {
+                   dp[all_skills] = kv.second;
+                   dp[all_skills].push_back(i);
+               
+        }
+           
+      }
+       
+    }
+       return dp[(1 << req_skills.size()) - 1];
   }

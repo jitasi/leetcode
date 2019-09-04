@@ -9,17 +9,22 @@
  */
 class Solution {
 public:
-    int sumOfLeftLeavesInternal(TreeNode* root, bool on_left) {
-      if (root-> left == NULL && root->right == NULL) {
-        return on_left? root->val : 0;
-      }
-      return (root->left == NULL? 0 : sumOfLeftLeavesInternal(root->left, true))
-        + (root->right == NULL? 0 : sumOfLeftLeavesInternal(root->right, false));
+  int sumOfLeftLeavesInternal(TreeNode *root, bool on_left) {
+    if (root->left == NULL && root->right == NULL) {
+      return on_left ? root->val : 0;
     }
-  
-    int sumOfLeftLeaves(TreeNode* root) {
-      if (root == NULL) return 0;
-      return (root->left == NULL? 0 : sumOfLeftLeavesInternal(root->left, true))
-        + (root->right == NULL? 0 : sumOfLeftLeavesInternal(root->right, false));
-    }
+    return (root->left == NULL ? 0
+                               : sumOfLeftLeavesInternal(root->left, true)) +
+           (root->right == NULL ? 0
+                                : sumOfLeftLeavesInternal(root->right, false));
+  }
+
+  int sumOfLeftLeaves(TreeNode *root) {
+    if (root == NULL)
+      return 0;
+    return (root->left == NULL ? 0
+                               : sumOfLeftLeavesInternal(root->left, true)) +
+           (root->right == NULL ? 0
+                                : sumOfLeftLeavesInternal(root->right, false));
+  }
 };

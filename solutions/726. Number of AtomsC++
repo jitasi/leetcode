@@ -1,44 +1,48 @@
-// Runtime: 4 ms, faster than 78.04% of C++ online submissions for Number of Atoms.
-// Memory Usage: 9.3 MB, less than 47.83% of C++ online submissions for Number of Atoms.
-​
-class Solution {
+// Runtime: 4 ms, faster than 78.04% of C++ online submissions for Number of
+// Atoms. Memory Usage: 9.3 MB, less than 47.83% of C++ online submissions for
+// Number of Atoms.
+​ class Solution {
 public:
-  int sz;
-  int cur;
-  
-  int getNext(string& formula, string& ele) {    
-    // return -3: end of string
+   int sz;
+   int cur;
+   
+  int getNext(string &formula, string &ele) {
+       
+     // return -3: end of string
     if (cur >= sz) return -3;
-​
-    // return -1: (
-    // return -2: )
+    ​
+     // return -1: (
+     // return -2: )
     if (formula[cur] == '(') {
-      cur++;
-      return -1;
-    }
-    if (formula[cur] == ')') {
-      cur++;
-      return -2;
-    }
-​
-    // return 1 .. : number
+           cur++;
+           return -1;
+       
+    }
+       if (formula[cur] == ')') {
+           cur++;
+           return -2;
+       
+    }
+    ​
+     // return 1 .. : number
     if (formula[cur] >= '0' && formula[cur] <= '9') {
-      int v = formula[cur] - '0';
-      cur++;
-      while(cur < sz && formula[cur] >= '0' && formula[cur] <= '9')
+           int v = formula[cur] - '0';
+           cur++;
+           while (cur < sz && formula[cur] >= '0' && formula[cur] <= '9')
         v = v * 10 + formula[cur++] - '0';
-      return v;
-    }
-    
-    // return 0: element name in val
+           return v;
+       
+    }
+       
+     // return 0: element name in val
     ele.push_back(formula[cur]);
-    cur++;
-    while(cur < sz && formula[cur] >= 'a' && formula[cur] <= 'z')
+       cur++;
+       while (cur < sz && formula[cur] >= 'a' && formula[cur] <= 'z')
       ele.push_back(formula[cur++]);
-    return 0;
+       return 0;
   }
-  
-  unordered_map<string, int> countOfAtomsHelper(string& formula) {
-    unordered_map<string, int> ans;
-    while (true) {
-      string ele;
+   
+  unordered_map<string, int> countOfAtomsHelper(string &formula) {
+       unordered_map<string, int> ans;
+       while (true) {
+           string ele;

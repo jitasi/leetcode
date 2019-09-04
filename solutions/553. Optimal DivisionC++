@@ -1,17 +1,20 @@
-// Runtime: 4 ms, faster than 89.86% of C++ online submissions for Optimal Division.
-// Memory Usage: 8.6 MB, less than 59.38% of C++ online submissions for Optimal Division.
-
+// Runtime: 4 ms, faster than 89.86% of C++ online submissions for Optimal
+// Division. Memory Usage: 8.6 MB, less than 59.38% of C++ online submissions
+// for Optimal Division.
 
 class Solution {
 public:
-  string optimalDivision(vector<int>& nums) {
-    if (nums.empty()) return "";
-    if (nums.size() == 1) return to_string(nums[0]);
-    if (nums.size() == 2) return to_string(nums[0]) + "/" + to_string(nums[1]); 
+  string optimalDivision(vector<int> &nums) {
+    if (nums.empty())
+      return "";
+    if (nums.size() == 1)
+      return to_string(nums[0]);
+    if (nums.size() == 2)
+      return to_string(nums[0]) + "/" + to_string(nums[1]);
 
     string ret = to_string(nums[0]);
     for (int i = 1; i < nums.size(); i++)
-      ret += ((i > 1)? "/" : "/(") + to_string(nums[i]);
+      ret += ((i > 1) ? "/" : "/(") + to_string(nums[i]);
     ret += ")";
     return ret;
   }

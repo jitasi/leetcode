@@ -1,36 +1,42 @@
-// Runtime: 44 ms, faster than 95.74% of C++ online submissions for Shortest Path in Binary Matrix.
-// Memory Usage: 13 MB, less than 100.00% of C++ online submissions for Shortest Path in Binary Matrix.
-​
-class Solution {
+// Runtime: 44 ms, faster than 95.74% of C++ online submissions for Shortest
+// Path in Binary Matrix. Memory Usage: 13 MB, less than 100.00% of C++ online
+// submissions for Shortest Path in Binary Matrix.
+​ class Solution {
 public:
-  const int dirs[8][2] = {
-    {-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
-  
-  int shortestPathBinaryMatrix(vector<vector<int>>& grid) {
-    const int rows = grid.size();
-    const int cols = grid[0].size();
-    
+   const int dirs[8][2] = {
+   {-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
+   
+  int shortestPathBinaryMatrix(vector<vector<int>> &grid) {
+       const int rows = grid.size();
+       const int cols = grid[0].size();
+       
     queue<int> q;
-    if (grid[0][0] == 0) {
-      q.push(0);
-      grid[0][0] = -1;     
-    }
-    while (!q.empty()) {
-      const int cur_x = q.front() & 0xff;
-      const int cur_y = q.front() >> 8;
-      q.pop();
-      for (const auto& d : dirs) {
-        const int nxt_x = cur_x + d[0];
-        const int nxt_y = cur_y + d[1];
-        if (nxt_x < 0 || nxt_x >= rows || nxt_y < 0 || nxt_y >= cols) continue;
-        const int dist = grid[cur_x][cur_y] - 1;
-        if (grid[nxt_x][nxt_y] == 0 || grid[nxt_x][nxt_y] < dist) {
-          grid[nxt_x][nxt_y] = dist;
-          q.push(nxt_x | (nxt_y << 8)); 
-        }
-      }
-    }
-    if (grid[rows - 1][cols - 1] >= 0) return -1;
-    return -grid[rows - 1][cols - 1];
+       if (grid[0][0] == 0) {
+           q.push(0);
+           grid[0][0] = -1;
+          
+  
+    }
+       while (!q.empty()) {
+           const int cur_x = q.front() & 0xff;
+           const int cur_y = q.front() >> 8;
+           q.pop();
+           for (const auto &d : dirs) {
+               const int nxt_x = cur_x + d[0];
+               const int nxt_y = cur_y + d[1];
+               if (nxt_x < 0 || nxt_x >= rows || nxt_y < 0 ||
+                   nxt_y >= cols) continue;
+               const int dist = grid[cur_x][cur_y] - 1;
+               if (grid[nxt_x][nxt_y] == 0 || grid[nxt_x][nxt_y] < dist) {
+                   grid[nxt_x][nxt_y] = dist;
+                   q.push(nxt_x | (nxt_y << 8));
+               
+        }
+           
+      }
+       
+    }
+       if (grid[rows - 1][cols - 1] >= 0) return -1;
+       return -grid[rows - 1][cols - 1];
   }
 };

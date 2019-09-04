@@ -1,16 +1,20 @@
-// Runtime: 16 ms, faster than 86.64% of C++ online submissions for Peak Index in a Mountain Array.
-// Memory Usage: 9.4 MB, less than 60.19% of C++ online submissions for Peak Index in a Mountain Array.
+// Runtime: 16 ms, faster than 86.64% of C++ online submissions for Peak Index
+// in a Mountain Array. Memory Usage: 9.4 MB, less than 60.19% of C++ online
+// submissions for Peak Index in a Mountain Array.
 
 class Solution {
 public:
-  int peakIndexInMountainArray(vector<int>& A) {
+  int peakIndexInMountainArray(vector<int> &A) {
     int first = 0;
     int last = A.size();
     while (first < last) {
       const int mid = first + (last - first) / 2;
-      if (A[mid - 1] < A[mid] && A[mid] > A[mid + 1]) return mid;
-      if (A[mid - 1] < A[mid] && A[mid] < A[mid + 1]) first = mid + 1;
-      else last = mid;
+      if (A[mid - 1] < A[mid] && A[mid] > A[mid + 1])
+        return mid;
+      if (A[mid - 1] < A[mid] && A[mid] < A[mid + 1])
+        first = mid + 1;
+      else
+        last = mid;
     }
     return -1;
   }

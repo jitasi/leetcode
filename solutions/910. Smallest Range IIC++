@@ -1,14 +1,14 @@
-// Runtime: 32 ms, faster than 82.42% of C++ online submissions for Smallest Range II.
-// Memory Usage: 9.8 MB, less than 54.84% of C++ online submissions for Smallest Range II.
-
+// Runtime: 32 ms, faster than 82.42% of C++ online submissions for Smallest
+// Range II. Memory Usage: 9.8 MB, less than 54.84% of C++ online submissions
+// for Smallest Range II.
 
 class Solution {
 public:
-  int smallestRangeII(vector<int>& A, int K) {
+  int smallestRangeII(vector<int> &A, int K) {
     const int len = A.size();
-    
+
     sort(A.begin(), A.end());
-    
+
     int ans = A[len - 1] - A[0];
     for (int i = 0; i < len - 1; i++) {
       const int big = max(A[len - 1] - K, A[i] + K);
