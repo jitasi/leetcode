@@ -2,7 +2,7 @@
 // Rich. Memory Usage: 41.3 MB, less than 12.92% of C++ online submissions for
 // Loud and Rich.
 ​ class Solution {
-public:
+ public:
    vector<unordered_set<int>> rich_graph;
    vector<int> ans;
    

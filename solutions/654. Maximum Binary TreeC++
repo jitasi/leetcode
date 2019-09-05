@@ -12,10 +12,9 @@
  * };
  */
 class Solution {
-public:
+ public:
   TreeNode *constructMaximumBinaryTree(vector<int> &nums, int from, int to) {
-    if (from > to)
-      return nullptr;
+    if (from > to) return nullptr;
 
     // max element in nums[from] ... nums[to]
     const auto it = max_element(nums.begin() + from, nums.begin() + to + 1);

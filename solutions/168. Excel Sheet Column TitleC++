@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   string convertToTitle(int n) {
     string ret;
     n--;

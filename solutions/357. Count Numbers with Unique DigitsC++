@@ -2,7 +2,7 @@
 // with Unique Digits. Memory Usage: 8.2 MB, less than 48.13% of C++ online
 // submissions for Count Numbers with Unique Digits.
 ​ class Solution {
-public:
+ public:
    int countNumbersWithUniqueDigits(int n) {
        if (n == 0) return 1;
        

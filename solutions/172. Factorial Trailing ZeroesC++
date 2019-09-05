@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   int helper(int n, int m) {
     int count = 0;
     while (n != 0) {

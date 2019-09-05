@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   int sumOfLeftLeavesInternal(TreeNode *root, bool on_left) {
     if (root->left == NULL && root->right == NULL) {
       return on_left ? root->val : 0;
@@ -20,8 +20,7 @@ public:
   }
 
   int sumOfLeftLeaves(TreeNode *root) {
-    if (root == NULL)
-      return 0;
+    if (root == NULL) return 0;
     return (root->left == NULL ? 0
                                : sumOfLeftLeavesInternal(root->left, true)) +
            (root->right == NULL ? 0

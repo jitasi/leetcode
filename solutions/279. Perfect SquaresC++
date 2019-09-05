@@ -1,11 +1,10 @@
 class Solution {
-public:
+ public:
   int numSquares(int n) {
     vector<int> squares;
     vector<int> dp(n + 1, 0);
     for (int i = 1; i <= n; i++) {
-      if (i * i > n)
-        break;
+      if (i * i > n) break;
       squares.push_back(i * i);
     }
 
@@ -16,11 +15,9 @@ public:
           min = 1;
           break;
         }
-        if (i - j < 0)
-          continue;
+        if (i - j < 0) continue;
         int c = dp[i - j] + 1;
-        if (min > c)
-          min = c;
+        if (min > c) min = c;
       }
       dp[i] = min;
     }

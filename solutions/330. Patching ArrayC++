@@ -2,7 +2,7 @@
 // Array. Memory Usage: 9.1 MB, less than 32.14% of C++ online submissions for
 // Patching Array.
 ​ class Solution {
-public:
+ public:
    int minPatches(vector<int> &nums, int n) {
        long miss = 1;
        int ans = 0;

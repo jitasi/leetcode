@@ -3,13 +3,12 @@
 // Palindrome Pairs.
 
 class Solution {
-public:
+ public:
   bool isPalindrome(const string &w) {
     int p = 0;
     int q = w.size() - 1;
     while (p < q) {
-      if (w[p++] != w[q--])
-        return false;
+      if (w[p++] != w[q--]) return false;
     }
     return true;
   }

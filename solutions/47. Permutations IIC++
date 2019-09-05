@@ -2,7 +2,7 @@
 // II. Memory Usage: 10 MB, less than 75.92% of C++ online submissions for
 // Permutations II.
 ​ class Solution {
-public:
+ public:
    void work(vector<int> &nums, vector<vector<int>> &ret, int first) {
        for (int i = first; i < nums.size(); i++) {
                

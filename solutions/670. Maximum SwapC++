@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   int maximumSwap(int num) {
     string t = to_string(num);
     string s = t;
@@ -7,16 +7,13 @@ public:
     sort(s.begin(), s.end(), greater<int>());
     int idx = 0;
     for (; idx < len; idx++) {
-      if (s[idx] != t[idx])
-        break;
+      if (s[idx] != t[idx]) break;
     }
     //      cout << "idx=" << idx << endl;
-    if (idx == len)
-      return num;
+    if (idx == len) return num;
     int j;
     for (j = len - 1; j > idx; j--) {
-      if (t[j] == s[idx])
-        break;
+      if (t[j] == s[idx]) break;
     }
     //      cout << "j=" << j << endl;
     //      cout << "s=" << s << endl;

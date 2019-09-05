@@ -3,8 +3,8 @@
     // Runtime: 244 ms, faster than 27.71% of C++ online submissions for
     // Possible Bipartition. Memory Usage: 68.3 MB, less than 21.11% of C++
     // online submissions for Possible Bipartition.
-        ​ class Solution {
-public:
+    ​ class Solution {
+ public:
    vector<int> ps;
    
   int find(int x) {

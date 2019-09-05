@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   int uniquePaths(int m, int n) {
     // Combination of (n-1) from (m+n-2)
     int total = m + n - 2;

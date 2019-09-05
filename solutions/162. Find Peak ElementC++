@@ -1,10 +1,9 @@
 class Solution {
-public:
+ public:
   int findPeakElement(vector<int> &nums) {
-    if (nums.size() == 0)
-      return -1;
+    if (nums.size() == 0) return -1;
 
-    int prev_trend = 1; // 1 increase, -1 decrease 0 no_change
+    int prev_trend = 1;  // 1 increase, -1 decrease 0 no_change
     for (int i = 1; i < nums.size(); i++) {
       if (nums[i] > nums[i - 1]) {
         prev_trend = 1;
@@ -19,8 +18,7 @@ public:
       }
     }
 
-    if (prev_trend == 1)
-      return nums.size() - 1;
+    if (prev_trend == 1) return nums.size() - 1;
     return -1;
   }
 };

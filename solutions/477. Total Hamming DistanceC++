@@ -1,9 +1,8 @@
 class Solution {
-public:
+ public:
   int totalHammingDistance(vector<int> &nums) {
     int cnt[32];
-    for (int i = 0; i < 32; i++)
-      cnt[i] = 0;
+    for (int i = 0; i < 32; i++) cnt[i] = 0;
 
     for (int n : nums) {
       for (int i = 0; i < 32 && n != 0; i++) {
@@ -15,8 +14,7 @@ public:
 
     const int num = nums.size();
     int ans = 0;
-    for (int i = 0; i < 32; i++)
-      ans += cnt[i] * (num - cnt[i]);
+    for (int i = 0; i < 32; i++) ans += cnt[i] * (num - cnt[i]);
     return ans;
   }
 };

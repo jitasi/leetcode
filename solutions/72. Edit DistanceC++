@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   int minDistance(string word1, string word2) {
     const int len1 = word1.size();
     const int len2 = word2.size();
@@ -9,11 +9,9 @@ public:
     vector<vector<int>> dp(len1 + 1, vector<int>(len2 + 1, 0));
 
     // dp[i][0] = i, just like word2 = ""
-    for (int i = 0; i <= len1; i++)
-      dp[i][0] = i;
+    for (int i = 0; i <= len1; i++) dp[i][0] = i;
     // dp[0][j] = j, just like word1 = ""
-    for (int i = 0; i <= len2; i++)
-      dp[0][i] = i;
+    for (int i = 0; i <= len2; i++) dp[0][i] = i;
 
     for (int i = 1; i <= len1; i++) {
       for (int j = 1; j <= len2; j++) {

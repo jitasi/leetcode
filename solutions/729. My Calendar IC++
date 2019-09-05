@@ -2,7 +2,7 @@
 // I. Memory Usage: 34.7 MB, less than 83.73% of C++ online submissions for My
 // Calendar I.
 ​ class MyCalendar {
-public:
+ public:
    vector<pair<int, int>> mtgs;
    
   MyCalendar() {}

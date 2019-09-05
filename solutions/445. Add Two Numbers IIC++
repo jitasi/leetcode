@@ -11,10 +11,9 @@
  * };
  */
 class Solution {
-public:
+ public:
   ListNode *ReverseList(ListNode *head, int *cnt) {
-    if (head == nullptr)
-      return nullptr;
+    if (head == nullptr) return nullptr;
 
     int count = 1;
     ListNode *prev = head;
@@ -28,8 +27,7 @@ public:
       prev = cur;
       cur = t;
     }
-    if (cnt != nullptr)
-      *cnt = count;
+    if (cnt != nullptr) *cnt = count;
     return prev;
   }
 

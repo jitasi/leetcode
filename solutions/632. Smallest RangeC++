@@ -4,24 +4,22 @@ Memory Usage: 15.7 MB, less than 30.96% of C++ online submissions for Smallest R
 
 
 class Solution {
-public:
+ public:
   vector<int> smallestRange(vector<vector<int>> &nums) {
     const int k = nums.size();
 
-    vector<pair<int, int>> ps; // val, idx of vector
+    vector<pair<int, int>> ps;  // val, idx of vector
     for (int i = 0; i < k; i++)
-      for (const int n : nums[i])
-        ps.push_back({n, i});
+      for (const int n : nums[i]) ps.push_back({n, i});
     std::sort(ps.begin(), ps.end());
 
-    unordered_map<int, int> m; // idx of vector, appears
-    int cnt = 0;               // num of vectors in window
-    int first = 0;             // window first
+    unordered_map<int, int> m;  // idx of vector, appears
+    int cnt = 0;                // num of vectors in window
+    int first = 0;              // window first
     int ans_first = -1, ans_last = nums.size() - 1;
     for (int i = 0; i < ps.size(); i++) {
       m[ps[i].second]++;
-      if (m[ps[i].second] == 1)
-        cnt++;
+      if (m[ps[i].second] == 1) cnt++;
 
       while (cnt >= k && first < ps.size()) {
         if (ans_first == -1 || ps[ans_last].first - ps[ans_first].first >
@@ -30,8 +28,7 @@ public:
           ans_first = first;
         }
         m[ps[first].second]--;
-        if (m[ps[first].second] == 0)
-          cnt--;
+        if (m[ps[first].second] == 0) cnt--;
         first++;
       }
     }

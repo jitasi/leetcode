@@ -6,10 +6,8 @@
  * };
  */
 struct ListNode *mergeTwoLists(struct ListNode *l1, struct ListNode *l2) {
-  if (l2 == NULL)
-    return l1;
-  if (l1 == NULL)
-    return l2;
+  if (l2 == NULL) return l1;
+  if (l1 == NULL) return l2;
 
   struct ListNode *head = NULL;
   struct ListNode *tail = NULL;
@@ -31,9 +29,7 @@ struct ListNode *mergeTwoLists(struct ListNode *l1, struct ListNode *l2) {
     }
   }
 
-  if (l1 == NULL)
-    tail->next = l2;
-  if (l2 == NULL)
-    tail->next = l1;
+  if (l1 == NULL) tail->next = l2;
+  if (l2 == NULL) tail->next = l1;
   return head;
 }

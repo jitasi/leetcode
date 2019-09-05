@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   bool canPlaceFlowers(vector<int> &flowerbed, int n) {
     bool f = true;
     int c = 0;

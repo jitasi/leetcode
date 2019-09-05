@@ -7,12 +7,10 @@
  * };
  */
 class Solution {
-public:
+ public:
   ListNode *removeElements(ListNode *head, int val) {
-    while (head != NULL && head->val == val)
-      head = head->next;
-    if (head == NULL)
-      return NULL;
+    while (head != NULL && head->val == val) head = head->next;
+    if (head == NULL) return NULL;
 
     ListNode *p = head;
     ListNode *q = p->next;

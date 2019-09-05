@@ -3,7 +3,7 @@
 // for Integer Replacement.
 
 class Solution {
-public:
+ public:
   int integerReplacement(int n) {
     int cnt = 0;
     long t = n;

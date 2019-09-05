@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   vector<vector<string>> groupAnagrams(vector<string> &strs) {
     unordered_map<string, int> m;
     vector<vector<string>> ret;

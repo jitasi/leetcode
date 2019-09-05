@@ -3,12 +3,11 @@
 // submissions for Contains Duplicate III.
 
 class Solution {
-public:
+ public:
   bool containsNearbyAlmostDuplicate(vector<int> &nums, int k, int t) {
-    map<long, int> m; // val -> idx
+    map<long, int> m;  // val -> idx
     for (int i = 0; i < nums.size(); i++) {
-      if (i > k)
-        m.erase(nums[i - k - 1]);
+      if (i > k) m.erase(nums[i - k - 1]);
 
       auto it = m.lower_bound(long(nums[i]) - t);
       if (it != m.end() && it->first - t <= nums[i]) {

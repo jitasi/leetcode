@@ -3,7 +3,7 @@
 // online submissions for Knight Probability in Chessboard.
 
 class Solution {
-public:
+ public:
   double knightProbability(int N, int K, int r, int c) {
     const int dir[8][2] = {{-1, -2}, {1, -2}, {-1, 2}, {1, 2},
                            {-2, -1}, {2, -1}, {-2, 1}, {2, 1}};
@@ -20,8 +20,7 @@ public:
             const int x = i + dir[d][0];
             const int y = j + dir[d][1];
 
-            if (x >= 0 && x < N && y >= 0 && y < N)
-              p += prev[x][y];
+            if (x >= 0 && x < N && y >= 0 && y < N) p += prev[x][y];
           }
           cur[i][j] = p / 8.0;
         }

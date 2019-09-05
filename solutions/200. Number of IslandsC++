@@ -1,21 +1,18 @@
 
 class Solution {
-public:
+ public:
   const int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
   int numIslands(vector<vector<char>> &grid) {
     int cnt = 0;
     const int rows = grid.size();
-    if (rows == 0)
-      return 0;
+    if (rows == 0) return 0;
     const int cols = grid[0].size();
-    if (cols == 0)
-      return 0;
+    if (cols == 0) return 0;
 
     for (int i = 0; i < rows; i++) {
       for (int j = 0; j < cols; j++) {
-        if (grid[i][j] == '0')
-          continue;
+        if (grid[i][j] == '0') continue;
         cnt++;
 
         stack<pair<int, int>> s;

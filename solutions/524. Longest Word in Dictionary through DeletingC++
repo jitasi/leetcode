@@ -3,11 +3,10 @@
 // C++ online submissions for Longest Word in Dictionary through Deleting.
 
 class Solution {
-public:
+ public:
   string findLongestWord(string s, vector<string> &d) {
     std::sort(d.begin(), d.end(), [](const string &a, const string &b) {
-      if (a.size() != b.size())
-        return a.size() > b.size();
+      if (a.size() != b.size()) return a.size() > b.size();
       return a < b;
     });
 
@@ -21,8 +20,7 @@ public:
           ;
         //        cout << start << ", " << i << endl;
       }
-      if (i == w.size() && s[start - 1] == w[i - 1])
-        return w;
+      if (i == w.size() && s[start - 1] == w[i - 1]) return w;
     }
     return "";
   }

@@ -1,7 +1,7 @@
 // Runtime: 28 ms, faster than 86.54% of C++ online submissions for Candy.
 // Memory Usage: 10.1 MB, less than 97.53% of C++ online submissions for Candy.
 ​ class Solution {
-public:
+ public:
    int candy(vector<int> &ratings) {
        if (ratings.size() <= 1) return ratings.size();
        

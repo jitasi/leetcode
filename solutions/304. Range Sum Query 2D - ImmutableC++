@@ -2,7 +2,7 @@
 // Query 2D - Immutable. Memory Usage: 16.3 MB, less than 99.87% of C++ online
 // submissions for Range Sum Query 2D - Immutable.
 ​ class NumMatrix {
-public:
+ public:
    vector<vector<int>> sums;
    
   NumMatrix(vector<vector<int>> &matrix) {

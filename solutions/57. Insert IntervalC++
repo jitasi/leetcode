@@ -3,7 +3,7 @@
 // for Insert Interval.
 
 class Solution {
-public:
+ public:
   vector<vector<int>> insert(vector<vector<int>> &intervals,
                              vector<int> &newInterval) {
     const int n = intervals.size();

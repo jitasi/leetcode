@@ -4,7 +4,7 @@
 ​
     // https://leetcode.com/problems/reverse-pairs/discuss/97268/general-principles-behind-problems-similar-to-reverse-pairs
     ​ class Solution {
-public:
+ public:
    int reversePairs(vector<int> &nums) {
        return reversePairs(nums, 0, nums.size());
   }

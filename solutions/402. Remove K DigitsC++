@@ -2,7 +2,7 @@
 // Digits. Memory Usage: 9.1 MB, less than 73.67% of C++ online submissions for
 // Remove K Digits.
 ​ class Solution {
-public:
+ public:
    string removeKdigits(string num, int k) {
        const int len = num.size();
        

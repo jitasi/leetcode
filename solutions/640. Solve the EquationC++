@@ -2,8 +2,8 @@
 // Equation. Memory Usage: 8.6 MB, less than 38.55% of C++ online submissions
 // for Solve the Equation.
 ​ class Solution {
-public:
-    // -1x+5-3+2x
+ public:
+     // -1x+5-3+2x
   pair<int, int> simplify(const string &s, int begin, int end) {
        int sign = 1;
        int a =  0;
@@ -15,11 +15,11 @@ public:
            
       }
       else if (s[i] == '+' || s[i] == '-') {
-                // process val.
+                 // process val.
         b += sign * val;
                val = 0;
                
-         // sign for next val
+          // sign for next val
         sign = s[i] == '-' ? -1 : 1;
            
       }

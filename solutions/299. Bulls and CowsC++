@@ -3,7 +3,7 @@
 // Bulls and Cows.
 
 class Solution {
-public:
+ public:
   string getHint(string secret, string guess) {
     int A = 0;
     int B = 0;

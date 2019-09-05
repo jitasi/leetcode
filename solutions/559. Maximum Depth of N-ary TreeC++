@@ -14,16 +14,14 @@ public:
 };
 */
 class Solution {
-public:
+ public:
   int maxDepth(Node *root) {
-    if (root == nullptr)
-      return 0;
+    if (root == nullptr) return 0;
 
     int m = 0;
     for (auto *child : root->children) {
       const int d = maxDepth(child);
-      if (d > m)
-        m = d;
+      if (d > m) m = d;
     }
     return m + 1;
   }

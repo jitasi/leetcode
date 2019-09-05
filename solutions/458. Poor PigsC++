@@ -2,7 +2,7 @@
 // Memory Usage: 8.1 MB, less than 88.64% of C++ online submissions for Poor
 // Pigs.
 ​ class Solution {
-public:
+ public:
      int poorPigs(int buckets, int minutesToDie, int minutesToTest) {
          const int one_pig = minutesToTest / minutesToDie + 1;
          int ans = 0;

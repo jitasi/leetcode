@@ -8,10 +8,9 @@
  * };
  */
 class Solution {
-public:
+ public:
   int work(TreeNode *root, int acc) {
-    if (root == nullptr)
-      return acc;
+    if (root == nullptr) return acc;
 
     if (root->right != nullptr) {
       acc = work(root->right, acc);

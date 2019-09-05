@@ -3,22 +3,17 @@
 // submissions for Swap Adjacent in LR String.
 
 class Solution {
-public:
+ public:
   bool canTransform(string start, string end) {
     const int len = start.size();
     int i = 0, j = 0;
 
     while (i < len && j < len) {
-      while (i < len - 1 && start[i] == 'X')
-        i++;
-      while (j < len - 1 && end[j] == 'X')
-        j++;
-      if (start[i] != end[j])
-        return false;
-      if (start[i] == 'L' && i < j)
-        return false;
-      if (start[i] == 'R' && i > j)
-        return false;
+      while (i < len - 1 && start[i] == 'X') i++;
+      while (j < len - 1 && end[j] == 'X') j++;
+      if (start[i] != end[j]) return false;
+      if (start[i] == 'L' && i < j) return false;
+      if (start[i] == 'R' && i > j) return false;
       i++;
       j++;
     }

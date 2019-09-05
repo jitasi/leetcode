@@ -3,12 +3,11 @@
 Memory Usage: 34.8 MB, less than 55.85% of C++ online submissions for Word Ladder II.
 
 class Solution {
-public:
+ public:
   bool isConnected(const string &a, const string &b) {
     int cnt = 0;
     for (int i = 0; i < a.size(); i++)
-      if (a[i] == b[i])
-        cnt++;
+      if (a[i] == b[i]) cnt++;
     return cnt == a.size() - 1;
   }
 
@@ -28,18 +27,15 @@ public:
         auto &path = paths.front();
 
         for (const int next : conns[path.back()]) {
-          if (visited[next] > 0)
-            continue;
+          if (visited[next] > 0) continue;
           if (next == target) {
             vector<string> p(path.size() + 1);
-            for (int i = 0; i < path.size(); i++)
-              p[i] = wordList[path[i]];
+            for (int i = 0; i < path.size(); i++) p[i] = wordList[path[i]];
             p.back() = wordList[target];
             ans.push_back(p);
           }
 
-          if (!ans.empty())
-            continue;
+          if (!ans.empty()) continue;
 
           next_visited[next] = true;
 
@@ -51,8 +47,7 @@ public:
         paths.pop();
       }
 
-      if (!ans.empty())
-        return;
+      if (!ans.empty()) return;
       visited.swap(next_visited);
     }
   }
@@ -71,8 +66,7 @@ public:
           conns[j].insert(i);
         }
       }
-      if (wordList[i] == endWord)
-        target = i;
+      if (wordList[i] == endWord) target = i;
     }
 
     vector<vector<string>> ans;

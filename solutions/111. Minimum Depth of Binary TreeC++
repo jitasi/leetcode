@@ -8,10 +8,9 @@
  * };
  */
 class Solution {
-public:
+ public:
   int minDepth(TreeNode *root) {
-    if (root == NULL)
-      return 0;
+    if (root == NULL) return 0;
     int left_deep = minDepth(root->left);
     int right_deep = minDepth(root->right);
     if (left_deep == 0)
@@ -22,8 +21,7 @@ public:
   }
 
   int minDepthInternal(TreeNode *root) {
-    if (root == NULL)
-      return 0;
+    if (root == NULL) return 0;
     int left_deep = minDepthInternal(root->left);
     int right_deep = minDepthInternal(root->right);
     return 1 + (left_deep < right_deep ? left_deep : right_deep);

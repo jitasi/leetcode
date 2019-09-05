@@ -3,16 +3,13 @@
 // Unique Paths II.
 
 class Solution {
-public:
+ public:
   int uniquePathsWithObstacles(vector<vector<int>> &obstacleGrid) {
     const int rows = obstacleGrid.size();
-    if (rows == 0)
-      return 0;
+    if (rows == 0) return 0;
     const int cols = obstacleGrid[0].size();
-    if (cols == 0)
-      return 0;
-    if (obstacleGrid[0][0] == 1)
-      return 0;
+    if (cols == 0) return 0;
+    if (obstacleGrid[0][0] == 1) return 0;
 
     unsigned int dp[rows][cols];
     dp[0][0] = 1;

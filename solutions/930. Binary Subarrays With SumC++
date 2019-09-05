@@ -3,8 +3,8 @@
     // Runtime: 52 ms, faster than 50.84% of C++ online submissions for Binary
     // Subarrays With Sum. Memory Usage: 19.6 MB, less than 21.34% of C++ online
     // submissions for Binary Subarrays With Sum.
-        ​ class Solution {
-public:
+    ​ class Solution {
+ public:
    int numSubarraysWithSum(vector<int> &A, int S) {
        unordered_map<int, int> m({{0, 1}});
        int ans = 0;

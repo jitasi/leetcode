@@ -7,12 +7,10 @@
  * };
  */
 class Solution {
-public:
+ public:
   ListNode *removeNthFromEnd(ListNode *head, int n) {
-    if (n == 0)
-      return head;
-    if (head->next == nullptr)
-      return nullptr;
+    if (n == 0) return head;
+    if (head->next == nullptr) return nullptr;
 
     ListNode *p = head;
     ListNode *q = head;

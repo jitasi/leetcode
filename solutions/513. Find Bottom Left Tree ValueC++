@@ -12,7 +12,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   void findBottomLeftValue(TreeNode *root, int &val, int &level) {
     if (root->left == nullptr && root->right == nullptr) {
       val = root->val;

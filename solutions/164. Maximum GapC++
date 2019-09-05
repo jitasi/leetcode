@@ -2,7 +2,7 @@
 // Memory Usage: 9.4 MB, less than 60.80% of C++ online submissions for Maximum
 // Gap.
 ​ class Solution {
-public:
+ public:
    int maximumGap(vector<int> &nums) {
        const int len = nums.size();
        if (len < 2) return 0;

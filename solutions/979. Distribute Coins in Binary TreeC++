@@ -12,7 +12,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   // pair<int, int>:
   // -- first: the coins to move to its parent, (negative if move from parent)
   // -- sconds: number of moves to balance.

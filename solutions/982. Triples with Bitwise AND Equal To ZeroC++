@@ -2,7 +2,7 @@
 // with Bitwise AND Equal To Zero. Memory Usage: 14.6 MB, less than 61.83% of
 // C++ online submissions for Triples with Bitwise AND Equal To Zero.
 ​ class Solution {
-public:
+ public:
    int countTriplets(vector<int> &A) {
        unordered_map<int, int> m;
        for (int i = 0; i < A.size(); i++)

@@ -2,7 +2,7 @@
 // Absolute Value Expression. Memory Usage: 11.3 MB, less than 100.00% of C++
 // online submissions for Maximum of Absolute Value Expression.
 ​ class Solution {
-public:
+ public:
    int maxAbsValExpr(vector<int> &arr1, vector<int> &arr2) {
        int ans = 0;
        for (const int p : {-1, 1}) {

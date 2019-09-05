@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   vector<vector<int>> kClosest(vector<vector<int>> &points, int K) {
     auto cmp = [](const pair<int, int> &a, const pair<int, int> &b) {
       return a.first < b.first;
@@ -10,8 +10,7 @@ public:
       const long long dist =
           points[i][0] * points[i][0] + points[i][1] * points[i][1];
       pq.push({dist, i});
-      if (pq.size() > K)
-        pq.pop();
+      if (pq.size() > K) pq.pop();
     }
 
     vector<vector<int>> ret;

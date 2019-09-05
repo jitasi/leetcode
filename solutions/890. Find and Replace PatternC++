@@ -3,7 +3,7 @@
 // submissions for Find and Replace Pattern.
 
 class Solution {
-public:
+ public:
   bool match(const string &w, const string &p) {
     unordered_map<char, char> m;
     unordered_set<char> s;
@@ -25,8 +25,7 @@ public:
   vector<string> findAndReplacePattern(vector<string> &words, string pattern) {
     vector<string> ans;
     for (const string &w : words) {
-      if (match(w, pattern))
-        ans.push_back(w);
+      if (match(w, pattern)) ans.push_back(w);
     }
     return ans;
   }

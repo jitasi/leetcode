@@ -1,14 +1,12 @@
 class Solution {
-public:
+ public:
   vector<int> findAnagrams(string s, string p) {
     vector<int> ret;
-    if (s.size() < p.size())
-      return ret;
+    if (s.size() < p.size()) return ret;
 
     string cnt;
     cnt.resize(26, 0);
-    for (char c : p)
-      cnt[c - 'a']++;
+    for (char c : p) cnt[c - 'a']++;
 
     string wnd;
     wnd.resize(26, 0);
@@ -19,8 +17,7 @@ public:
 
     for (int i = p_len - 1; i < s.size(); i++) {
       wnd[s[i] - 'a']++;
-      if (wnd == cnt)
-        ret.push_back(i - p_len + 1);
+      if (wnd == cnt) ret.push_back(i - p_len + 1);
       wnd[s[i - p_len + 1] - 'a']--;
     }
     return ret;

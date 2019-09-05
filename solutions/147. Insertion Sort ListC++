@@ -11,7 +11,7 @@
      * };
      */
     class Solution {
-public:
+ public:
    ListNode *insertionSortList(ListNode *head) {
        ListNode *dummy = new ListNode(-1);
        ListNode *cur = dummy;

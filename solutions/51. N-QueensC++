@@ -1,12 +1,10 @@
 
 class Solution {
-public:
+ public:
   bool valid(int n, int *st, int cur, int c) {
     for (int i = 0; i < cur; i++) {
-      if (st[i] == c)
-        return false;
-      if (cur - i == abs(c - st[i]))
-        return false;
+      if (st[i] == c) return false;
+      if (cur - i == abs(c - st[i])) return false;
     }
     return true;
   }
@@ -39,8 +37,7 @@ public:
   }
 
   vector<vector<string>> solveNQueens(int n) {
-    if (n == 0)
-      return {};
+    if (n == 0) return {};
     vector<vector<string>> ans;
     int st[n];
     solve(n, ans, st, 0);

@@ -1,5 +1,5 @@
 class MinStack {
-public:
+ public:
   /** initialize your data structure here. */
   vector<int> stack;
   vector<int> min_stack;

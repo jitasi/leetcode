@@ -2,7 +2,7 @@
 // Bipartite?. Memory Usage: 25.7 MB, less than 5.03% of C++ online submissions
 // for Is Graph Bipartite?.
 ​ class Solution {
-public:
+ public:
    int f(const vector<int> grps, int idx) {
        while (grps[idx] != -1) idx = grps[idx];
        return idx;

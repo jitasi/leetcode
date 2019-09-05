@@ -1,8 +1,7 @@
 class Solution {
-public:
+ public:
   bool increasingTriplet(vector<int> &nums) {
-    if (nums.size() < 3)
-      return false;
+    if (nums.size() < 3) return false;
 
     int min_so_far = nums[0];
     bool has_candidate = false;

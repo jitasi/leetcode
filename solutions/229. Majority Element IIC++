@@ -3,7 +3,7 @@
 // for Majority Element II.
 
 class Solution {
-public:
+ public:
   vector<int> majorityElement(vector<int> &nums) {
     int candidate_1 = 0, candidate_2 = 0;
     int cnt1 = 0, cnt2 = 0;
@@ -33,10 +33,8 @@ public:
     }
 
     vector<int> ans;
-    if (nums.size() / 3 < cnt1)
-      ans.push_back(candidate_1);
-    if (nums.size() / 3 < cnt2)
-      ans.push_back(candidate_2);
+    if (nums.size() / 3 < cnt1) ans.push_back(candidate_1);
+    if (nums.size() / 3 < cnt2) ans.push_back(candidate_2);
     return ans;
   }
 };

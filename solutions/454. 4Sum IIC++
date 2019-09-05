@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   int fourSumCount(vector<int> &A, vector<int> &B, vector<int> &C,
                    vector<int> &D) {
     unordered_map<int, int> m;
@@ -18,8 +18,7 @@ public:
     for (int c : C) {
       for (int d : D) {
         const int s = -c - d;
-        if (m.find(s) != m.end())
-          cnt += m[s];
+        if (m.find(s) != m.end()) cnt += m[s];
       }
     }
 

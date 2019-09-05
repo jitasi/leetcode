@@ -1,5 +1,5 @@
 class MedianFinder {
-public:
+ public:
   /** initialize your data structure here. */
   // half of the samll numbers, pop up max first.
   priority_queue<int, vector<int>, less<int>> min_heap;
@@ -24,8 +24,7 @@ public:
   }
 
   double findMedian() {
-    if (min_heap.size() > max_heap.size())
-      return min_heap.top();
+    if (min_heap.size() > max_heap.size()) return min_heap.top();
     return (min_heap.top() + max_heap.top()) / 2.0;
   }
 };

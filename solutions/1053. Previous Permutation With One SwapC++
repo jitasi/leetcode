@@ -2,7 +2,7 @@
 // Permutation With One Swap. Memory Usage: 12.6 MB, less than 100.00% of C++
 // online submissions for Previous Permutation With One Swap.
 ​ class Solution {
-public:
+ public:
    vector<int> prevPermOpt1(vector<int> &A) {
        const int len = A.size();
        

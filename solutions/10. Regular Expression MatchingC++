@@ -1,8 +1,7 @@
 class Solution {
-public:
+ public:
   bool isMatch(string s, string p) {
-    if (s.empty() && p.empty())
-      return true;
+    if (s.empty() && p.empty()) return true;
 
     const int len_s = s.size();
     const int len_p = p.size();
@@ -23,8 +22,7 @@ public:
           last = p[j - 1];
         } else {
           // match x => x*
-          if (dp[i][j - 1])
-            dp[i][j] = true;
+          if (dp[i][j - 1]) dp[i][j] = true;
           // match xx => x*
           // match xxx => x*, xxxx => x*
           else if (i >= 1 && (dp[i - 1][j - 1] || dp[i - 1][j]) &&

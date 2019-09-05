@@ -3,10 +3,9 @@
 // Beautiful Array.
 
 class Solution {
-public:
+ public:
   vector<int> beautifulArray(int N) {
-    if (N == 0)
-      return {};
+    if (N == 0) return {};
     vector<int> ans(1);
     ans[0] = 1;
 

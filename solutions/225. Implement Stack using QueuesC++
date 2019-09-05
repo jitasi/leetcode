@@ -2,7 +2,7 @@
 // Stack using Queues. Memory Usage: 9 MB, less than 15.51% of C++ online
 // submissions for Implement Stack using Queues.
 ​ class MyStack {
-public:
+ public:
      queue<int> q1, q2;
    
     /** Initialize your data structure here. */

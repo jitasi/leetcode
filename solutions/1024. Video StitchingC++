@@ -3,26 +3,22 @@
 // for Video Stitching.
 
 class Solution {
-public:
+ public:
   int videoStitching(vector<vector<int>> &clips, int T) {
     int dp[T + 1];
-    for (int i = 0; i <= T; i++)
-      dp[i] = -1;
+    for (int i = 0; i <= T; i++) dp[i] = -1;
 
     sort(clips.begin(), clips.end());
     for (const auto &clip : clips) {
       const int prev = clip[0];
-      if (prev > T)
-        break;
+      if (prev > T) break;
 
       const int prev_num = (prev == 0) ? 0 : prev_num = dp[prev];
-      if (prev_num == -1)
-        return -1;
+      if (prev_num == -1) return -1;
 
       int cur_num = prev_num + 1;
       for (int i = clip[0]; i <= clip[1] && i <= T; i++) {
-        if (dp[i] == -1 || dp[i] > cur_num)
-          dp[i] = cur_num;
+        if (dp[i] == -1 || dp[i] > cur_num) dp[i] = cur_num;
       }
     }
     return dp[T];

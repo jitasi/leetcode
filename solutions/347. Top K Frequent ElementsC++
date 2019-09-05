@@ -2,7 +2,7 @@
 // Frequent Elements. Memory Usage: 11.6 MB, less than 22.86% of C++ online
 // submissions for Top K Frequent Elements.
 ​ class Solution {
-public:
+ public:
      vector<int> topKFrequent(vector<int> &nums, int k) {
          unordered_map<int, int> m;
          for (auto num : nums) m[num]++;

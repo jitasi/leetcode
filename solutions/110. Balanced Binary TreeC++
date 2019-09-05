@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   bool isBalanced(TreeNode *root) {
     int level;
     return helper(root, &level);

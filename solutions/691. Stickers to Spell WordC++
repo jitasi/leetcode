@@ -2,7 +2,7 @@
 // Spell Word. Memory Usage: 9.9 MB, less than 77.53% of C++ online submissions
 // for Stickers to Spell Word.
 ​ class Solution {
-public:
+ public:
    int minStickers(vector<string> &stickers, string target) {
        const int len = target.size();
        const int states = 1 << len;

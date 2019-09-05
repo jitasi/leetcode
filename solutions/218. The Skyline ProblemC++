@@ -2,7 +2,7 @@
 // Problem. Memory Usage: 14.1 MB, less than 82.34% of C++ online submissions
 // for The Skyline Problem.
 ​ class Solution {
-public:
+ public:
    vector<vector<int>> getSkyline(vector<vector<int>> &buildings) {
        if (buildings.empty()) return {};
        
@@ -17,7 +17,7 @@ public:
        const auto it = std::unique(pos.begin(), pos.end());
        pos.resize(std::distance(pos.begin(), it));
        
-     // highest buildings pops first.
+      // highest buildings pops first.
     auto cmp = [&buildings](int a, int b) {
            return buildings[a][2] < buildings[b][2];
        
@@ -29,14 +29,14 @@ public:
        int last_height = 0;
        const int num_buildings = buildings.size();
        for (int i = 1; i < pos.size(); i++) {
-            // insert buildings
+             // insert buildings
       while (next_building < num_buildings &&
               buildings[next_building][0] < pos[i]) {
                pq.push(next_building++);
            
       }
            
-       // get the highest building between pos[i-1] .. pos[i]
+        // get the highest building between pos[i-1] .. pos[i]
       int cur_building = -1;
            while (!pq.empty()) {
                cur_building = pq.top();
@@ -49,7 +49,7 @@ public:
            
       }
            
-       // update height
+        // update height
       if (cur_building != -1) {
                if (last_height != buildings[cur_building][2]) {
                    ans.push_back({pos[i - 1], buildings[cur_building][2]});

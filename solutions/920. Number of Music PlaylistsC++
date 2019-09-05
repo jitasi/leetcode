@@ -2,12 +2,12 @@
 // Music Playlists. Memory Usage: 8.1 MB, less than 95.48% of C++ online
 // submissions for Number of Music Playlists.
 ​ class Solution {
-public:
+ public:
    const int MOD = 1000000007;
   ​
   int numMusicPlaylists(int N, int L, int K) {
        long dp[L + 1][N + 1];
-      // dp[i][j]: number playlists with length j of i diffs songs.
+       // dp[i][j]: number playlists with length j of i diffs songs.
     for (int i = 0; i <= L; i++)
       for (int j = 0; j <= N; j++)
         dp[i][j] = 0;
@@ -16,7 +16,7 @@ public:
        for (int i = 1; i <= L; i++) {
            for (int j = 1; j <= N; j++) {
                dp[i][j] = (dp[i - 1][j - 1] * (N - j + 1)) % MOD;
-          // the last song is new song
+           // the last song is new song
         if (j > K) dp[i][j] =
             (dp[i][j] + (dp[i - 1][j] * (j - K)) % MOD) % MOD;
            

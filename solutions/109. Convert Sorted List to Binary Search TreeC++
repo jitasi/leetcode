@@ -20,7 +20,7 @@
      * };
      */
     class Solution {
-public:
+ public:
    TreeNode *sortedListToBST(ListNode *head) {
        if (head == nullptr) return nullptr;
        if (head->next == nullptr) return new TreeNode(head->val);

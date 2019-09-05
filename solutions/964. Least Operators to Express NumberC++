@@ -2,21 +2,21 @@
 // Operators to Express Number. Memory Usage: 12.7 MB, less than 19.69% of C++
 // online submissions for Least Operators to Express Number.
 ​ class Solution {
-public:
+ public:
    unordered_map<int, int> m;
    
   int leastOpsExpressTarget(int x, int target) {
        if (target == 0) return 0;
        
-     // target < x
-     // case 1: x / x + x / x + x / x + ... => target + (taget - 1)
-     // case 2: x - x / x - x / x - ... => (x - target) + (x - target)
+      // target < x
+      // case 1: x / x + x / x + x / x + ... => target + (taget - 1)
+      // case 2: x - x / x - x / x - ... => (x - target) + (x - target)
     if (target < x) return min(2 * target - 1, 2 * (x - target));
     ​
     if (m.count(target)) return m[target];
        
-     // target >= x
-     // case 1: x * x * x * .... => (k - 1)
+      // target >= x
+      // case 1: x * x * x * .... => (k - 1)
     int k = log(target) / log(x);
        long p = pow(x, k);
        if (target == p) {
@@ -25,12 +25,12 @@ public:
        
     }
        
-     // case 2: x * x * ... * x + f(x, target - p) => (k - 1) + 1 + least(x, target - p)
+      // case 2: x * x * ... * x + f(x, target - p) => (k - 1) + 1 + least(x, target - p)
     int ans = leastOpsExpressTarget(x, target - p) + k;
        
-     // case 3: x * x * ... * x + f(x, p * x - target) => k + 1 + least(x, p * x - target)
+      // case 3: x * x * ... * x + f(x, p * x - target) => k + 1 + least(x, p * x - target)
     long sub = p * x - target;
-       if (sub < target)   // keep target decreasing
+       if (sub < target)    // keep target decreasing
       ans = min(ans, leastOpsExpressTarget(x, sub) + k + 1);
        m[target] = ans;
        return ans;

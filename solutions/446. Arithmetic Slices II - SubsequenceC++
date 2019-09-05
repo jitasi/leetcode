@@ -1,6 +1,6 @@
 
 class Solution {
-public:
+ public:
   int numberOfArithmeticSlices(vector<int> &A) {
     const int len = A.size();
 
@@ -11,8 +11,7 @@ public:
     for (int i = 1; i < len; i++) {
       for (int j = 0; j < i; j++) {
         const long diff = long(A[i]) - long(A[j]);
-        if (diff > INT_MAX || diff < INT_MIN)
-          continue;
+        if (diff > INT_MAX || diff < INT_MIN) continue;
         dp[i][diff]++;
         if (dp[j].count(diff)) {
           ans += dp[j][diff];

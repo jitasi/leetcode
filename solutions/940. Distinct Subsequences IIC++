@@ -2,12 +2,12 @@
 // Subsequences II. Memory Usage: 8.9 MB, less than 49.18% of C++ online
 // submissions for Distinct Subsequences II.
 ​ class Solution {
-public:
+ public:
    const int MOD = 1000000007;
    
   int distinctSubseqII(string S) {
        vector<int> dp(26, 0);
-      // distinc subsequence ending with dp[i] = 'a'.
+       // distinc subsequence ending with dp[i] = 'a'.
     for (const char c : S)
       dp[c - 'a'] = accumulate(dp.begin(), dp.end(), 1L) % MOD;
        return accumulate(dp.begin(), dp.end(), 0L) % MOD;

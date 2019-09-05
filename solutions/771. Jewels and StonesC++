@@ -1,15 +1,12 @@
 class Solution {
-public:
+ public:
   int numJewelsInStones(string J, string S) {
     bool flags[256];
-    for (int i = 0; i < 256; i++)
-      flags[i] = false;
-    for (unsigned char c : J)
-      flags[c] = true;
+    for (int i = 0; i < 256; i++) flags[i] = false;
+    for (unsigned char c : J) flags[c] = true;
     int count = 0;
     for (unsigned char c : S) {
-      if (flags[c])
-        count++;
+      if (flags[c]) count++;
     }
     return count;
   }

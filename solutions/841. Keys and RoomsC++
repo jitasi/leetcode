@@ -1,27 +1,24 @@
 class Solution {
-public:
+ public:
   bool canVisitAllRooms(vector<vector<int>> &rooms) {
     const int len = rooms.size();
 
     bool visited[len];
-    for (int i = 1; i < len; i++)
-      visited[i] = false;
+    for (int i = 1; i < len; i++) visited[i] = false;
     visited[0] = true;
 
     unordered_set<int> keys(rooms[0].begin(), rooms[0].end());
     while (!keys.empty()) {
       const int r = *keys.begin();
       keys.erase(r);
-      if (visited[r])
-        continue;
+      if (visited[r]) continue;
 
       visited[r] = true;
       keys.insert(rooms[r].begin(), rooms[r].end());
     }
 
     for (int i = 0; i < len; i++) {
-      if (visited[i] == false)
-        return false;
+      if (visited[i] == false) return false;
     }
     return true;
   }

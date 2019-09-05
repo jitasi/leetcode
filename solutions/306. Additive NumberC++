@@ -2,7 +2,7 @@
 // Number. Memory Usage: 8.2 MB, less than 66.03% of C++ online submissions for
 // Additive Number.
 ​ class Solution {
-public:
+ public:
    bool isAdditiveNumber(string num) {
        const int len = num.size();
        if (len < 3) return false;

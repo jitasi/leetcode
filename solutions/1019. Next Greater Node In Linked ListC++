@@ -11,11 +11,10 @@
  * };
  */
 class Solution {
-public:
+ public:
   vector<int> nextLargerNodes(ListNode *head) {
     vector<int> ans;
-    if (head == nullptr)
-      return ans;
+    if (head == nullptr) return ans;
 
     stack<int> s;
     while (head != nullptr) {

@@ -3,7 +3,7 @@
 // Ugly Number II.
 
 class Solution {
-public:
+ public:
   int nthUglyNumber(int n) {
     priority_queue<long, vector<long>, greater<long>> pq;
     pq.push(1);
@@ -12,8 +12,7 @@ public:
     while (n-- > 0) {
       cur = pq.top();
       pq.pop();
-      while (!pq.empty() && cur == pq.top())
-        pq.pop();
+      while (!pq.empty() && cur == pq.top()) pq.pop();
 
       pq.push(cur * 2);
       pq.push(cur * 3);

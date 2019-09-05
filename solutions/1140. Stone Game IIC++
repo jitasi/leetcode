@@ -3,10 +3,10 @@
     // Runtime: 4 ms, faster than 90.81% of C++ online submissions for Stone
     // Game II. Memory Usage: 9.4 MB, less than 100.00% of C++ online
     // submissions for Stone Game II.
-        ​ class Solution {
-public:
+    ​ class Solution {
+ public:
    unordered_map<int, int> dp;
-    // key: from << 6 + m
+     // key: from << 6 + m
   
   int helper(const vector<int> &suffix_sum, int from, int m) {
        const int max_taken_to = from + (m << 1);

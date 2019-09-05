@@ -12,7 +12,7 @@
      * };
      */
     class Solution {
-public:
+ public:
    int sumNumbers(TreeNode *root, int presum) {
        presum = presum * 10 + root->val;
        if (root->left == nullptr && root->right == nullptr) return presum;

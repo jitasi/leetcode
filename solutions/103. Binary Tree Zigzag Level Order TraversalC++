@@ -12,10 +12,9 @@
  * };
  */
 class Solution {
-public:
+ public:
   vector<vector<int>> zigzagLevelOrder(TreeNode *root) {
-    if (root == nullptr)
-      return {};
+    if (root == nullptr) return {};
     vector<vector<int>> ans;
     bool left_to_right = true;
     stack<TreeNode *> cur;
@@ -29,15 +28,11 @@ public:
         cur.pop();
         vals.push_back(p->val);
         if (left_to_right) {
-          if (p->left != nullptr)
-            next.push(p->left);
-          if (p->right != nullptr)
-            next.push(p->right);
+          if (p->left != nullptr) next.push(p->left);
+          if (p->right != nullptr) next.push(p->right);
         } else {
-          if (p->right != nullptr)
-            next.push(p->right);
-          if (p->left != nullptr)
-            next.push(p->left);
+          if (p->right != nullptr) next.push(p->right);
+          if (p->left != nullptr) next.push(p->left);
         }
       }
       ans.emplace_back(vals);

@@ -3,18 +3,15 @@
 // for Coin Change 2.
 
 class Solution {
-public:
+ public:
   int change(int amount, vector<int> &coins) {
     const int len = coins.size();
-    if (amount == 0)
-      return 1;
-    if (len == 0)
-      return 0;
+    if (amount == 0) return 1;
+    if (len == 0) return 0;
 
     vector<vector<int>> dp(amount + 1, vector<int>(len, 0));
 
-    for (int j = 0; j < len; j++)
-      dp[0][j] = 1;
+    for (int j = 0; j < len; j++) dp[0][j] = 1;
 
     for (int i = 1; i <= amount; i++) {
       for (int j = 0; j < len; j++) {

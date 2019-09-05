@@ -2,7 +2,7 @@
 // "2147483648"
 // -2147483648
 ​ ​ class Solution {
-public:
+ public:
    unordered_map<string, long> AddMultiply(string num, int l, int r) {
        if (r - l == 1) return {{string(1, num[l]), num[l] - '0'}};
        

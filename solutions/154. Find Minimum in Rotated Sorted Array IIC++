@@ -3,7 +3,7 @@
 // online submissions for Find Minimum in Rotated Sorted Array II.
 
 class Solution {
-public:
+ public:
   int findMin(vector<int> &nums) {
     int p = 0;
     int q = nums.size() - 1;

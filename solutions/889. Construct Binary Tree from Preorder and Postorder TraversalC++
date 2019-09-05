@@ -13,21 +13,18 @@
  * };
  */
 class Solution {
-public:
+ public:
   TreeNode *helper(vector<int> &pre, vector<int> &post, int pre_from,
                    int pre_to, int post_from, int post_to) {
     //    cout << pre_from << ", " << pre_to << ", " << post_from << ", " <<
     //    post_to << endl;
-    if (pre_from > pre_to)
-      return nullptr;
-    if (pre_from == pre_to)
-      return new TreeNode(pre[pre_from]);
+    if (pre_from > pre_to) return nullptr;
+    if (pre_from == pre_to) return new TreeNode(pre[pre_from]);
 
     TreeNode *root = new TreeNode(pre[pre_from]);
     int i = post_from;
     for (; i <= post_to; i++) {
-      if (pre[pre_from + 1] == post[i])
-        break;
+      if (pre[pre_from + 1] == post[i]) break;
     }
     root->left = helper(pre, post, pre_from + 1, pre_from + i - post_from + 1,
                         post_from, i);

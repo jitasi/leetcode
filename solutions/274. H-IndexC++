@@ -2,10 +2,9 @@
 // Memory Usage: 8.9 MB, less than 75.13% of C++ online submissions for H-Index.
 
 class Solution {
-public:
+ public:
   int hIndex(vector<int> &citations) {
-    if (citations.empty())
-      return 0;
+    if (citations.empty()) return 0;
 
     sort(citations.begin(), citations.end());
     int cnt = 0;
@@ -14,8 +13,7 @@ public:
     for (int i = citations.size() - 1; i >= 0; i--) {
       cnt++;
       new_h = min(citations[i], cnt);
-      if (new_h <= h)
-        return h;
+      if (new_h <= h) return h;
       h = new_h;
     }
     return cnt;

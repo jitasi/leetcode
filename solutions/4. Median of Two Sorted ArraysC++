@@ -3,19 +3,16 @@
 // submissions for Median of Two Sorted Arrays.
 
 class Solution {
-public:
+ public:
   int len1;
   int len2;
 
   double findKth(vector<int> &nums1, int s1, vector<int> &nums2, int s2,
                  int k) {
     //    cout << s1 << ", " << s2 << ", " << k << endl;
-    if (s1 >= len1)
-      return nums2[s2 + k];
-    if (s2 >= len2)
-      return nums1[s1 + k];
-    if (k == 0)
-      return min(nums1[s1], nums2[s2]);
+    if (s1 >= len1) return nums2[s2 + k];
+    if (s2 >= len2) return nums1[s1 + k];
+    if (k == 0) return min(nums1[s1], nums2[s2]);
 
     const int mid1 = min(len1 - s1, (k + 1) / 2);
     const int mid2 = min(len2 - s2, (k + 1) / 2);

@@ -1,15 +1,13 @@
 class Solution {
-public:
+ public:
   void combinationSum(vector<vector<int>> &ans, vector<int> &prefix,
                       int prefix_sum, vector<int> &candidates, int target,
                       int idx) {
-    if (target <= 0)
-      return;
+    if (target <= 0) return;
 
     for (int i = idx; i < candidates.size(); i++) {
       const int sum = prefix_sum + candidates[i];
-      if (sum > target)
-        break;
+      if (sum > target) break;
       prefix.push_back(candidates[i]);
 
       if (sum == target) {

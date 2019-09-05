@@ -4,17 +4,17 @@
 ​
     // https://leetcode.com/problems/remove-boxes/discuss/101310/java-top-down-and-bottom-up-dp-solutions
     ​ class Solution {
-public:
+ public:
    int removeBoxes(vector<int> &boxes) {
        const int len = boxes.size();
-        // dp[i][j][k]: max score from boxes[i] ,, box[j], inclusive. 
-     // with k boxes in color boxes[i] on its left.
-     // i.e.:   x x x x x x x ? ? ? ? ?
-     //         0 1 2     k i         j
+         // dp[i][j][k]: max score from boxes[i] ,, box[j], inclusive. 
+      // with k boxes in color boxes[i] on its left.
+      // i.e.:   x x x x x x x ? ? ? ? ?
+      //         0 1 2     k i         j
     int dp[len][len][len] = {0};
        for (int i = 0; i < len; i++)
       for (int k = 0; k <= i;
-            k++)   // be careful, boxes[i] has i boxes on its left.
+            k++)    // be careful, boxes[i] has i boxes on its left.
         dp[i][i][k] = (k + 1) * (k + 1);
        
     for (int l = 1; l < len; l++) {
@@ -22,9 +22,9 @@ public:
                const int j = i + l;
                
         for (int k = 0; k <= i; k++) {
-                    // init score by remove boxes[i] with the k boxes on the left.
+                     // init score by remove boxes[i] with the k boxes on the left.
           int score = (k + 1) * (k + 1) + dp[i + 1][j][0];
-                    // // remove all boxes from i+1 to m-1, then get k+1 boxes in color boxes[m]
+                     // // remove all boxes from i+1 to m-1, then get k+1 boxes in color boxes[m]
           for (int m = i + 1; m <= j; m++)
             if (boxes[m] == boxes[i])
               score = max(score, dp[i + 1][m - 1][0] + dp[m][j][k + 1]);

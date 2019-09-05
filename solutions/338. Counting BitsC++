@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   vector<int> countBits(int num) {
     vector<int> ret(num + 1, 0);
     int last = 0;

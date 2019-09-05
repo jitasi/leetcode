@@ -2,18 +2,18 @@
 // Memory Usage: 8 MB, less than 91.73% of C++ online submissions for Valid
 // Number.
 ​ class Solution {
-public:
+ public:
    bool isNumber(string s) {
        int l = 0;
        int r = s.size() - 1;
        while (r >= 0 && s[r] == ' ') r--;
        while (l <= r && s[l] == ' ') l++;
        if (l > r || s[l] == 'e' || s[r] == 'e') return false;
-      // empty or "2e" or "e2" or "e"
+       // empty or "2e" or "e2" or "e"
     if (l == r && s[l] == '.') return false;
-      // "."
+       // "."
     if (s[r] == '+' || s[r] == '-') return false;
-      // "4e+"
+       // "4e+"
     
     int num_digits = 0;
        bool allow_e = true;

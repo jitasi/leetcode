@@ -2,14 +2,11 @@
 // Word Is Valid After Substitutions. Memory Usage: 345.9 MB, less than 17.20%
 // of C++ online submissions for Check If Word Is Valid After Substitutions.
 class Solution {
-public:
+ public:
   bool isValid(string S) {
-    if (S.size() < 3)
-      return false;
-    if (S.size() % 3 != 0)
-      return false;
-    if (S[0] != 'a' || S[S.size() - 1] != 'c')
-      return false;
+    if (S.size() < 3) return false;
+    if (S.size() % 3 != 0) return false;
+    if (S[0] != 'a' || S[S.size() - 1] != 'c') return false;
 
     int idx;
     while ((idx = S.find("abc")) != std::string::npos) {

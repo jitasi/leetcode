@@ -3,29 +3,23 @@
 // for Surrounded Regions.
 
 class Solution {
-public:
+ public:
   const int dirs[4][2] = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
 
   void solve(vector<vector<char>> &board) {
     const int rows = board.size();
-    if (rows <= 1)
-      return;
+    if (rows <= 1) return;
     const int cols = board[0].size();
-    if (cols <= 1)
-      return;
+    if (cols <= 1) return;
 
     queue<pair<int, int>> q;
     for (int i = 0; i < rows; i++) {
-      if (board[i][0] == 'O')
-        q.push({i, 0});
-      if (board[i][cols - 1] == 'O')
-        q.push({i, cols - 1});
+      if (board[i][0] == 'O') q.push({i, 0});
+      if (board[i][cols - 1] == 'O') q.push({i, cols - 1});
     }
     for (int j = 1; j < cols - 1; j++) {
-      if (board[0][j] == 'O')
-        q.push({0, j});
-      if (board[rows - 1][j] == 'O')
-        q.push({rows - 1, j});
+      if (board[0][j] == 'O') q.push({0, j});
+      if (board[rows - 1][j] == 'O') q.push({rows - 1, j});
     }
 
     while (!q.empty()) {

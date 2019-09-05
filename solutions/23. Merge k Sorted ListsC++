@@ -8,12 +8,11 @@
  * };
  */
 class Solution {
-public:
+ public:
   ListNode *mergeKLists(vector<ListNode *> &lists) {
     ListNode *head = nullptr;
 
-    if (lists.empty())
-      return head;
+    if (lists.empty()) return head;
 
     auto cmp = [](const ListNode *a, const ListNode *b) {
       return a->val > b->val;
@@ -21,8 +20,7 @@ public:
     priority_queue<ListNode *, vector<ListNode *>, decltype(cmp)> queue(cmp);
 
     for (int i = 0; i < lists.size(); i++) {
-      if (lists[i] != nullptr)
-        queue.push(lists[i]);
+      if (lists[i] != nullptr) queue.push(lists[i]);
     }
 
     ListNode *cur = nullptr;
@@ -40,8 +38,7 @@ public:
         cur = tmp;
       }
     }
-    if (cur != nullptr)
-      cur->next = nullptr;
+    if (cur != nullptr) cur->next = nullptr;
 
     return head;
   }

@@ -2,11 +2,11 @@
 // Well-Performing Interval. Memory Usage: 11.5 MB, less than 100.00% of C++
 // online submissions for Longest Well-Performing Interval.
 ​ class Solution {
-public:
+ public:
    int longestWPI(vector<int> &hours) {
        int ans = 0;
        unordered_map<int, int> m;
-      // presum, idx
+       // presum, idx
     int presum = 0;
        for (int i = 0; i < hours.size(); i++) {
            presum += (hours[i] > 8) ? 1 : -1;

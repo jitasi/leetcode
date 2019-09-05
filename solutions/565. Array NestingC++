@@ -2,7 +2,7 @@
 // Nesting. Memory Usage: 9.9 MB, less than 68.83% of C++ online submissions for
 // Array Nesting.
 ​ class Solution {
-public:
+ public:
    int arrayNesting(vector<int> &nums) {
        const int len = nums.size();
        int ans = 0;

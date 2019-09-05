@@ -1,9 +1,8 @@
 class Solution {
-public:
+ public:
   int longestValidParentheses(string s) {
     const int len = s.size();
-    if (len < 2)
-      return 0;
+    if (len < 2) return 0;
 
     int max_len = 0;
 

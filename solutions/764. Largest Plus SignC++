@@ -3,7 +3,7 @@
 // for Largest Plus Sign.
 
 class Solution {
-public:
+ public:
   int orderOfLargestPlusSign(int N, vector<vector<int>> &mines) {
     int dp[N][N];
     for (int i = 0; i < N; i++) {

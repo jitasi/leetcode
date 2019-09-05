@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   vector<vector<int>> subsets(vector<int> &nums) {
     vector<vector<int>> ret = {{}};
     for (auto num : nums) {

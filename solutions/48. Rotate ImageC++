@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   void rotate(vector<vector<int>> &matrix) {
     const int n = matrix.size();
 

@@ -3,12 +3,11 @@
 // Interleaving String.
 
 class Solution {
-public:
+ public:
   bool isInterleave(string s1, string s2, string s3) {
     const int len1 = s1.size();
     const int len2 = s2.size();
-    if (len1 + len2 != s3.size())
-      return false;
+    if (len1 + len2 != s3.size()) return false;
 
     vector<vector<bool>> dp(len1 + 1, vector<bool>(len2 + 1, false));
 

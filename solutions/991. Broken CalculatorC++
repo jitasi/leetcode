@@ -3,7 +3,7 @@
 // for Broken Calculator.
 
 class Solution {
-public:
+ public:
   int brokenCalc(int X, int Y) {
     int ans = 0;
     while (Y > X) {

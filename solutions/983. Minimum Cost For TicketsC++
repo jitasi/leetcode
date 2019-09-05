@@ -3,7 +3,7 @@
 // for Minimum Cost For Tickets.
 
 class Solution {
-public:
+ public:
   int mincostTickets(vector<int> &days, vector<int> &costs) {
     int dp[days.size()];
     dp[0] = std::min(costs[0], std::min(costs[1], costs[2]));

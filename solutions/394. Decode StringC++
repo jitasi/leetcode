@@ -1,8 +1,7 @@
 class Solution {
-public:
+ public:
   int getNumber(const string &s, int *idx) {
-    if (s[*idx] < '0' || s[*idx] > '9')
-      return -1;
+    if (s[*idx] < '0' || s[*idx] > '9') return -1;
     int val = 0;
     while (s[*idx] != '[') {
       val *= 10;
@@ -14,15 +13,13 @@ public:
   string getStr(const string &s, int *idx) {
     int start = *idx;
     int end = *idx + 1;
-    while (s[end] >= 'a' && s[end] <= 'z')
-      end++;
+    while (s[end] >= 'a' && s[end] <= 'z') end++;
     *idx += end - start;
     return s.substr(start, end - start);
   }
 
   string decodeString(string s) {
-    if (s.empty())
-      return "";
+    if (s.empty()) return "";
 
     stack<int> repeats;
     stack<string> chars;

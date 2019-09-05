@@ -12,7 +12,7 @@
      * };
      */
     class Solution {
-public:
+ public:
      TreeNode *pre = nullptr, *first = nullptr, *second = nullptr;
    
     void recoverTree(TreeNode *root) {

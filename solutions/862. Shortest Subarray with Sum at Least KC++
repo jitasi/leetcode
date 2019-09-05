@@ -3,7 +3,7 @@
 // online submissions for Shortest Subarray with Sum at Least K.
 
 class Solution {
-public:
+ public:
   int shortestSubarray(vector<int> &A, int K) {
     const int len = A.size();
 
@@ -11,8 +11,7 @@ public:
     sum[0] = 0;
     for (int i = 0; i < len; i++) {
       sum[i + 1] = sum[i] + A[i];
-      if (sum[i + 1] < 0)
-        sum[i + 1] = 0;
+      if (sum[i + 1] < 0) sum[i + 1] = 0;
     }
 
     int min_len = len + 1;
@@ -20,12 +19,10 @@ public:
     int p = 0;
     dq.push_back(0);
     for (int q = 1; q <= len; q++) {
-      while (!dq.empty() && sum[dq.back()] >= sum[q])
-        dq.pop_back();
+      while (!dq.empty() && sum[dq.back()] >= sum[q]) dq.pop_back();
       dq.push_back(q);
 
-      if (sum[q] - sum[p] < K)
-        continue;
+      if (sum[q] - sum[p] < K) continue;
 
       while (sum[q] - sum[dq.front()] >= K) {
         min_len = min(min_len, q - dq.front());

@@ -2,10 +2,10 @@
 // Path with Alternating Colors. Memory Usage: 12.7 MB, less than 100.00% of C++
 // online submissions for Shortest Path with Alternating Colors.
 ​ class Solution {
-public:
+ public:
    vector<int> shortestAlternatingPaths(int n, vector<vector<int>> &red_edges,
                                         vector<vector<int>> &blue_edges) {
-        // Build Graph
+         // Build Graph
     vector<vector<int>> adj_red(n), adj_blue(n);
        for (const auto &e : red_edges) adj_red[e[0]].push_back(e[1]);
        for (const auto &e : blue_edges) adj_blue[e[0]].push_back(e[1]);
@@ -13,10 +13,10 @@ public:
     vector<int> ans(n, -1);
        ans[0] = 0;
      
-     // BFS
+      // BFS
     int hops = 0;
        queue<pair<int, bool>> q;
-      // node idx, true => next edge allow red; false => blue
+       // node idx, true => next edge allow red; false => blue
     vector<int> visited_red(n, 0), visited_blue(n, 0);
        q.push({0, true});
        q.push({0, false});

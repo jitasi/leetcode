@@ -3,12 +3,10 @@
 // for Score of Parentheses.
 
 class Solution {
-public:
+ public:
   int scoreOfParentheses(const string &S, int from, int to) {
-    if (from >= to)
-      return 0;
-    if (from + 1 == to)
-      return 1;
+    if (from >= to) return 0;
+    if (from + 1 == to) return 1;
 
     int pos = from;
     int cnt = 1;
@@ -19,8 +17,7 @@ public:
         cnt--;
     }
 
-    if (pos == to)
-      return 2 * scoreOfParentheses(S, from + 1, to - 1);
+    if (pos == to) return 2 * scoreOfParentheses(S, from + 1, to - 1);
     return scoreOfParentheses(S, from, pos) +
            scoreOfParentheses(S, pos + 1, to);
   }

@@ -1,8 +1,8 @@
 class Solution {
-public:
+ public:
    
-   // Runtime: 8 ms, faster than 90.71% of C++ online submissions for Next Permutation.
-   // Memory Usage: 8.7 MB, less than 49.97% of C++ online submissions for Next Permutation.
+    // Runtime: 8 ms, faster than 90.71% of C++ online submissions for Next Permutation.
+    // Memory Usage: 8.7 MB, less than 49.97% of C++ online submissions for Next Permutation.
     void nextPermutation(vector<int> &nums) {
          const int len = nums.size();
          int p = -1;

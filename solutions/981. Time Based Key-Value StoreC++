@@ -3,7 +3,7 @@
 // submissions for Time Based Key-Value Store.
 
 class TimeMap {
-public:
+ public:
   unordered_map<string, vector<pair<int, string>>> store;
 
   /** Initialize your data structure here. */
@@ -14,27 +14,22 @@ public:
   }
 
   string get(string key, int timestamp) {
-    if (store.count(key) == 0 || store[key].size() == 0)
-      return "";
+    if (store.count(key) == 0 || store[key].size() == 0) return "";
 
     const auto &v = store[key];
     int first = 0;
     int last = v.size();
     while (first < last) {
       const int mid = first + (last - first) / 2;
-      if (v[mid].first == timestamp)
-        return v[mid].second;
+      if (v[mid].first == timestamp) return v[mid].second;
       if (v[mid].first < timestamp)
         first = mid + 1;
       else
         last = mid;
     }
-    if (first == store[key].size())
-      return store[key].back().second;
-    if (first == 0 && v[first].first > timestamp)
-      return "";
-    if (first > 0 && v[first].first > timestamp)
-      return v[first - 1].second;
+    if (first == store[key].size()) return store[key].back().second;
+    if (first == 0 && v[first].first > timestamp) return "";
+    if (first > 0 && v[first].first > timestamp) return v[first - 1].second;
     return v[first].second;
   }
 };

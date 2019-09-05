@@ -2,7 +2,7 @@
 // Offers. Memory Usage: 22.4 MB, less than 5.54% of C++ online submissions for
 // Shopping Offers.
 ​ class Solution {
-public:
+ public:
    int items;
    
   int opt(vector<vector<int>> &special, vector<int> needs, int from,

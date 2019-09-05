@@ -2,7 +2,7 @@
 // Ranges. Memory Usage: 8.5 MB, less than 39.95% of C++ online submissions for
 // Summary Ranges.
 ​ class Solution {
-public:
+ public:
    vector<string> summaryRanges(vector<int> &nums) {
        if (nums.size() == 0) return {};
        

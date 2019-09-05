@@ -3,7 +3,7 @@
 // submissions for Bitwise ORs of Subarrays.
 
 class Solution {
-public:
+ public:
   int subarrayBitwiseORs(vector<int> &A) {
     set<int> ans;
     set<int> cur;

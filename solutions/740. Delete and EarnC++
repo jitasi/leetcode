@@ -2,7 +2,7 @@
 // Earn. Memory Usage: 11.2 MB, less than 27.62% of C++ online submissions for
 // Delete and Earn.
 ​ class Solution {
-public:
+ public:
    int deleteAndEarn(vector<int> &nums) {
        vector<int> dp(10001, 0);
        for (const int n : nums)

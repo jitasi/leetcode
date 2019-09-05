@@ -3,7 +3,7 @@
 // online submissions for Capacity To Ship Packages Within D Days.
 
 class Solution {
-public:
+ public:
   //   3,2,2,4, 1, 4
   // 0 3 5 7 11 12 16
   //
@@ -17,8 +17,7 @@ public:
     }
 
     int p = total / D;
-    if (total % D != 0)
-      p++;
+    if (total % D != 0) p++;
     p = max(p, max_num);
 
     int q = total;
@@ -29,8 +28,7 @@ public:
       int days = 0;
       int sum = 0;
       for (int i = 0; i < len; i++) {
-        if (sum == 0)
-          days++;
+        if (sum == 0) days++;
         sum += weights[i];
         if (sum == mid) {
           sum = 0;

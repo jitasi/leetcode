@@ -2,7 +2,7 @@
 // Barcodes. Memory Usage: 19.2 MB, less than 100.00% of C++ online submissions
 // for Distant Barcodes.
 ​ class Solution {
-public:
+ public:
    vector<int> rearrangeBarcodes(vector<int> &barcodes) {
        unordered_map<int, int> m;
        int m_cnt = 0;

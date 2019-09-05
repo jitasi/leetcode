@@ -3,17 +3,15 @@
 Memory Usage: 21.6 MB, less than 52.65% of C++ online submissions for Substring with Concatenation of All Words.
 
 class Solution {
-public:
+ public:
   bool checkSubstring(const string &s, int start, unordered_map<string, int> &m,
                       int word_len, int num_of_words) {
     unordered_map<string, int> cnts;
     for (int i = 0; i < num_of_words; i++) {
       const string cur = s.substr(start + i * word_len, word_len);
-      if (m.count(cur) == 0)
-        return false;
+      if (m.count(cur) == 0) return false;
       cnts[cur]++;
-      if (cnts[cur] > m[cur])
-        return false;
+      if (cnts[cur] > m[cur]) return false;
     }
     return true;
   }
@@ -22,20 +20,16 @@ public:
     vector<int> ans;
 
     const int num_of_words = words.size();
-    if (num_of_words == 0)
-      return ans;
+    if (num_of_words == 0) return ans;
     const int word_len = words[0].size();
     const int total_len = num_of_words * word_len;
-    if (s.size() < total_len)
-      return ans;
+    if (s.size() < total_len) return ans;
 
-    unordered_map<string, int> m; // word to idx in words.
-    for (int i = 0; i < words.size(); i++)
-      m[words[i]]++;
+    unordered_map<string, int> m;  // word to idx in words.
+    for (int i = 0; i < words.size(); i++) m[words[i]]++;
 
     for (int i = 0; i <= s.size() - total_len; i++) {
-      if (checkSubstring(s, i, m, word_len, num_of_words))
-        ans.push_back(i);
+      if (checkSubstring(s, i, m, word_len, num_of_words)) ans.push_back(i);
     }
     return ans;
   }

@@ -3,7 +3,7 @@
 // for Split Array Largest Sum.
 
 class Solution {
-public:
+ public:
   int splitArray(vector<int> &nums, int m) {
     const int len = nums.size();
 
@@ -18,8 +18,7 @@ public:
 
     long dp[len + 1][m + 1];
     for (int i = 0; i <= len; i++)
-      for (int j = 0; j <= m; j++)
-        dp[i][j] = sum[len];
+      for (int j = 0; j <= m; j++) dp[i][j] = sum[len];
     dp[0][0] = 0;
 
     long val;

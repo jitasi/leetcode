@@ -3,7 +3,7 @@
 // Shuffle an Array.
 
 class Solution {
-public:
+ public:
   vector<int> nums;
 
   Solution(vector<int> &nums) { this->nums = nums; }

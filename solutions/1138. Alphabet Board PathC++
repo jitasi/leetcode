@@ -3,8 +3,8 @@
     // Runtime: 0 ms, faster than 100.00% of C++ online submissions for Alphabet
     // Board Path. Memory Usage: 8.6 MB, less than 100.00% of C++ online
     // submissions for Alphabet Board Path.
-        ​ class Solution {
-public:
+    ​ class Solution {
+ public:
    const vector<string> board = {"abcde", "fghij", "klmno",
                                  "pqrst", "uvwxy", "z"};
    
@@ -19,7 +19,7 @@ public:
        string x_ans;
        string y_ans;
        for (const char ch : target) {
-           const auto &[n_x, n_y] = m[ch];
+           const auto& [n_x, n_y] = m[ch];
            const int x_diff = x - n_x;
            const int y_diff = y - n_y;
            

@@ -2,7 +2,7 @@
 // Stones Until Consecutive II. Memory Usage: 9.5 MB, less than 100.00% of C++
 // online submissions for Moving Stones Until Consecutive II.
 ​ class Solution {
-public:
+ public:
    vector<int> numMovesStonesII(vector<int> &stones) {
        const int len = stones.size();
        sort(stones.begin(), stones.end());
@@ -15,7 +15,7 @@ public:
            if (right - left + 1 == len - 1 &&
                stones[right] - stones[left] == len - 2)
         min_steps = min(min_steps, 2);
-        // handle special case: 1 2 3 4 10
+         // handle special case: 1 2 3 4 10
       else        min_steps = min(min_steps, len - (right - left + 1));
            
   

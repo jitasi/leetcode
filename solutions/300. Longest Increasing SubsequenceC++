@@ -2,7 +2,7 @@
 // Increasing Subsequence. Memory Usage: 8.7 MB, less than 52.20% of C++ online
 // submissions for Longest Increasing Subsequence.
 ​ class Solution {
-public:
+ public:
      int lengthOfLIS(vector<int> &nums) {
          const int len = nums.size();
          if (len <= 1) return len;

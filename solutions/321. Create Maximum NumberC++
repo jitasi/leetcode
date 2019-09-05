@@ -2,7 +2,7 @@
 // Maximum Number. Memory Usage: 25.2 MB, less than 43.15% of C++ online
 // submissions for Create Maximum Number.
 ​ class Solution {
-public:
+ public:
    vector<int> getMaxK(const vector<int> &nums, int k) {
        vector<int> ans;
        int drop = nums.size() - k;

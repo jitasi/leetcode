@@ -22,19 +22,15 @@ public:
 };
 */
 class Solution {
-public:
+ public:
   Node *connect(Node *root) {
-    if (root == nullptr)
-      return nullptr;
+    if (root == nullptr) return nullptr;
 
     root->next = nullptr;
-    if (root->right == nullptr && root->left == nullptr)
-      return root;
+    if (root->right == nullptr && root->left == nullptr) return root;
 
-    if (root->left != nullptr)
-      root->left->next = root->right;
-    if (root->right != nullptr)
-      root->right->next = nullptr;
+    if (root->left != nullptr) root->left->next = root->right;
+    if (root->right != nullptr) root->right->next = nullptr;
 
     work(root->right);
     work(root->left);
@@ -42,11 +38,9 @@ public:
   }
 
   void work(Node *root) {
-    if (root == nullptr)
-      return;
+    if (root == nullptr) return;
 
-    if (root->right == nullptr && root->left == nullptr)
-      return;
+    if (root->right == nullptr && root->left == nullptr) return;
 
     if (root->right != nullptr && root->left != nullptr) {
       root->left->next = root->right;

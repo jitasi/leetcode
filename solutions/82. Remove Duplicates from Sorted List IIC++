@@ -10,7 +10,7 @@
 // Duplicates from Sorted List II. Memory Usage: 9 MB, less than 86.88% of C++
 // online submissions for Remove Duplicates from Sorted List II.
 ​ class Solution {
-public:
+ public:
    ListNode *deleteDuplicates(ListNode *head) {
        if (head == nullptr || head->next == nullptr) return head;
        

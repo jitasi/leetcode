@@ -9,31 +9,27 @@
  * };
  */
 class Solution {
-public:
+ public:
   void findSecretWord(vector<string> &wordlist, Master &master) {
     const int word_len = 6;
     const int len = wordlist.size();
 
     unordered_set<int> candidates;
-    for (int i = 0; i < len; i++)
-      candidates.insert(i);
+    for (int i = 0; i < len; i++) candidates.insert(i);
 
     while (!candidates.empty()) {
       const int guess = *candidates.begin();
       const int ret = master.guess(wordlist[guess]);
       //      cout << wordlist[guess] << ", " << ret << endl;
-      if (ret == word_len)
-        break;
+      if (ret == word_len) break;
 
       candidates.erase(guess);
       unordered_set<int> nexts;
       for (const int next : candidates) {
         int cnt = 0;
         for (int i = 0; i < word_len; i++)
-          if (wordlist[guess][i] == wordlist[next][i])
-            cnt++;
-        if (cnt == ret)
-          nexts.insert(next);
+          if (wordlist[guess][i] == wordlist[next][i]) cnt++;
+        if (cnt == ret) nexts.insert(next);
       }
       candidates.swap(nexts);
     }

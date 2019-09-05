@@ -12,7 +12,7 @@
      * };
      */
     class Solution {
-public:
+ public:
    TreeNode *sufficientSubset(TreeNode *root, int limit) {
        if (root == nullptr) return nullptr;
        if (root->left == nullptr && root->right == nullptr) {

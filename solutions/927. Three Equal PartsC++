@@ -2,7 +2,7 @@
 // Parts. Memory Usage: 12 MB, less than 96.49% of C++ online submissions for
 // Three Equal Parts.
 ​ class Solution {
-public:
+ public:
    vector<int> threeEqualParts(vector<int> &A) {
        const int ones = accumulate(A.begin(), A.end(), 0);
        if (ones % 3 != 0) return {-1, -1};
@@ -11,23 +11,23 @@ public:
        
     int cnt;
        
-     // find the first part starting 1
+      // find the first part starting 1
     int first = 0;
        while (A[first] == 0) first++;
        
-     // find the second part starting 1
+      // find the second part starting 1
     int second = first;
        cnt = ones_in_part + 1;
        while (cnt > 0) cnt -= A[second++];
        second--;
        
-     // find the last part starting 1
+      // find the last part starting 1
     int last = second;
        cnt = ones_in_part + 1;
        while (cnt > 0) cnt -= A[last++];
        last--;
        
-     // check
+      // check
     for (int i = last; i < A.size(); i++, first++, second++)
       if (A[i] != A[first] || A[i] != A[second]) return {-1, -1};
        

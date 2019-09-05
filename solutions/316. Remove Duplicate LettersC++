@@ -2,7 +2,7 @@
 // Duplicate Letters. Memory Usage: 8.7 MB, less than 67.51% of C++ online
 // submissions for Remove Duplicate Letters.
 ​ class Solution {
-public:
+ public:
    string removeDuplicateLetters(string s) {
        vector<int> cnt(26, 0);
        for (const char ch : s) cnt[ch - 'a']++;

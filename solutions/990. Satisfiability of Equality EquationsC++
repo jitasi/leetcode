@@ -1,8 +1,8 @@
 // Runtime: 8 ms, faster than 81.70% of C++ online submissions for
 // Satisfiability of Equality Equations. Memory Usage: 9.6 MB, less than 45.55%
 // of C++ online submissions for Satisfiability of Equality Equations.
-​ class Solution {
-public:
+class Solution {
+ public:
    unordered_map<char, char> m;
    
   char f(char ch) {

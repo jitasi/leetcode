@@ -3,11 +3,10 @@
 // Rabbits in Forest.
 
 class Solution {
-public:
+ public:
   int numRabbits(vector<int> &answers) {
     unordered_map<int, int> m;
-    for (const int a : answers)
-      m[a]++;
+    for (const int a : answers) m[a]++;
 
     int rabbits = 0;
     for (const auto &kv : m) {

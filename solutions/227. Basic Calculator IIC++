@@ -3,16 +3,14 @@
 // submissions for Basic Calculator II.
 
 class Solution {
-public:
+ public:
   int calculate(string s) {
-
-    char op = '+'; // + - * /
+    char op = '+';  // + - * /
     long cur_num = 0;
     stack<long> vals;
     s = s + '+';
     for (const char ch : s) {
-      if (ch == ' ')
-        continue;
+      if (ch == ' ') continue;
 
       //      cout << ch;
       if (ch >= '0' && ch <= '9') {

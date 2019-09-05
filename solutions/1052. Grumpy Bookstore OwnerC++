@@ -3,7 +3,7 @@
 // submissions for Grumpy Bookstore Owner.
 
 class Solution {
-public:
+ public:
   int maxSatisfied(vector<int> &customers, vector<int> &grumpy, int X) {
     int num_customers = 0;
     for (int i = 0; i < grumpy.size(); i++) {

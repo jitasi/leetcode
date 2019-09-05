@@ -1,8 +1,7 @@
 class Solution {
-public:
+ public:
   int titleToNumber(string s) {
-    if (s.size() == 0)
-      return 0;
+    if (s.size() == 0) return 0;
 
     int base = 1;
     int ret = 0;

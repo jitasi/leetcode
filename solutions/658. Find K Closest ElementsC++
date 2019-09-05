@@ -1,7 +1,7 @@
 class Solution {
-public:
-    // Runtime: 100 ms, faster than 88.36% of C++ online submissions for Find K Closest Elements.
-   // Memory Usage: 13.1 MB, less than 68.66% of C++ online submissions for Find K Closest Elements.
+ public:
+     // Runtime: 100 ms, faster than 88.36% of C++ online submissions for Find K Closest Elements.
+    // Memory Usage: 13.1 MB, less than 68.66% of C++ online submissions for Find K Closest Elements.
   
   vector<int> findClosestElements(vector<int> &arr, int k, int x) {
        int l = 0;
@@ -15,8 +15,8 @@ public:
        return vector<int>(arr.begin() + l, arr.begin() + l + k);
   }
    
-   // Runtime: 492 ms, faster than 5.07% of C++ online submissions for Find K Closest Elements.
-   // Memory Usage: 13.2 MB, less than 64.98% of C++ online submissions for Find K Closest Elements.
+    // Runtime: 492 ms, faster than 5.07% of C++ online submissions for Find K Closest Elements.
+    // Memory Usage: 13.2 MB, less than 64.98% of C++ online submissions for Find K Closest Elements.
   /*
     vector<int> findClosestElements(vector<int>& arr, int k, int x) {
       while (arr.size() > k) {

@@ -1,9 +1,8 @@
 class Solution {
-public:
+ public:
   string largestNumber(vector<int> &nums) {
     vector<string> strs(nums.size());
-    for (int i = 0; i < nums.size(); i++)
-      strs[i] = std::to_string(nums[i]);
+    for (int i = 0; i < nums.size(); i++) strs[i] = std::to_string(nums[i]);
 
     std::sort(strs.begin(), strs.end(),
               [](const string &a, const string &b) { return a + b > b + a; });
@@ -15,8 +14,7 @@ public:
 
     // remove the leading 0s.
     int i = 0;
-    while (ret[i] == '0')
-      i++;
+    while (ret[i] == '0') i++;
     ret = ret.substr(i, ret.size() - i);
     return ret.empty() ? "0" : ret;
   }

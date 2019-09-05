@@ -3,7 +3,7 @@
 // submissions for Adding Two Negabinary Numbers.
 
 class Solution {
-public:
+ public:
   string baseNeg2(int N) {
     string ans;
     int flag = 1;

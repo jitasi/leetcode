@@ -3,7 +3,7 @@
 // submissions for Adding Two Negabinary Numbers.
 
 class Solution {
-public:
+ public:
   vector<int> addNegabinary(vector<int> &arr1, vector<int> &arr2) {
     const int len1 = arr1.size();
     const int len2 = arr2.size();
@@ -13,10 +13,8 @@ public:
     reverse(arr2.begin(), arr2.end());
 
     vector<int> ret(max(len1, len2) + 2, 0);
-    for (int i = 0; i < len1; i++)
-      ret[i] = arr1[i];
-    for (int i = 0; i < len2; i++)
-      ret[i] += arr2[i];
+    for (int i = 0; i < len1; i++) ret[i] = arr1[i];
+    for (int i = 0; i < len2; i++) ret[i] += arr2[i];
 
     // process carrier
     for (int i = 0; i < ret.size(); i++) {
@@ -39,8 +37,7 @@ public:
 
     // remove leading 0s.
     int last = ret.size() - 1;
-    while (last > 0 && ret[last] == 0)
-      last--;
+    while (last > 0 && ret[last] == 0) last--;
     ret.resize(last + 1);
 
     // final result.

@@ -2,12 +2,12 @@
 Memory Usage: 41.4 MB, less than 16.87% of C++ online submissions for LFU Cache.
 
 class LFUCache {
-public:
+ public:
   int capacity;
   int min_freq;
-  unordered_map<int, pair<int, int>> m;         // key -> val, freq
-  unordered_map<int, list<int>> freq;           // freq -> keys
-  unordered_map<int, list<int>::iterator> iter; // key -> it of freq[key]
+  unordered_map<int, pair<int, int>> m;          // key -> val, freq
+  unordered_map<int, list<int>> freq;            // freq -> keys
+  unordered_map<int, list<int>::iterator> iter;  // key -> it of freq[key]
 
   LFUCache(int capacity) {
     this->capacity = capacity;
@@ -16,8 +16,7 @@ public:
 
   // returns val or -1.
   int get(int key) {
-    if (m.count(key) == 0)
-      return -1;
+    if (m.count(key) == 0) return -1;
 
     // update freq, iter, m
     auto &old_freq_list = freq[m[key].second];
@@ -28,8 +27,7 @@ public:
     iter[key] = --new_freq_list.end();
 
     // update min_freq
-    if (freq[min_freq].size() == 0)
-      min_freq++;
+    if (freq[min_freq].size() == 0) min_freq++;
 
     return m[key].first;
   }
@@ -37,10 +35,9 @@ public:
   // update or insert
   // evict policy: 1) Least frequently used; 2) Least recently used.
   void put(int key, int value) {
-    if (capacity <= 0)
-      return;
+    if (capacity <= 0) return;
     if (get(key) !=
-        -1) { // get(keuy) 1) check the existence of key; 2) update lfu.
+        -1) {  // get(keuy) 1) check the existence of key; 2) update lfu.
       m[key].first = value;
       return;
     }

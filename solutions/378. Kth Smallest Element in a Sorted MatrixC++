@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   int kthSmallest(vector<vector<int>> &matrix, int k) {
     auto cmp = [](const vector<int> a, const vector<int> b) {
       return a[0] > b[0];
@@ -9,7 +9,7 @@ public:
 
     priority_queue<vector<int>, vector<vector<int>>, decltype(cmp)> pq(cmp);
     for (int i = 0; i < matrix[0].size(); i++) {
-      pq.push({matrix[0][i], i, 0}); // val, col, row
+      pq.push({matrix[0][i], i, 0});  // val, col, row
     }
 
     while (--k > 0) {

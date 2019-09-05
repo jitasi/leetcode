@@ -1,12 +1,10 @@
 class Solution {
-public:
+ public:
   vector<int> findDisappearedNumbers(vector<int> &nums) {
-    for (int i = 0; i < nums.size(); i++)
-      nums[i]--;
+    for (int i = 0; i < nums.size(); i++) nums[i]--;
 
     for (int i = 0; i < nums.size(); i++) {
-      if (nums[i] == i)
-        continue;
+      if (nums[i] == i) continue;
 
       int j = nums[i];
       nums[i] = -1;
@@ -19,8 +17,7 @@ public:
 
     vector<int> ret;
     for (int i = 0; i < nums.size(); i++) {
-      if (nums[i] == -1)
-        ret.push_back(i + 1);
+      if (nums[i] == -1) ret.push_back(i + 1);
     }
     return ret;
   }

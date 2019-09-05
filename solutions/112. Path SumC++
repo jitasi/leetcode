@@ -8,20 +8,16 @@
  * };
  */
 class Solution {
-public:
+ public:
   bool hasPathSum(TreeNode *root, int sum) {
-    if (root == NULL)
-      return false;
+    if (root == NULL) return false;
     return helper(root, sum);
   }
 
   bool helper(TreeNode *root, int sum) {
-    if (root == NULL && sum != 0)
-      return false;
-    if (root == NULL && sum == 0)
-      return true;
-    if (root->left != NULL && helper(root->left, sum - root->val))
-      return true;
+    if (root == NULL && sum != 0) return false;
+    if (root == NULL && sum == 0) return true;
+    if (root->left != NULL && helper(root->left, sum - root->val)) return true;
     if (root->right != NULL && helper(root->right, sum - root->val))
       return true;
     if (root->left == NULL && root->right == NULL && root->val == sum)

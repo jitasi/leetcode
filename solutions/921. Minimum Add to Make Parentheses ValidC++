@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   int minAddToMakeValid(string S) {
     int fix = 0;
     int cnt = 0;

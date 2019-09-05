@@ -2,7 +2,7 @@
 // Query - Mutable. Memory Usage: 18.9 MB, less than 87.01% of C++ online
 // submissions for Range Sum Query - Mutable.
 ​ class NumArray {
-public:
+ public:
    vector<int> data;
    vector<int> bit;
    

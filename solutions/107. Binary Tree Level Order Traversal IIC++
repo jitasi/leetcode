@@ -8,12 +8,11 @@
  * };
  */
 class Solution {
-public:
+ public:
   vector<vector<int>> ret;
 
   void helper(TreeNode *root, int level) {
-    if (root == NULL)
-      return;
+    if (root == NULL) return;
 
     if (ret.size() <= level)
       ret.push_back({root->val});
@@ -25,8 +24,7 @@ public:
   }
 
   vector<vector<int>> levelOrderBottom(TreeNode *root) {
-    if (root == NULL)
-      return ret;
+    if (root == NULL) return ret;
     ret.push_back({root->val});
     helper(root->left, 1);
     helper(root->right, 1);

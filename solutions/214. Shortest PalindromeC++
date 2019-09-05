@@ -3,11 +3,10 @@
 // for Shortest Palindrome.
 
 class Solution {
-public:
+ public:
   string shortestPalindrome(string s) {
     const int len = s.size();
-    if (len == 0)
-      return "";
+    if (len == 0) return "";
 
     string ans;
     string t;
@@ -22,8 +21,7 @@ public:
         t = s.substr(q, len - q + 1);
         reverse(t.begin(), t.end());
         t += s;
-        if (ans.empty() || t.size() < ans.size())
-          ans = t;
+        if (ans.empty() || t.size() < ans.size()) ans = t;
         //        cout << t << endl;
       }
 
@@ -37,13 +35,11 @@ public:
         t = s.substr(q, len - q + 1);
         reverse(t.begin(), t.end());
         t += s;
-        if (ans.empty() || t.size() < ans.size())
-          ans = t;
+        if (ans.empty() || t.size() < ans.size()) ans = t;
         //        cout << t << endl;
       }
 
-      if (!ans.empty())
-        break;
+      if (!ans.empty()) break;
     }
 
     return ans;

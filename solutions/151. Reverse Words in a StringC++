@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   void strip(string &s) {
     int cur = 0;
     bool in_word = false;
@@ -10,8 +10,7 @@ public:
         s[cur++] = s[i];
       } else {
         in_word = true;
-        if (cur != 0)
-          s[cur++] = ' ';
+        if (cur != 0) s[cur++] = ' ';
         s[cur++] = s[i];
       }
     }
@@ -25,22 +24,18 @@ public:
   }
 
   string reverseWords(string s) {
-    if (s.empty())
-      return s;
+    if (s.empty()) return s;
     strip(s);
-    if (s.empty())
-      return s;
+    if (s.empty()) return s;
     reverse(s, 0, s.size() - 1);
     int p = 0;
     for (int q = 1; q < s.size() - 1; q++) {
-      if (s[q] != ' ')
-        continue;
+      if (s[q] != ' ') continue;
       reverse(s, p, q - 1);
       p = q + 1;
       q = q + 1;
     }
-    if (p != s.size() - 1)
-      reverse(s, p, s.size() - 1);
+    if (p != s.size() - 1) reverse(s, p, s.size() - 1);
 
     return s;
   }

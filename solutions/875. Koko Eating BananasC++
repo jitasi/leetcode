@@ -2,7 +2,7 @@
 // Bananas. Memory Usage: 10.2 MB, less than 68.04% of C++ online submissions
 // for Koko Eating Bananas.
 ​ class Solution {
-public:
+ public:
    int minEatingSpeed(vector<int> &piles, int H) {
        const auto mm = std::minmax_element(piles.begin(), piles.end());
        int l = *(mm.first) / (H / piles.size()) - 1;

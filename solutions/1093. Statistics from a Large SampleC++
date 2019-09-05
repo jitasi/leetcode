@@ -2,7 +2,7 @@
 // from a Large Sample. Memory Usage: 8.6 MB, less than 100.00% of C++ online
 // submissions for Statistics from a Large Sample.
 ​ class Solution {
-public:
+ public:
    vector<double> sampleStats(vector<int> &count) {
        const int cnt = accumulate(count.begin(), count.end(), 0);
        const int median_1 = cnt / 2;

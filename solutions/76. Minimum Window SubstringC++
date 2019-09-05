@@ -3,20 +3,17 @@
 // submissions for Minimum W
 
 class Solution {
-public:
+ public:
   string minWindow(string s, string t) {
-    if (t.empty() || s.empty())
-      return "";
+    if (t.empty() || s.empty()) return "";
 
     const int len = s.size();
-    if (len < t.size())
-      return "";
+    if (len < t.size()) return "";
 
     int pattern_chars = 0;
     unordered_map<char, int> pattern_cnts;
     for (const char ch : t) {
-      if (pattern_cnts.count(ch) == 0)
-        pattern_chars++;
+      if (pattern_cnts.count(ch) == 0) pattern_chars++;
       pattern_cnts[ch]++;
     }
 
@@ -28,15 +25,12 @@ public:
     unordered_map<char, int> window_cnts;
     for (int end = 0; end < len; end++) {
       const char ch = s[end];
-      if (pattern_cnts.count(ch) == 0)
-        continue;
+      if (pattern_cnts.count(ch) == 0) continue;
 
-      if (window_cnts[ch] == 0)
-        window_chars++;
+      if (window_cnts[ch] == 0) window_chars++;
       window_cnts[ch]++;
 
-      if (window_chars != pattern_chars)
-        continue;
+      if (window_chars != pattern_chars) continue;
 
       bool match = true;
       for (const auto kv : window_cnts) {
@@ -45,13 +39,11 @@ public:
           break;
         }
       }
-      if (!match)
-        continue;
+      if (!match) continue;
 
       for (; start <= end; start++) {
         const char ch = s[start];
-        if (pattern_cnts.count(ch) == 0)
-          continue;
+        if (pattern_cnts.count(ch) == 0) continue;
 
         if (window_cnts[ch] > pattern_cnts[ch]) {
           window_cnts[ch]--;
@@ -65,8 +57,7 @@ public:
         }
 
         window_cnts[ch]--;
-        if (window_cnts[ch] == 0)
-          window_chars--;
+        if (window_cnts[ch] == 0) window_chars--;
         start++;
         break;
       }

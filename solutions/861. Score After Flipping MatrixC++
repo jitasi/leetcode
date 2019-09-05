@@ -1,11 +1,10 @@
 class Solution {
-public:
+ public:
   int matrixScore(vector<vector<int>> &A) {
     const int rows = A.size();
     const int cols = A[0].size();
     for (int i = 0; i < rows; i++) {
-      if (A[i][0] != 0)
-        continue;
+      if (A[i][0] != 0) continue;
       for (int j = 0; j < cols; j++) {
         A[i][j] = 1 - A[i][j];
       }
@@ -17,8 +16,7 @@ public:
       for (int i = 0; i < rows; i++) {
         ones += A[i][j];
       }
-      if (rows - ones > ones)
-        ones = rows - ones;
+      if (rows - ones > ones) ones = rows - ones;
       result += ones * (1 << (cols - j - 1));
     }
     return result;

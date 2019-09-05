@@ -2,7 +2,7 @@
 // Sum IV. Memory Usage: 9.1 MB, less than 22.79% of C++ online submissions for
 // Combination Sum IV.
 ​ class Solution {
-public:
+ public:
    int combinationSum4(vector<int> &nums, vector<int> &dp, int target) {
        if (dp[target] != -1) return dp[target];
        int ans = 0;

@@ -3,7 +3,7 @@
 // for Camelcase Matching.
 
 class Solution {
-public:
+ public:
   vector<bool> camelMatch(vector<string> &queries, string pattern) {
     vector<bool> ans;
     const int p_len = pattern.size();

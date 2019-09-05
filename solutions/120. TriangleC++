@@ -1,8 +1,7 @@
 class Solution {
-public:
+ public:
   int minimumTotal(vector<vector<int>> &triangle) {
-    if (triangle.empty())
-      return 0;
+    if (triangle.empty()) return 0;
 
     const int len = triangle.size();
     int dp[len];
@@ -17,8 +16,7 @@ public:
 
     int ans = dp[0];
     for (int i = 1; i < len; i++) {
-      if (ans > dp[i])
-        ans = dp[i];
+      if (ans > dp[i]) ans = dp[i];
     }
 
     return ans;

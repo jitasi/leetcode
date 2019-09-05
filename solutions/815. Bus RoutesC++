@@ -3,12 +3,11 @@
 // Routes.
 
 class Solution {
-public:
+ public:
   int numBusesToDestination(vector<vector<int>> &routes, int S, int T) {
-    if (S == T)
-      return 0;
+    if (S == T) return 0;
 
-    unordered_map<int, unordered_set<int>> m; // stop_id -> route_idx
+    unordered_map<int, unordered_set<int>> m;  // stop_id -> route_idx
     for (int i = 0; i < routes.size(); i++) {
       for (const int stop_id : routes[i]) {
         m[stop_id].insert(i);
@@ -25,9 +24,8 @@ public:
         for (const int route_id : m[stop_id]) {
           for (const int next_stop_id : routes[route_id]) {
             if (next_stop_id == T)
-              return stops; // Eearly termination, runtime 1776 ms -> 956 ms.
-            if (visited.count(next_stop_id) > 0)
-              continue;
+              return stops;  // Eearly termination, runtime 1776 ms -> 956 ms.
+            if (visited.count(next_stop_id) > 0) continue;
             next_stops.insert(next_stop_id);
             visited.insert(next_stop_id);
           }

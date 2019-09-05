@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   void work(const string &prefix, vector<string> *ret, int existing, int n) {
     if (n == 0 && existing == 0) {
       ret->push_back(prefix);

@@ -3,8 +3,8 @@
     // Runtime: 48 ms, faster than 98.19% of C++ online submissions for Coloring
     // A Border. Memory Usage: 12 MB, less than 99.60% of C++ online submissions
     // for Coloring A Border.
-        ​ class Solution {
-public:
+    ​ class Solution {
+ public:
    int rows;
    int cols;
    

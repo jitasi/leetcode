@@ -2,7 +2,7 @@
 // in String. Memory Usage: 9.5 MB, less than 59.44% of C++ online submissions
 // for Permutation in String.
 ​ class Solution {
-public:
+ public:
    bool checkInclusion(string s1, string s2) {
        vector<int> target_cnts(26, 0);
        int target_chars = 0;

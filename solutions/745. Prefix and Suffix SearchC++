@@ -1,7 +1,7 @@
 
 
 class WordFilter {
-public:
+ public:
   unordered_map<string, int> m;
 
   WordFilter(vector<string> &words) {
@@ -19,8 +19,7 @@ public:
 
   int f(string prefix, string suffix) {
     const string s = prefix + "#" + suffix;
-    if (m.count(s) == 0)
-      return -1;
+    if (m.count(s) == 0) return -1;
     return m[s];
   }
 };

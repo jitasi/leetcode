@@ -2,7 +2,7 @@
 // Combinations. Memory Usage: 20.3 MB, less than 27.17% of C++ online
 // submissions for Combinations.
 ​ class Solution {
-public:
+ public:
    void combine(int n, int k, vector<int> &prefix, vector<vector<int>> &ans) {
        if (k == 0) ans.push_back(prefix);
        if (k == 0 || n == 0) return;

@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   pair<TreeNode *, int> work(TreeNode *root, TreeNode *p, TreeNode *q) {
     if (root == nullptr) {
       return {nullptr, 0};
@@ -28,8 +28,7 @@ public:
       existing = 2;
     }
     existing += left_ret.second + right_ret.second;
-    if (existing == 3)
-      return {root, 3};
+    if (existing == 3) return {root, 3};
     return {nullptr, existing};
   }
 

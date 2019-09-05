@@ -12,7 +12,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   void helper(TreeNode *root, int &max_val, int &min_val, int &max_diff) {
     max_val = min_val = root->val;
     max_diff = 0;
@@ -42,8 +42,7 @@ public:
   }
 
   int maxAncestorDiff(TreeNode *root) {
-    if (root == nullptr)
-      return 0;
+    if (root == nullptr) return 0;
 
     int max_val, min_val, max_diff;
     helper(root, max_val, min_val, max_diff);

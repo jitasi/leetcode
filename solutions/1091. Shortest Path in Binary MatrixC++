@@ -2,7 +2,7 @@
 // Path in Binary Matrix. Memory Usage: 13 MB, less than 100.00% of C++ online
 // submissions for Shortest Path in Binary Matrix.
 ​ class Solution {
-public:
+ public:
    const int dirs[8][2] = {
    {-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
    

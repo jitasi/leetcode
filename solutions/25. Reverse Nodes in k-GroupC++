@@ -11,7 +11,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   int ListLen(ListNode *head) {
     int cnt = 0;
     while (head != nullptr) {
@@ -41,8 +41,7 @@ public:
       cur->next = prev;
       prev = cur;
       cur = next;
-      if (cur == nullptr)
-        break;
+      if (cur == nullptr) break;
       next = cur->next;
     }
     head->next = cur;
@@ -52,19 +51,17 @@ public:
   }
 
   ListNode *reverseKGroup(ListNode *head, int k) {
-    if (k == 1)
-      return head;
+    if (k == 1) return head;
     int len = ListLen(head);
     len = len / k * k;
-    if (len < k)
-      return head;
+    if (len < k) return head;
 
     //    cout << "======" << endl;
     ListNode *last_reversed;
     ListNode *new_head = ReverseFirstK(head, k, &last_reversed);
     len -= k;
 
-    ListNode *t; // head of the first k reversed list
+    ListNode *t;  // head of the first k reversed list
     while (len > 0) {
       len -= k;
       t = last_reversed;

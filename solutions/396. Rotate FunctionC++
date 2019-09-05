@@ -3,7 +3,7 @@
 // for Rotate Function.
 
 class Solution {
-public:
+ public:
   int maxRotateFunction(vector<int> &A) {
     const long len = A.size();
 

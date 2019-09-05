@@ -4,14 +4,14 @@
 ​
     // https://leetcode.com/problems/race-car/discuss/124326/summary-of-the-bfs-and-dp-solutions-with-intuitive-explanation
     ​ class Solution {
-public:
+ public:
    int racecar(int target) {
-        // dp[i]: the min steps to reach i, from pos 0, with speed 1 pointing to i.
+         // dp[i]: the min steps to reach i, from pos 0, with speed 1 pointing to i.
     vector<int> dp(target + 1, INT_MAX);
        dp[0] = 0;
        
     for (int i = 1; i <= target; i++) {
-            // starting from dp[0], do acc instruction A
+             // starting from dp[0], do acc instruction A
       int acc = 0;
            int speed = 1;
            int pos = 0;
@@ -22,11 +22,11 @@ public:
                speed <<= 1;
                if (pos >= i) break;
                
-         // starting from pos, do
-         // 1) instruction R
-         // 2) back_acc instructino A to reach back_pos
-         // 3) instruction R to correct the direction.
-         // back_acc, back_speed and back_pos are inited with instruction R
+          // starting from pos, do
+          // 1) instruction R
+          // 2) back_acc instructino A to reach back_pos
+          // 3) instruction R to correct the direction.
+          // back_acc, back_speed and back_pos are inited with instruction R
         int back_acc = 0;
                int back_speed = 1;
                int back_pos = 0;
@@ -43,11 +43,11 @@ public:
            
       }
            
-       // at this point, pos >= i, so there are two situations.
-       // 1) pos == i 
-       // .  => done.
-       // 2) pos > i with speed pointing away from i
-       // .  => do instruction R to correct the direction (speed at 1 poining to i).
+        // at this point, pos >= i, so there are two situations.
+        // 1) pos == i 
+        // .  => done.
+        // 2) pos > i with speed pointing away from i
+        // .  => do instruction R to correct the direction (speed at 1 poining to i).
       dp[i] = min(dp[i], acc + (pos == i ? 0 : 1 + dp[pos - i]));
        
     }

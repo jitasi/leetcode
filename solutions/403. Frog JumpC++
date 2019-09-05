@@ -3,7 +3,7 @@
 // Jump.
 
 class Solution {
-public:
+ public:
   bool canCross(vector<int> &stones) {
     // stone pos -> steps to this stone.
     unordered_map<int, unordered_set<int>> m;
@@ -12,22 +12,18 @@ public:
     }
 
     // second stone is one step after first stone.
-    if (m.count(stones[0] + 1) == 0)
-      return false;
+    if (m.count(stones[0] + 1) == 0) return false;
     m[stones[0] + 1].insert(1);
 
     // from the second stone.
     for (int i = 1; i < stones.size(); i++) {
       for (const int step : m[stones[i]]) {
         int next_pos = stones[i] + step - 1;
-        if (step > 1 && m.count(next_pos) > 0)
-          m[next_pos].insert(step - 1);
+        if (step > 1 && m.count(next_pos) > 0) m[next_pos].insert(step - 1);
         next_pos++;
-        if (m.count(next_pos) > 0)
-          m[next_pos].insert(step);
+        if (m.count(next_pos) > 0) m[next_pos].insert(step);
         next_pos++;
-        if (m.count(next_pos) > 0)
-          m[next_pos].insert(step + 1);
+        if (m.count(next_pos) > 0) m[next_pos].insert(step + 1);
       }
     }
     /*

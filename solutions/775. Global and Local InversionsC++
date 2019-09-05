@@ -3,16 +3,14 @@
 // submissions for Global and Local Inversions.
 
 class Solution {
-public:
+ public:
   bool isIdealPermutation(vector<int> &A) {
-    if (A.size() < 3)
-      return true;
+    if (A.size() < 3) return true;
 
     int m = INT_MIN;
     for (int i = 0; i < A.size() - 2; i++) {
       m = max(m, A[i]);
-      if (m > A[i + 2])
-        return false;
+      if (m > A[i + 2]) return false;
     }
     return true;
   }

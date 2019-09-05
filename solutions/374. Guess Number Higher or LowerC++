@@ -9,15 +9,14 @@
 int guess(int num);
 
 class Solution {
-public:
+ public:
   int guessNumber(int n) {
     long first = 1;
     long last = long(n) + 1;
     while (first < last) {
       const long mid = first + (last - first) / 2;
       const int r = guess(mid);
-      if (r == 0)
-        return mid;
+      if (r == 0) return mid;
       if (r == -1)
         last = mid;
       else

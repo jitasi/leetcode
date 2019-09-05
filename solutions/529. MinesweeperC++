@@ -2,7 +2,7 @@
 // Memory Usage: 14.8 MB, less than 95.48% of C++ online submissions for
 // Minesweeper.
 ​ class Solution {
-public:
+ public:
    const int dirs[8][2] = {
    {-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
    
@@ -24,7 +24,7 @@ public:
            const auto cur = s.top();
            s.pop();
            if (board[cur.first][cur.second] != 'E') continue;
-        // already processed
+         // already processed
       
       int added = 0;
            int mines = 0;

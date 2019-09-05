@@ -8,11 +8,10 @@
  * };
  */
 class Codec {
-public:
+ public:
   // Encodes a tree to a single string.
   string serialize(TreeNode *root) {
-    if (root == nullptr)
-      return "";
+    if (root == nullptr) return "";
 
     return to_string(root->val) +
            (root->left == nullptr && root->right == nullptr
@@ -23,8 +22,7 @@ public:
 
   // Decodes your encoded data to tree.
   TreeNode *deserialize(string data) {
-    if (data.empty())
-      return nullptr;
+    if (data.empty()) return nullptr;
 
     size_t sz;
     TreeNode *root = new TreeNode(stoi(data, &sz));
@@ -48,7 +46,7 @@ public:
       }
     }
     sz++;
-    if (e_l - sz > 0) { //        cout << data.substr(sz, e_l - sz) << endl;
+    if (e_l - sz > 0) {  //        cout << data.substr(sz, e_l - sz) << endl;
       root->left = deserialize(data.substr(sz, e_l - sz));
     }
 

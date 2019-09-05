@@ -1,29 +1,27 @@
 
 
 class Solution {
-public:
+ public:
   int findMaximizedCapital(int K, int W, vector<int> &Profits,
                            vector<int> &Capital) {
     const int len = Profits.size();
 
     // sort by capital.
     vector<int> idx(len);
-    for (int i = 0; i < len; i++)
-      idx[i] = i;
+    for (int i = 0; i < len; i++) idx[i] = i;
     sort(idx.begin(), idx.end(), [&Capital](const int a, const int b) {
       return Capital[a] < Capital[b];
     });
 
-    priority_queue<int> pq; // profit
-    int p = 0;              // projects
+    priority_queue<int> pq;  // profit
+    int p = 0;               // projects
     int ans = W;
     for (int k = 0; k < K; k++) {
       for (; p < len && Capital[idx[p]] <= ans; p++) {
         pq.push(Profits[idx[p]]);
       }
 
-      if (pq.empty())
-        break;
+      if (pq.empty()) break;
       cout << pq.top();
       ans += pq.top();
       pq.pop();

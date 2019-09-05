@@ -3,8 +3,8 @@
     // Runtime: 0 ms, faster than 100.00% of C++ online submissions for Valid
     // Tic-Tac-Toe State. Memory Usage: 8.3 MB, less than 26.92% of C++ online
     // submissions for Valid Tic-Tac-Toe State.
-        ​ class Solution {
-public:
+    ​ class Solution {
+ public:
    bool validTicTacToe(vector<string> &board) {
        int cnt_xo = 0;
        vector<int> cnts(8, 0);
@@ -31,11 +31,11 @@ public:
     }
     ​
     if (win_o && win_x) return false;
-      // cannot both win
+       // cannot both win
     if (win_x && cnt_xo == 0) return false;
-      // X wins, X should have 1 more piece than O.
-    if (win_o && cnt_xo == -1) return false; // O wins, X should have the same
-                                              // number of pieces as O.
+       // X wins, X should have 1 more piece than O.
+    if (win_o && cnt_xo == -1) return false;  // O wins, X should have the same
+                                               // number of pieces as O.
        return cnt_xo == 0 || cnt_xo == -1;
   }
 };
@@ -45,4 +45,4 @@ public:
     // ["XXX","XOO","OO "]     X wins, then O cannot place the last piece.
     // ["OXX","XOX","OXO"]     O wins, X should have the same number of pieces
     // as O.
-        ​ ​
+    ​ ​

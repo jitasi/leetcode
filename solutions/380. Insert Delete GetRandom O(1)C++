@@ -3,9 +3,9 @@
 // submissions for Insert Delete GetRandom O(1).
 
 class RandomizedSet {
-public:
-  unordered_map<int, int> m; // val --> pos
-  vector<int> v;             // val
+ public:
+  unordered_map<int, int> m;  // val --> pos
+  vector<int> v;              // val
 
   /** Initialize your data structure here. */
   RandomizedSet() {}
@@ -13,8 +13,7 @@ public:
   /** Inserts a value to the set. Returns true if the set did not already
    * contain the specified element. */
   bool insert(int val) {
-    if (m.count(val) > 0)
-      return false;
+    if (m.count(val) > 0) return false;
 
     m[val] = v.size();
     v.push_back(val);
@@ -24,8 +23,7 @@ public:
   /** Removes a value from the set. Returns true if the set contained the
    * specified element. */
   bool remove(int val) {
-    if (m.count(val) == 0)
-      return false;
+    if (m.count(val) == 0) return false;
     const int remove_pos = m[val];
     const int last_val = v.back();
     swap(v[remove_pos], v[v.size() - 1]);

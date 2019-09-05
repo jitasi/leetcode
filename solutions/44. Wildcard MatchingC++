@@ -1,13 +1,12 @@
 class Solution {
-public:
+ public:
   bool isMatch(string s, string p) {
     const int len_s = s.size();
     const int len_p = p.size();
 
     bool dp[len_s + 1][len_p + 1];
     for (int i = 0; i <= len_s; i++)
-      for (int j = 0; j <= len_p; j++)
-        dp[i][j] = false;
+      for (int j = 0; j <= len_p; j++) dp[i][j] = false;
     dp[0][0] = true;
     for (int j = 1; j <= len_p; j++) {
       if (p[j - 1] == '*')

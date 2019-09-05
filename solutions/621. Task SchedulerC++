@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   int leastInterval(vector<char> &tasks, int n) {
     vector<int> t(26, 0);
     for (char c : tasks) {
@@ -9,15 +9,13 @@ public:
     int total = 0;
     int m = 0;
     for (int i = 0; i < t.size(); i++) {
-      if (m < t[i])
-        m = t[i];
+      if (m < t[i]) m = t[i];
       total += t[i];
     }
 
     int c = 0;
     for (int i = 0; i < t.size(); i++) {
-      if (m == t[i])
-        c++;
+      if (m == t[i]) c++;
     }
 
     int ret = (m - 1) * (n + 1) + c;

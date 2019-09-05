@@ -3,19 +3,17 @@
 // Word Break II.
 
 class Solution {
-public:
+ public:
   unordered_map<string, vector<string>> m;
 
   vector<string> wordBreak(string s, vector<string> &wordDict, int pos) {
     const string sub = s.substr(pos, s.size() - pos);
-    if (m.count(sub) > 0)
-      return m[sub];
+    if (m.count(sub) > 0) return m[sub];
 
     vector<string> ret;
     for (const string &w : wordDict) {
       int found = s.find(w, pos);
-      if (found != pos)
-        continue;
+      if (found != pos) continue;
 
       if (found + w.size() == s.size()) {
         ret.push_back(w);
@@ -36,8 +34,7 @@ public:
   }
 
   vector<string> wordBreak(string s, vector<string> &wordDict) {
-    if (s.empty())
-      return {};
+    if (s.empty()) return {};
 
     return wordBreak(s, wordDict, 0);
   }

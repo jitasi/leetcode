@@ -3,8 +3,8 @@
     // Runtime: 36 ms, faster than 93.17% of C++ online submissions for Shortest
     // Bridge. Memory Usage: 13.3 MB, less than 81.18% of C++ online submissions
     // for Shortest Bridge.
-        ​ class Solution {
-public:
+    ​ class Solution {
+ public:
    int rows;
    int cols;
    
@@ -18,7 +18,7 @@ public:
        
       borders.push({i, j});
            A[i][j] = -2;
-        // mark water connect to land.
+         // mark water connect to land.
       return;
        
     }
@@ -32,7 +32,7 @@ public:
        cols = A[0].size();
         
     int i, j;
-      // find the pos of any land from the first island.
+       // find the pos of any land from the first island.
     bool found = false;
        for (i = 0; i < rows; i++) {
            for (j = 0; j < cols; j++) {

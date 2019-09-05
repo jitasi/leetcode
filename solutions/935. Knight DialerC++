@@ -14,7 +14,7 @@
 // 9->2,4
 
 class Solution {
-public:
+ public:
   int knightDialer(int N) {
     vector<long> prev(10);
     vector<long> cur(10, 1);
@@ -35,8 +35,7 @@ public:
     }
 
     long ans = 0;
-    for (const long cnt : cur)
-      ans += cnt;
+    for (const long cnt : cur) ans += cnt;
     return ans % 1000000007;
   }
 };

@@ -2,7 +2,7 @@
 // Ladder. Memory Usage: 22.3 MB, less than 31.31% of C++ online submissions for
 // Word Ladder.
 ​ class Solution {
-public:
+ public:
      bool isConnected(const string &a, const string &b) {
          int cnt = 0;
          for (int i = 0; i < a.size() && cnt < 2; i++) {

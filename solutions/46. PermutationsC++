@@ -1,18 +1,16 @@
 class Solution {
-public:
+ public:
   void work(vector<int> &nums, vector<vector<int>> &ret, int first) {
     for (int i = first; i < nums.size(); i++) {
       swap(nums[first], nums[i]);
-      if (first == nums.size() - 1)
-        ret.push_back(nums);
+      if (first == nums.size() - 1) ret.push_back(nums);
       work(nums, ret, first + 1);
       swap(nums[first], nums[i]);
     }
   }
 
   vector<vector<int>> permute(vector<int> &nums) {
-    if (nums.size() < 1)
-      return {{}};
+    if (nums.size() < 1) return {{}};
 
     vector<vector<int>> ret;
     work(nums, ret, 0);

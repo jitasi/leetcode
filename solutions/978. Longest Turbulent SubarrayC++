@@ -3,10 +3,9 @@
 // submissions for Longest Turbulent Subarray.
 
 class Solution {
-public:
+ public:
   int maxTurbulenceSize(vector<int> &A) {
-    if (A.size() <= 1)
-      return A.size();
+    if (A.size() <= 1) return A.size();
 
     int ans = 1;
     int loc_len = 1;

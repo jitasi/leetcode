@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   // is_bst, min, max
   tuple<bool, int, int> work(TreeNode *root) {
     if (root->left == nullptr && root->right == nullptr) {
@@ -37,8 +37,7 @@ public:
   }
 
   bool isValidBST(TreeNode *root) {
-    if (root == nullptr)
-      return true;
+    if (root == nullptr) return true;
     auto ret = work(root);
     return get<0>(ret);
   }

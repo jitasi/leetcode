@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   vector<pair<int, int>> reconstructQueue(vector<pair<int, int>> &people) {
     std::sort(people.begin(), people.end(),
               [](const pair<int, int> &a, const pair<int, int> &b) {
@@ -21,8 +21,7 @@ public:
       pos = 0;
       for (const auto &b : ret) {
         pos++;
-        if (b.first >= a.first)
-          c++;
+        if (b.first >= a.first) c++;
         if (c > a.second) {
           pos--;
           break;

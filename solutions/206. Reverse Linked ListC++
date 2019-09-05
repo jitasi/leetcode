@@ -9,7 +9,7 @@
  * p .q . tmp
  */
 class Solution {
-public:
+ public:
   ListNode *reverseList(ListNode *head) {
     1 if (head == NULL) return NULL;
     2 ListNode *p = head;

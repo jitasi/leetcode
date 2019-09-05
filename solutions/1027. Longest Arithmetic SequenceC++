@@ -3,10 +3,9 @@
 // submissions for Longest Arithmetic Sequence.
 
 class Solution {
-public:
+ public:
   int longestArithSeqLength(vector<int> &A) {
-    if (A.size() == 2)
-      return 2;
+    if (A.size() == 2) return 2;
 
     const int len = A.size();
     // dp[i][j]: lenght of LAS ending at A[i] with diff j.

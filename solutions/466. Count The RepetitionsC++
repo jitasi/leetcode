@@ -2,7 +2,7 @@
 // Repetitions. Memory Usage: 122.7 MB, less than 6.38% of C++ online
 // submissions for Count The Repetitions.
 ​ class Solution {
-public:
+ public:
    int getMaxRepetitions(string s1, int n1, string s2, int n2) {
        const int len1 = s1.size();
        const int len2 = s2.size();

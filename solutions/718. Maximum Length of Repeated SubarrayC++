@@ -3,7 +3,7 @@
 // online submissions for Maximum Length of Repeated
 
 class Solution {
-public:
+ public:
   int findLength(vector<int> &A, vector<int> &B) {
     const int lena = A.size();
     const int lenb = B.size();

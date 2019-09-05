@@ -1,13 +1,11 @@
 class Solution {
-public:
+ public:
   bool searchMatrix(vector<vector<int>> &matrix, int target) {
     const int rows = matrix.size();
-    if (rows == 0)
-      return false;
+    if (rows == 0) return false;
 
     const int cols = matrix[0].size();
-    if (cols == 0)
-      return false;
+    if (cols == 0) return false;
 
     int cur_row = 0;
     int cur_col = cols - 1;
@@ -15,12 +13,10 @@ public:
     while (cur != target) {
       if (cur > target) {
         cur_col--;
-        if (cur_col < 0)
-          return false;
+        if (cur_col < 0) return false;
       } else {
         cur_row++;
-        if (cur_row >= rows)
-          return false;
+        if (cur_row >= rows) return false;
       }
       cur = matrix[cur_row][cur_col];
     }

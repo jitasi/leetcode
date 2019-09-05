@@ -8,10 +8,9 @@
  * };
  */
 class Solution {
-public:
+ public:
   TreeNode *work(TreeNode *root) {
-    if (root == nullptr)
-      return nullptr;
+    if (root == nullptr) return nullptr;
 
     TreeNode *left = nullptr;
     if (root->left != nullptr) {
@@ -26,8 +25,7 @@ public:
     root->left = nullptr;
     if (left != nullptr) {
       root->right = left;
-      while (left->right != nullptr)
-        left = left->right;
+      while (left->right != nullptr) left = left->right;
     }
 
     if (left != nullptr)

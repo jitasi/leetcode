@@ -3,7 +3,7 @@
 // for Max Points on a Line.
 
 class Solution {
-public:
+ public:
   void simplify(int &a, int &b) {
     if (a == 0) {
       b = 1;
@@ -28,8 +28,7 @@ public:
   }
 
   int maxPoints(vector<vector<int>> &points) {
-    if (points.size() <= 1)
-      return points.size();
+    if (points.size() <= 1) return points.size();
 
     unordered_map<long, int> slope_pairs;
 

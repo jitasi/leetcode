@@ -8,10 +8,9 @@
  * };
  */
 class Solution {
-public:
+ public:
   TreeNode *helper(vector<int> &nums, int b, int e) {
-    if (b > e)
-      return NULL;
+    if (b > e) return NULL;
 
     const int mid = (e - b + 1) / 2 + b;
     TreeNode *root = (TreeNode *)malloc(sizeof(TreeNode));

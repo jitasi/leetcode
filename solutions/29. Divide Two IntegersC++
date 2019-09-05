@@ -3,7 +3,7 @@
 // for Divide Two Integers.
 
 class Solution {
-public:
+ public:
   int divide(int dividend, int divisor) {
     long flag = (dividend < 0) ^ (divisor < 0) ? -1 : 1;
 
@@ -22,8 +22,7 @@ public:
     }
 
     long t = flag * quotient;
-    if (t == -2147483648L)
-      t = 2147483647;
+    if (t == -2147483648L) t = 2147483647;
     return t;
   }
 };

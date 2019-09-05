@@ -1,8 +1,7 @@
 class Solution {
-public:
+ public:
   bool canFinish(int numCourses, std::vector<std::vector<int>> &prerequisites) {
-    if (numCourses <= 1)
-      return true;
+    if (numCourses <= 1) return true;
     vector<int> indegree(numCourses, 0);
     vector<set<int>> nexts(numCourses);
 
@@ -17,8 +16,7 @@ public:
         q.push(i);
       }
     }
-    if (q.size() == numCourses)
-      return true;
+    if (q.size() == numCourses) return true;
 
     int cnt = 0;
     while (!q.empty()) {

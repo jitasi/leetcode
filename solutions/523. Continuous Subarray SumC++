@@ -1,8 +1,7 @@
 class Solution {
-public:
+ public:
   bool checkSubarraySum(vector<int> &nums, int k) {
-    if (nums.size() <= 1)
-      return false;
+    if (nums.size() <= 1) return false;
 
     vector<int> prefix_sum(nums.size() + 1);
     prefix_sum[0] = 0;
@@ -14,10 +13,8 @@ public:
       for (int j = i + 2; j < nums.size() + 1; j++) {
         int d = prefix_sum[j] - prefix_sum[i];
         // cout << i << "," << j << "=" << d << endl;
-        if (k == 0 && d == 0)
-          return true;
-        if (k != 0 && d % k == 0)
-          return true;
+        if (k == 0 && d == 0) return true;
+        if (k != 0 && d % k == 0) return true;
       }
     }
 

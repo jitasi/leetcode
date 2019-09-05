@@ -2,7 +2,7 @@
 // Matrix. Memory Usage: 9.8 MB, less than 63.86% of C++ online submissions for
 // Search a 2D Matrix.
 ​ class Solution {
-public:
+ public:
    bool searchMatrix(vector<vector<int>> &matrix, int target) {
        const int rows = matrix.size();
        if (rows == 0) return false;

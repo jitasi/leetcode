@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   vector<int> inorderTraversal(TreeNode *root) {
     vector<int> ret;
     TreeNode *current = root;

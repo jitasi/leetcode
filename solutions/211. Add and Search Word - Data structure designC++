@@ -2,7 +2,7 @@
 // Search Word - Data structure design. Memory Usage: 106.9 MB, less than 15.81%
 // of C++ online submissions for Add and Search Word - Data structure design.
 ​ class WordDictionary {
-public:
+ public:
      class TrieNode {
         public :
       TrieNode *children[26];

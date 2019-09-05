@@ -2,7 +2,7 @@
 // Weight II. Memory Usage: 8.4 MB, less than 100.00% of C++ online submissions
 // for Last Stone Weight II.
 ​ class Solution {
-public:
+ public:
    int lastStoneWeightII(vector<int> &stones) {
        const int sum = std::accumulate(stones.begin(), stones.end(), 0);
        

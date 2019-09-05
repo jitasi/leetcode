@@ -1,8 +1,7 @@
 class Solution {
-public:
+ public:
   int countPrimes(int n) {
-    if (n <= 2)
-      return 0;
+    if (n <= 2) return 0;
     vector<int> primes = {2};
     for (int i = 3; i < n; i += 2) {
       int j = 0;
@@ -14,8 +13,7 @@ public:
           break;
         }
       }
-      if (f)
-        primes.push_back(i);
+      if (f) primes.push_back(i);
     }
     return primes.size();
   }

@@ -2,7 +2,7 @@
 // Values From Labels. Memory Usage: 15.9 MB, less than 100.00% of C++ online
 // submissions for Largest Values From Labels.
 ​ class Solution {
-public:
+ public:
    int largestValsFromLabels(vector<int> &values, vector<int> &labels,
                              int num_wanted, int use_limit) {
        unordered_map<int, multiset<int>> m;

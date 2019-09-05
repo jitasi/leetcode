@@ -2,7 +2,7 @@
 // Path Visiting All Nodes. Memory Usage: 12.6 MB, less than 75.82% of C++
 // online submissions for Shortest Path Visiting All Nodes.
 ​ class Solution {
-public:
+ public:
    int shortestPathLength(vector<vector<int>> &graph) {
        const int nodes = graph.size();
        if (nodes <= 1) return 0;

@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   // 73
   // 76 (76 > 73, remove 73, push 76)
   // 72 76 (72 < 76, push 72)
@@ -11,17 +11,15 @@ public:
 
   vector<int> dailyTemperatures(vector<int> &T) {
     const int len = T.size();
-    if (len == 0)
-      return {};
+    if (len == 0) return {};
 
     vector<int> ret(len);
     ret[len - 1] = 0;
 
-    stack<int> s; // index in T
+    stack<int> s;  // index in T
     s.push(len - 1);
     for (int i = len - 2; i >= 0; i--) {
-      while (!s.empty() && T[s.top()] <= T[i])
-        s.pop();
+      while (!s.empty() && T[s.top()] <= T[i]) s.pop();
       if (s.empty())
         ret[i] = 0;
       else

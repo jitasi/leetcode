@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   int findUnsortedSubarray(vector<int> &nums) {
     vector<int> sorted(nums);
     std::sort(sorted.begin(), sorted.end());

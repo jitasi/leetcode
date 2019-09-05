@@ -3,9 +3,8 @@
 // for Basic Calculator.
 
 class Solution {
-public:
+ public:
   int calculate(string s) {
-
     stack<long> nums;
     stack<long> signs;
 
@@ -13,8 +12,7 @@ public:
     long sign = 1;
     long accu_num = 0;
     for (int i = 0; i < s.size(); i++) {
-      if (s[i] == ' ')
-        continue;
+      if (s[i] == ' ') continue;
 
       if (s[i] >= '0' && s[i] <= '9') {
         cur_num = cur_num * 10 + s[i] - '0';

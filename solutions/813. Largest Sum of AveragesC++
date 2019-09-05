@@ -3,7 +3,7 @@
 // for Largest Sum of Averages.
 
 class Solution {
-public:
+ public:
   double largestSumOfAverages(vector<int> &A, int K) {
     // dp[i][j]: A[0..i] with j group
     vector<vector<double>> dp(A.size() + 1, vector<double>(K + 1, 0));

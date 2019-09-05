@@ -3,7 +3,7 @@
 // submissions for Interval List Intersections.
 
 class Solution {
-public:
+ public:
   vector<vector<int>> intervalIntersection(vector<vector<int>> &A,
                                            vector<vector<int>> &B) {
     vector<vector<int>> ans;

@@ -3,7 +3,7 @@
 // 100.00% of C++ online submissions for Flip Columns For Maximum Number of
 // Equal Rows.
 ​ class Solution {
-public:
+ public:
    int maxEqualRowsAfterFlips(vector<vector<int>> &matrix) {
        const int cols = matrix[0].size();
        

@@ -5,13 +5,13 @@
     // https://leetcode.com/problems/valid-permutations-for-di-sequence/discuss/168289/Share-my-O%28N3%29-greater-O%28N2%29-C++-DP-solution.-Including-the-thoughts-of-improvement.
     // https://leetcode.com/problems/valid-permutations-for-di-sequence/discuss/168612/Top-down-with-Memo-greater-Bottom-up-DP-greater-N3-DP-greater-N2-DP-greater-O%28N%29-space
     ​ class Solution {
-public:
+ public:
    const int MOD = 1000000007;
   ​
   int numPermsDISequence(string S) {
        const int len = S.length() + 1;
-      // length of sequence
-     // dp[j]: sequence length X, sequence ending at j or less; init to length 1.
+       // length of sequence
+      // dp[j]: sequence length X, sequence ending at j or less; init to length 1.
     vector<int> dp(len + 1, 0);
        dp[1] = 1;
        

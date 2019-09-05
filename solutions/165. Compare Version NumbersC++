@@ -2,7 +2,7 @@
 // Version Numbers. Memory Usage: 8.5 MB, less than 45.93% of C++ online
 // submissions for Compare Version Numbers.
 ​ class Solution {
-public:
+ public:
    void parse(const string version, vector<int> &v) {
        const int len = version.size();
        int i = 0;
@@ -13,7 +13,7 @@ public:
            v.push_back(val);
            val = 0;
            i++;
-        // skip dot.
+         // skip dot.
   
     }
        while (!v.empty() && v.back() == 0) v.pop_back();

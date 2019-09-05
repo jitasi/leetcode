@@ -3,7 +3,7 @@
 // Room.
 
 class ExamRoom {
-public:
+ public:
   set<int> s;
   int N;
 

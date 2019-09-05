@@ -3,8 +3,8 @@
 // for Online Stock Span.
 
 class StockSpanner {
-public:
-  stack<pair<int, int>> s; // price, day
+ public:
+  stack<pair<int, int>> s;  // price, day
   int day;
 
   StockSpanner() { day = 0; }

@@ -2,7 +2,7 @@
 // Columns to Make Sorted III. Memory Usage: 10 MB, less than 49.54% of C++
 // online submissions for Delete Columns to Make Sorted III.
 ​ class Solution {
-public:
+ public:
    int minDeletionSize(vector<string> &A) {
        const int len = A[0].size();
        vector<int> dp(len, 1);

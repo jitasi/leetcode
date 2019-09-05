@@ -3,15 +3,13 @@
 // Pancake Sorting.
 
 class Solution {
-public:
+ public:
   void reverse(vector<int> &A, int to) {
-    for (int i = 0; i < (to + 1) / 2; i++)
-      swap(A[i], A[to - i]);
+    for (int i = 0; i < (to + 1) / 2; i++) swap(A[i], A[to - i]);
   }
 
   void work(vector<int> &A, int to, vector<int> &ans) {
-    if (to <= 0)
-      return;
+    if (to <= 0) return;
 
     // find largest from A[0] ... A[to].
     const auto it = max_element(A.begin(), A.begin() + to + 1);

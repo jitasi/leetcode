@@ -13,7 +13,7 @@
      * };
      */
     class Solution {
-public:
+ public:
    TreeNode *buildTree(vector<int> &inorder, vector<int> &postorder,
                      int i_l, int i_r, int p_l, int p_r) {
        if (i_l == i_r) return nullptr;

@@ -3,7 +3,7 @@
 // C++ online submissions for Maximum Sum of Two Non-Overlapping Subarrays.
 
 class Solution {
-public:
+ public:
   int maxSumTwoNoOverlap(vector<int> &A, int L, int M) {
     const int len = A.size();
 
@@ -13,10 +13,8 @@ public:
     for (int i = 1; i < len; i++) {
       sum_l[i] = sum_l[i - 1] + A[i];
       sum_m[i] = sum_m[i - 1] + A[i];
-      if (i >= L)
-        sum_l[i] -= A[i - L];
-      if (i >= M)
-        sum_m[i] -= A[i - M];
+      if (i >= L) sum_l[i] -= A[i - L];
+      if (i >= M) sum_m[i] -= A[i - M];
     }
 
     /*

@@ -1,8 +1,7 @@
 class Solution {
-public:
+ public:
   string fractionToDecimal(int numerator, int denominator) {
-    if (numerator == 0)
-      return "0";
+    if (numerator == 0) return "0";
 
     const bool f_n = numerator > 0;
     const bool f_d = denominator > 0;
@@ -44,8 +43,7 @@ public:
       ret += std::to_string(ds[i]);
     if (recur) {
       ret += "(";
-      for (int i = start; i < ds.size(); i++)
-        ret += std::to_string(ds[i]);
+      for (int i = start; i < ds.size(); i++) ret += std::to_string(ds[i]);
       ret += ")";
     }
 

@@ -4,7 +4,7 @@
     // Triangle Number. Memory Usage: 8.7 MB, less than 46.71% of C++ online
     // submissions for Valid Triangle Number.
    class Solution {
-public:
+ public:
    int triangleNumber(vector<int> &nums) {
        const int len = nums.size();
        sort(nums.begin(), nums.end());
@@ -14,7 +14,7 @@ public:
            int r = 0;
            for (int l = i + 1; l < len - 1; l++) {
                r = max(r, l + 1);
-          // handle case [0,0,0]
+           // handle case [0,0,0]
         while (r < len && nums[r] < nums[l] + nums[i]) r++;
                ans += r - l - 1;
            

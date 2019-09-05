@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   pair<int, int> _rob(TreeNode *root) {
     if (root == nullptr) {
       return {0, 0};
@@ -18,8 +18,7 @@ public:
     auto r = _rob(root->right);
     ret.second = l.first + r.first;
     ret.first = root->val + l.second + r.second;
-    if (ret.second > ret.first)
-      ret.first = ret.second;
+    if (ret.second > ret.first) ret.first = ret.second;
     return ret;
   }
 

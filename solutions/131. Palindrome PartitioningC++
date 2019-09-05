@@ -3,11 +3,10 @@
 // for Palindrome Partitioning.
 
 class Solution {
-public:
+ public:
   void work(const string &s, int from, int to, vector<string> &prefix,
             vector<vector<string>> &ans, vector<vector<bool>> &dp) {
-    if (from > to)
-      return;
+    if (from > to) return;
 
     for (int i = from; i <= to; i++) {
       if (dp[from][i]) {
@@ -29,10 +28,8 @@ public:
       return {{s}};
 
     vector<vector<bool>> dp(len, vector<bool>(len, false));
-    for (int i = 0; i < len; i++)
-      dp[i][i] = true;
-    for (int i = 0; i < len - 1; i++)
-      dp[i][i + 1] = s[i] == s[i + 1];
+    for (int i = 0; i < len; i++) dp[i][i] = true;
+    for (int i = 0; i < len - 1; i++) dp[i][i + 1] = s[i] == s[i + 1];
     for (int l = 2; l < len; l++) {
       for (int i = 0; i < len - l; i++) {
         const int j = i + l;

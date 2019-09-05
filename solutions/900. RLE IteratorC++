@@ -3,7 +3,7 @@
 // Iterator.
 
 class RLEIterator {
-public:
+ public:
   vector<int> arr;
   int pos;
   int cur;
@@ -20,8 +20,7 @@ public:
       cur -= arr[pos];
       pos += 2;
     }
-    if (pos == arr.size())
-      return -1;
+    if (pos == arr.size()) return -1;
     return arr[pos + 1];
   }
 };

@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   bool reorderedPowerOf2(int N) {
     const string t = to_string(N);
     sort(t.begin(), t.end());
@@ -7,8 +7,7 @@ public:
     for (int i = 0; i < 32; i++) {
       s = to_string(1 << i);
       sort(s.begin(), s.end());
-      if (s == t)
-        return true;
+      if (s == t) return true;
     }
     return false;
   }

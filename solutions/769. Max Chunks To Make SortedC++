@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   int maxChunksToSorted(vector<int> &arr) {
     int chucks = 0;
 
@@ -7,13 +7,11 @@ public:
     for (int p = 0; p < arr.size(); p++) {
       for (int q = 0; q < arr.size(); q++) {
         if (arr[q] == p) {
-          if (q > last)
-            last = q;
+          if (q > last) last = q;
           break;
         }
       }
-      if (p == last)
-        chucks++;
+      if (p == last) chucks++;
     }
 
     return chucks;

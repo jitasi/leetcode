@@ -3,18 +3,16 @@
 // submissions for Longest String Chain.
 
 class Solution {
-public:
+ public:
   int longestStrChain(vector<string> &words) {
-    if (words.size() <= 1)
-      return words.size();
+    if (words.size() <= 1) return words.size();
     unordered_map<string, int>
-        m; // string to the longest chain ending with string.
+        m;  // string to the longest chain ending with string.
 
     sort(words.begin(), words.end(), [](const string &a, const string &b) {
       const int lena = a.size();
       const int lenb = b.size();
-      if (lena != lenb)
-        return lena < lenb;
+      if (lena != lenb) return lena < lenb;
       return a < b;
     });
 

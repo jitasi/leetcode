@@ -1,8 +1,7 @@
 class Solution {
-public:
+ public:
   vector<int> spiralOrder(vector<vector<int>> &matrix) {
-    if (matrix.empty())
-      return {};
+    if (matrix.empty()) return {};
 
     int row_start = 0;
     int row_end = matrix.size() - 1;
@@ -16,22 +15,19 @@ public:
       for (int i = col_start; i <= col_end; i++) {
         ans[c++] = matrix[row_start][i];
       }
-      if (c == cnt)
-        break;
+      if (c == cnt) break;
       row_start++;
 
       for (int i = row_start; i <= row_end; i++) {
         ans[c++] = matrix[i][col_end];
       }
-      if (c == cnt)
-        break;
+      if (c == cnt) break;
       col_end--;
 
       for (int i = col_end; i >= col_start; i--) {
         ans[c++] = matrix[row_end][i];
       }
-      if (c == cnt)
-        break;
+      if (c == cnt) break;
       row_end--;
 
       for (int i = row_end; i >= row_start; i--) {

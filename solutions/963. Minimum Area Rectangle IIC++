@@ -3,7 +3,7 @@
 // submissions for Minimum Area Rectangle II.
 
 class Solution {
-public:
+ public:
   double minAreaFreeRect(vector<vector<int>> &points) {
     map<vector<double>, vector<vector<int>>> m;
     for (int i = 0; i < points.size() - 1; i++) {

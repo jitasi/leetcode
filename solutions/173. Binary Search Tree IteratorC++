@@ -12,7 +12,7 @@
  * };
  */
 class BSTIterator {
-public:
+ public:
   TreeNode *current;
   TreeNode *ret;
 
@@ -32,8 +32,7 @@ public:
 
   /** @return whether we have a next smallest number */
   bool hasNext() {
-    if (ret != nullptr)
-      return true;
+    if (ret != nullptr) return true;
 
     while (current != nullptr) {
       // visit node.

@@ -3,11 +3,10 @@
 // for Push Dominoes.
 
 class Solution {
-public:
+ public:
   void mark(string &dominoes, int from, int to, char ch) {
     //    cout << ch << " " << from << ", " << to << endl;
-    for (int i = from; i <= to; i++)
-      dominoes[i] = ch;
+    for (int i = from; i <= to; i++) dominoes[i] = ch;
   }
 
   void mark(string &dominoes, int from, int to) {
@@ -21,8 +20,7 @@ public:
   string pushDominoes(string dominoes) {
     int start = 0;
     for (int i = 0; i < dominoes.size(); i++) {
-      if (dominoes[i] == '.')
-        continue;
+      if (dominoes[i] == '.') continue;
 
       if (dominoes[i] == 'L') {
         if (dominoes[start] == '.')
@@ -31,8 +29,7 @@ public:
           mark(dominoes, start + 1, i - 1);
         start = i + 1;
       } else /* dominoes[i] == 'R' */ {
-        if (dominoes[start] == 'R')
-          mark(dominoes, start + 1, i - 1, 'R');
+        if (dominoes[start] == 'R') mark(dominoes, start + 1, i - 1, 'R');
         start = i;
       }
     }

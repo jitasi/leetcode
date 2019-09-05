@@ -1,8 +1,7 @@
 class Solution {
-public:
+ public:
   vector<vector<int>> merge(vector<vector<int>> &intervals) {
-    if (intervals.size() <= 1)
-      return intervals;
+    if (intervals.size() <= 1) return intervals;
     std::sort(intervals.begin(), intervals.end(),
               [](const vector<int> &a, const vector<int> &b) {
                 return (a[0] == b[0]) ? a[1] > b[1] : a[0] < b[0];

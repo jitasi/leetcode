@@ -2,7 +2,7 @@
 // with Smallest Sums. Memory Usage: 9.8 MB, less than 48.12% of C++ online
 // submissions for Find K Pairs with Smallest Sums.
 ​ class Solution {
-public:
+ public:
    vector<vector<int>> kSmallestPairs(vector<int> &nums1, vector<int> &nums2,
                                       int k) {
        const int len1 = nums1.size();
@@ -11,7 +11,7 @@ public:
        
     vector<vector<int>> ans;
        vector<int> idx(len1, 0);
-      // for nums1[i], the first avialable number in nums2 is nums2[idx[i]]
+       // for nums1[i], the first avialable number in nums2 is nums2[idx[i]]
     while (k--) {
            int sum = INT_MAX;
            int idx1 = 0;

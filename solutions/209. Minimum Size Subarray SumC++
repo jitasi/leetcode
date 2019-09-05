@@ -3,18 +3,16 @@
 // submissions for Minimum Size Subarray Sum.
 
 class Solution {
-public:
+ public:
   int minSubArrayLen(int s, vector<int> &nums) {
-    if (s == 0 || nums.size() == 0)
-      return 0;
+    if (s == 0 || nums.size() == 0) return 0;
     int start = 0;
     int sum = 0;
     int ans = 0;
     int t;
     for (int end = 0; end < nums.size(); end++) {
       sum += nums[end];
-      if (sum < s)
-        continue;
+      if (sum < s) continue;
       t = sum - nums[start];
       while (t >= s) {
         sum = t;

@@ -2,7 +2,7 @@
 // Product of Word Lengths. Memory Usage: 12.9 MB, less than 59.82% of C++
 // online submissions for Maximum Product of Word Lengths.
 ​ class Solution {
-public:
+ public:
    int maxProduct(vector<string> &words) {
        vector<int> bits(words.size(), 0);
        for (int i = 0; i < words.size(); i++)

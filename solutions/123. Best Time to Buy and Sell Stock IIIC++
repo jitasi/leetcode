@@ -1,8 +1,7 @@
 class Solution {
-public:
+ public:
   int maxProfit(vector<int> &prices) {
-    if (prices.size() <= 1)
-      return 0;
+    if (prices.size() <= 1) return 0;
 
     vector<int> profits_fwd(prices.size(), 0);
     int lowest = prices[0];
@@ -14,8 +13,7 @@ public:
         continue;
       }
       const int diff = prices[i] - lowest;
-      if (diff > profit)
-        profit = diff;
+      if (diff > profit) profit = diff;
       profits_fwd[i] = profit;
     }
 
@@ -29,16 +27,14 @@ public:
         continue;
       }
       const int diff = highest - prices[i];
-      if (diff > profit)
-        profit = diff;
+      if (diff > profit) profit = diff;
       profits_bwd[i] = profit;
     }
 
     profit = 0;
     for (int i = 0; i < prices.size(); i++) {
       const int two = profits_fwd[i] + profits_bwd[i];
-      if (two > profit)
-        profit = two;
+      if (two > profit) profit = two;
     }
 
     return profit;

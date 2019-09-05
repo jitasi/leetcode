@@ -3,7 +3,7 @@
 // submissions for Complex Number Multiplication.
 
 class Solution {
-public:
+ public:
   void parse(const string &c, int &a, int &b) {
     int pos = c.find('+');
     a = std::atoi(c.substr(0, pos).c_str());

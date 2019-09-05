@@ -12,7 +12,7 @@
      * };
      */
     class Solution {
-public:
+ public:
    void pathSum(TreeNode *root, vector<int> prefix, int sum,
                 vector<vector<int>> &ans) {
        prefix.push_back(root->val);

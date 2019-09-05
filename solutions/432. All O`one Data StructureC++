@@ -1,10 +1,10 @@
 /
 
     class AllOne {
-public:
-  typedef pair<int, unordered_set<string>> entry; // val, key
-  list<entry> l;                                  // increase of entry.val
-  unordered_map<string, list<entry>::iterator> m; // key, list
+ public:
+  typedef pair<int, unordered_set<string>> entry;  // val, key
+  list<entry> l;                                   // increase of entry.val
+  unordered_map<string, list<entry>::iterator> m;  // key, list
 
   /** Initialize your data structure here. */
   AllOne() {}
@@ -17,8 +17,7 @@ public:
       auto new_val = old_entry->first + 1;
       auto new_entry = ++m[key];
       old_entry->second.erase(key);
-      if (old_entry->second.size() == 0)
-        l.erase(old_entry);
+      if (old_entry->second.size() == 0) l.erase(old_entry);
       if (new_entry == l.end() || new_entry->first != new_val)
         m[key] = l.insert(new_entry, {new_val, {key}});
       else
@@ -36,8 +35,7 @@ public:
   /** Decrements an existing key by 1. If Key's value is 1, remove it from the
    * data structure. */
   void dec(string key) {
-    if (m.count(key) == 0)
-      return;
+    if (m.count(key) == 0) return;
 
     auto old_entry = m[key];
     auto new_val = old_entry->first - 1;
@@ -50,8 +48,7 @@ public:
       new_entry->second.insert(key);
     }
     old_entry->second.erase(key);
-    if (old_entry->second.size() == 0)
-      l.erase(old_entry);
+    if (old_entry->second.size() == 0) l.erase(old_entry);
   }
 
   /** Returns one of the keys with maximal value. */

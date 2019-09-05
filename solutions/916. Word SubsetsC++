@@ -2,7 +2,7 @@
 // Subsets. Memory Usage: 83.4 MB, less than 44.60% of C++ online submissions
 // for Word Subsets.
 ​ class Solution {
-public:
+ public:
    vector<string> wordSubsets(vector<string> &A, vector<string> &B) {
        int b_bit = 0;
        vector<int> b_cnt(26, 0);

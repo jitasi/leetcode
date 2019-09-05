@@ -3,15 +3,14 @@
 // submissions for Different Ways to Add Parentheses.
 
 class Solution {
-public:
+ public:
   vector<int> diffWaysToCompute(string input) {
     return diffWaysToCompute(input, 0, input.size() - 1);
   }
 
   vector<int> diffWaysToCompute(string &input, int from, int to) {
     vector<int> ans;
-    if (from > to)
-      return {0};
+    if (from > to) return {0};
     for (int i = from; i <= to; i++) {
       if (input[i] == '+' || input[i] == '-' || input[i] == '*') {
         for (int l : diffWaysToCompute(input, from, i - 1)) {

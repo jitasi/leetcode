@@ -2,7 +2,7 @@
 // Sightseeing Pair. Memory Usage: 13.2 MB, less than 38.62% of C++ online
 // submissions for Best Sightseeing Pair.
 ​ class Solution {
-public:
+ public:
    int maxScoreSightseeingPair(vector<int> &A) {
        int ans = A[0] + A[1] - 1;
        int prev = (A[0] - 1 > A[1]) ? 0 : 1;

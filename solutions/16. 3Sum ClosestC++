@@ -3,7 +3,7 @@
 // Closest.
 
 class Solution {
-public:
+ public:
   int threeSumClosest(vector<int> &nums, int target) {
     std::sort(nums.begin(), nums.end());
 

@@ -3,8 +3,8 @@
     // Runtime: 36 ms, faster than 90.19% of C++ online submissions for Print
     // Zero Even Odd. Memory Usage: 9.2 MB, less than 100.00% of C++ online
     // submissions for Print Zero Even Odd.
-        ​ class ZeroEvenOdd {
-private:
+    ​ class ZeroEvenOdd {
+ private:
      int n;
      std::mutex m0, m1, m2;
   ​ public :
@@ -15,7 +15,7 @@ private:
        
   }
   ​
-     // printNumber(x) outputs "x", where x is an integer.
+      // printNumber(x) outputs "x", where x is an integer.
     void zero(function<void(int)> printNumber) {
          for (int i = 0; i < n; i++) {
              m0.lock();

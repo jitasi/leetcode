@@ -2,7 +2,7 @@
 // Weight. Memory Usage: 8.3 MB, less than 100.00% of C++ online submissions for
 // Last Stone Weight.
 ​ class Solution {
-public:
+ public:
    int lastStoneWeight(vector<int> &stones) {
        priority_queue<int> pq;
        for (const int s : stones) pq.push(s);

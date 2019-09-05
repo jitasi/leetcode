@@ -3,8 +3,8 @@
     // Runtime: 12 ms, faster than 34.38% of C++ online submissions for
     // Expressive Words. Memory Usage: 9.5 MB, less than 33.67% of C++ online
     // submissions for Expressive Words.
-        ​ class Solution {
-public:
+    ​ class Solution {
+ public:
    string helper(const string &S, vector<int> &cnts) {
        cnts.clear();
        char ch  = S[0];

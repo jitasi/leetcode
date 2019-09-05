@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   void add(map<int, int> &m, int v, int c) {
     if (m.find(v) != m.end()) {
       m[v] += c;
@@ -22,8 +22,7 @@ public:
       m = new_m;
     }
 
-    if (m.find(S) != m.end())
-      return m[S];
+    if (m.find(S) != m.end()) return m[S];
     return 0;
   }
 };

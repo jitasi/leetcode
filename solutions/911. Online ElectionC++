@@ -3,7 +3,7 @@
 // for Online Election.
 
 class TopVotedCandidate {
-public:
+ public:
   vector<int> winner;
   vector<int> times;
 
@@ -24,8 +24,7 @@ public:
     int last = times.size();
     while (first < last) {
       const int mid = first + (last - first) / 2;
-      if (times[mid] == t)
-        return winner[mid];
+      if (times[mid] == t) return winner[mid];
       if (times[mid] < t)
         first = mid + 1;
       else

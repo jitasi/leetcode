@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   int findLongestChain(vector<vector<int>> &pairs) {
     sort(pairs.begin(), pairs.end(),
          [](const vector<int> &a, const vector<int> &b) -> bool {

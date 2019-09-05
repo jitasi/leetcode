@@ -18,7 +18,7 @@
  * };
  */
 class NestedIterator {
-public:
+ public:
   stack<pair<vector<NestedInteger> *, int>> s;
 
   NestedIterator(vector<NestedInteger> &nestedList) {
@@ -37,7 +37,7 @@ public:
       if (cur.second == (*cur.first).size()) {
         s.pop();
       }
-    } else { // is a list
+    } else {  // is a list
       // shouldn't come here.
     }
     hasNext();
@@ -46,22 +46,20 @@ public:
   }
 
   bool hasNext() {
-    if (s.empty())
-      return false;
+    if (s.empty()) return false;
 
     // Find the next
     auto &cur = s.top();
     if ((*cur.first)[cur.second].isInteger()) {
       return true;
-    } else { // is a list
+    } else {  // is a list
       auto *l = &((*cur.first)[cur.second].getList());
       cur.second++;
       if (cur.second == (*cur.first).size()) {
         s.pop();
       }
 
-      if (l->size() > 0)
-        s.push({l, 0});
+      if (l->size() > 0) s.push({l, 0});
       return hasNext();
     }
 

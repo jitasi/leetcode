@@ -12,7 +12,7 @@
      * };
      */
     class Solution {
-public:
+ public:
    TreeNode *helper(TreeNode *root, const unordered_set<int> &s,
                     vector<TreeNode *> *ans, bool is_root) {
        if (root == nullptr) return nullptr;

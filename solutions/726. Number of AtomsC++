@@ -2,17 +2,17 @@
 // Atoms. Memory Usage: 9.3 MB, less than 47.83% of C++ online submissions for
 // Number of Atoms.
 ​ class Solution {
-public:
+ public:
    int sz;
    int cur;
    
   int getNext(string &formula, string &ele) {
        
-     // return -3: end of string
+      // return -3: end of string
     if (cur >= sz) return -3;
     ​
-     // return -1: (
-     // return -2: )
+      // return -1: (
+      // return -2: )
     if (formula[cur] == '(') {
            cur++;
            return -1;
@@ -24,7 +24,7 @@ public:
        
     }
     ​
-     // return 1 .. : number
+      // return 1 .. : number
     if (formula[cur] >= '0' && formula[cur] <= '9') {
            int v = formula[cur] - '0';
            cur++;
@@ -34,7 +34,7 @@ public:
        
     }
        
-     // return 0: element name in val
+      // return 0: element name in val
     ele.push_back(formula[cur]);
        cur++;
        while (cur < sz && formula[cur] >= 'a' && formula[cur] <= 'z')

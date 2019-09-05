@@ -2,7 +2,7 @@
 // String. Memory Usage: 8.8 MB, less than 29.63% of C++ online submissions for
 // Reorganize String.
 ​ class Solution {
-public:
+ public:
    string reorganizeString(string S) {
        unordered_map<char, int> m;
        for (const char ch : S) m[ch]++;

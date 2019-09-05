@@ -3,14 +3,13 @@
 // submissions for Peak Index in a Mountain Array.
 
 class Solution {
-public:
+ public:
   int peakIndexInMountainArray(vector<int> &A) {
     int first = 0;
     int last = A.size();
     while (first < last) {
       const int mid = first + (last - first) / 2;
-      if (A[mid - 1] < A[mid] && A[mid] > A[mid + 1])
-        return mid;
+      if (A[mid - 1] < A[mid] && A[mid] > A[mid + 1]) return mid;
       if (A[mid - 1] < A[mid] && A[mid] < A[mid + 1])
         first = mid + 1;
       else

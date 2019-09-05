@@ -3,11 +3,10 @@
 // submissions for Longest Mountain in Array.
 
 class Solution {
-public:
+ public:
   int longestMountain(vector<int> &A) {
     const int len = A.size();
-    if (len < 3)
-      return 0;
+    if (len < 3) return 0;
 
     int ans = 0;
 

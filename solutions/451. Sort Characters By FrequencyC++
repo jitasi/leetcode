@@ -3,17 +3,14 @@
 // online submissions for Sort Characters By Frequency.
 
 class Solution {
-public:
+ public:
   string frequencySort(string s) {
     int m[256];
-    for (int i = 0; i < 256; i++)
-      m[i] = 0;
-    for (int i = 0; i < s.size(); i++)
-      m[s[i]]++;
+    for (int i = 0; i < 256; i++) m[i] = 0;
+    for (int i = 0; i < s.size(); i++) m[s[i]]++;
 
     std::sort(s.begin(), s.end(), [&m](const char a, const char b) {
-      if (m[a] != m[b])
-        return m[a] > m[b];
+      if (m[a] != m[b]) return m[a] > m[b];
       return a < b;
     });
     return s;

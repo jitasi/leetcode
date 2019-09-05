@@ -3,7 +3,7 @@
 // Calendar II.
 
 class MyCalendarTwo {
-public:
+ public:
   set<pair<int, int>> booked;
   set<pair<int, int>> overlapped;
 
@@ -13,16 +13,14 @@ public:
     // check not overlap with overlapped;
     // else return false
     for (const auto &pt : overlapped) {
-      if (max(start, pt.first) < min(end, pt.second))
-        return false;
+      if (max(start, pt.first) < min(end, pt.second)) return false;
     }
 
     // calculate the overlap
     for (const auto &pt : booked) {
       // non overlap.   start end . first second
       // .              first second  start end
-      if (max(start, pt.first) >= min(end, pt.second))
-        continue;
+      if (max(start, pt.first) >= min(end, pt.second)) continue;
       overlapped.insert({max(start, pt.first), min(end, pt.second)});
     }
 

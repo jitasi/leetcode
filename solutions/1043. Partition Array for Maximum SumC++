@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   int maxSumAfterPartitioning(vector<int> &A, int K) {
     const int len = A.size();
     if (len <= K) {

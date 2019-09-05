@@ -4,9 +4,9 @@
 // Duplicates allowed.
 
 class RandomizedCollection {
-public:
-  vector<int> v;                  // keep the val
-  unordered_map<int, set<int>> m; // val to pos in v;
+ public:
+  vector<int> v;                   // keep the val
+  unordered_map<int, set<int>> m;  // val to pos in v;
 
   /** Initialize your data structure here. */
   RandomizedCollection() {}
@@ -22,8 +22,7 @@ public:
   /** Removes a value from the collection. Returns true if the collection
    * contained the specified element. */
   bool remove(int val) {
-    if (m[val].size() <= 0)
-      return false;
+    if (m[val].size() <= 0) return false;
 
     int pos = *(m[val].begin());
     m[val].erase(pos);

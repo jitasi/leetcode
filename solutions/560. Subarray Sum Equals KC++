@@ -2,12 +2,12 @@
 // Equals K. Memory Usage: 14.3 MB, less than 59.75% of C++ online submissions
 // for Subarray Sum Equals K.
 ​ class Solution {
-public:
+ public:
    int subarraySum(vector<int> &nums, int k) {
        int ans = 0;
        int sum = 0;
        unordered_map<int, int> m;
-      // val, count
+       // val, count
     m[0] = 1;
        for (int right = 0; right < nums.size(); right++) {
            sum += nums[right];

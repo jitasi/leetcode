@@ -3,7 +3,7 @@
 // submissions for Repeated DNA Sequences.
 
 class Solution {
-public:
+ public:
   vector<string> findRepeatedDnaSequences(string s) {
     set<string> ans;
     set<int> codes;

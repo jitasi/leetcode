@@ -11,10 +11,9 @@
  * };
  */
 class Solution {
-public:
+ public:
   ListNode *sortList(ListNode *head) {
-    if (head == nullptr || head->next == nullptr)
-      return head;
+    if (head == nullptr || head->next == nullptr) return head;
 
     ListNode *slow = head;
     ListNode *last = nullptr;
@@ -23,8 +22,7 @@ public:
       last = slow;
       slow = slow->next;
       fast = fast->next;
-      if (fast != nullptr)
-        fast = fast->next;
+      if (fast != nullptr) fast = fast->next;
     }
     last->next = nullptr;
     return mergeSort(sortList(head), sortList(slow));

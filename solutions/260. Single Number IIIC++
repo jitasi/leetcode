@@ -3,7 +3,7 @@
 // for Single Number III.
 
 class Solution {
-public:
+ public:
   vector<int> singleNumber(vector<int> &nums) {
     int criteria = 0;
     for (const int n : nums) {

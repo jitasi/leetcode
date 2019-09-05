@@ -7,7 +7,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   int getListLength(ListNode *head) {
     int i = 0;
     while (head != NULL) {
@@ -36,8 +36,7 @@ public:
     }
 
     while (headA != NULL) {
-      if (headA == headB)
-        return headA;
+      if (headA == headB) return headA;
       headA = headA->next;
       headB = headB->next;
     }

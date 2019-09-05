@@ -3,18 +3,17 @@
 // submissions for Course Schedule II.
 
 class Solution {
-public:
+ public:
   vector<int> findOrder(int numCourses, vector<vector<int>> &prerequisites) {
-    if (numCourses == 0)
-      return {};
+    if (numCourses == 0) return {};
 
     vector<int> ans;
-    unordered_map<int, unordered_set<int>> m; // a:{b} => a is prerequisite of b
-    int ps[numCourses]; // ps[i]: the number of prerequisite courses of course
-                        // i.
+    unordered_map<int, unordered_set<int>>
+        m;               // a:{b} => a is prerequisite of b
+    int ps[numCourses];  // ps[i]: the number of prerequisite courses of course
+                         // i.
 
-    for (int i = 0; i < numCourses; i++)
-      ps[i] = 0;
+    for (int i = 0; i < numCourses; i++) ps[i] = 0;
 
     for (const auto &p : prerequisites) {
       if (m.count(p[1]) == 0) {
@@ -27,24 +26,20 @@ public:
 
     stack<int> s;
     for (int i = 0; i < numCourses; i++)
-      if (ps[i] == 0)
-        s.push(i);
+      if (ps[i] == 0) s.push(i);
 
     int c;
     while (!s.empty()) {
       c = s.top();
       ans.push_back(c);
       s.pop();
-      if (m.count(c) == 0)
-        continue;
+      if (m.count(c) == 0) continue;
       for (const int c_next : m[c]) {
         ps[c_next]--;
-        if (ps[c_next] == 0)
-          s.push(c_next);
+        if (ps[c_next] == 0) s.push(c_next);
       }
     }
-    if (ans.size() == numCourses)
-      return ans;
+    if (ans.size() == numCourses) return ans;
     return {};
   }
 };

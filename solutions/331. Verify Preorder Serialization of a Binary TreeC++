@@ -3,7 +3,7 @@
 // than 59.00% of C++ online submissions for Verify Preorder Serialization of a
 // Binary Tree.
 ​ class Solution {
-public:
+ public:
    bool isValidSerialization(string preorder) {
        int diff = 1;
        preorder.push_back(',');

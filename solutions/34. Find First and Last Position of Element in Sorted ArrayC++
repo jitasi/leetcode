@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   int findFirst(vector<int> &nums, int target) {
     int start = 0;
     int end = nums.size() - 1;
@@ -46,8 +46,7 @@ public:
   }
 
   vector<int> searchRange(vector<int> &nums, int target) {
-    if (nums.size() <= 0)
-      return {-1, -1};
+    if (nums.size() <= 0) return {-1, -1};
     const int first = findFirst(nums, target);
     const int last = (first >= 0) ? findLast(nums, target, first) : -1;
     return {first, last};

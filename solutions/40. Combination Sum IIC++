@@ -2,7 +2,7 @@
 // Sum II. Memory Usage: 9.1 MB, less than 73.52% of C++ online submissions for
 // Combination Sum II.
 ​ class Solution {
-public:
+ public:
    void combinationSum2(vector<int> &candidates, int target, int from, 
                   vector<int> &prefix, vector<vector<int>> &ans) {
        if (target == 0) ans.push_back(prefix);

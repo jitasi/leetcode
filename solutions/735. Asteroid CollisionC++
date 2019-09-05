@@ -3,7 +3,7 @@
 // for Asteroid Collision.
 
 class Solution {
-public:
+ public:
   vector<int> asteroidCollision(vector<int> &asteroids) {
     vector<bool> removed(asteroids.size(), false);
 
@@ -46,8 +46,7 @@ public:
 
     vector<int> ans;
     for (int i = 0; i < asteroids.size(); i++) {
-      if (removed[i])
-        continue;
+      if (removed[i]) continue;
       ans.push_back(asteroids[i]);
     }
     return ans;

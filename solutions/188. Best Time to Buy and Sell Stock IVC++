@@ -3,11 +3,10 @@
 // submissions for Best Time to Buy and Sell Stock IV.
 
 class Solution {
-public:
+ public:
   int maxProfit(int k, vector<int> &prices) {
     const int len = prices.size();
-    if (len < 2)
-      return 0;
+    if (len < 2) return 0;
 
     k = std::min(k, len / 2);
 

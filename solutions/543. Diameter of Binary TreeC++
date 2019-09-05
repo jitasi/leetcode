@@ -8,13 +8,11 @@
  * };
  */
 class Solution {
-public:
+ public:
   // pair of diameter, deepth
   pair<int, int> work(TreeNode *root) {
-    if (root == nullptr)
-      return {0, 0};
-    if (root->right == nullptr && root->left == nullptr)
-      return {0, 0};
+    if (root == nullptr) return {0, 0};
+    if (root->right == nullptr && root->left == nullptr) return {0, 0};
     if (root->right == nullptr) {
       auto ret = work(root->left);
       return {max(ret.first, ret.second + 1), ret.second + 1};

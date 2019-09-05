@@ -1,17 +1,13 @@
 class Solution {
-public:
+ public:
   bool isPerfectSquare(int num) {
-    if (num <= 0)
-      return false;
-    if (num == 1)
-      return true;
+    if (num <= 0) return false;
+    if (num == 1) return true;
     long long t = 1;
     for (int i = 1;; i++) {
       t += (i + i + 1);
-      if (t == num)
-        return true;
-      if (t > num)
-        return false;
+      if (t == num) return true;
+      if (t > num) return false;
     }
     return false;
   }

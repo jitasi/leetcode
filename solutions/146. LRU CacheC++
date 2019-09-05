@@ -1,16 +1,15 @@
 class LRUCache {
-private:
+ private:
   vector<int> cache;
   unordered_map<int, int> key_to_cache_pos;
-  list<int> lru; // key sorted by LRU
+  list<int> lru;  // key sorted by LRU
   int capacity;
 
-public:
+ public:
   LRUCache(int capacity) { this->capacity = capacity; }
 
   int get(int key) {
-    if (key_to_cache_pos.find(key) == key_to_cache_pos.end())
-      return -1;
+    if (key_to_cache_pos.find(key) == key_to_cache_pos.end()) return -1;
 
     // refresh the existing key in lru
     auto it = std::find(lru.begin(), lru.end(), key);

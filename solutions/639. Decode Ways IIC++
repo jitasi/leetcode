@@ -3,10 +3,9 @@
 // Decode Ways II.
 
 class Solution {
-public:
+ public:
   int numDecodings(string s) {
-    if (s.empty())
-      return 0;
+    if (s.empty()) return 0;
 
     const long M = 1e9 + 7;
     long ending_1 = 0, ending_2 = 0, ways = 1;

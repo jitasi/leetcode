@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   int work(TreeNode *root, int c) {
     if (root->right != nullptr) {
       c = work(root->right, c);
@@ -22,8 +22,7 @@ public:
   }
 
   TreeNode *convertBST(TreeNode *root) {
-    if (root == nullptr)
-      return nullptr;
+    if (root == nullptr) return nullptr;
     work(root, 0);
     return root;
   }

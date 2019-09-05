@@ -3,7 +3,7 @@
 // for Permutation Sequence.
 
 class Solution {
-public:
+ public:
   string getPermutation(int n, int k) {
     int total = 1;
     vector<char> digits(n, '0');

@@ -1,12 +1,10 @@
 class Solution {
-public:
+ public:
   void subsetsWithDup(vector<int> &nums, int from, vector<int> cur,
                       vector<vector<int>> &ans) {
-    if (from >= nums.size())
-      return;
+    if (from >= nums.size()) return;
     for (int i = from; i < nums.size(); i++) {
-      if (i > from && nums[i] == nums[i - 1])
-        continue;
+      if (i > from && nums[i] == nums[i - 1]) continue;
       cur.push_back(nums[i]);
       ans.push_back(cur);
       subsetsWithDup(nums, i + 1, cur, ans);

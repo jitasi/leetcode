@@ -3,8 +3,8 @@
     // Runtime: 208 ms, faster than 38.26% of C++ online submissions for
     // Smallest Sufficient Team. Memory Usage: 62.7 MB, less than 100.00% of C++
     // online submissions for Smallest Sufficient Team.
-        ​ class Solution {
-public:
+    ​ class Solution {
+ public:
    
   vector<int> smallestSufficientTeam(vector<string> &req_skills,
                                       vector<vector<string>> &people) {

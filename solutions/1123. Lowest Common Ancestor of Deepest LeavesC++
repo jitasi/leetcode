@@ -12,7 +12,7 @@
      * };
      */
     class Solution {
-public:
+ public:
    pair<TreeNode *, int> helper(TreeNode *root) {
        if (root == nullptr) return {nullptr, 0};
        if (root->left == nullptr && root->right == nullptr) return {root, 1};

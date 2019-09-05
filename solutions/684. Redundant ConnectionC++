@@ -3,10 +3,9 @@
 // for Redundant Connection.
 
 class Solution {
-public:
+ public:
   int grp(int *p, int x) {
-    while (p[x] != -1)
-      x = p[x];
+    while (p[x] != -1) x = p[x];
     return x;
   }
 
@@ -22,11 +21,9 @@ public:
 
   vector<int> findRedundantConnection(vector<vector<int>> &edges) {
     const int len = edges.size();
-    if (len == 0)
-      return {};
+    if (len == 0) return {};
     int grps[len];
-    for (int i = 0; i < len; i++)
-      grps[i] = -1;
+    for (int i = 0; i < len; i++) grps[i] = -1;
     for (const auto &e : edges) {
       if (u(grps, e[0] - 1, e[1] - 1)) {
         return e;

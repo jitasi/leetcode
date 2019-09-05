@@ -3,7 +3,7 @@
 // for Smallest Range II.
 
 class Solution {
-public:
+ public:
   int smallestRangeII(vector<int> &A, int K) {
     const int len = A.size();
 

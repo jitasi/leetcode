@@ -3,7 +3,7 @@
 // submissions for Bitwise AND of Numbers Range.
 
 class Solution {
-public:
+ public:
   int rangeBitwiseAnd(int m, int n) {
     while (m < n) {
       // find the least significant bit

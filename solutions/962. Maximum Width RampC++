@@ -3,8 +3,8 @@
     // Runtime: 56 ms, faster than 95.81% of C++ online submissions for Maximum
     // Width Ramp. Memory Usage: 12.7 MB, less than 93.15% of C++ online
     // submissions for Maximum Width Ramp.
-        ​ class Solution {
-public:
+    ​ class Solution {
+ public:
    int maxWidthRamp(vector<int> &A) {
        vector<int> monolithic_queue;
        monolithic_queue.push_back(0);

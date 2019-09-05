@@ -15,8 +15,7 @@ bool isPalindrome(char *s) {
       continue;
     }
 
-    if (tolower(s[p]) != tolower(s[q]))
-      return false;
+    if (tolower(s[p]) != tolower(s[q])) return false;
     p++;
     q--;
   }

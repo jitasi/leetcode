@@ -12,7 +12,7 @@
  * };
  */
 class Solution {
-public:
+ public:
   TreeNode *helper(TreeNode *root, int &level) {
     if (root->left == nullptr && root->right == nullptr) {
       level = 1;

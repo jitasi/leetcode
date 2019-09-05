@@ -11,18 +11,16 @@
 // 4 0  1  2  2
 
 class Solution {
-public:
+ public:
   int maxUncrossedLines(vector<int> &A, vector<int> &B) {
     const int lena = A.size();
     const int lenb = B.size();
 
     // dp[i][j]: the length longest common sequence of A[0..i-1] and B[0..j-1]
     int dp[lena + 1][lenb + 1];
-    for (int j = 0; j <= lenb; j++)
-      dp[0][j] = 0;
+    for (int j = 0; j <= lenb; j++) dp[0][j] = 0;
 
     for (int i = 1; i <= lena; i++) {
-
       dp[i][0] = 0;
       for (int j = 1; j <= lenb; j++) {
         if (A[i - 1] == B[j - 1]) {

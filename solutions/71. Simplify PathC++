@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   string simplifyPath(string path) {
     stack<string> s;
     int start = 0;
@@ -10,8 +10,7 @@ public:
         if (start != e) {
           token = path.substr(start, e - start);
           if (token == "..") {
-            if (!s.empty())
-              s.pop();
+            if (!s.empty()) s.pop();
           } else if (token != ".")
             s.push(token);
         }

@@ -3,7 +3,7 @@
     // Robber II. Memory Usage: 8.5 MB, less than 80.17% of C++ online
     // submissions for House Robber II.
    class Solution {
-public:
+ public:
    int rob(vector<int> &nums, int l, int r) {
        vector<int> dp(r - l, 0);
        for (int i = l; i < r; i++) {

@@ -2,7 +2,7 @@
 // Common Supersequence. Memory Usage: 13 MB, less than 100.00% of C++ online
 // submissions for Shortest Common Supersequence.
 ​ class Solution {
-public:
+ public:
    string shortestCommonSupersequence(string str1, string str2) {
        const int len1 = str1.size();
        const int len2 = str2.size();

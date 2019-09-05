@@ -3,8 +3,8 @@
     // Runtime: 52 ms, faster than 90.42% of C++ online submissions for Shifting
     // Letters. Memory Usage: 11.4 MB, less than 82.09% of C++ online
     // submissions for Shifting Letters.
-        ​ class Solution {
-public:
+    ​ class Solution {
+ public:
    string shiftingLetters(string S, vector<int> &shifts) {
        const int len = S.size();
        long steps = 0;

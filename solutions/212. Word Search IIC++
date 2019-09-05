@@ -3,22 +3,20 @@
 // Word Search II.
 
 class Solution {
-public:
+ public:
   struct Trie {
     Trie *child[26];
     bool isWord;
 
     Trie() {
       isWord = false;
-      for (int i = 0; i < 26; i++)
-        child[i] = nullptr;
+      for (int i = 0; i < 26; i++) child[i] = nullptr;
     }
   };
 
   void AddWord(Trie *root, const string &word) {
     for (const char ch : word) {
-      if (root->child[ch - 'a'] == nullptr)
-        root->child[ch - 'a'] = new Trie();
+      if (root->child[ch - 'a'] == nullptr) root->child[ch - 'a'] = new Trie();
       root = root->child[ch - 'a'];
     }
     root->isWord = true;
@@ -30,8 +28,7 @@ public:
            string prefix, int i, int j) {
     const string t = prefix + string(1, board[i][j]);
 
-    if (root->isWord)
-      ans.insert(t);
+    if (root->isWord) ans.insert(t);
 
     board[i][j] = '$';
     for (int k = 0; k < 4; k++) {
@@ -39,8 +36,7 @@ public:
       const int y = j + dirs[k][1];
       if (x < 0 || x >= rows || y < 0 || y >= cols || board[x][y] == '$')
         continue;
-      if (root->child[board[x][y] - 'a'] == nullptr)
-        continue;
+      if (root->child[board[x][y] - 'a'] == nullptr) continue;
       dfs(board, root->child[board[x][y] - 'a'], ans, t, x, y);
     }
     board[i][j] = t.back();
@@ -51,15 +47,12 @@ public:
 
   vector<string> findWords(vector<vector<char>> &board, vector<string> &words) {
     rows = board.size();
-    if (rows == 0)
-      return {};
+    if (rows == 0) return {};
     cols = board[0].size();
-    if (cols == 0)
-      return {};
+    if (cols == 0) return {};
 
     Trie *root = new Trie();
-    for (const string &w : words)
-      AddWord(root, w);
+    for (const string &w : words) AddWord(root, w);
 
     unordered_set<string> ans;
     for (int i = 0; i < rows; i++)

@@ -2,7 +2,7 @@
 // Range Sum. Memory Usage: 26.8 MB, less than 7.31% of C++ online submissions
 // for Count of Range Sum.
 ​ class Solution {
-public:
+ public:
    int countRangeSum(vector<int> &nums, int lower, int upper) {
        vector<long> sums(nums.size() + 1, 0L);
        for (int i = 0; i < nums.size(); i++) sums[i + 1] = sums[i] + nums[i];
@@ -18,7 +18,7 @@ public:
     //    cout << l << ", " << r << endl;  
        
     int idx_lower = m;
-      // the idx in the second part that sum[idx_lower] - sum[i] > lower
+       // the idx in the second part that sum[idx_lower] - sum[i] > lower
     int idx_upper = m;
        int idx_sort = m;
        vector<long> sorted(r - l);

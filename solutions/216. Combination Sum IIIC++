@@ -2,7 +2,7 @@
 // Sum III. Memory Usage: 8.5 MB, less than 78.70% of C++ online submissions for
 // Combination Sum III.
 ​ class Solution {
-public:
+ public:
    void combinationSum3(int k, int n, int from, vector<int> &prefix,
                         vector<vector<int>> &ans) {
        if (n == 0 && k == 0) ans.push_back(prefix);

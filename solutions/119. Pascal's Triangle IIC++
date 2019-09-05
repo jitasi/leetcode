@@ -1,8 +1,7 @@
 class Solution {
-public:
+ public:
   vector<int> getRow(int rowIndex) {
-    if (rowIndex == 0)
-      return {1};
+    if (rowIndex == 0) return {1};
     vector<int> ret(rowIndex + 1);
 
     ret[0] = 1;

@@ -4,7 +4,7 @@
 // N.
 
 class Solution {
-public:
+ public:
   bool queryString(string S, int N) {
     string n = "0";
     bool flip;
@@ -23,8 +23,7 @@ public:
       if (!flip) {
         n = "1" + n;
       }
-      if (S.find(n) == -1)
-        return false;
+      if (S.find(n) == -1) return false;
     }
     return true;
   }

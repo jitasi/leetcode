@@ -1,8 +1,7 @@
 class Solution {
-public:
+ public:
   int numberOfArithmeticSlices(vector<int> &A) {
-    if (A.size() <= 2)
-      return 0;
+    if (A.size() <= 2) return 0;
 
     int c = 0;
     int d = A[1] - A[0];

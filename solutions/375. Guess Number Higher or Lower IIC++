@@ -3,7 +3,7 @@
 // submissions for Guess Number Higher or Lower II.
 
 class Solution {
-public:
+ public:
   int getMoneyAmount(int n) {
     if (n == 1)
       return 0;

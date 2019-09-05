@@ -3,7 +3,7 @@
 // C++ online submissions for Minimum Domino Rotations For Equal Row.
 
 class Solution {
-public:
+ public:
   int minDominoRotations(vector<int> &A, vector<int> &B) {
     const int len = A.size();
     int ans = -1;
@@ -16,8 +16,7 @@ public:
           success = false;
           break;
         }
-        if (A[i] == j && B[i] == j)
-          continue;
+        if (A[i] == j && B[i] == j) continue;
 
         if (A[i] == j)
           swaps_b++;

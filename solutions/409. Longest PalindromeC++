@@ -2,7 +2,7 @@
 // Palindrome. Memory Usage: 9 MB, less than 22.24% of C++ online submissions
 // for Longest Palindrome.
 ​ class Solution {
-public:
+ public:
    int longestPalindrome(string s) {
        unordered_map<char, int> m;
        for (const char ch : s) m[ch]++;

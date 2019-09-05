@@ -2,7 +2,7 @@
 // Addresses. Memory Usage: 8.6 MB, less than 64.24% of C++ online submissions
 // for Restore IP Addresses.
 ​ class Solution {
-public:
+ public:
    void restoreIpAddresses(const string &s, int from, int parts, 
                           string prefix, vector<string> &ans) {
        if (from == s.size() && parts == 0) {
@@ -15,7 +15,7 @@ public:
     const int end = min(from + 3, (int)s.size() - parts + 1);
        for (int i = from; i < end; i++) {
            if (i != from && s[from] == '0') break;
-        // disallow leading 0
+         // disallow leading 0
       const string sub = s.substr(from, i - from + 1);
            int num = stoi(sub.c_str());
            if (num > 255) break;

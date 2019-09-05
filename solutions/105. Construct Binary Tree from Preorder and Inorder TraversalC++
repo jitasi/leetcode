@@ -8,19 +8,16 @@
  * };
  */
 class Solution {
-public:
+ public:
   TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder,
                       int preorder_begin, int preorder_end, int inorder_begin,
                       int inorder_end) {
-    if (preorder_begin > preorder_end)
-      return nullptr;
-    if (inorder_begin > inorder_end)
-      return nullptr;
+    if (preorder_begin > preorder_end) return nullptr;
+    if (inorder_begin > inorder_end) return nullptr;
 
     int pos = inorder_begin;
     for (; pos <= inorder_end; pos++) {
-      if (inorder[pos] == preorder[preorder_begin])
-        break;
+      if (inorder[pos] == preorder[preorder_begin]) break;
     }
 
     TreeNode *root = new TreeNode(preorder[preorder_begin]);

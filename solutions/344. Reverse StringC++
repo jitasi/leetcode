@@ -1,9 +1,8 @@
 class Solution {
-public:
+ public:
   string reverseString(string s) {
     const int l = s.length();
-    if (l <= 1)
-      return s;
+    if (l <= 1) return s;
 
     for (int i = 0; i < l / 2; i++) {
       const char t = s[i];

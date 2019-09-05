@@ -5,11 +5,11 @@
 // length of longest subarray with up to 2 different values.
 
 class Solution {
-public:
+ public:
   int totalFruit(vector<int> &tree) {
-    unordered_map<int, int> m; // type -> number in the window
+    unordered_map<int, int> m;  // type -> number in the window
     int ans = 0;
-    int type_of_trees = 0; // type of trees in the window
+    int type_of_trees = 0;  // type of trees in the window
     int start = 0;
     for (int i = 0; i < tree.size(); i++) {
       if (m.count(tree[i]) > 0 && m[tree[i]] > 0) {
@@ -20,8 +20,7 @@ public:
       }
 
       while (type_of_trees > 2) {
-        if (--m[tree[start++]] == 0)
-          type_of_trees--;
+        if (--m[tree[start++]] == 0) type_of_trees--;
       }
 
       ans = std::max(ans, i - start + 1);

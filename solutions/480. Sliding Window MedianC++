@@ -3,7 +3,7 @@
 // submissions for Sliding Window Median.
 
 class Solution {
-public:
+ public:
   vector<double> medianSlidingWindow(vector<int> &nums, int k) {
     vector<double> ans;
 
@@ -15,17 +15,14 @@ public:
 
     for (int i = k; i <= nums.size(); i++) {
       ans.push_back((*mid + *prev(mid, 1 - k % 2)) / 2);
-      if (i == nums.size())
-        return ans;
+      if (i == nums.size()) return ans;
       s.insert(nums[i]);
 
       // 1 2 3 4 5
       // .   m
       // nums[i] =
-      if (nums[i] < *mid)
-        --mid;
-      if (nums[i - k] <= *mid)
-        ++mid;
+      if (nums[i] < *mid) --mid;
+      if (nums[i - k] <= *mid) ++mid;
       s.erase(s.lower_bound(nums[i - k]));
     }
     return ans;

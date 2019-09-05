@@ -5,20 +5,17 @@ Memory Usage: 107.9 MB, less than 5.21% of C++ online submissions for Max Sum of
 // https://www.cnblogs.com/grandyang/p/5617660.html
 
 class Solution {
-public:
+ public:
   int maxSumSubmatrix(vector<vector<int>> &matrix, int k) {
     int rows = matrix.size();
-    if (rows == 0)
-      return 0;
+    if (rows == 0) return 0;
     int cols = matrix[0].size();
-    if (cols == 0)
-      return 0;
+    if (cols == 0) return 0;
 
     if (rows > cols * 10) {
       vector<vector<int>> nm(cols, vector<int>(rows));
       for (int i = 0; i < rows; i++)
-        for (int j = 0; j < cols; j++)
-          nm[j][i] = matrix[i][j];
+        for (int j = 0; j < cols; j++) nm[j][i] = matrix[i][j];
       matrix.swap(nm);
       swap(rows, cols);
     }
@@ -49,8 +46,7 @@ public:
           auto it = s.lower_bound(area - k);
           if (it != s.end()) {
             int local = area - *it;
-            if (local <= k)
-              ans = max(ans, local);
+            if (local <= k) ans = max(ans, local);
           }
           s.insert(area);
         }

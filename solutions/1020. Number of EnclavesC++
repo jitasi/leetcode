@@ -2,7 +2,7 @@
 // Enclaves. Memory Usage: 15.1 MB, less than 48.73% of C++ online submissions
 // for Number of Enclaves.
 ​ class Solution {
-public:
+ public:
    const int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
    
   void TestBit(vector<vector<int>> &A, stack<pair<int, int>> &s, int x,

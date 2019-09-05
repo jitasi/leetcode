@@ -3,8 +3,8 @@
     // Runtime: 72 ms, faster than 95.85% of C++ online submissions for Vowel
     // Spellchecker. Memory Usage: 28.4 MB, less than 77.50% of C++ online
     // submissions for Vowel Spellchecker.
-        ​ class Solution {
-public:
+    ​ class Solution {
+ public:
    vector<string> spellchecker(vector<string> &wordlist,
                                vector<string> &queries) {
        unordered_set<string> exact_match(wordlist.begin(), wordlist.end());

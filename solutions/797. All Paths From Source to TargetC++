@@ -1,12 +1,11 @@
 class Solution {
-public:
+ public:
   vector<vector<int>> allPathsSourceTarget(vector<vector<int>> &graph) {
     return Helper(graph, 0);
   }
 
   vector<vector<int>> Helper(vector<vector<int>> &graph, int idx) {
-    if (idx == graph.size() - 1)
-      return {{idx}};
+    if (idx == graph.size() - 1) return {{idx}};
 
     vector<vector<int>> ret;
     for (int i = 0; i < graph[idx].size(); i++) {

@@ -2,7 +2,7 @@
 // Memory Usage: 9.8 MB, less than 100.00% of C++ online submissions for Car
 // Pooling.
 ​ class Solution {
-public:
+ public:
    bool carPooling(vector<vector<int>> &trips, int capacity) {
        vector<int> demands(1001, 0);
        for (const auto &t : trips) {

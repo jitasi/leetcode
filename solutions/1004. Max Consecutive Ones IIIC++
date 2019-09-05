@@ -3,21 +3,18 @@
 // submissions for Max Consecutive Ones III.
 
 class Solution {
-public:
+ public:
   int longestOnes(vector<int> &A, int K) {
     const int len = A.size();
-    if (len <= K)
-      return len;
+    if (len <= K) return len;
 
     int max_ones = 0;
     int start = 0;
     int zeros = 0;
     for (int i = 0; i < len; i++) {
-      if (A[i] == 0)
-        zeros++;
+      if (A[i] == 0) zeros++;
       while (zeros > K) {
-        if (A[start++] == 0)
-          zeros--;
+        if (A[start++] == 0) zeros--;
       }
       max_ones = std::max(max_ones, i - start + 1);
     }

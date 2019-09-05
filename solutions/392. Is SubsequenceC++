@@ -3,11 +3,11 @@
 // submissions for Is Subsequence.
 
 class Solution {
-public:
+ public:
   bool isSubsequence(string s, string t) {
     const int len = t.size();
-    int p = 0; // idx of t  "ahbgdc"
-    int i = 0; // idx of s  "abc"
+    int p = 0;  // idx of t  "ahbgdc"
+    int i = 0;  // idx of s  "abc"
     for (; i < s.size() && p < len; i++) {
       while (p < len && s[i] != t[p++])
         ;

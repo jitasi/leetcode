@@ -1,5 +1,5 @@
 class Solution {
-public:
+ public:
   int minimumDeleteSum(string s1, string s2) {
     const int s1_len = s1.size();
     const int s2_len = s2.size();

@@ -3,7 +3,7 @@
 // for Hand of Straights.
 
 class Solution {
-public:
+ public:
   bool isNStraightHand(vector<int> &hand, int W) {
     map<int, int> m;
     for (const int card : hand) {
@@ -17,16 +17,13 @@ public:
       auto prev = m.begin();
       for (int i = 1; i < W; i++) {
         auto cur = std::next(prev);
-        if (cur == m.end() || cur->first != (prev->first + 1))
-          return false;
+        if (cur == m.end() || cur->first != (prev->first + 1)) return false;
         m[prev->first]--;
-        if (m[prev->first] == 0)
-          m.erase(prev->first);
+        if (m[prev->first] == 0) m.erase(prev->first);
         prev = cur;
       }
       m[prev->first]--;
-      if (m[prev->first] == 0)
-        m.erase(prev->first);
+      if (m[prev->first] == 0) m.erase(prev->first);
     }
     return true;
   }

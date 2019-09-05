@@ -3,7 +3,7 @@
 // Wall.
 
 class Solution {
-public:
+ public:
   int leastBricks(vector<vector<int>> &wall) {
     unordered_map<int, int> m;
     for (const auto &w : wall) {
@@ -17,8 +17,7 @@ public:
       }
     }
 
-    if (m.empty())
-      return wall.size();
+    if (m.empty()) return wall.size();
 
     const auto it =
         max_element(m.begin(), m.end(),

@@ -2,7 +2,7 @@
 // Doll Envelopes. Memory Usage: 14.7 MB, less than 12.69% of C++ online
 // submissions for Russian Doll Envelopes.
 ​ class Solution {
-public:
+ public:
    int maxEnvelopes(vector<vector<int>> &envelopes) {
        const int len = envelopes.size();
        if (len <= 1) return len;

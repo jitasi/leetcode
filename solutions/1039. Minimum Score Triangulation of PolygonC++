@@ -3,7 +3,7 @@
 // online submissions for Minimum Score Triangulation of Polygon.
 
 class Solution {
-public:
+ public:
   int minScoreTriangulation(vector<int> &A) {
     const int len = A.size();
     vector<vector<int>> dp(len, vector<int>(len, 0));
