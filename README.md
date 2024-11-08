@@ -345,3 +345,19 @@
 |1138|[ Alphabet Board Path](https://leetcode.com/problems/alphabet-board-path/)|[C++](./solutions/1138.%20Alphabet%20Board%20PathC%2B%2B)|0 ms|
 |1139|[ Largest 1-Bordered Square](https://leetcode.com/problems/largest-1-bordered-square/)|[C++](./solutions/1139.%20Largest%201-Bordered%20SquareC%2B%2B)|16 ms|
 |1140|[ Stone Game II](https://leetcode.com/problems/stone-game-ii/)|[C++](./solutions/1140.%20Stone%20Game%20IIC%2B%2B)|4 ms|
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## String
+|  |
+| ------- |
+| [0022-generate-parentheses](https://github.com/jitasi/leetcode/tree/master/0022-generate-parentheses) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0022-generate-parentheses](https://github.com/jitasi/leetcode/tree/master/0022-generate-parentheses) |
+## Backtracking
+|  |
+| ------- |
+| [0022-generate-parentheses](https://github.com/jitasi/leetcode/tree/master/0022-generate-parentheses) |
+<!---LeetCode Topics End-->
