@@ -353,6 +353,7 @@
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/jitasi/leetcode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0022-generate-parentheses](https://github.com/jitasi/leetcode/tree/master/0022-generate-parentheses) |
+| [0043-multiply-strings](https://github.com/jitasi/leetcode/tree/master/0043-multiply-strings) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -369,4 +370,12 @@
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/jitasi/leetcode/tree/master/0003-longest-substring-without-repeating-characters) |
+## Math
+|  |
+| ------- |
+| [0043-multiply-strings](https://github.com/jitasi/leetcode/tree/master/0043-multiply-strings) |
+## Simulation
+|  |
+| ------- |
+| [0043-multiply-strings](https://github.com/jitasi/leetcode/tree/master/0043-multiply-strings) |
 <!---LeetCode Topics End-->
